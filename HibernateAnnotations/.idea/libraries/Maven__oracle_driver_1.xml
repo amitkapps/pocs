@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Maven: oracle:driver:1">
+    <CLASSES>
+      <root url="jar://C:/bea10.3/wlserver_10.3/server/lib/ojdbc6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

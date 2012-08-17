@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @editor-info:link autogen="true" source="CreditCardReport.jws" -->
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:conv="http://www.openuri.org/2002/04/soap/conversation/" xmlns:cw="http://www.openuri.org/2002/04/wsdl/conversation/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:jms="http://www.openuri.org/2002/04/wsdl/jms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://www.openuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://www.openuri.org/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.openuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema">
+      <s:element name="getCreditCardData">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="taxID" type="s:string" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCreditCardDataResponse">
+        <s:complexType>
+          <s:sequence/>
+        </s:complexType>
+      </s:element>
+      <s:element name="cancelRequest">
+        <s:complexType>
+          <s:sequence/>
+        </s:complexType>
+      </s:element>
+      <s:element name="cancelRequestResponse">
+        <s:complexType>
+          <s:sequence/>
+        </s:complexType>
+      </s:element>
+      <s:element name="onCreditCardDataReadyResponse">
+        <s:complexType>
+          <s:sequence/>
+        </s:complexType>
+      </s:element>
+      <s:element name="onCreditCardDataReady">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="cardData" type="s:string" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.openuri.org/2002/04/soap/conversation/">
+      <s:element name="StartHeader" type="conv:StartHeader"/>
+      <s:element name="ContinueHeader" type="conv:ContinueHeader"/>
+      <s:element name="CallbackHeader" type="conv:CallbackHeader"/>
+      <s:complexType name="StartHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="conversationID" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="callbackLocation" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ContinueHeader">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="conversationID" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CallbackHeader">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="conversationID" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </types>
+  <message name="getCreditCardDataSoapIn">
+    <part name="parameters" element="s0:getCreditCardData"/>
+  </message>
+  <message name="getCreditCardDataSoapOut">
+    <part name="parameters" element="s0:getCreditCardDataResponse"/>
+  </message>
+  <message name="cancelRequestSoapIn">
+    <part name="parameters" element="s0:cancelRequest"/>
+  </message>
+  <message name="cancelRequestSoapOut">
+    <part name="parameters" element="s0:cancelRequestResponse"/>
+  </message>
+  <message name="onCreditCardDataReadySoapIn">
+    <part name="parameters" element="s0:onCreditCardDataReadyResponse"/>
+  </message>
+  <message name="onCreditCardDataReadySoapOut">
+    <part name="parameters" element="s0:onCreditCardDataReady"/>
+  </message>
+  <message name="getCreditCardDataHttpGetIn">
+    <part name="taxID" type="s:string"/>
+  </message>
+  <message name="getCreditCardDataHttpGetOut"/>
+  <message name="cancelRequestHttpGetIn"/>
+  <message name="cancelRequestHttpGetOut"/>
+  <message name="onCreditCardDataReadyHttpGetIn"/>
+  <message name="onCreditCardDataReadyHttpGetOut">
+    <part name="cardData" type="s:string"/>
+  </message>
+  <message name="getCreditCardDataHttpPostIn">
+    <part name="taxID" type="s:string"/>
+  </message>
+  <message name="getCreditCardDataHttpPostOut"/>
+  <message name="cancelRequestHttpPostIn"/>
+  <message name="cancelRequestHttpPostOut"/>
+  <message name="onCreditCardDataReadyHttpPostIn"/>
+  <message name="onCreditCardDataReadyHttpPostOut">
+    <part name="cardData" type="s:string"/>
+  </message>
+  <message name="StartHeader_literal">
+    <part name="StartHeader" element="conv:StartHeader"/>
+  </message>
+  <message name="ContinueHeader_literal">
+    <part name="ContinueHeader" element="conv:ContinueHeader"/>
+  </message>
+  <message name="CallbackHeader_literal">
+    <part name="CallbackHeader" element="conv:CallbackHeader"/>
+  </message>
+  <portType name="CreditCardReportSoap">
+    <operation name="getCreditCardData">
+      <input message="s0:getCreditCardDataSoapIn"/>
+      <output message="s0:getCreditCardDataSoapOut"/>
+    </operation>
+    <operation name="cancelRequest">
+      <input message="s0:cancelRequestSoapIn"/>
+      <output message="s0:cancelRequestSoapOut"/>
+    </operation>
+    <operation name="onCreditCardDataReady">
+      <output message="s0:onCreditCardDataReadySoapOut"/>
+      <input message="s0:onCreditCardDataReadySoapIn"/>
+    </operation>
+  </portType>
+  <portType name="CreditCardReportHttpGet">
+    <operation name="getCreditCardData">
+      <input message="s0:getCreditCardDataHttpGetIn"/>
+      <output message="s0:getCreditCardDataHttpGetOut"/>
+    </operation>
+    <operation name="cancelRequest">
+      <input message="s0:cancelRequestHttpGetIn"/>
+      <output message="s0:cancelRequestHttpGetOut"/>
+    </operation>
+    <operation name="onCreditCardDataReady">
+      <output message="s0:onCreditCardDataReadyHttpGetOut"/>
+      <input message="s0:onCreditCardDataReadyHttpGetIn"/>
+    </operation>
+  </portType>
+  <portType name="CreditCardReportHttpPost">
+    <operation name="getCreditCardData">
+      <input message="s0:getCreditCardDataHttpPostIn"/>
+      <output message="s0:getCreditCardDataHttpPostOut"/>
+    </operation>
+    <operation name="cancelRequest">
+      <input message="s0:cancelRequestHttpPostIn"/>
+      <output message="s0:cancelRequestHttpPostOut"/>
+    </operation>
+    <operation name="onCreditCardDataReady">
+      <output message="s0:onCreditCardDataReadyHttpPostOut"/>
+      <input message="s0:onCreditCardDataReadyHttpPostIn"/>
+    </operation>
+  </portType>
+  <binding name="CreditCardReportSoap" type="s0:CreditCardReportSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="getCreditCardData">
+      <soap:operation soapAction="http://www.openuri.org/getCreditCardData" style="document"/>
+      <cw:transition phase="start"/>
+      <input>
+        <soap:body use="literal"/>
+        <soap:header wsdl:required="true" message="s0:StartHeader_literal" part="StartHeader" use="literal" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="cancelRequest">
+      <soap:operation soapAction="http://www.openuri.org/cancelRequest" style="document"/>
+      <cw:transition phase="continue"/>
+      <input>
+        <soap:body use="literal"/>
+        <soap:header wsdl:required="true" message="s0:ContinueHeader_literal" part="ContinueHeader" use="literal" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="onCreditCardDataReady">
+      <soap:operation soapAction="http://www.openuri.org/onCreditCardDataReady" style="document"/>
+      <cw:transition phase="finish"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+        <soap:header wsdl:required="true" message="s0:CallbackHeader_literal" part="CallbackHeader" use="literal" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="CreditCardReportHttpGet" type="s0:CreditCardReportHttpGet">
+    <http:binding verb="GET"/>
+    <operation name="getCreditCardData">
+      <http:operation location="/getCreditCardData"/>
+      <cw:transition phase="start"/>
+      <input>
+        <http:urlEncoded/>
+      </input>
+      <output/>
+    </operation>
+    <operation name="cancelRequest">
+      <http:operation location="/cancelRequest"/>
+      <cw:transition phase="continue"/>
+      <input>
+        <http:urlEncoded/>
+      </input>
+      <output/>
+    </operation>
+    <operation name="onCreditCardDataReady">
+      <http:operation location="/onCreditCardDataReady"/>
+      <cw:transition phase="finish"/>
+      <input>
+        <mime:mimeXml part="Body"/>
+      </input>
+      <output>
+        <http:urlEncoded/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="CreditCardReportHttpPost" type="s0:CreditCardReportHttpPost">
+    <http:binding verb="POST"/>
+    <operation name="getCreditCardData">
+      <http:operation location="/getCreditCardData"/>
+      <cw:transition phase="start"/>
+      <input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </input>
+      <output/>
+    </operation>
+    <operation name="cancelRequest">
+      <http:operation location="/cancelRequest"/>
+      <cw:transition phase="continue"/>
+      <input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </input>
+      <output/>
+    </operation>
+    <operation name="onCreditCardDataReady">
+      <http:operation location="/onCreditCardDataReady"/>
+      <cw:transition phase="finish"/>
+      <input>
+        <mime:mimeXml part="Body"/>
+      </input>
+      <output>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="CreditCardReport">
+    <port name="CreditCardReportSoap" binding="s0:CreditCardReportSoap">
+      <soap:address location="http://localhost:7001/CreditCardReport_JPFTutorial/webservice/CreditCardReport.jws"/>
+    </port>
+    <port name="CreditCardReportHttpGet" binding="s0:CreditCardReportHttpGet">
+      <http:address location="http://localhost:7001/CreditCardReport_JPFTutorial/webservice/CreditCardReport.jws"/>
+    </port>
+    <port name="CreditCardReportHttpPost" binding="s0:CreditCardReportHttpPost">
+      <http:address location="http://localhost:7001/CreditCardReport_JPFTutorial/webservice/CreditCardReport.jws"/>
+    </port>
+  </service>
+</definitions>

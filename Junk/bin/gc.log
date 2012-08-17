@@ -1,0 +1,903 @@
+0.125: [GC  {Heap before GC invocations=0:
+Heap
+ def new generation   total 576K, used 467K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,  91% used [0x10020000, 0x10094eb0, 0x100a0000)
+  from space 64K,   0% used [0x100a0000, 0x100a0000, 0x100b0000)
+  to   space 64K,   0% used [0x100b0000, 0x100b0000, 0x100c0000)
+ tenured generation   total 1408K, used 0K [0x10500000, 0x10660000, 0x14020000)
+   the space 1408K,   0% used [0x10500000, 0x10500000, 0x10500200, 0x10660000)
+ compacting perm gen  total 4096K, used 1066K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412ab40, 0x1412ac00, 0x14420000)
+0.125: [DefNew: 467K->63K(576K), 0.0067476 secs] 467K->355K(1984K) Heap after GC invocations=1:
+Heap
+ def new generation   total 576K, used 63K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,   0% used [0x10020000, 0x10020000, 0x100a0000)
+  from space 64K,  99% used [0x100b0000, 0x100bfff8, 0x100c0000)
+  to   space 64K,   0% used [0x100a0000, 0x100a0000, 0x100b0000)
+ tenured generation   total 1408K, used 291K [0x10500000, 0x10660000, 0x14020000)
+   the space 1408K,  20% used [0x10500000, 0x10548e50, 0x10549000, 0x10660000)
+ compacting perm gen  total 4096K, used 1066K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412ab40, 0x1412ac00, 0x14420000)
+} , 0.0069592 secs]
+0.133: [GC  {Heap before GC invocations=1:
+Heap
+ def new generation   total 576K, used 552K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,  95% used [0x10020000, 0x1009a1c0, 0x100a0000)
+  from space 64K,  99% used [0x100b0000, 0x100bfff8, 0x100c0000)
+  to   space 64K,   0% used [0x100a0000, 0x100a0000, 0x100b0000)
+ tenured generation   total 1408K, used 291K [0x10500000, 0x10660000, 0x14020000)
+   the space 1408K,  20% used [0x10500000, 0x10548e50, 0x10549000, 0x10660000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b068, 0x1412b200, 0x14420000)
+0.133: [DefNew: 552K->48K(576K), 0.0053747 secs] 844K->844K(1984K) Heap after GC invocations=2:
+Heap
+ def new generation   total 576K, used 48K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,   0% used [0x10020000, 0x10020000, 0x100a0000)
+  from space 64K,  76% used [0x100a0000, 0x100ac360, 0x100b0000)
+  to   space 64K,   0% used [0x100b0000, 0x100b0000, 0x100c0000)
+ tenured generation   total 1408K, used 795K [0x10500000, 0x10660000, 0x14020000)
+   the space 1408K,  56% used [0x10500000, 0x105c6ca8, 0x105c6e00, 0x10660000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b068, 0x1412b200, 0x14420000)
+} , 0.0055527 secs]
+0.139: [GC  {Heap before GC invocations=2:
+Heap
+ def new generation   total 576K, used 537K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,  95% used [0x10020000, 0x1009a1c0, 0x100a0000)
+  from space 64K,  76% used [0x100a0000, 0x100ac360, 0x100b0000)
+  to   space 64K,   0% used [0x100b0000, 0x100b0000, 0x100c0000)
+ tenured generation   total 1408K, used 795K [0x10500000, 0x10660000, 0x14020000)
+   the space 1408K,  56% used [0x10500000, 0x105c6ca8, 0x105c6e00, 0x10660000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+0.139: [DefNew: 537K->48K(576K), 0.0046953 secs] 1332K->1332K(1984K) Heap after GC invocations=3:
+Heap
+ def new generation   total 576K, used 48K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,   0% used [0x10020000, 0x10020000, 0x100a0000)
+  from space 64K,  76% used [0x100b0000, 0x100bc360, 0x100c0000)
+  to   space 64K,   0% used [0x100a0000, 0x100a0000, 0x100b0000)
+ tenured generation   total 1408K, used 1283K [0x10500000, 0x10660000, 0x14020000)
+   the space 1408K,  91% used [0x10500000, 0x10640e68, 0x10641000, 0x10660000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+} , 0.0048437 secs]
+0.144: [GC  {Heap before GC invocations=3:
+Heap
+ def new generation   total 576K, used 537K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,  95% used [0x10020000, 0x1009a1c0, 0x100a0000)
+  from space 64K,  76% used [0x100b0000, 0x100bc360, 0x100c0000)
+  to   space 64K,   0% used [0x100a0000, 0x100a0000, 0x100b0000)
+ tenured generation   total 1408K, used 1283K [0x10500000, 0x10660000, 0x14020000)
+   the space 1408K,  91% used [0x10500000, 0x10640e68, 0x10641000, 0x10660000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+0.144: [DefNew: 537K->48K(576K), 0.0043642 secs]0.148: [Tenured: 1772K->1772K(1792K), 0.0057839 secs] 1820K->1820K(2368K) Heap after GC invocations=4:
+Heap
+ def new generation   total 576K, used 48K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,   9% used [0x10020000, 0x1002c360, 0x100a0000)
+  from space 64K,   0% used [0x100a0000, 0x100a0000, 0x100b0000)
+  to   space 64K,   0% used [0x100b0000, 0x100b0000, 0x100c0000)
+ tenured generation   total 2956K, used 1772K [0x10500000, 0x107e3000, 0x14020000)
+   the space 2956K,  59% used [0x10500000, 0x106bb028, 0x106bb200, 0x107e3000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+} , 0.0103446 secs]
+0.154: [GC  {Heap before GC invocations=4:
+Heap
+ def new generation   total 576K, used 488K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,  95% used [0x10020000, 0x1009a1c0, 0x100a0000)
+  from space 64K,   0% used [0x100a0000, 0x100a0000, 0x100b0000)
+  to   space 64K,   0% used [0x100b0000, 0x100b0000, 0x100c0000)
+ tenured generation   total 2956K, used 1772K [0x10500000, 0x107e3000, 0x14020000)
+   the space 2956K,  59% used [0x10500000, 0x106bb028, 0x106bb200, 0x107e3000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+0.154: [DefNew: 488K->48K(576K), 0.0066082 secs] 2260K->2260K(3532K) Heap after GC invocations=5:
+Heap
+ def new generation   total 576K, used 48K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,   0% used [0x10020000, 0x10020000, 0x100a0000)
+  from space 64K,  76% used [0x100b0000, 0x100bc360, 0x100c0000)
+  to   space 64K,   0% used [0x100a0000, 0x100a0000, 0x100b0000)
+ tenured generation   total 2956K, used 2211K [0x10500000, 0x107e3000, 0x14020000)
+   the space 2956K,  74% used [0x10500000, 0x10728e88, 0x10729000, 0x107e3000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+} , 0.0067551 secs]
+0.161: [GC  {Heap before GC invocations=5:
+Heap
+ def new generation   total 576K, used 537K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,  95% used [0x10020000, 0x1009a1c0, 0x100a0000)
+  from space 64K,  76% used [0x100b0000, 0x100bc360, 0x100c0000)
+  to   space 64K,   0% used [0x100a0000, 0x100a0000, 0x100b0000)
+ tenured generation   total 2956K, used 2211K [0x10500000, 0x107e3000, 0x14020000)
+   the space 2956K,  74% used [0x10500000, 0x10728e88, 0x10729000, 0x107e3000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+0.161: [DefNew: 537K->48K(576K), 0.0043334 secs] 2748K->2748K(3532K) Heap after GC invocations=6:
+Heap
+ def new generation   total 576K, used 48K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,   0% used [0x10020000, 0x10020000, 0x100a0000)
+  from space 64K,  76% used [0x100a0000, 0x100ac360, 0x100b0000)
+  to   space 64K,   0% used [0x100b0000, 0x100b0000, 0x100c0000)
+ tenured generation   total 2956K, used 2700K [0x10500000, 0x107e3000, 0x14020000)
+   the space 2956K,  91% used [0x10500000, 0x107a3048, 0x107a3200, 0x107e3000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+} , 0.0044774 secs]
+0.166: [GC  {Heap before GC invocations=6:
+Heap
+ def new generation   total 576K, used 537K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,  95% used [0x10020000, 0x1009a1c0, 0x100a0000)
+  from space 64K,  76% used [0x100a0000, 0x100ac360, 0x100b0000)
+  to   space 64K,   0% used [0x100b0000, 0x100b0000, 0x100c0000)
+ tenured generation   total 2956K, used 2700K [0x10500000, 0x107e3000, 0x14020000)
+   the space 2956K,  91% used [0x10500000, 0x107a3048, 0x107a3200, 0x107e3000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+0.166: [DefNew: 537K->48K(576K), 0.0042566 secs]0.170: [Tenured: 3188K->3188K(3212K), 0.0058115 secs] 3237K->3237K(3788K) Heap after GC invocations=7:
+Heap
+ def new generation   total 576K, used 48K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,   9% used [0x10020000, 0x1002c360, 0x100a0000)
+  from space 64K,   0% used [0x100b0000, 0x100b0000, 0x100c0000)
+  to   space 64K,   0% used [0x100a0000, 0x100a0000, 0x100b0000)
+ tenured generation   total 5316K, used 3188K [0x10500000, 0x10a31000, 0x14020000)
+   the space 5316K,  59% used [0x10500000, 0x1081d208, 0x1081d400, 0x10a31000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+} , 0.0102661 secs]
+0.177: [GC  {Heap before GC invocations=7:
+Heap
+ def new generation   total 576K, used 488K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,  95% used [0x10020000, 0x1009a1c0, 0x100a0000)
+  from space 64K,   0% used [0x100b0000, 0x100b0000, 0x100c0000)
+  to   space 64K,   0% used [0x100a0000, 0x100a0000, 0x100b0000)
+ tenured generation   total 5316K, used 3188K [0x10500000, 0x10a31000, 0x14020000)
+   the space 5316K,  59% used [0x10500000, 0x1081d208, 0x1081d400, 0x10a31000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+0.177: [DefNew: 488K->48K(576K), 0.0067033 secs] 3676K->3676K(5892K) Heap after GC invocations=8:
+Heap
+ def new generation   total 576K, used 48K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,   0% used [0x10020000, 0x10020000, 0x100a0000)
+  from space 64K,  76% used [0x100a0000, 0x100ac360, 0x100b0000)
+  to   space 64K,   0% used [0x100b0000, 0x100b0000, 0x100c0000)
+ tenured generation   total 5316K, used 3628K [0x10500000, 0x10a31000, 0x14020000)
+   the space 5316K,  68% used [0x10500000, 0x1088b068, 0x1088b200, 0x10a31000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+} , 0.0068526 secs]
+0.184: [GC  {Heap before GC invocations=8:
+Heap
+ def new generation   total 576K, used 537K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,  95% used [0x10020000, 0x1009a1c0, 0x100a0000)
+  from space 64K,  76% used [0x100a0000, 0x100ac360, 0x100b0000)
+  to   space 64K,   0% used [0x100b0000, 0x100b0000, 0x100c0000)
+ tenured generation   total 5316K, used 3628K [0x10500000, 0x10a31000, 0x14020000)
+   the space 5316K,  68% used [0x10500000, 0x1088b068, 0x1088b200, 0x10a31000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+0.184: [DefNew: 537K->48K(576K), 0.0043116 secs] 4165K->4165K(5892K) Heap after GC invocations=9:
+Heap
+ def new generation   total 576K, used 48K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,   0% used [0x10020000, 0x10020000, 0x100a0000)
+  from space 64K,  76% used [0x100b0000, 0x100bc360, 0x100c0000)
+  to   space 64K,   0% used [0x100a0000, 0x100a0000, 0x100b0000)
+ tenured generation   total 5316K, used 4116K [0x10500000, 0x10a31000, 0x14020000)
+   the space 5316K,  77% used [0x10500000, 0x10905228, 0x10905400, 0x10a31000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+} , 0.0044821 secs]
+0.188: [GC  {Heap before GC invocations=9:
+Heap
+ def new generation   total 576K, used 537K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,  95% used [0x10020000, 0x1009a1c0, 0x100a0000)
+  from space 64K,  76% used [0x100b0000, 0x100bc360, 0x100c0000)
+  to   space 64K,   0% used [0x100a0000, 0x100a0000, 0x100b0000)
+ tenured generation   total 5316K, used 4116K [0x10500000, 0x10a31000, 0x14020000)
+   the space 5316K,  77% used [0x10500000, 0x10905228, 0x10905400, 0x10a31000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+0.189: [DefNew: 537K->48K(576K), 0.0042962 secs] 4653K->4653K(5892K) Heap after GC invocations=10:
+Heap
+ def new generation   total 576K, used 48K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,   0% used [0x10020000, 0x10020000, 0x100a0000)
+  from space 64K,  76% used [0x100a0000, 0x100ac360, 0x100b0000)
+  to   space 64K,   0% used [0x100b0000, 0x100b0000, 0x100c0000)
+ tenured generation   total 5316K, used 4604K [0x10500000, 0x10a31000, 0x14020000)
+   the space 5316K,  86% used [0x10500000, 0x1097f3e8, 0x1097f400, 0x10a31000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+} , 0.0044401 secs]
+0.193: [GC  {Heap before GC invocations=10:
+Heap
+ def new generation   total 576K, used 537K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,  95% used [0x10020000, 0x1009a1c0, 0x100a0000)
+  from space 64K,  76% used [0x100a0000, 0x100ac360, 0x100b0000)
+  to   space 64K,   0% used [0x100b0000, 0x100b0000, 0x100c0000)
+ tenured generation   total 5316K, used 4604K [0x10500000, 0x10a31000, 0x14020000)
+   the space 5316K,  86% used [0x10500000, 0x1097f3e8, 0x1097f400, 0x10a31000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+0.193: [DefNew: 537K->48K(576K), 0.0044279 secs] 5142K->5142K(5892K) Heap after GC invocations=11:
+Heap
+ def new generation   total 576K, used 48K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,   0% used [0x10020000, 0x10020000, 0x100a0000)
+  from space 64K,  76% used [0x100b0000, 0x100bc360, 0x100c0000)
+  to   space 64K,   0% used [0x100a0000, 0x100a0000, 0x100b0000)
+ tenured generation   total 5316K, used 5093K [0x10500000, 0x10a31000, 0x14020000)
+   the space 5316K,  95% used [0x10500000, 0x109f95a8, 0x109f9600, 0x10a31000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+} , 0.0046088 secs]
+0.198: [GC  {Heap before GC invocations=11:
+Heap
+ def new generation   total 576K, used 537K [0x10020000, 0x100c0000, 0x10500000)
+  eden space 512K,  95% used [0x10020000, 0x1009a1c0, 0x100a0000)
+  from space 64K,  76% used [0x100b0000, 0x100bc360, 0x100c0000)
+  to   space 64K,   0% used [0x100a0000, 0x100a0000, 0x100b0000)
+ tenured generation   total 5316K, used 5093K [0x10500000, 0x10a31000, 0x14020000)
+   the space 5316K,  95% used [0x10500000, 0x109f95a8, 0x109f9600, 0x10a31000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+0.198: [DefNew: 537K->48K(576K), 0.0044414 secs]0.203: [Tenured: 5581K->5630K(5700K), 0.0055709 secs] 5630K->5630K(6276K) Heap after GC invocations=12:
+Heap
+ def new generation   total 768K, used 0K [0x10020000, 0x100f0000, 0x10500000)
+  eden space 704K,   0% used [0x10020000, 0x10020000, 0x100d0000)
+  from space 64K,   0% used [0x100d0000, 0x100d0000, 0x100e0000)
+  to   space 64K,   0% used [0x100e0000, 0x100e0000, 0x100f0000)
+ tenured generation   total 9388K, used 5630K [0x10500000, 0x10e2b000, 0x14020000)
+   the space 9388K,  59% used [0x10500000, 0x10a7fac8, 0x10a7fc00, 0x10e2b000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+} , 0.0102519 secs]
+0.209: [GC  {Heap before GC invocations=12:
+Heap
+ def new generation   total 768K, used 683K [0x10020000, 0x100f0000, 0x10500000)
+  eden space 704K,  97% used [0x10020000, 0x100caf40, 0x100d0000)
+  from space 64K,   0% used [0x100d0000, 0x100d0000, 0x100e0000)
+  to   space 64K,   0% used [0x100e0000, 0x100e0000, 0x100f0000)
+ tenured generation   total 9388K, used 5630K [0x10500000, 0x10e2b000, 0x14020000)
+   the space 9388K,  59% used [0x10500000, 0x10a7fac8, 0x10a7fc00, 0x10e2b000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+0.209: [DefNew: 683K->48K(768K), 0.0045189 secs] 6314K->6314K(10156K) Heap after GC invocations=13:
+Heap
+ def new generation   total 768K, used 48K [0x10020000, 0x100f0000, 0x10500000)
+  eden space 704K,   0% used [0x10020000, 0x10020000, 0x100d0000)
+  from space 64K,  76% used [0x100e0000, 0x100ec360, 0x100f0000)
+  to   space 64K,   0% used [0x100d0000, 0x100d0000, 0x100e0000)
+ tenured generation   total 9388K, used 6265K [0x10500000, 0x10e2b000, 0x14020000)
+   the space 9388K,  66% used [0x10500000, 0x10b1e6a8, 0x10b1e800, 0x10e2b000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+} , 0.0046677 secs]
+0.214: [GC  {Heap before GC invocations=13:
+Heap
+ def new generation   total 768K, used 732K [0x10020000, 0x100f0000, 0x10500000)
+  eden space 704K,  97% used [0x10020000, 0x100caf40, 0x100d0000)
+  from space 64K,  76% used [0x100e0000, 0x100ec360, 0x100f0000)
+  to   space 64K,   0% used [0x100d0000, 0x100d0000, 0x100e0000)
+ tenured generation   total 9388K, used 6265K [0x10500000, 0x10e2b000, 0x14020000)
+   the space 9388K,  66% used [0x10500000, 0x10b1e6a8, 0x10b1e800, 0x10e2b000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+0.214: [DefNew: 732K->48K(768K), 0.0046519 secs] 6998K->6998K(10156K) Heap after GC invocations=14:
+Heap
+ def new generation   total 768K, used 48K [0x10020000, 0x100f0000, 0x10500000)
+  eden space 704K,   0% used [0x10020000, 0x10020000, 0x100d0000)
+  from space 64K,  76% used [0x100d0000, 0x100dc360, 0x100e0000)
+  to   space 64K,   0% used [0x100e0000, 0x100e0000, 0x100f0000)
+ tenured generation   total 9388K, used 6949K [0x10500000, 0x10e2b000, 0x14020000)
+   the space 9388K,  74% used [0x10500000, 0x10bc95e8, 0x10bc9600, 0x10e2b000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+} , 0.0047992 secs]
+0.219: [GC  {Heap before GC invocations=14:
+Heap
+ def new generation   total 768K, used 732K [0x10020000, 0x100f0000, 0x10500000)
+  eden space 704K,  97% used [0x10020000, 0x100caf40, 0x100d0000)
+  from space 64K,  76% used [0x100d0000, 0x100dc360, 0x100e0000)
+  to   space 64K,   0% used [0x100e0000, 0x100e0000, 0x100f0000)
+ tenured generation   total 9388K, used 6949K [0x10500000, 0x10e2b000, 0x14020000)
+   the space 9388K,  74% used [0x10500000, 0x10bc95e8, 0x10bc9600, 0x10e2b000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+0.219: [DefNew: 732K->48K(768K), 0.0046220 secs] 7682K->7682K(10156K) Heap after GC invocations=15:
+Heap
+ def new generation   total 768K, used 48K [0x10020000, 0x100f0000, 0x10500000)
+  eden space 704K,   0% used [0x10020000, 0x10020000, 0x100d0000)
+  from space 64K,  76% used [0x100e0000, 0x100ec360, 0x100f0000)
+  to   space 64K,   0% used [0x100d0000, 0x100d0000, 0x100e0000)
+ tenured generation   total 9388K, used 7633K [0x10500000, 0x10e2b000, 0x14020000)
+   the space 9388K,  81% used [0x10500000, 0x10c74528, 0x10c74600, 0x10e2b000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+} , 0.0047676 secs]
+0.224: [GC  {Heap before GC invocations=15:
+Heap
+ def new generation   total 768K, used 732K [0x10020000, 0x100f0000, 0x10500000)
+  eden space 704K,  97% used [0x10020000, 0x100caf40, 0x100d0000)
+  from space 64K,  76% used [0x100e0000, 0x100ec360, 0x100f0000)
+  to   space 64K,   0% used [0x100d0000, 0x100d0000, 0x100e0000)
+ tenured generation   total 9388K, used 7633K [0x10500000, 0x10e2b000, 0x14020000)
+   the space 9388K,  81% used [0x10500000, 0x10c74528, 0x10c74600, 0x10e2b000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+0.224: [DefNew: 732K->48K(768K), 0.0047255 secs] 8365K->8365K(10156K) Heap after GC invocations=16:
+Heap
+ def new generation   total 768K, used 48K [0x10020000, 0x100f0000, 0x10500000)
+  eden space 704K,   0% used [0x10020000, 0x10020000, 0x100d0000)
+  from space 64K,  76% used [0x100d0000, 0x100dc360, 0x100e0000)
+  to   space 64K,   0% used [0x100e0000, 0x100e0000, 0x100f0000)
+ tenured generation   total 9388K, used 8317K [0x10500000, 0x10e2b000, 0x14020000)
+   the space 9388K,  88% used [0x10500000, 0x10d1f468, 0x10d1f600, 0x10e2b000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+} , 0.0048947 secs]
+0.229: [GC  {Heap before GC invocations=16:
+Heap
+ def new generation   total 768K, used 732K [0x10020000, 0x100f0000, 0x10500000)
+  eden space 704K,  97% used [0x10020000, 0x100caf40, 0x100d0000)
+  from space 64K,  76% used [0x100d0000, 0x100dc360, 0x100e0000)
+  to   space 64K,   0% used [0x100e0000, 0x100e0000, 0x100f0000)
+ tenured generation   total 9388K, used 8317K [0x10500000, 0x10e2b000, 0x14020000)
+   the space 9388K,  88% used [0x10500000, 0x10d1f468, 0x10d1f600, 0x10e2b000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+0.229: [DefNew: 732K->48K(768K), 0.0045826 secs] 9049K->9049K(10156K) Heap after GC invocations=17:
+Heap
+ def new generation   total 768K, used 48K [0x10020000, 0x100f0000, 0x10500000)
+  eden space 704K,   0% used [0x10020000, 0x10020000, 0x100d0000)
+  from space 64K,  76% used [0x100e0000, 0x100ec360, 0x100f0000)
+  to   space 64K,   0% used [0x100d0000, 0x100d0000, 0x100e0000)
+ tenured generation   total 9388K, used 9000K [0x10500000, 0x10e2b000, 0x14020000)
+   the space 9388K,  95% used [0x10500000, 0x10dca3a8, 0x10dca400, 0x10e2b000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+} , 0.0047322 secs]
+0.234: [GC  {Heap before GC invocations=17:
+Heap
+ def new generation   total 768K, used 732K [0x10020000, 0x100f0000, 0x10500000)
+  eden space 704K,  97% used [0x10020000, 0x100caf40, 0x100d0000)
+  from space 64K,  76% used [0x100e0000, 0x100ec360, 0x100f0000)
+  to   space 64K,   0% used [0x100d0000, 0x100d0000, 0x100e0000)
+ tenured generation   total 9388K, used 9000K [0x10500000, 0x10e2b000, 0x14020000)
+   the space 9388K,  95% used [0x10500000, 0x10dca3a8, 0x10dca400, 0x10e2b000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b308, 0x1412b400, 0x14420000)
+0.234: [DefNew: 732K->48K(768K), 0.0045940 secs]0.239: [Tenured: 9684K->9730K(9772K), 0.0116353 secs] 9733K->9730K(10540K) Heap after GC invocations=18:
+Heap
+ def new generation   total 1280K, used 0K [0x10020000, 0x10180000, 0x10500000)
+  eden space 1152K,   0% used [0x10020000, 0x10020000, 0x10140000)
+  from space 128K,   0% used [0x10140000, 0x10140000, 0x10160000)
+  to   space 128K,   0% used [0x10160000, 0x10160000, 0x10180000)
+ tenured generation   total 16220K, used 9730K [0x10500000, 0x114d7000, 0x14020000)
+   the space 16220K,  59% used [0x10500000, 0x10e808b8, 0x10e80a00, 0x114d7000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0164710 secs]
+0.252: [GC  {Heap before GC invocations=18:
+Heap
+ def new generation   total 1280K, used 1123K [0x10020000, 0x10180000, 0x10500000)
+  eden space 1152K,  97% used [0x10020000, 0x10138da0, 0x10140000)
+  from space 128K,   0% used [0x10140000, 0x10140000, 0x10160000)
+  to   space 128K,   0% used [0x10160000, 0x10160000, 0x10180000)
+ tenured generation   total 16220K, used 9730K [0x10500000, 0x114d7000, 0x14020000)
+   the space 16220K,  59% used [0x10500000, 0x10e808b8, 0x10e80a00, 0x114d7000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.252: [DefNew: 1123K->97K(1280K), 0.0052739 secs] 10853K->10853K(17500K) Heap after GC invocations=19:
+Heap
+ def new generation   total 1280K, used 97K [0x10020000, 0x10180000, 0x10500000)
+  eden space 1152K,   0% used [0x10020000, 0x10020000, 0x10140000)
+  from space 128K,  76% used [0x10160000, 0x101786c0, 0x10180000)
+  to   space 128K,   0% used [0x10140000, 0x10140000, 0x10160000)
+ tenured generation   total 16220K, used 10755K [0x10500000, 0x114d7000, 0x14020000)
+   the space 16220K,  66% used [0x10500000, 0x10f80f98, 0x10f81000, 0x114d7000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0055019 secs]
+0.258: [GC  {Heap before GC invocations=19:
+Heap
+ def new generation   total 1280K, used 1221K [0x10020000, 0x10180000, 0x10500000)
+  eden space 1152K,  97% used [0x10020000, 0x10138da0, 0x10140000)
+  from space 128K,  76% used [0x10160000, 0x101786c0, 0x10180000)
+  to   space 128K,   0% used [0x10140000, 0x10140000, 0x10160000)
+ tenured generation   total 16220K, used 10755K [0x10500000, 0x114d7000, 0x14020000)
+   the space 16220K,  66% used [0x10500000, 0x10f80f98, 0x10f81000, 0x114d7000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.258: [DefNew: 1221K->97K(1280K), 0.0052554 secs] 11976K->11976K(17500K) Heap after GC invocations=20:
+Heap
+ def new generation   total 1280K, used 97K [0x10020000, 0x10180000, 0x10500000)
+  eden space 1152K,   0% used [0x10020000, 0x10020000, 0x10140000)
+  from space 128K,  76% used [0x10140000, 0x101586c0, 0x10160000)
+  to   space 128K,   0% used [0x10160000, 0x10160000, 0x10180000)
+ tenured generation   total 16220K, used 11879K [0x10500000, 0x114d7000, 0x14020000)
+   the space 16220K,  73% used [0x10500000, 0x11099d38, 0x11099e00, 0x114d7000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0054255 secs]
+0.264: [GC  {Heap before GC invocations=20:
+Heap
+ def new generation   total 1280K, used 1221K [0x10020000, 0x10180000, 0x10500000)
+  eden space 1152K,  97% used [0x10020000, 0x10138da0, 0x10140000)
+  from space 128K,  76% used [0x10140000, 0x101586c0, 0x10160000)
+  to   space 128K,   0% used [0x10160000, 0x10160000, 0x10180000)
+ tenured generation   total 16220K, used 11879K [0x10500000, 0x114d7000, 0x14020000)
+   the space 16220K,  73% used [0x10500000, 0x11099d38, 0x11099e00, 0x114d7000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.264: [DefNew: 1221K->97K(1280K), 0.0052845 secs] 13100K->13100K(17500K) Heap after GC invocations=21:
+Heap
+ def new generation   total 1280K, used 97K [0x10020000, 0x10180000, 0x10500000)
+  eden space 1152K,   0% used [0x10020000, 0x10020000, 0x10140000)
+  from space 128K,  76% used [0x10160000, 0x101786c0, 0x10180000)
+  to   space 128K,   0% used [0x10140000, 0x10140000, 0x10160000)
+ tenured generation   total 16220K, used 13002K [0x10500000, 0x114d7000, 0x14020000)
+   the space 16220K,  80% used [0x10500000, 0x111b2ad8, 0x111b2c00, 0x114d7000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0054581 secs]
+0.270: [GC  {Heap before GC invocations=21:
+Heap
+ def new generation   total 1280K, used 1221K [0x10020000, 0x10180000, 0x10500000)
+  eden space 1152K,  97% used [0x10020000, 0x10138da0, 0x10140000)
+  from space 128K,  76% used [0x10160000, 0x101786c0, 0x10180000)
+  to   space 128K,   0% used [0x10140000, 0x10140000, 0x10160000)
+ tenured generation   total 16220K, used 13002K [0x10500000, 0x114d7000, 0x14020000)
+   the space 16220K,  80% used [0x10500000, 0x111b2ad8, 0x111b2c00, 0x114d7000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.270: [DefNew: 1221K->97K(1280K), 0.0052451 secs] 14223K->14223K(17500K) Heap after GC invocations=22:
+Heap
+ def new generation   total 1280K, used 97K [0x10020000, 0x10180000, 0x10500000)
+  eden space 1152K,   0% used [0x10020000, 0x10020000, 0x10140000)
+  from space 128K,  76% used [0x10140000, 0x101586c0, 0x10160000)
+  to   space 128K,   0% used [0x10160000, 0x10160000, 0x10180000)
+ tenured generation   total 16220K, used 14126K [0x10500000, 0x114d7000, 0x14020000)
+   the space 16220K,  87% used [0x10500000, 0x112cb878, 0x112cba00, 0x114d7000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0053961 secs]
+0.276: [GC  {Heap before GC invocations=22:
+Heap
+ def new generation   total 1280K, used 1221K [0x10020000, 0x10180000, 0x10500000)
+  eden space 1152K,  97% used [0x10020000, 0x10138da0, 0x10140000)
+  from space 128K,  76% used [0x10140000, 0x101586c0, 0x10160000)
+  to   space 128K,   0% used [0x10160000, 0x10160000, 0x10180000)
+ tenured generation   total 16220K, used 14126K [0x10500000, 0x114d7000, 0x14020000)
+   the space 16220K,  87% used [0x10500000, 0x112cb878, 0x112cba00, 0x114d7000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.276: [DefNew: 1221K->97K(1280K), 0.0051993 secs] 15347K->15347K(17500K) Heap after GC invocations=23:
+Heap
+ def new generation   total 1280K, used 97K [0x10020000, 0x10180000, 0x10500000)
+  eden space 1152K,   0% used [0x10020000, 0x10020000, 0x10140000)
+  from space 128K,  76% used [0x10160000, 0x101786c0, 0x10180000)
+  to   space 128K,   0% used [0x10140000, 0x10140000, 0x10160000)
+ tenured generation   total 16220K, used 15249K [0x10500000, 0x114d7000, 0x14020000)
+   the space 16220K,  94% used [0x10500000, 0x113e4618, 0x113e4800, 0x114d7000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0053452 secs]
+0.282: [GC  {Heap before GC invocations=23:
+Heap
+ def new generation   total 1280K, used 1221K [0x10020000, 0x10180000, 0x10500000)
+  eden space 1152K,  97% used [0x10020000, 0x10138da0, 0x10140000)
+  from space 128K,  76% used [0x10160000, 0x101786c0, 0x10180000)
+  to   space 128K,   0% used [0x10140000, 0x10140000, 0x10160000)
+ tenured generation   total 16220K, used 15249K [0x10500000, 0x114d7000, 0x14020000)
+   the space 16220K,  94% used [0x10500000, 0x113e4618, 0x113e4800, 0x114d7000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.282: [DefNew: 1221K->97K(1280K), 0.0054054 secs]0.287: [Tenured: 16372K->16470K(16476K), 0.0060559 secs] 16470K->16470K(17756K) Heap after GC invocations=24:
+Heap
+ def new generation   total 2112K, used 0K [0x10020000, 0x10260000, 0x10500000)
+  eden space 1920K,   0% used [0x10020000, 0x10020000, 0x10200000)
+  from space 192K,   0% used [0x10200000, 0x10200000, 0x10230000)
+  to   space 192K,   0% used [0x10230000, 0x10230000, 0x10260000)
+ tenured generation   total 27452K, used 16470K [0x10500000, 0x11fcf000, 0x14020000)
+   the space 27452K,  59% used [0x10500000, 0x11515a78, 0x11515c00, 0x11fcf000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0117961 secs]
+0.295: [GC  {Heap before GC invocations=24:
+Heap
+ def new generation   total 2112K, used 1904K [0x10020000, 0x10260000, 0x10500000)
+  eden space 1920K,  99% used [0x10020000, 0x101fc3a0, 0x10200000)
+  from space 192K,   0% used [0x10200000, 0x10200000, 0x10230000)
+  to   space 192K,   0% used [0x10230000, 0x10230000, 0x10260000)
+ tenured generation   total 27452K, used 16470K [0x10500000, 0x11fcf000, 0x14020000)
+   the space 27452K,  59% used [0x10500000, 0x11515a78, 0x11515c00, 0x11fcf000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.295: [DefNew: 1904K->146K(2112K), 0.0062025 secs] 18375K->18375K(29564K) Heap after GC invocations=25:
+Heap
+ def new generation   total 2112K, used 146K [0x10020000, 0x10260000, 0x10500000)
+  eden space 1920K,   0% used [0x10020000, 0x10020000, 0x10200000)
+  from space 192K,  76% used [0x10230000, 0x10254a20, 0x10260000)
+  to   space 192K,   0% used [0x10200000, 0x10200000, 0x10230000)
+ tenured generation   total 27452K, used 18228K [0x10500000, 0x11fcf000, 0x14020000)
+   the space 27452K,  66% used [0x10500000, 0x116cd3f8, 0x116cd400, 0x11fcf000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0063541 secs]
+0.302: [GC  {Heap before GC invocations=25:
+Heap
+ def new generation   total 2112K, used 2051K [0x10020000, 0x10260000, 0x10500000)
+  eden space 1920K,  99% used [0x10020000, 0x101fc3a0, 0x10200000)
+  from space 192K,  76% used [0x10230000, 0x10254a20, 0x10260000)
+  to   space 192K,   0% used [0x10200000, 0x10200000, 0x10230000)
+ tenured generation   total 27452K, used 18228K [0x10500000, 0x11fcf000, 0x14020000)
+   the space 27452K,  66% used [0x10500000, 0x116cd3f8, 0x116cd400, 0x11fcf000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.302: [DefNew: 2051K->146K(2112K), 0.0064020 secs] 20280K->20280K(29564K) Heap after GC invocations=26:
+Heap
+ def new generation   total 2112K, used 146K [0x10020000, 0x10260000, 0x10500000)
+  eden space 1920K,   0% used [0x10020000, 0x10020000, 0x10200000)
+  from space 192K,  76% used [0x10200000, 0x10224a20, 0x10230000)
+  to   space 192K,   0% used [0x10230000, 0x10230000, 0x10260000)
+ tenured generation   total 27452K, used 20133K [0x10500000, 0x11fcf000, 0x14020000)
+   the space 27452K,  73% used [0x10500000, 0x118a9798, 0x118a9800, 0x11fcf000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0065514 secs]
+0.309: [GC  {Heap before GC invocations=26:
+Heap
+ def new generation   total 2112K, used 2051K [0x10020000, 0x10260000, 0x10500000)
+  eden space 1920K,  99% used [0x10020000, 0x101fc3a0, 0x10200000)
+  from space 192K,  76% used [0x10200000, 0x10224a20, 0x10230000)
+  to   space 192K,   0% used [0x10230000, 0x10230000, 0x10260000)
+ tenured generation   total 27452K, used 20133K [0x10500000, 0x11fcf000, 0x14020000)
+   the space 27452K,  73% used [0x10500000, 0x118a9798, 0x118a9800, 0x11fcf000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.309: [DefNew: 2051K->146K(2112K), 0.0063816 secs] 22185K->22185K(29564K) Heap after GC invocations=27:
+Heap
+ def new generation   total 2112K, used 146K [0x10020000, 0x10260000, 0x10500000)
+  eden space 1920K,   0% used [0x10020000, 0x10020000, 0x10200000)
+  from space 192K,  76% used [0x10230000, 0x10254a20, 0x10260000)
+  to   space 192K,   0% used [0x10200000, 0x10200000, 0x10230000)
+ tenured generation   total 27452K, used 22038K [0x10500000, 0x11fcf000, 0x14020000)
+   the space 27452K,  80% used [0x10500000, 0x11a85b38, 0x11a85c00, 0x11fcf000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0065393 secs]
+0.317: [GC  {Heap before GC invocations=27:
+Heap
+ def new generation   total 2112K, used 2051K [0x10020000, 0x10260000, 0x10500000)
+  eden space 1920K,  99% used [0x10020000, 0x101fc3a0, 0x10200000)
+  from space 192K,  76% used [0x10230000, 0x10254a20, 0x10260000)
+  to   space 192K,   0% used [0x10200000, 0x10200000, 0x10230000)
+ tenured generation   total 27452K, used 22038K [0x10500000, 0x11fcf000, 0x14020000)
+   the space 27452K,  80% used [0x10500000, 0x11a85b38, 0x11a85c00, 0x11fcf000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.317: [DefNew: 2051K->146K(2112K), 0.0080612 secs] 24090K->24090K(29564K) Heap after GC invocations=28:
+Heap
+ def new generation   total 2112K, used 146K [0x10020000, 0x10260000, 0x10500000)
+  eden space 1920K,   0% used [0x10020000, 0x10020000, 0x10200000)
+  from space 192K,  76% used [0x10200000, 0x10224a20, 0x10230000)
+  to   space 192K,   0% used [0x10230000, 0x10230000, 0x10260000)
+ tenured generation   total 27452K, used 23943K [0x10500000, 0x11fcf000, 0x14020000)
+   the space 27452K,  87% used [0x10500000, 0x11c61ed8, 0x11c62000, 0x11fcf000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0082627 secs]
+0.326: [GC  {Heap before GC invocations=28:
+Heap
+ def new generation   total 2112K, used 2051K [0x10020000, 0x10260000, 0x10500000)
+  eden space 1920K,  99% used [0x10020000, 0x101fc3a0, 0x10200000)
+  from space 192K,  76% used [0x10200000, 0x10224a20, 0x10230000)
+  to   space 192K,   0% used [0x10230000, 0x10230000, 0x10260000)
+ tenured generation   total 27452K, used 23943K [0x10500000, 0x11fcf000, 0x14020000)
+   the space 27452K,  87% used [0x10500000, 0x11c61ed8, 0x11c62000, 0x11fcf000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.326: [DefNew: 2051K->146K(2112K), 0.0066635 secs] 25995K->25995K(29564K) Heap after GC invocations=29:
+Heap
+ def new generation   total 2112K, used 146K [0x10020000, 0x10260000, 0x10500000)
+  eden space 1920K,   0% used [0x10020000, 0x10020000, 0x10200000)
+  from space 192K,  76% used [0x10230000, 0x10254a20, 0x10260000)
+  to   space 192K,   0% used [0x10200000, 0x10200000, 0x10230000)
+ tenured generation   total 27452K, used 25848K [0x10500000, 0x11fcf000, 0x14020000)
+   the space 27452K,  94% used [0x10500000, 0x11e3e278, 0x11e3e400, 0x11fcf000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0068509 secs]
+0.334: [GC  {Heap before GC invocations=29:
+Heap
+ def new generation   total 2112K, used 2051K [0x10020000, 0x10260000, 0x10500000)
+  eden space 1920K,  99% used [0x10020000, 0x101fc3a0, 0x10200000)
+  from space 192K,  76% used [0x10230000, 0x10254a20, 0x10260000)
+  to   space 192K,   0% used [0x10200000, 0x10200000, 0x10230000)
+ tenured generation   total 27452K, used 25848K [0x10500000, 0x11fcf000, 0x14020000)
+   the space 27452K,  94% used [0x10500000, 0x11e3e278, 0x11e3e400, 0x11fcf000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.334: [DefNew: 2051K->146K(2112K), 0.0064051 secs]0.340: [Tenured: 27753K->27802K(27836K), 0.0063747 secs] 27900K->27900K(29948K) Heap after GC invocations=30:
+Heap
+ def new generation   total 3520K, used 97K [0x10020000, 0x103f0000, 0x10500000)
+  eden space 3136K,   3% used [0x10020000, 0x100386c0, 0x10330000)
+  from space 384K,   0% used [0x10330000, 0x10330000, 0x10390000)
+  to   space 384K,   0% used [0x10390000, 0x10390000, 0x103f0000)
+ tenured generation   total 46340K, used 27802K [0x10500000, 0x13241000, 0x14020000)
+   the space 46340K,  59% used [0x10500000, 0x12026978, 0x12026a00, 0x13241000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0130578 secs]
+0.349: [GC  {Heap before GC invocations=30:
+Heap
+ def new generation   total 3520K, used 3126K [0x10020000, 0x103f0000, 0x10500000)
+  eden space 3136K,  99% used [0x10020000, 0x1032d800, 0x10330000)
+  from space 384K,   0% used [0x10330000, 0x10330000, 0x10390000)
+  to   space 384K,   0% used [0x10390000, 0x10390000, 0x103f0000)
+ tenured generation   total 46340K, used 27802K [0x10500000, 0x13241000, 0x14020000)
+   the space 46340K,  59% used [0x10500000, 0x12026978, 0x12026a00, 0x13241000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.349: [DefNew: 3126K->341K(3520K), 0.0112292 secs] 30928K->30928K(49860K) Heap after GC invocations=31:
+Heap
+ def new generation   total 3520K, used 341K [0x10020000, 0x103f0000, 0x10500000)
+  eden space 3136K,   0% used [0x10020000, 0x10020000, 0x10330000)
+  from space 384K,  89% used [0x10390000, 0x103e57a0, 0x103f0000)
+  to   space 384K,   0% used [0x10330000, 0x10330000, 0x10390000)
+ tenured generation   total 46340K, used 30586K [0x10500000, 0x13241000, 0x14020000)
+   the space 46340K,  66% used [0x10500000, 0x122de9d8, 0x122dea00, 0x13241000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0113803 secs]
+0.362: [GC  {Heap before GC invocations=31:
+Heap
+ def new generation   total 3520K, used 3467K [0x10020000, 0x103f0000, 0x10500000)
+  eden space 3136K,  99% used [0x10020000, 0x1032d800, 0x10330000)
+  from space 384K,  89% used [0x10390000, 0x103e57a0, 0x103f0000)
+  to   space 384K,   0% used [0x10330000, 0x10330000, 0x10390000)
+ tenured generation   total 46340K, used 30586K [0x10500000, 0x13241000, 0x14020000)
+   the space 46340K,  66% used [0x10500000, 0x122de9d8, 0x122dea00, 0x13241000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.362: [DefNew: 3467K->341K(3520K), 0.0082481 secs] 34054K->34054K(49860K) Heap after GC invocations=32:
+Heap
+ def new generation   total 3520K, used 341K [0x10020000, 0x103f0000, 0x10500000)
+  eden space 3136K,   0% used [0x10020000, 0x10020000, 0x10330000)
+  from space 384K,  89% used [0x10330000, 0x103857a0, 0x10390000)
+  to   space 384K,   0% used [0x10390000, 0x10390000, 0x103f0000)
+ tenured generation   total 46340K, used 33712K [0x10500000, 0x13241000, 0x14020000)
+   the space 46340K,  72% used [0x10500000, 0x125ec1d8, 0x125ec200, 0x13241000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0083969 secs]
+0.372: [GC  {Heap before GC invocations=32:
+Heap
+ def new generation   total 3520K, used 3467K [0x10020000, 0x103f0000, 0x10500000)
+  eden space 3136K,  99% used [0x10020000, 0x1032d800, 0x10330000)
+  from space 384K,  89% used [0x10330000, 0x103857a0, 0x10390000)
+  to   space 384K,   0% used [0x10390000, 0x10390000, 0x103f0000)
+ tenured generation   total 46340K, used 33712K [0x10500000, 0x13241000, 0x14020000)
+   the space 46340K,  72% used [0x10500000, 0x125ec1d8, 0x125ec200, 0x13241000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.372: [DefNew: 3467K->341K(3520K), 0.0082323 secs] 37180K->37180K(49860K) Heap after GC invocations=33:
+Heap
+ def new generation   total 3520K, used 341K [0x10020000, 0x103f0000, 0x10500000)
+  eden space 3136K,   0% used [0x10020000, 0x10020000, 0x10330000)
+  from space 384K,  89% used [0x10390000, 0x103e57a0, 0x103f0000)
+  to   space 384K,   0% used [0x10330000, 0x10330000, 0x10390000)
+ tenured generation   total 46340K, used 36838K [0x10500000, 0x13241000, 0x14020000)
+   the space 46340K,  79% used [0x10500000, 0x128f99d8, 0x128f9a00, 0x13241000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0083909 secs]
+0.382: [GC  {Heap before GC invocations=33:
+Heap
+ def new generation   total 3520K, used 3467K [0x10020000, 0x103f0000, 0x10500000)
+  eden space 3136K,  99% used [0x10020000, 0x1032d800, 0x10330000)
+  from space 384K,  89% used [0x10390000, 0x103e57a0, 0x103f0000)
+  to   space 384K,   0% used [0x10330000, 0x10330000, 0x10390000)
+ tenured generation   total 46340K, used 36838K [0x10500000, 0x13241000, 0x14020000)
+   the space 46340K,  79% used [0x10500000, 0x128f99d8, 0x128f9a00, 0x13241000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.382: [DefNew: 3467K->341K(3520K), 0.0081527 secs] 40306K->40306K(49860K) Heap after GC invocations=34:
+Heap
+ def new generation   total 3520K, used 341K [0x10020000, 0x103f0000, 0x10500000)
+  eden space 3136K,   0% used [0x10020000, 0x10020000, 0x10330000)
+  from space 384K,  89% used [0x10330000, 0x103857a0, 0x10390000)
+  to   space 384K,   0% used [0x10390000, 0x10390000, 0x103f0000)
+ tenured generation   total 46340K, used 39964K [0x10500000, 0x13241000, 0x14020000)
+   the space 46340K,  86% used [0x10500000, 0x12c071d8, 0x12c07200, 0x13241000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0083268 secs]
+0.392: [GC  {Heap before GC invocations=34:
+Heap
+ def new generation   total 3520K, used 3467K [0x10020000, 0x103f0000, 0x10500000)
+  eden space 3136K,  99% used [0x10020000, 0x1032d800, 0x10330000)
+  from space 384K,  89% used [0x10330000, 0x103857a0, 0x10390000)
+  to   space 384K,   0% used [0x10390000, 0x10390000, 0x103f0000)
+ tenured generation   total 46340K, used 39964K [0x10500000, 0x13241000, 0x14020000)
+   the space 46340K,  86% used [0x10500000, 0x12c071d8, 0x12c07200, 0x13241000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.392: [DefNew: 3467K->341K(3520K), 0.0081658 secs] 43432K->43432K(49860K) Heap after GC invocations=35:
+Heap
+ def new generation   total 3520K, used 341K [0x10020000, 0x103f0000, 0x10500000)
+  eden space 3136K,   0% used [0x10020000, 0x10020000, 0x10330000)
+  from space 384K,  89% used [0x10390000, 0x103e57a0, 0x103f0000)
+  to   space 384K,   0% used [0x10330000, 0x10330000, 0x10390000)
+ tenured generation   total 46340K, used 43090K [0x10500000, 0x13241000, 0x14020000)
+   the space 46340K,  92% used [0x10500000, 0x12f149d8, 0x12f14a00, 0x13241000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0083189 secs]
+0.402: [GC  {Heap before GC invocations=35:
+Heap
+ def new generation   total 3520K, used 3467K [0x10020000, 0x103f0000, 0x10500000)
+  eden space 3136K,  99% used [0x10020000, 0x1032d800, 0x10330000)
+  from space 384K,  89% used [0x10390000, 0x103e57a0, 0x103f0000)
+  to   space 384K,   0% used [0x10330000, 0x10330000, 0x10390000)
+ tenured generation   total 46340K, used 43090K [0x10500000, 0x13241000, 0x14020000)
+   the space 46340K,  92% used [0x10500000, 0x12f149d8, 0x12f14a00, 0x13241000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.402: [DefNew: 3467K->341K(3520K), 0.0081830 secs] 46558K->46558K(49860K) Heap after GC invocations=36:
+Heap
+ def new generation   total 3520K, used 341K [0x10020000, 0x103f0000, 0x10500000)
+  eden space 3136K,   0% used [0x10020000, 0x10020000, 0x10330000)
+  from space 384K,  89% used [0x10330000, 0x103857a0, 0x10390000)
+  to   space 384K,   0% used [0x10390000, 0x10390000, 0x103f0000)
+ tenured generation   total 46340K, used 46216K [0x10500000, 0x13241000, 0x14020000)
+   the space 46340K,  99% used [0x10500000, 0x132221d8, 0x13222200, 0x13241000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0083600 secs]
+0.412: [GC  {Heap before GC invocations=36:
+Heap
+ def new generation   total 3520K, used 3467K [0x10020000, 0x103f0000, 0x10500000)
+  eden space 3136K,  99% used [0x10020000, 0x1032d800, 0x10330000)
+  from space 384K,  89% used [0x10330000, 0x103857a0, 0x10390000)
+  to   space 384K,   0% used [0x10390000, 0x10390000, 0x103f0000)
+ tenured generation   total 46340K, used 46216K [0x10500000, 0x13241000, 0x14020000)
+   the space 46340K,  99% used [0x10500000, 0x132221d8, 0x13222200, 0x13241000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.412: [DefNew: 3467K->341K(3520K), 0.0082913 secs]0.420: [Tenured: 49342K->49391K(49412K), 0.0069261 secs] 49684K->49684K(52932K) Heap after GC invocations=37:
+Heap
+ def new generation   total 4544K, used 293K [0x10020000, 0x10500000, 0x10500000)
+  eden space 4096K,   7% used [0x10020000, 0x10069440, 0x10420000)
+  from space 448K,   0% used [0x10420000, 0x10420000, 0x10490000)
+  to   space 448K,   0% used [0x10490000, 0x10490000, 0x10500000)
+ tenured generation   total 60544K, used 49391K [0x10500000, 0x14020000, 0x14020000)
+   the space 60544K,  81% used [0x10500000, 0x1353bd38, 0x1353be00, 0x14020000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0154581 secs]
+0.429: [GC  {Heap before GC invocations=37:
+Heap
+ def new generation   total 4544K, used 4054K [0x10020000, 0x10500000, 0x10500000)
+  eden space 4096K,  98% used [0x10020000, 0x10415820, 0x10420000)
+  from space 448K,   0% used [0x10420000, 0x10420000, 0x10490000)
+  to   space 448K,   0% used [0x10490000, 0x10490000, 0x10500000)
+ tenured generation   total 60544K, used 49391K [0x10500000, 0x14020000, 0x14020000)
+   the space 60544K,  81% used [0x10500000, 0x1353bd38, 0x1353be00, 0x14020000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.429: [DefNew: 4054K->439K(4544K), 0.0130099 secs] 53445K->53445K(65088K) Heap after GC invocations=38:
+Heap
+ def new generation   total 4544K, used 439K [0x10020000, 0x10500000, 0x10500000)
+  eden space 4096K,   0% used [0x10020000, 0x10020000, 0x10420000)
+  from space 448K,  98% used [0x10490000, 0x104fde60, 0x10500000)
+  to   space 448K,   0% used [0x10420000, 0x10420000, 0x10490000)
+ tenured generation   total 60544K, used 53005K [0x10500000, 0x14020000, 0x14020000)
+   the space 60544K,  87% used [0x10500000, 0x138c36f8, 0x138c3800, 0x14020000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0131601 secs]
+0.445: [GC  {Heap before GC invocations=38:
+Heap
+ def new generation   total 4544K, used 4493K [0x10020000, 0x10500000, 0x10500000)
+  eden space 4096K,  98% used [0x10020000, 0x10415820, 0x10420000)
+  from space 448K,  98% used [0x10490000, 0x104fde60, 0x10500000)
+  to   space 448K,   0% used [0x10420000, 0x10420000, 0x10490000)
+ tenured generation   total 60544K, used 53005K [0x10500000, 0x14020000, 0x14020000)
+   the space 60544K,  87% used [0x10500000, 0x138c36f8, 0x138c3800, 0x14020000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.445: [DefNew: 4493K->439K(4544K), 0.0097640 secs] 57499K->57499K(65088K) Heap after GC invocations=39:
+Heap
+ def new generation   total 4544K, used 439K [0x10020000, 0x10500000, 0x10500000)
+  eden space 4096K,   0% used [0x10020000, 0x10020000, 0x10420000)
+  from space 448K,  98% used [0x10420000, 0x1048de60, 0x10490000)
+  to   space 448K,   0% used [0x10490000, 0x10490000, 0x10500000)
+ tenured generation   total 60544K, used 57059K [0x10500000, 0x14020000, 0x14020000)
+   the space 60544K,  94% used [0x10500000, 0x13cb8f18, 0x13cb9000, 0x14020000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0099219 secs]
+0.456: [GC  {Heap before GC invocations=39:
+Heap
+ def new generation   total 4544K, used 4493K [0x10020000, 0x10500000, 0x10500000)
+  eden space 4096K,  98% used [0x10020000, 0x10415820, 0x10420000)
+  from space 448K,  98% used [0x10420000, 0x1048de60, 0x10490000)
+  to   space 448K,   0% used [0x10490000, 0x10490000, 0x10500000)
+ tenured generation   total 60544K, used 57059K [0x10500000, 0x14020000, 0x14020000)
+   the space 60544K,  94% used [0x10500000, 0x13cb8f18, 0x13cb9000, 0x14020000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.457: [DefNew: 4493K->4493K(4544K), 0.0000097 secs]0.457: [Tenured: 57059K->60527K(60544K), 0.0121489 secs] 61553K->61553K(65088K) Heap after GC invocations=40:
+Heap
+ def new generation   total 4544K, used 1025K [0x10020000, 0x10500000, 0x10500000)
+  eden space 4096K,  25% used [0x10020000, 0x101206e0, 0x10420000)
+  from space 448K,   0% used [0x10420000, 0x10420000, 0x10490000)
+  to   space 448K,   0% used [0x10490000, 0x10490000, 0x10500000)
+ tenured generation   total 60544K, used 60527K [0x10500000, 0x14020000, 0x14020000)
+   the space 60544K,  99% used [0x10500000, 0x1401beb8, 0x1401c000, 0x14020000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0123270 secs]
+0.470: [Full GC  {Heap before GC invocations=40:
+Heap
+ def new generation   total 4544K, used 4054K [0x10020000, 0x10500000, 0x10500000)
+  eden space 4096K,  98% used [0x10020000, 0x10415820, 0x10420000)
+  from space 448K,   0% used [0x10420000, 0x10420000, 0x10490000)
+  to   space 448K,   0% used [0x10490000, 0x10490000, 0x10500000)
+ tenured generation   total 60544K, used 60527K [0x10500000, 0x14020000, 0x14020000)
+   the space 60544K,  99% used [0x10500000, 0x1401beb8, 0x1401c000, 0x14020000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.470: [Tenured: 60527K->60527K(60544K), 0.0069442 secs] 64581K->64581K(65088K), [Perm : 1068K->1068K(4096K)] Heap after GC invocations=41:
+Heap
+ def new generation   total 4544K, used 4054K [0x10020000, 0x10500000, 0x10500000)
+  eden space 4096K,  98% used [0x10020000, 0x10415820, 0x10420000)
+  from space 448K,   0% used [0x10420000, 0x10420000, 0x10490000)
+  to   space 448K,   0% used [0x10490000, 0x10490000, 0x10500000)
+ tenured generation   total 60544K, used 60527K [0x10500000, 0x14020000, 0x14020000)
+   the space 60544K,  99% used [0x10500000, 0x1401beb8, 0x1401c000, 0x14020000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0071512 secs]
+0.478: [Full GC  {Heap before GC invocations=41:
+Heap
+ def new generation   total 4544K, used 4493K [0x10020000, 0x10500000, 0x10500000)
+  eden space 4096K,  98% used [0x10020000, 0x10415820, 0x10420000)
+  from space 448K,  98% used [0x10420000, 0x1048de60, 0x10490000)
+  to   space 448K,   0% used [0x10490000, 0x10490000, 0x10500000)
+ tenured generation   total 60544K, used 60527K [0x10500000, 0x14020000, 0x14020000)
+   the space 60544K,  99% used [0x10500000, 0x1401beb8, 0x1401c000, 0x14020000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.478: [Tenured: 60527K->60527K(60544K), 0.0069482 secs] 65021K->65021K(65088K), [Perm : 1068K->1068K(4096K)] Heap after GC invocations=42:
+Heap
+ def new generation   total 4544K, used 4493K [0x10020000, 0x10500000, 0x10500000)
+  eden space 4096K,  98% used [0x10020000, 0x10415820, 0x10420000)
+  from space 448K,  98% used [0x10420000, 0x1048de60, 0x10490000)
+  to   space 448K,   0% used [0x10490000, 0x10490000, 0x10500000)
+ tenured generation   total 60544K, used 60527K [0x10500000, 0x14020000, 0x14020000)
+   the space 60544K,  99% used [0x10500000, 0x1401beb8, 0x1401c000, 0x14020000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0071248 secs]
+0.485: [Full GC  {Heap before GC invocations=42:
+Heap
+ def new generation   total 4544K, used 4493K [0x10020000, 0x10500000, 0x10500000)
+  eden space 4096K,  98% used [0x10020000, 0x10415820, 0x10420000)
+  from space 448K,  98% used [0x10420000, 0x1048de60, 0x10490000)
+  to   space 448K,   0% used [0x10490000, 0x10490000, 0x10500000)
+ tenured generation   total 60544K, used 60527K [0x10500000, 0x14020000, 0x14020000)
+   the space 60544K,  99% used [0x10500000, 0x1401beb8, 0x1401c000, 0x14020000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+0.485: [Tenured: 60527K->60527K(60544K), 0.0065885 secs] 65021K->65021K(65088K), [Perm : 1068K->1068K(4096K)] Heap after GC invocations=43:
+Heap
+ def new generation   total 4544K, used 4493K [0x10020000, 0x10500000, 0x10500000)
+  eden space 4096K,  98% used [0x10020000, 0x10415820, 0x10420000)
+  from space 448K,  98% used [0x10420000, 0x1048de60, 0x10490000)
+  to   space 448K,   0% used [0x10490000, 0x10490000, 0x10500000)
+ tenured generation   total 60544K, used 60527K [0x10500000, 0x14020000, 0x14020000)
+   the space 60544K,  99% used [0x10500000, 0x1401beb8, 0x1401c000, 0x14020000)
+ compacting perm gen  total 4096K, used 1068K [0x14020000, 0x14420000, 0x18020000)
+   the space 4096K,  26% used [0x14020000, 0x1412b110, 0x1412b200, 0x14420000)
+} , 0.0067337 secs]

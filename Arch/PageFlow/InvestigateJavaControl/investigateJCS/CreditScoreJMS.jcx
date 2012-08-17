@@ -1,0 +1,30 @@
+package investigateJCS; 
+
+import com.bea.control.*;
+import java.io.Serializable;
+
+/** 
+ *   @jc:jms send-type="topic" send-jndi-name="tutorial.credit.request.topic"
+ *            receive-type="topic" receive-jndi-name="tutorial.credit.response.topic"
+ *            connection-factory-jndi-name="weblogic.jws.jms.QueueConnectionFactory"
+ */ 
+public interface CreditScoreJMS extends JMSControl,com.bea.control.ControlExtension 
+{
+    /**
+     * this method will send a javax.jms.TextMessage to send-jndi-name
+     */
+    public void sendTextMessage(String payload);
+    /**
+     * If your control specifies receive-jndi-name, that is your JWS expects to receive messages 
+     * from this control, you will need to implement callback handlers.
+     */
+    interface Callback extends JMSControl.Callback
+    {
+        /**
+         * Define only 1 callback method here.
+         * 
+         * This method defines a callback that can handle text messages from receive-jndi-name
+         */
+        public void receiveTextMessage(String payload);
+    }
+}

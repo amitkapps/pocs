@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="SpringBatchEar/SpringBatchWebApp/WEB-INF/classes" path="SpringBatchEar/SpringBatchWebApp/WEB-INF/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="SpringBatchEar/SpringBatchWebApp/WEB-INF/lib/spring.jar" sourcepath="C:/AmitK/Reference/Technical/libraries/Spring/spring-framework-2.5.6.SEC01/dist/spring-sources.jar"/>
+	<classpathentry kind="lib" path="SpringBatchEar/SpringBatchWebApp/WEB-INF/lib/spring-webmvc.jar" sourcepath="C:/AmitK/Reference/Technical/libraries/Spring/spring-framework-2.5.6.SEC01/src"/>
+	<classpathentry kind="lib" path="SpringBatchEar/SpringBatchWebApp/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/Spring/spring-framework-2.5.6.SEC01/lib/j2ee/servlet-api.jar"/>
+	<classpathentry kind="lib" path="SpringBatchEar/SpringBatchWebApp/WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="SpringBatchEar/SpringBatchWebApp/WEB-INF/lib/spring-batch-core-2.1.0.M2.jar" sourcepath="C:/AmitK/Reference/Technical/libraries/Spring/batch/spring-batch-2.1.0.M2/dist/spring-batch-core-2.1.0.M2-sources.jar"/>
+	<classpathentry kind="lib" path="SpringBatchEar/SpringBatchWebApp/WEB-INF/lib/spring-batch-infrastructure-2.1.0.M2.jar"/>
+	<classpathentry kind="lib" path="SpringBatchEar/SpringBatchWebApp/WEB-INF/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="SpringBatchEar/SpringBatchWebApp/WEB-INF/lib/standard.jar"/>
+	<classpathentry kind="lib" path="SpringBatchEar/SpringBatchWebApp/WEB-INF/lib/commons-io.jar"/>
+	<classpathentry kind="lib" path="SpringBatchEar/SpringBatchWebApp/WEB-INF/lib/cglib-nodep-2.1_3.jar"/>
+	<classpathentry kind="lib" path="SpringBatchEar/SpringBatchWebApp/WEB-INF/lib/commons-lang-2.2.jar"/>
+	<classpathentry kind="lib" path="C:/bea10.3/wlserver_10.3/server/lib/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="C:/bea10.3/wlserver_10.3/server/lib/weblogic.jar"/>
+	<classpathentry kind="lib" path="SpringBatchEar/SpringBatchWebApp/WEB-INF/lib/xstream-1.3.1.jar"/>
+	<classpathentry kind="lib" path="SpringBatchEar/SpringBatchWebApp/WEB-INF/lib/jettison-1.0.1.jar"/>
+	<classpathentry kind="output" path="SpringBatchEar/SpringBatchWebApp/WEB-INF/classes"/>
+</classpath>

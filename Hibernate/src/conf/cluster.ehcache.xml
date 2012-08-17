@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ehcache.xsd">
+    
+    <diskStore path="java.io.tmpdir"/>
+    
+    <cacheManagerPeerProviderFactory class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory"
+    	properties="peerDiscovery=automatic, multicastGroupAddress=230.0.0.2,
+					multicastGroupPort=4447, timeToLive=1"
+    />
+    
+    <cacheManagerPeerListenerFactory class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory"
+		properties="socketTimeoutMillis=2000"
+	/>
+    
+    <defaultCache
+        maxElementsInMemory="10000"
+        eternal="false"
+        timeToIdleSeconds="900"
+        timeToLiveSeconds="900"
+        overflowToDisk="false"
+        diskPersistent="false"
+        diskExpiryThreadIntervalSeconds="120"
+        memoryStoreEvictionPolicy="LRU"
+     >
+     	<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+			properties="replicateAsynchronously=false, replicatePuts=true, replicateUpdates=true, 
+						replicateRemovals=true, replicateUpdatesViaCopy=false"
+		/>
+		<bootstrapCacheLoaderFactory
+			class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory"
+			properties="bootstrapAsynchronously=false, maximumChunkSizeBytes=5000000"
+		/>
+     </defaultCache>
+     
+</ehcache>

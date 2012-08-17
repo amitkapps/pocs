@@ -1,0 +1,101 @@
+<?xml version="1.0"?><component name="dataSourceStorage">
+  <data-source source="LOCAL" name="root@MySqlLocal" product="MySQL" version="5.5.8" jdbc-version="4.0" driver-version="mysql-connector-java-5.1.14 ( Revision: ${bzr.revision-id} )" uuid="3d890616-90a6-49dc-a29f-d0dbec694b03">
+    <extra-name-characters>#@</extra-name-characters>
+    <identifier-quote-string>`</identifier-quote-string>
+    <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+    <jdbc-url>jdbc:mysql://localhost/test</jdbc-url>
+    <user-name>root</user-name>
+    <user-password>dfd8dfc5dfc5dfde</user-password>
+    <default-dialect>MySQL</default-dialect>
+    <libraries>
+      <library>
+        <url>jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.14/mysql-connector-java-5.1.14.jar!/</url>
+      </library>
+    </libraries>
+    <table name="cas_search_mz" schema="" catalog="test" type="TABLE">
+      <column name="search_id" sqlType="DECIMAL" length="38" precision="0" nullable="false" jdbcType="3" />
+      <column name="search_name" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12" />
+      <column name="search_type" sqlType="CHAR" length="1" precision="0" nullable="false" jdbcType="1" />
+      <column name="datasource" sqlType="VARCHAR" length="50" precision="0" nullable="true" jdbcType="12" />
+      <column name="test_date" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93" />
+      <column name="test_timestamp" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93" />
+      <column name="distinct_type" sqlType="CHAR" length="1" precision="0" nullable="true" jdbcType="1" />
+      <column name="max_result_set" sqlType="DECIMAL" length="22" precision="0" nullable="true" jdbcType="3" />
+      <column name="allow_bind_variable" sqlType="CHAR" length="1" precision="0" nullable="false" jdbcType="1" />
+      <primary-key name="PRIMARY" columns="search_id" />
+      <index name="sys_c004141" unique="true" columns="search_name" />
+    </table>
+    <table name="cas_search_named_sql_mz" schema="" catalog="test" type="TABLE">
+      <column name="search_id" sqlType="DECIMAL" length="22" precision="0" nullable="false" jdbcType="3" />
+      <column name="query_name" sqlType="VARCHAR" length="100" precision="0" nullable="false" jdbcType="12" />
+      <column name="entity_name" sqlType="VARCHAR" length="100" precision="0" nullable="true" jdbcType="12" />
+      <column name="mapped_class" sqlType="VARCHAR" length="1000" precision="0" nullable="false" jdbcType="12" />
+      <foreign-key name="sys_c005209" columns="search_id" ref-table="cas_search_mz" ref-schema="" ref-catalog="test" ref-columns="search_id" />
+    </table>
+    <table name="cas_search_parameter_mz" schema="" catalog="test" type="TABLE">
+      <column name="search_id" sqlType="DECIMAL" length="38" precision="0" nullable="false" jdbcType="3" />
+      <column name="paramater_name" sqlType="VARCHAR" length="25" precision="0" nullable="false" jdbcType="12" />
+      <column name="parameter_statement" sqlType="VARCHAR" length="50" precision="0" nullable="true" jdbcType="12" />
+      <column name="parameter_type" sqlType="VARCHAR" length="50" precision="0" nullable="true" jdbcType="12" />
+    </table>
+    <table name="cas_search_result_metadata_mz" schema="" catalog="test" type="TABLE">
+      <column name="search_id" sqlType="DECIMAL" length="38" precision="0" nullable="false" jdbcType="3" />
+      <column name="column_property_name" sqlType="VARCHAR" length="50" precision="0" nullable="true" jdbcType="12" />
+      <column name="column_property_value" sqlType="VARCHAR" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="search_flg" sqlType="CHAR" length="1" precision="0" nullable="false" jdbcType="1" />
+      <column name="display_flg" sqlType="CHAR" length="1" precision="0" nullable="false" jdbcType="1" />
+      <column name="column_name" sqlType="VARCHAR" length="50" precision="0" nullable="false" jdbcType="12" />
+      <column name="ref_column" sqlType="VARCHAR" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="display_order" sqlType="DECIMAL" length="22" precision="0" nullable="true" jdbcType="3" />
+      <column name="search_order" sqlType="DECIMAL" length="22" precision="0" nullable="true" jdbcType="3" />
+      <column name="export_order" sqlType="DECIMAL" length="22" precision="0" nullable="true" jdbcType="3" />
+    </table>
+    <table name="cas_search_saved_filter_mt" schema="" catalog="test" type="TABLE">
+      <column name="query_id" sqlType="DECIMAL" length="38" precision="0" nullable="false" jdbcType="3" />
+      <column name="line" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" />
+      <column name="open_parenthesis" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="monitor_column_name" sqlType="VARCHAR" length="50" precision="0" nullable="false" jdbcType="12" />
+      <column name="column_operator" sqlType="VARCHAR" length="15" precision="0" nullable="true" jdbcType="12" />
+      <column name="column_value" sqlType="VARCHAR" length="1000" precision="0" nullable="true" jdbcType="12" />
+      <column name="close_parenthesis" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="conjunction" sqlType="VARCHAR" length="10" precision="0" nullable="true" jdbcType="12" />
+      <column name="label" sqlType="VARCHAR" length="100" precision="0" nullable="true" jdbcType="12" />
+      <foreign-key name="sys_c004344" columns="query_id" ref-table="cas_search_saved_query_mt" ref-schema="" ref-catalog="test" ref-columns="query_id" cascade-remove="true" />
+    </table>
+    <table name="cas_search_saved_order_mt" schema="" catalog="test" type="TABLE">
+      <column name="query_id" sqlType="DECIMAL" length="38" precision="0" nullable="false" jdbcType="3" />
+      <column name="monitor_column_name" sqlType="VARCHAR" length="50" precision="0" nullable="false" jdbcType="12" />
+      <column name="position" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" />
+      <column name="sort_cd" sqlType="VARCHAR" length="10" precision="0" nullable="true" jdbcType="12" />
+      <foreign-key name="sys_c004345" columns="query_id" ref-table="cas_search_saved_query_mt" ref-schema="" ref-catalog="test" ref-columns="query_id" cascade-remove="true" />
+    </table>
+    <table name="cas_search_saved_query_mt" schema="" catalog="test" type="TABLE">
+      <column name="query_id" sqlType="DECIMAL" length="38" precision="0" nullable="false" jdbcType="3" />
+      <column name="search_id" sqlType="DECIMAL" length="22" precision="0" nullable="false" jdbcType="3" />
+      <column name="query_name" sqlType="VARCHAR" length="200" precision="0" nullable="false" jdbcType="12" />
+      <column name="user_id" sqlType="VARCHAR" length="100" precision="0" nullable="false" jdbcType="12" />
+      <column name="is_default_query" sqlType="CHAR" length="1" precision="0" nullable="false" jdbcType="1" />
+      <column name="public_flg" sqlType="CHAR" length="1" precision="0" nullable="false" jdbcType="1" />
+      <column name="query_view_type" sqlType="CHAR" length="1" precision="0" nullable="true" jdbcType="1" />
+      <column name="sort_order" sqlType="DECIMAL" length="22" precision="0" nullable="true" jdbcType="3" />
+      <column name="sort_order_field" sqlType="DECIMAL" length="22" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PRIMARY" columns="query_id" />
+    </table>
+    <table name="cas_search_sql_mz" schema="" catalog="test" type="TABLE">
+      <column name="search_id" sqlType="DECIMAL" length="22" precision="0" nullable="false" jdbcType="3" />
+      <column name="from_clause" sqlType="VARCHAR" length="1000" precision="0" nullable="false" jdbcType="12" />
+      <column name="predicate" sqlType="VARCHAR" length="2000" precision="0" nullable="true" jdbcType="12" />
+    </table>
+    <table name="cas_search_view_mz" schema="" catalog="test" type="TABLE">
+      <column name="search_id" sqlType="DECIMAL" length="22" precision="0" nullable="false" jdbcType="3" />
+      <column name="view_name" sqlType="VARCHAR" length="50" precision="0" nullable="false" jdbcType="12" />
+      <column name="order_by" sqlType="VARCHAR" length="1000" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PRIMARY" columns="search_id" />
+    </table>
+    <table name="employee" schema="" catalog="test" type="TABLE">
+      <column name="emp_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="emp_name" sqlType="VARCHAR" length="20" precision="0" nullable="true" jdbcType="12" />
+      <column name="join_date" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" />
+    </table>
+  </data-source>
+</component>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.matson.booking.vo" >
+  	<class name="BookingDisplay" mutable="false" entity-name="bookingDisplay">
+     	<composite-id >
+     		<key-property name="bookingId"/>
+        </composite-id>
+        <property name="bookingNumber" insert="false" update="false" />
+        <property name="bookedDate" insert="false" update="false" />
+        <property name="origin" insert="false" update="false"  />
+        <property name="destination" insert="false" update="false"  />
+        <property name="vvd" insert="false" update="false"  />
+        <property name="sailDate" insert="false" update="false"  />
+        <property name="consignee" insert="false" update="false"  />
+      </class>
+</hibernate-mapping>

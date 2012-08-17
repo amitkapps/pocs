@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Report"
+  id="myeclipse.1170677596177"
+  context-root="/Report"
+  j2ee-spec="1.4"
+  archive="Report.war">
+  <attributes>
+    <attribute name="webrootdir" value="&lt;prjroot&gt;" />
+  </attributes>
+</project-module>
+

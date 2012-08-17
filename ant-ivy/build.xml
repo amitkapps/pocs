@@ -1,0 +1,57 @@
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="HelloCucumber"
+         default="cucumber" basedir=".">
+    <property name="ivy.jar.dir" value="${basedir}/ivy"/>
+
+    <target name="compile-steps" depends="define-paths">
+        <mkdir dir="target/test-classes"/>
+        <javac srcdir="src" destdir="build"
+               classpathref="compile.classpath" encoding="UTF-8"/>
+    </target>
+
+    <target name="cucumber" depends="compile-steps"
+            description="Run Cucumber">
+        <echo message="Running Cucumber"/>
+    </target>
+
+    <target name="download-jars" depends="install-ivy">
+            <ivy:retrieve pattern="lib/[conf]/[artifact]-[revision].[ext]" conf="*" />
+    </target>
+
+    <target name="install-ivy" description="--> install ivy">
+        <!-- try to load ivy here from local ivy dir, in case the user has not already dropped
+                it into ant's lib dir (note that the latter copy will always take precedence).
+                We will not fail as long as local lib dir exists (it may be empty) and
+                ivy is in at least one of ant's lib dir or the local lib dir. -->
+        <path id="ivy.lib.path">
+            <fileset dir="${ivy.jar.dir}" includes="*.jar"/>
+        </path>
+        <taskdef resource="org/apache/ivy/ant/antlib.xml"
+                 uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
+    </target>
+
+    <target name="define-paths" depends="download-jars">
+        <path id="my.classpath">
+            <fileset dir="lib">
+                <include name="**/*.jar"/>
+            </fileset>
+        </path>
+
+        <path id="compile.classpath">
+            <fileset dir="lib">
+                <include name="**/*.jar"/>
+            </fileset>
+        </path>
+    </target>
+
+    <target name="clean" description="Delete all generated artifacts">
+        <delete dir="${basedir}/target"/>
+    </target>
+
+    <target name="clean-deps" description="Delete all dependencies">
+        <delete dir="${basedir}/lib/.jruby"/>
+        <delete>
+            <fileset dir="${basedir}/lib" includes=".jar"/>
+        </delete>
+    </target>
+
+</project>

@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<control-tags xmlns="http://www.bea.com/2003/03/controls/">
+    <control-tag name="error-message">
+        <description>Properties relating to the error message.</description>
+        <attribute name="phone-number" required="false">
+            <description>
+                Sets the phone number to call in case of an error.
+            </description>
+            <type>
+                <text/>
+            </type>
+            <default-value>(555) 555-5555</default-value>
+        </attribute>
+    </control-tag>
+</control-tags>

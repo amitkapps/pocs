@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Query Builder</title>
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+		<link rel="stylesheet" href="dragDropSort.css" type="text/css"></link>
+		<link rel="stylesheet" href="queryBuilder.css" type="text/css"></link>
+		<link rel="stylesheet" href="../../resource/js/jquery/plugins/jqModal/jqModal.css" type="text/css"></link>
+		
+		
+		<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+		<script type="text/javascript" src="../../resource/js/jquery/core/jquery-1.1.4.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/iutil.js"></script>	
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/idrag.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/idrop.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/ifxtransfer.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/isortables.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/iautoscroller.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/jqModal/jqModal.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/contextMenu/jquery.contextmenu.r2.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/livequery/jquery.livequery.js"></script>
+		<script type="text/javascript" src="queryBuilder.js"></script>
+		
+		<script type="text/javascript">
+			//******************************
+			//On Document Ready
+			//******************************
+			$(document).ready(function(){
+				//toggle show hide (for each query builder clause group)
+				$(".groupHeader").bind('click', toggleContent);
+				//set all the columns draggable
+				makeColumnsDraggable();
+				//set query builder's clause nodes to accept columns when dropped over them.
+				makeQueryTreeClauseNodesDroppable();
+				
+				//Makes the clause items sortable under their own clause group
+				makeSortable($(".columnsGroup"), 'columnsGroupItem');				
+				makeSortable($(".filtersGroup"), 'filtersGroupItem');
+				makeSortable($(".sortsGroup"), 'sortsGroupItem');
+				makeSortable($(".groupsGroup"), 'groupsGroupItem');
+				
+				//Live Query rules
+				filterElementRulesLiveQuery();
+ 				
+			});//End Document ready
+			
+		</script>
+	
+	</head>
+
+	<body>
+		<h1>Advanced Filter</h1>
+		<form method="post" action="" name="queryFilter">
+			<table cellspacing="80px" valign="top">
+			<tr>
+			<td>
+				<ul>
+					<div id= "viewBuilder" class="groupHeader"><span>-</span>  VIEW BUILDER TREE</div>
+					<ul>
+						<div id="columns" class="groupHeader"><span>-</span>  COLUMNS</div>
+						<ul id="columnsGroup" class="columnsGroup"></ul>
+						<div  id="filters" class="groupHeader"><span>-</span>  FILTERS</div>
+						<ul id="filtersGroup" class="filtersGroup"></ul>
+						<div id="groups" class="groupHeader"><span>-</span>  GROUPS</div>
+						<ul id="groupsGroup" class="groupsGroup"></ul>
+						<div id="sorts" class="groupHeader"><span>-</span>  SORTS</div>
+						<ul id="sortsGroup" class="sortsGroup"></ul>
+					</ul>
+				</ul>
+			</td>
+			<td align="left" valign="top">
+				<table cellpadding="5px">
+					<tr><td><div class="column">City Name</div></td></tr>
+					<tr><td><div class="column">State Name</div></td></tr>
+					<tr><td><div class="column">Zip Code</div></td></tr>
+					<tr><td><div class="column">Update Date</div></td></tr>
+				</table>
+			</td>
+			</tr>
+			</table>
+			
+		</form>
+		
+		<!-- Div used to generate filter criteria html modal -->
+		<div class="jqmWindow" style="display: none;" id="chooseFilterCriteria">
+			<div class="filterCriteriaModalContent">
+				<h2>Choose Filter Criteria</h2>
+				<table align="center">
+					<tr valign="center">
+						<td>
+							<select id="filterConjunction">
+								<option value="AND">AND</option>
+								<option value="OR">OR</option>
+							</select>
+						
+						</td>
+						
+						<td>
+							<input id="filterField" type="text" value="" readonly="readonly"/>
+						</td>
+						
+						<td>
+							<select id="filterOperator">
+								<option value="=">=</option>
+								<option value="&lt;&gt;">&lt;&gt;</option>
+								<option value="&gt;">&gt;</option>
+								<option value="&gt;=">&gt;=</option>
+								<option value="&lt;">&lt;</option>
+								<option value="&lt;=">&lt;=</option>
+							</select>
+							
+						</td>
+						
+						<td>
+							<table width="100%">
+								<tr><td><input type="text" value="Input value" class="inputFields" id="fieldValue1" /></td></tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2"> <input type="button" class="jqmClose" onclick="javascript:$('#updateFilterAction').val('accept');return false;" value="Accept"/> </td>
+						<td colspan="2"> <input type="button" class="jqmClose" onclick="javascript:$('#updateFilterAction').val('cancel'); return false;" value="Cancel"/> </td>
+					</tr>
+				</table>
+				<input id="updateFilterAction" type="hidden" value=""/>
+			</div>
+		</div>
+		
+		<!-- Context Menu for clause items-->
+		<div class="contextMenu" id="clauseItemMenu">
+	      <ul>
+	        <li id="delete"><img src="../../resource/img/cross.png" /> Delete</li>
+	      </ul>
+	    </div>
+		
+		
+	</body>
+</html>

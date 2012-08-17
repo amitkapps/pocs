@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Context Menu</title>
+	<script type="text/javascript" src="../../resource/js/jquery/core/jquery-1.1.4.js"></script>
+	<script type="text/javascript" src="../../resource/js/jquery/plugins/contextMenu/jquery.contextmenu.r2.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//alert('hello');
+			$('#rtClk').contextMenu('myMenu1', {});
+		});
+	</script>
+</head>
+<body>
+	<div id="rtClk">Right Click Me</div>
+	
+	<div class="contextMenu" id="myMenu1">
+      <ul>
+        <li id="open"><img src="../../resource/img/folder.png" /> Open</li>
+        <li id="email"><img src="../../resource/img/email.png" /> Email</li>
+        <li id="save"><img src="../../resource/img/disk.png" /> Save</li>
+        <li id="close"><img src="../../resource/img/cross.png" /> Close</li>
+      </ul>
+    </div>
+</body>
+</html>

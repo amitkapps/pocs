@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jbosscache xmlns="urn:jboss:jbosscache-core:config:3.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:jboss:jbosscache-core:config:3.2
+    http://www.jboss.org/jbosscache/jbosscache-config-3.2.xsd">
+
+    <!-- Locking strategy for the cache, similar to the database isolation -->
+    <locking isolationLevel="REPEATABLE_READ" lockAcquisitionTimeout="20000"/>
+
+    <!-- Allows the cache to participate in transactions -->
+    <transaction transactionManagerLookupClass="org.jboss.cache.transaction.GenericTransactionManagerLookup"
+    			syncCommitPhase="false" syncRollbackPhase="false"
+    />
+
+	<!-- Registers a shutdown hook with JVM to destroy the cache and release resources on JVM exit (normal exit). -->
+    <shutdown hookBehavior="REGISTER"/>
+
+    <!-- How will the listeners be called if any are registered with the cache.
+    	Listeners are callbacks that are invoked on certain cache operations e.g. node added.
+    -->
+    <listeners asyncPoolSize="1" asyncQueueSize="50000"/>
+
+    <!-- Whether to allow batched cache operations (changes will be replicated in batches in a clustered env.) -->
+    <invocationBatching enabled="false"/>
+
+	<!-- How frequently will the eviction thread execute -->
+    <eviction wakeUpInterval="10000">
+    	<!-- the Global default Eviction configuration -->
+    	<default algorithmClass="org.jboss.cache.eviction.LRUAlgorithm" eventQueueSize="200000">
+    		<property name="maxNodes" value="5000"></property>
+    		<property name="timeToLive" value="900000"></property>
+    	</default>
+    </eviction>
+
+	<!-- No Clustering tag since this is a local cache-->
+</jbosscache>

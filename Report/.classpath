@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="WEB-INF/classes" path="WEB-INF/src/java"/>
+	<classpathentry kind="src" path="WEB-INF/src/conf"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/AmitK/Installs/work/essentials/bea/weblogic81_wli85/server/lib/weblogic.jar"/>
+	<classpathentry kind="con" path="com.genuitec.eclipse.j2eedt.core.J2EE14_CONTAINER"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-digester.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/struts.jar" sourcepath="C:/AmitK/Reference/Technical/libraries/jakarta/jakarta-struts-1.1/src"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/displaytag-1.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/displaytag-export-poi-1.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-lang-2.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/poi-2.5.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/antlr-2.7.5H3.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/asm-attrs.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/asm.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/cglib-2.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/dom4j-1.6.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jta.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/hibernate3.jar" sourcepath="C:/AmitK/Reference/Technical/libraries/hibernate/hibernate-3.0/src"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/log4j-1.2.8.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-validator.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/oscache-2.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-beanutils-core.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/itext-1.3.jar" sourcepath="C:/AmitK/Reference/Technical/libraries/itext/itext-1.4.8/src"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jcommon-1.0.8.jar" sourcepath="C:/AmitK/Reference/Technical/libraries/sourceforge/jfreechart/jfreechart-1.0.4/jcommon-1.0.8/source">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/AmitK/Reference/Technical/libraries/sourceforge/jfreechart/jfreechart-1.0.4/jcommon-1.0.8/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="WEB-INF/lib/jfreechart-1.0.4.jar" sourcepath="C:/AmitK/Reference/Technical/libraries/sourceforge/jfreechart/jfreechart-1.0.4/jfreechart-1.0.4/source">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/AmitK/Reference/Technical/libraries/sourceforge/jfreechart/jfreechart-1.0.4/jfreechart-1.0.4/jfreechart-1.0.4-javadocs.zip!/jfreechart-1.0.4-javadocs"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry combineaccessrules="false" kind="src" path="/POC"/>
+	<classpathentry kind="output" path="WEB-INF/classes"/>
+</classpath>

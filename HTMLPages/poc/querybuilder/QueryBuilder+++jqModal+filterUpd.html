@@ -1,0 +1,371 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Query Builder</title>
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+		<link rel="stylesheet" href="dragDropSort.css" type="text/css"></link>
+		<link rel="stylesheet" href="queryBuilder.css" type="text/css"></link>
+		<link rel="stylesheet" href="../../resource/js/jquery/plugins/jqModal/jqModal.css" type="text/css"></link>
+		
+		
+		<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+		<script type="text/javascript" src="../../resource/js/jquery/core/jquery-1.1.4.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/iutil.js"></script>	
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/idrag.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/idrop.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/ifxtransfer.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/isortables.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/iautoscroller.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/jqModal/jqModal.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/contextMenu/jquery.contextmenu.r2.js"></script>
+		
+		<script type="text/javascript">
+		
+			//The columns become draggable with ghosting
+			//and revert = true
+			function makeColumnsDraggable(){
+ 				$(".column")
+ 					.attr("title", "Draggable column")
+ 					.addClass("draggable")
+ 					;
+
+				$('.column').Draggable({
+					zIndex: 	1000,
+					ghosting:	true,
+					opacity: 	0.4,
+					revert: true
+				});
+
+			}
+			
+			//
+			function makeQueryTreeClauseNodesDroppable(){
+
+				$('#columns,#filters,#groups,#sorts').Droppable({
+					accept: 'column',
+					hoverclass: 'droppablehover',
+					ondrop:	function(drag){
+							//alert('dropping ' + $(drag).text());
+							var func = new acceptDraggableToQueryBuilderTree(drag, this);
+							func.invoke();
+					}
+				});
+				
+			}
+			
+			function isDuplicateColAllowed(clauseId){
+				return clauseId=='filters';	
+			}
+			
+			function isSortableAllowed(clauseId){
+				return true; //clauseId!='filters';
+			}
+			
+			function isSortClause(clauseId){
+				return clauseId == 'sorts';
+			}
+			
+			function isFilterClause(clauseId){
+				return clauseId == 'filters';
+			}
+			
+			//Adds the dragged column to the droppable specifid by the clauseNode
+			function addColumnToQueryBuilderTreeNode(clauseNode, column){
+				var clauseId = $(clauseNode).attr('id');
+				//var parentGroupClass = clauseId + 'Group'; 
+				var clauseIdColumnItemClass = clauseId + "GroupItem draggable";
+				var ul_jquery = $(clauseNode).next();
+				var columnText = $(column).text();
+				var newItemId = clauseId + columnText; 
+
+				//dont add if it already exists
+				if( !isDuplicateColAllowed(clauseId) && document.getElementById(newItemId) ){
+					alert('Column "' + columnText + '" already in list.');
+				}else{
+					ul_jquery.append("<div>" +columnText+ "</div>")
+						.children('div:last')
+						.attr('id',newItemId)
+						.addClass(clauseIdColumnItemClass)
+						;
+					newElem_jquery = ul_jquery.children('div:last');
+					if(isSortClause(clauseId)){
+						newElem_jquery.addClass('sortAscending');
+						newElem_jquery.dblclick( function(){
+													$(this).toggleClass('sortAscending');
+													$(this).toggleClass('sortDescending');
+												});
+					}else if(isFilterClause(clauseId)){
+						//newElem_jquery.removeClass('draggable');
+						newElem_jquery.dblclick( function(){
+													updateFilterCriteria(this)
+												 });
+						//simulate dblclick and open update filter criteria
+						newElem_jquery.dblclick();
+					}
+					//add the new item to sortable only if its not a filter
+					if(isSortableAllowed(clauseId))
+						ul_jquery.SortableAddItem(newElem_jquery.get(0));
+						
+					//add right click menu
+					ul_jquery.children('div:last').contextMenu('clauseItemMenu', { 
+																	bindings:{
+																		'delete': function(t){
+																			//alert('removing' + $(t).attr('id'));
+																			$(t).unbind().remove();
+																		}
+																	}
+																});
+				}
+			}
+			
+			//The Drag item will be added under the 
+			//tree node identified by drop
+			function acceptDraggableToQueryBuilderTree(drag, drop){
+				this.drag = drag;
+				this.drop = drop
+				me = this;
+				this.invoke = function(){
+					//this generates the transfer to effect
+					//driven by the transferer1 class
+					$(drag).TransferTo({
+						to:me.drop,
+						className:'transferEffect', 
+						duration: 400,
+						complete: function(){
+							//call back that will be executed after the transfer
+							//effect finishes
+							addColumnToQueryBuilderTreeNode(me.drop, me.drag);
+						}
+					});
+				};
+			}
+			
+			function makeSortable(jquerySortGroup, itemClass){
+				jquerySortGroup.Sortable(
+					{
+						accept: itemClass,
+						helperclass: 'sortHelper',
+						activeclass : 	'sortableactive',
+						hoverclass : 	'sortablehover',
+						//handle: 'div.itemHeader',
+						tolerance: 'pointer',
+						onChange : function(ser)
+						{
+						},
+						onStart : function()
+						{
+							$.iAutoscroller.start(this, document.getElementsByTagName('body'));
+						},
+						onStop : function()
+						{
+							$.iAutoscroller.stop();
+						}
+					}
+				);
+			}
+			
+		</script>
+
+		
+		<script type="text/javascript">
+			//******************************
+			//On Document Ready
+			//******************************
+			$(document).ready(function(){
+				//toggle show hide
+				$(".groupHeader").bind('click', toggleContent);
+				//cols can be dragged
+				makeColumnsDraggable();
+				//query builder's clause nodes will accept columns
+				makeQueryTreeClauseNodesDroppable();
+				
+				makeSortable($(".columnsGroup"), 'columnsGroupItem');				
+				makeSortable($(".filtersGroup"), 'filtersGroupItem');
+				makeSortable($(".sortsGroup"), 'sortsGroupItem');
+				makeSortable($(".groupsGroup"), 'groupsGroupItem');
+ 				
+				//makeQueryTreeClauseNodesDroppable();
+				
+			});//End Document ready
+			
+			
+			var toggleContent = function(e){
+			
+				var targetContent = $(this).next();
+				//debug('targetContent[' + targetContent.text() +']');
+				if (targetContent.css('display') == 'none') {
+					targetContent.slideDown(300);
+					$(this).children('span').text('-');
+				} else {
+					targetContent.slideUp(300);
+					$(this).children('span').text('+');
+				}
+				return false;
+			};			
+			
+			
+			var closeJqModal = function(hash) { 
+							   		hash.w.fadeOut('2000',function(){ 
+															hash.o.remove(); 
+														  }); 
+							  };
+			
+			function updateFilterCriteria(filterCriteriaElement){
+				var thisFilterClauseItem = new filterClauseItem(filterCriteriaElement);
+				thisFilterClauseItem.updateToFilterCriteriaModal();
+				//$("#chooseFilterCriteria #filterField").val(fieldName);
+				
+				$("#chooseFilterCriteria").jqm( {onHide: function(hash){
+																thisFilterClauseItem.updateFromFilterCriteriaModal();
+																closeJqModal(hash);
+														}
+											   }).jqmShow();
+			}
+			
+			function filterClauseItem(element){
+				this.element = element;
+				me = this;
+				this.updateFromFilterCriteriaModal = function (){
+						if($('#updateFilterAction').val() == 'accept')
+							$(me.element).text(serializeFilterCriteria());
+					}
+
+				this.updateToFilterCriteriaModal = function (){
+						deSerializeFilterCriteria($(me.element).text());
+					}
+
+			}
+			
+			var filterElementSeparator = '\u000A';
+			
+			function serializeFilterCriteria(){
+				conjunction = $('#chooseFilterCriteria #filterConjunction > option:selected').text();
+				field = $('#chooseFilterCriteria #filterField').val();
+				operator = $('#chooseFilterCriteria #filterOperator > option:selected').text();
+				value1 = $("#chooseFilterCriteria #fieldValue1").val();
+				serializedFilterCriteria = conjunction + filterElementSeparator + field + filterElementSeparator + operator + filterElementSeparator + value1;
+				return serializedFilterCriteria;
+			}
+			
+			function deSerializeFilterCriteria(filterCriteriaString){
+				var mySplitResult = filterCriteriaString.split("\u000A");
+				var index = 0;
+				$("#chooseFilterCriteria #filterConjunction > option")
+					.each(function(i){
+						if($(this).text() == mySplitResult[0]){
+							$(this).attr('selected','selected');
+							index++;
+							return false;
+						}
+					});
+				field = mySplitResult[index];
+				$('#chooseFilterCriteria #filterField').val(field);
+				operator = mySplitResult[++index];
+				if(operator)
+					$('#chooseFilterCriteria #filterOperator > option')
+						.each(function(i){
+							if( $(this).text() == operator)
+								$(this).attr('selected','selected');
+						});
+				value1 = mySplitResult[++index];
+				if(value1)
+					$('#chooseFilterCriteria #fieldValue1').val(value1);
+				else
+					$('#chooseFilterCriteria #fieldValue1').val('');
+				
+				return true;				
+			}
+		</script>
+	
+	</head>
+
+	<body>
+		<h1>Advanced Filter</h1>
+		<form method="post" action="" name="queryFilter">
+			<table cellspacing="80px" valign="top">
+			<tr>
+			<td>
+				<ul>
+					<div id= "viewBuilder" class="groupHeader"><span>-</span>  VIEW BUILDER TREE</div>
+					<ul>
+						<div id="columns" class="groupHeader"><span>-</span>  COLUMNS</div>
+						<ul id="columnsGroup" class="columnsGroup">
+						</ul>
+						<div  id="filters" class="groupHeader"><span>-</span>  FILTERS</div>
+						<ul id="filtersGroup" class="filtersGroup"></ul>
+						<div id="groups" class="groupHeader"><span>-</span>  GROUPS</div>
+						<ul id="groupsGroup" class="groupsGroup"></ul>
+						<div id="sorts" class="groupHeader"><span>-</span>  SORTS</div>
+						<ul id="sortsGroup" class="sortsGroup"></ul>
+					</ul>
+				</ul>
+			</td>
+			<td align="left" valign="top">
+				<table cellpadding="5px">
+					<tr><td><div class="column">City Name</div></td></tr>
+					<tr><td><div class="column">State Name</div></td></tr>
+					<tr><td><div class="column">Zip Code</div></td></tr>
+					<tr><td><div class="column">Update Date</div></td></tr>
+				</table>
+			</td>
+			</tr>
+			</table>
+			
+		</form>
+		
+		<!-- Div used to generate filter criteria html modal -->
+		<div class="jqmWindow" style="display: none;" id="chooseFilterCriteria">
+			<div class="filterCriteriaModalContent">
+				<h2>Choose Filter Criteria</h2>
+				<table align="center">
+					<tr valign="center">
+						<td>
+							<select id="filterConjunction">
+								<option value="AND">AND</option>
+								<option value="OR">OR</option>
+							</select>
+						
+						</td>
+						
+						<td>
+							<input id="filterField" type="text" value="" readonly="readonly"/>
+						</td>
+						
+						<td>
+							<select id="filterOperator">
+								<option value="=">=</option>
+								<option value="&lt;&gt;">&lt;&gt;</option>
+								<option value="&gt;">&gt;</option>
+								<option value="&gt;=">&gt;=</option>
+								<option value="&lt;">&lt;</option>
+								<option value="&lt;=">&lt;=</option>
+							</select>
+							
+						</td>
+						
+						<td>
+							<table width="100%">
+								<tr><td><input type="text" value="Input value" class="inputFields" id="fieldValue1" /></td></tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2"> <input type="button" class="jqmClose" onclick="javascript:$('#updateFilterAction').val('accept');return false;" value="Accept"/> </td>
+						<td colspan="2"> <input type="button" class="jqmClose" onclick="javascript:$('#updateFilterAction').val('cancel'); return false;" value="Cancel"/> </td>
+					</tr>
+				</table>
+				<input id="updateFilterAction" type="hidden" value=""/>
+			</div>
+		</div>
+		
+		<!-- Context Menu for clause items-->
+		<div class="contextMenu" id="clauseItemMenu">
+	      <ul>
+	        <li id="delete"><img src="../../resource/img/cross.png" /> Delete</li>
+	      </ul>
+	    </div>
+		
+		
+	</body>
+</html>

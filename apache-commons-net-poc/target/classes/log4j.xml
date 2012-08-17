@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//LOGGER" "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <!-- Appenders -->
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p: [%d{hh:mm:ss:sss z}] %t %c - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="VMI_FILE" class="org.apache.log4j.RollingFileAppender">
+        <!-- unix: /home/logs/applogs/vmi or windows c:\home\logs\applogs\vmi directory should preexist
+               and application should have permission to create/append file in that directory
+          -->
+        <!-- weblogic.Name is a system property (passed as -Dweblogic.Name=XXX at in startup script) that is available to all
+               application servers that store the name of the server. e.g. GATES_SVR1_PROD
+          -->
+        <!--         <param name="File" value="/home/ab/${weblogic.Name}_vmi.log" /> -->
+        <param name="File" value="/home/logs/applogs/vmi/${weblogic.Name}_vmi.log" />
+
+        <param name="MaxFileSize" value="20MB"/>
+        <param name="MaxBackupIndex" value="20"/>
+        <param name="Append" value="true" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{dd/MM/yy hh:mm:ss:sss z}] %t %5p %c{4}.%M(): %m%n" />
+        </layout>
+    </appender>
+
+    <!-- VMI Application Logger -->
+    <logger name="poc">
+        <level value="debug" />
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <!-- VMI Application Logger -->
+    <logger name="com.matson.vmi">
+        <level value="debug" />
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <!-- Struts-->
+    <logger name="org.apache.struts">
+        <level value="info"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <!-- To log hibernate queries -->
+    <logger name="org.hibernate.SQL">
+        <level value="debug"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+
+    <logger name="org.hibernate.type">
+        <!-- Change level to trace to log parameter binding information-->
+        <level value="info"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <logger name="org.apache.axis2.enterprise">
+        <level value="FATAL"/>
+        <appender-ref ref="CONSOLE" />
+    </logger>
+
+    <logger name="de.hunsicker.jalopy.io">
+        <level value="FATAL"/>
+        <appender-ref ref="CONSOLE" />
+    </logger>
+
+    <logger name="httpclient.wire.header">
+        <level value="info"/>
+        <appender-ref ref="CONSOLE" />
+    </logger>
+
+    <logger name="httpclient.wire">
+        <level value="debug"/>
+        <appender-ref ref="CONSOLE" />
+    </logger>
+
+    <logger name="org.apache.commons.httpclient">
+        <level value="info"/>
+        <appender-ref ref="CONSOLE" />
+    </logger>
+
+    <logger name="org.quartz">
+        <level value="info"/>
+        <appender-ref ref="CONSOLE" />
+    </logger>
+
+    <!-- CAS Loggers -->
+    <logger name="com.matson.cas">
+        <level value="debug"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <!-- Spring Loggers -->
+    <logger name="org.springframework">
+        <level value="warn"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <logger name="org.springframework.core">
+        <level value="info"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <logger name="org.springframework.beans">
+        <level value="info"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <logger name="org.springframework.context">
+        <level value="info"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <logger name="org.springframework.web">
+        <level value="info"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <logger name="org.springframework.webflow">
+        <level value="debug"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+</log4j:configuration>

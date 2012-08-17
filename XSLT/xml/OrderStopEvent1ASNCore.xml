@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTransmission xmlns:miltns="http://www.matson.com/milportal/schema"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                 CtrlNumber="1"
+                 Receiver="MILBPIT"
+                 Sender="ALEX"
+                 Timestamp="20070801 043352">
+   <XMLGroup CtrlNumber="1" GroupType="SH" IncludedMessages="1">
+      <XMLTransaction CtrlNumber="CtrlNumber" TransactionType="ASN">
+         <ASN>
+            <PurposeCd>04</PurposeCd>
+            <ShipmentID>12345</ShipmentID>
+            <CarrierSCAC>MIOS</CarrierSCAC>
+            <Mode>X</Mode>
+            <Measure Qualifier="G" UOMCd="LB">15</Measure>
+            <Location LocTypeCd="OR">
+               <Place>
+                  <City>Chicago</City>
+                  <StateProvinceCd>IL</StateProvinceCd>
+               </Place>
+            </Location>
+            <Location LocTypeCd="DE">
+               <Place>
+                  <City>San Francisco</City>
+                  <StateProvinceCd>CA</StateProvinceCd>
+               </Place>
+            </Location>
+            <Reference RefTypeCd="GV">12345</Reference>
+            <Reference RefTypeCd="76">500</Reference>
+            <Reference RefTypeCd="78">100</Reference>
+            <Reference RefTypeCd="BM">456789</Reference>
+            <Reference RefTypeCd="OP">ABCDE123</Reference>
+            <Reference RefTypeCd="ACC">Dispatched</Reference>
+            <Date DateTypeCd="SHP">20011217 93047</Date>
+            <TradePartner RoleCd="LW">
+               <TradePartnerName>Walmart</TradePartnerName>
+               <TradePartnerId>10013</TradePartnerId>
+            </TradePartner>
+            <TradePartner RoleCd="SH">
+               <Date DateTypeCd="035">20011217 93047</Date>
+               <TradePartnerName>TRANSWELL LOGISTICS INC</TradePartnerName>
+               <TradePartnerID Qualifier="ZZ">11987700</TradePartnerID>
+               <TradePartnerAddress>
+                  <Street>1234 Main St</Street>
+                  <City>Chicago</City>
+                  <StateProvinceCd>IL</StateProvinceCd>
+               </TradePartnerAddress>
+            </TradePartner>
+         </ASN>
+      </XMLTransaction>
+   </XMLGroup>
+</XMLTransmission>

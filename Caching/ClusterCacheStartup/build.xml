@@ -1,0 +1,66 @@
+<project basedir="." default="all" name="JBossCacheServlet">
+
+	<property file="build.properties" />	
+	<path id="project.libs">
+			<fileset includes="**/*.jar" dir="${jbosscache.lib.dir}" />
+	</path>
+	<path id="external.libs">
+			<fileset includes="log4j-1.2.8.jar" dir="${log4j.lib.dir}" />
+	</path>
+	
+	<path id="classpath.libs">
+		<path refid="project.libs" />
+		<path refid="external.libs" />
+		<filelist><file name="${weblogic.jar}"/></filelist>
+	</path>
+	
+	<target name="init" description="Initialises the build environment">
+		<property name="project.bin" value="${basedir}/buildBin" />
+		<property name="project.src" value="${basedir}/src" />
+		<property name="project.dist" value="${basedir}/dist" />
+		<property name="project.lib" value="${basedir}/lib" />
+		<property name="project.conf" value="${basedir}/src/conf" />
+	</target>
+	
+	<target name="clean" description="Cleans the build environment" depends="init">
+		  <delete includeemptydirs="true">
+		    <fileset dir="${project.bin}" includes="**/*"/>
+		  </delete>
+		  <delete includeemptydirs="true">
+		    <fileset dir="${project.dist}" includes="**/*"/>
+		  </delete>
+	</target>
+	
+	<target name="prepare" description="Prepares the build environment" depends="clean">
+		<mkdir dir="${project.bin}"/>
+	</target>
+	
+	<target name="build" description="Builds the sourcecode" depends="prepare">
+		<javac
+			optimize="off"
+			debug="on" 			
+			destdir="${project.bin}"
+			srcdir="${project.src}"
+			classpathref="classpath.libs"/>
+	</target>
+	
+	<target name="package" description="packages the startup jar" depends="build">
+
+		<copy todir="${project.dist}">
+			<fileset dir="${project.lib}" />
+		</copy>
+		
+		<jar destfile="${project.dist}/${project.j2eeservice.jar.name}">
+			<fileset dir="${project.bin}" />
+			<fileset dir="${project.src}" includes="conf/**" />
+			<manifest >
+				<attribute name="Implementation-Version" value="1.0.0"/>
+			</manifest>
+		</jar>
+		
+	</target>
+	
+	<target name="all" description="Default build target" depends="package">
+		<echo>JAR creation complete</echo>
+	</target>
+</project>

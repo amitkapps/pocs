@@ -1,0 +1,108 @@
+<html>
+	<head>
+		<title>Simple Modal</title>
+		<link rel="stylesheet" href="../../resource/js/jquery/plugins/jqModal/jqModal.css" type="text/css"></link>
+		
+		<script type="text/javascript" src="../../resource/js/jquery/core/jquery-1.1.4.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/jqModal/jqModal.js"></script>
+		<script type="text/javascript">
+		
+			$(document)
+				.ready( function(){
+					
+					$('#clk1, #clk2').click(function(){
+												alert('triggering element:[' + $(this).attr('id') + ']');
+												var caller = new alertCaller($(this).attr('id'));
+												$("#updateFilterCriteria")
+													.jqm( {onHide: function(hash){
+																		//if($('#updateFilterAction').val() == 'accept')
+																		//$(callingObj).text(serializeFilterCriteria());
+																		caller.invoke();
+																   		hash.w.fadeOut('2000',function(){ 
+																								hash.o.remove(); 
+																							  }); 
+																	}
+											   			  })
+													.jqmShow();
+							   				});
+				});
+
+			function alertCaller(identity){
+				this.identity = identity;
+				me = this;
+				this.invoke = function(){
+								alert('Caller Id:' + me.identity);  	
+							  };
+			}
+			var closeJqModal = function(hash) { 
+							   		hash.w.fadeOut('2000',function(){ 
+															hash.o.remove(); 
+														  }); 
+							  };
+
+			
+			function updateFilterCriteria(fieldName){
+				$("#chooseFilterCriteria #filterField").val(fieldName);
+				//alert(element);
+				$("#chooseFilterCriteria").jqm();
+				return false;
+			}
+		</script>
+		
+	</head>
+
+	<body>
+		<form name="f1" id="f1" action="" method="post">
+			
+			<a id="clk1" href="#">View1</a>
+			<a id="clk2" href="#">View2</a>
+			
+			<!-- Div used to generate filter criteria html modal -->
+			<div class="jqmWindow" style="display: none;" id="updateFilterCriteria" class="jqmDialog">
+				<div class="filterCriteriaModalContent">
+					<h2>Choose Filter Criteria</h2>
+					<table align="center">
+						<tr valign="center">
+							<td>
+								<select id="filterConjunction">
+									<option value="AND">AND</option>
+									<option value="OR">OR</option>
+								</select>
+							
+							</td>
+							
+							<td>
+								<input id="filterField" type="text" value="" readonly="readonly"/>
+							</td>
+							
+							<td>
+								<select id="operator"
+									onchange="">
+									<option value="=">=</option>
+									<option value="&lt;&gt;">&lt;&gt;</option>
+									<option value="&gt;">&gt;</option>
+									<option value="&gt;=">&gt;=</option>
+									<option value="&lt;">&lt;</option>
+									<option value="&lt;=">&lt;=</option>
+								</select>
+								
+							</td>
+							
+							<td>
+								<table width="100%">
+									<tr><td><input type="text" value="Input value" class="inputFields" id="fieldValue1" /></td></tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2"> <input type="button" class="jqmClose" onclick="javascript:$('#updateFilterAction').val('accept');return false;" value="Accept"/> </td>
+							<td colspan="2"> <input type="button" class="jqmClose" onclick="javascript:$('#updateFilterAction').val('cancel'); return false;" value="Cancel"/> </td>
+						</tr>
+					</table>
+					<input id="updateFilterAction" type="hidden" value=""/>
+				</div>
+			</div>
+			
+		</form>
+	</body>
+</html>

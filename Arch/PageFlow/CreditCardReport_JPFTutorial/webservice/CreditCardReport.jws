@@ -1,0 +1,141 @@
+package webservice; 
+
+import weblogic.jws.control.JwsContext;
+import weblogic.jws.util.Logger;
+import org.openuri.bea.samples.workshop.CardType;
+import org.openuri.bea.samples.workshop.CreditCardDataDocument.CreditCardData;
+import org.openuri.bea.samples.workshop.CreditCardDataDocument;
+import org.openuri.bea.samples.workshop.CustomerType;
+import com.bea.xml.XmlBeans;
+import java.util.Iterator;
+import java.io.Serializable;
+import com.bea.ide.*;
+import java.util.HashMap;
+import com.bea.xml.XmlOptions;
+
+public class CreditCardReport implements com.bea.jws.WebService
+{
+     static final long serialVersionUID = 1L;
+    
+    /** @common:context */ 
+    JwsContext context; 
+    
+    public static class CreditCard implements Serializable
+    {
+        public String provider;
+        public String accountNumber;
+        public int availableCredit;
+        public int creditUsed;
+        
+        public CreditCard(String provider, String accountNumber, int availableCredit, int creditUsed)
+        {
+            this.provider = provider;
+            this.accountNumber = accountNumber;
+            this.availableCredit = availableCredit;
+            this.creditUsed = creditUsed;
+        }
+        public CreditCard() {}
+    }
+
+    transient Logger m_logger;
+     
+    public Callback callback;
+
+
+    /**
+     * @common:operation
+     * @common:message-buffer enable="true"
+     * @jws:conversation phase="start"
+     */
+    public void getCreditCardData(String taxID)
+    {
+        CreditCard[] cardDataArray = this.getCreditCardDataArray(taxID);
+        CreditCardDataDocument cardDataXML = generateXMLResponse(cardDataArray);
+        //callback.setUsername("weblogic");
+        //callback.setPassword("weblogic");
+        callback.onCreditCardDataReady(cardDataXML.xmlText());
+    }
+    
+        private CreditCardDataDocument generateXMLResponse(CreditCard[] cards){
+        CustomerType requestedCustomer = null;
+        CreditCardData responseData = null;
+        CreditCardDataDocument doc = null;
+        try{
+            doc = CreditCardDataDocument.Factory.newInstance();
+            responseData = doc.addNewCreditCardData();
+            requestedCustomer = responseData.addNewCustomer();
+        }catch(java.lang.IllegalArgumentException iae){
+            throw iae;
+        }
+        for (int i = 0; i < cards.length; i++){
+            CardType newCard = requestedCustomer.addNewCard();
+            newCard.setAvailableCredit(cards[i].availableCredit);
+            newCard.setCreditUsed(cards[i].creditUsed);
+            newCard.setNumber(cards[i].accountNumber);
+            if(cards[i].provider.equals("MasterCard")){
+                newCard.setName(CardType.Name.MASTER_CARD);                
+            } else {
+                newCard.setName(CardType.Name.VISA);
+            }
+        }
+        return doc;
+    }
+
+    /**
+     * @common:operation
+     * @jws:conversation phase="continue"
+     */
+    public void cancelRequest()
+    {
+        context.finishConversation();
+    }
+
+    public interface Callback extends com.bea.control.ServiceControl
+    {
+        /**
+         * @jws:conversation phase="finish"
+         */
+        void onCreditCardDataReady(String cardData);
+    }
+    
+        private CreditCard[] getCreditCardDataArray(String taxID)
+    {   
+        CreditCard[] cards = new CreditCard[2];
+        if (taxID.equals("111111111")) {
+            cards[0] = new CreditCard("MasterCard", "1111-2222-3333-4444", 500, 500);
+            cards[1] = new CreditCard("Visa", "1111-2222-3333-4444", 500, 500);
+        }
+        else if (taxID.equals("222222222")) {
+            cards[0] = new CreditCard("MasterCard", "1111-2222-3333-4444", 1000, 400);
+            cards[1] = new CreditCard("Visa", "1111-2222-3333-4444", 1000, 500);
+        }
+        else if (taxID.equals("333333333")) {
+            cards[0] = new CreditCard("MasterCard", "1111-2222-3333-4444", 2000, 300);
+            cards[1] = new CreditCard("Visa", "1111-2222-3333-4444", 2000, 500);
+        }
+        else if (taxID.equals("444444444")) {
+            cards[0] = new CreditCard("MasterCard", "1111-2222-3333-4444", 2500, 200);
+            cards[1] = new CreditCard("Visa", "1111-2222-3333-4444", 2500, 500);
+        }
+        else if (taxID.equals("555555555")) {
+            cards[0] = new CreditCard("MasterCard", "1111-2222-3333-4444", 5000, 100);
+            cards[1] = new CreditCard("Visa", "1111-2222-3333-4444", 5000, 500);
+        }
+        else if (taxID.equals("123456789")) {
+            cards[0] = new CreditCard("MasterCard", "1111-2222-3333-4444", 10000, 100);
+            cards[1] = new CreditCard("Visa", "1111-2222-3333-4444", 10000, 100);
+        }
+        else {
+            cards[0] = new CreditCard("MasterCard", "1111-2222-3333-4444", 10000, 100);
+            cards[1] = new CreditCard("Visa", "1111-2222-3333-4444", 10000, 100);
+        }
+        return cards;
+    }
+    
+    public void context_onException(Exception e, String methodName, 
+        Object[] parameters)
+    {
+        m_logger = context.getLogger("CreditCardReport");
+        m_logger.debug("Exception in " + methodName, e);
+    }
+} 

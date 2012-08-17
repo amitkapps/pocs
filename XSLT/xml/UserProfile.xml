@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<userProfile>
+<coreProfile>
+  <userProfileId>26</userProfileId>
+  <userName>kathleen</userName>
+  <lastName>kathleen</lastName>
+  <firstName>kathleen</firstName>
+  <middleName>kkkk</middleName>
+  <emailAddress>kathleen@matson.com</emailAddress>
+  <title>Kathleen</title>
+  <companyName>matson12</companyName>
+  <addressList>
+    <address>
+      <addressType>
+        <typeCode>WORK</typeCode>
+        <description>Work</description>
+        <audit>
+          <active>true</active>
+          <createUser>BATCH</createUser>
+          <createTime class="sql-timestamp">2007-06-06 14:24:59.0</createTime>
+          <updateUser>BATCH</updateUser>
+          <updateTime class="sql-timestamp">2007-06-06 14:24:59.0</updateTime>
+        </audit>
+      </addressType>
+      <addressId>13</addressId>
+      <addressLine1> </addressLine1>
+      <addressLine2> </addressLine2>
+      <cityName>OAKBROOK</cityName>
+      <countryCode>USA</countryCode>
+      <stateCode>IL</stateCode>
+      <postalCode>60102</postalCode>
+      <audit>
+        <active>true</active>
+        <createUser>Kalim</createUser>
+        <createTime class="sql-timestamp">2007-07-12 00:00:00.0</createTime>
+        <updateUser>kalim</updateUser>
+        <updateTime class="sql-timestamp">2007-07-12 00:00:00.0</updateTime>
+      </audit>
+    </address>
+  </addressList>
+  <phoneList>
+    <phone>
+      <phoneType>
+        <typeCode>WFX</typeCode>
+        <description>Work Fax</description>
+        <audit>
+          <active>true</active>
+          <createUser>BATCH</createUser>
+          <createTime class="sql-timestamp">2007-06-06 14:24:59.0</createTime>
+          <updateUser>BATCH</updateUser>
+          <updateTime class="sql-timestamp">2007-06-06 14:24:59.0</updateTime>
+        </audit>
+      </phoneType>
+      <phoneId>27</phoneId>
+      <internationPrefix>01</internationPrefix>
+      <phoneNumber>11111</phoneNumber>
+      <extension>234</extension>
+      <faxNumber>true</faxNumber>
+      <audit>
+        <active>true</active>
+        <createUser>kalim</createUser>
+        <createTime class="sql-timestamp">2007-07-12 00:00:00.0</createTime>
+        <updateUser>kalim</updateUser>
+        <updateTime class="sql-timestamp">2007-07-12 00:00:00.0</updateTime>
+      </audit>
+    </phone>
+    <phone>
+      <phoneType>
+        <typeCode>WORK</typeCode>
+        <description>Work</description>
+        <audit>
+          <active>true</active>
+          <createUser>BATCH</createUser>
+          <createTime class="sql-timestamp">2007-06-06 14:24:59.0</createTime>
+          <updateUser>BATCH</updateUser>
+          <updateTime class="sql-timestamp">2007-06-06 14:24:59.0</updateTime>
+        </audit>
+      </phoneType>
+      <phoneId>26</phoneId>
+      <internationPrefix>01</internationPrefix>
+      <phoneNumber>11111222</phoneNumber>
+      <extension>12</extension>
+      <faxNumber>false</faxNumber>
+      <audit>
+        <active>true</active>
+        <createUser>kalim</createUser>
+        <createTime class="sql-timestamp">2007-07-12 00:00:00.0</createTime>
+        <updateUser>kalim</updateUser>
+        <updateTime class="sql-timestamp">2007-07-03 00:00:00.0</updateTime>
+      </audit>
+    </phone>
+    <phone>
+      <phoneType>
+        <typeCode>WORK</typeCode>
+        <description>Work</description>
+        <audit>
+          <active>true</active>
+          <createUser>BATCH</createUser>
+          <createTime class="sql-timestamp">2007-06-06 14:24:59.0</createTime>
+          <updateUser>BATCH</updateUser>
+          <updateTime class="sql-timestamp">2007-06-06 14:24:59.0</updateTime>
+        </audit>
+      </phoneType>
+      <phoneId>26</phoneId>
+      <internationPrefix>01</internationPrefix>
+      <phoneNumber>22223333</phoneNumber>
+      <extension>12</extension>
+      <faxNumber>false</faxNumber>
+      <audit>
+        <active>true</active>
+        <createUser>kalim</createUser>
+        <createTime class="sql-timestamp">2007-07-12 00:00:00.0</createTime>
+        <updateUser>kalim</updateUser>
+        <updateTime class="sql-timestamp">2007-07-03 00:00:00.0</updateTime>
+      </audit>
+    </phone>
+  </phoneList>
+  <profileState>
+    <typeCode>MANUAL</typeCode>
+    <description>MANUAL</description>
+    <audit>
+      <active>true</active>
+      <createUser>KALIM</createUser>
+      <createTime class="sql-timestamp">2007-08-08 00:00:00.0</createTime>
+      <updateUser>KALIM</updateUser>
+      <updateTime class="sql-timestamp">2007-08-08 00:00:00.0</updateTime>
+    </audit>
+  </profileState>
+  <profileStateUpdateDate class="sql-timestamp">2007-08-24 17:24:52.0</profileStateUpdateDate>
+  <audit>
+    <active>true</active>
+    <createUser>kalim</createUser>
+    <createTime class="sql-timestamp">2007-07-12 00:00:00.0</createTime>
+    <updateUser>JYasuda</updateUser>
+    <updateTime class="sql-timestamp">2007-08-31 15:13:11.0</updateTime>
+  </audit>
+</coreProfile>
+<customProfile>
+  <userProfileId>13</userProfileId>
+  <userName>kathleen</userName>
+  <orderRefNum1>123</orderRefNum1>
+  <orderRefNum2>433</orderRefNum2>
+  <orderRefNum3>222</orderRefNum3>
+  <userComments>please aprove my request</userComments>
+  <portalType>C</portalType>
+  <parentId>3431</parentId>
+  <lobCode>HWY</lobCode>
+  <milCustomUserService>
+    <onlineServices>
+      <serviceTypeCode>MYL</serviceTypeCode>
+      <serviceTypeDesc></serviceTypeDesc>
+      <audit>
+        <active>true</active>
+        <createUser>JYasuda</createUser>
+        <createTime class="sql-timestamp">2007-08-31 15:13:11.0</createTime>
+        <updateUser>JYasuda</updateUser>
+        <updateTime class="sql-timestamp">2007-08-31 15:13:11.0</updateTime>
+      </audit>
+    </onlineServices>
+    <onlineServices>
+      <serviceTypeCode>ACT</serviceTypeCode>
+      <serviceTypeDesc></serviceTypeDesc>
+      <audit>
+        <active>true</active>
+        <createUser>JYasuda</createUser>
+        <createTime class="sql-timestamp">2007-08-31 15:13:11.0</createTime>
+        <updateUser>JYasuda</updateUser>
+        <updateTime class="sql-timestamp">2007-08-31 15:13:11.0</updateTime>
+      </audit>
+    </onlineServices>
+    <onlineServices>
+      <serviceTypeCode>LAN</serviceTypeCode>
+      <serviceTypeDesc></serviceTypeDesc>
+      <audit>
+        <active>true</active>
+        <createUser>JYasuda</createUser>
+        <createTime class="sql-timestamp">2007-08-31 15:13:11.0</createTime>
+        <updateUser>JYasuda</updateUser>
+        <updateTime class="sql-timestamp">2007-08-31 15:13:11.0</updateTime>
+      </audit>
+    </onlineServices>
+  </milCustomUserService>
+  <milCustomUserRelationship>
+    <relationShipToMatson>
+      <relationshipTypeCode>SH</relationshipTypeCode>
+      <relationshipTypeDesc>Shipper</relationshipTypeDesc>
+      <audit>
+        <active>true</active>
+        <createUser>ADMIN</createUser>
+        <createTime class="sql-timestamp">2007-07-12 00:00:00.0</createTime>
+        <updateUser>ADMIN</updateUser>
+        <updateTime class="sql-timestamp">2007-06-12 00:00:00.0</updateTime>
+      </audit>
+    </relationShipToMatson>
+    <relationShipToMatson>
+      <relationshipTypeCode>OTHERS</relationshipTypeCode>
+      <relationshipTypeDesc>Test Descriptions send from </relationshipTypeDesc>
+      <audit>
+        <active>true</active>
+        <createUser>JYasuda</createUser>
+        <createTime class="sql-timestamp">2007-08-21 17:14:23.0</createTime>
+        <updateUser>JYasuda</updateUser>
+        <updateTime class="sql-timestamp">2007-08-21 17:14:23.0</updateTime>
+      </audit>
+    </relationShipToMatson>
+  </milCustomUserRelationship>
+  <milCustomUserControllingParties>
+    <controllingParties>
+      <controllingPartyName>PATENT CONSTRUCTION - CA</controllingPartyName>
+      <controllingPartyId>3572</controllingPartyId>
+      <addressLine1>8210 BERRY AVENUE</addressLine1>
+      <addressLine2>SUITE 180</addressLine2>
+      <cityName>SACRAMENTO</cityName>
+      <stateCode>CA</stateCode>
+      <zipPostalCode>95828</zipPostalCode>
+      <countryCode>US</countryCode>
+      <fax>9163811344</fax>
+      <phone>9163816090</phone>
+      <audit>
+        <active>true</active>
+        <createUser>JYasuda</createUser>
+        <createTime class="sql-timestamp">2007-08-31 15:13:11.0</createTime>
+        <updateUser>JYasuda</updateUser>
+        <updateTime class="sql-timestamp">2007-08-31 15:13:11.0</updateTime>
+      </audit>
+    </controllingParties>
+    <controllingParties>
+      <controllingPartyName>PATENT CONSTRUCTION - NC</controllingPartyName>
+      <controllingPartyId>3585</controllingPartyId>
+      <addressLine1>301 DALTON AVENUE</addressLine1>
+      <cityName>CHARLOTTE</cityName>
+      <stateCode>NC</stateCode>
+      <zipPostalCode>28206</zipPostalCode>
+      <countryCode>US</countryCode>
+      <fax>7043449115</fax>
+      <phone>7043731771</phone>
+      <audit>
+        <active>true</active>
+        <createUser>JYasuda</createUser>
+        <createTime class="sql-timestamp">2007-08-31 15:13:11.0</createTime>
+        <updateUser>JYasuda</updateUser>
+        <updateTime class="sql-timestamp">2007-08-31 15:13:11.0</updateTime>
+      </audit>
+    </controllingParties>
+    <controllingParties>
+      <controllingPartyName>PATENT CONSTRUCTION - AZ</controllingPartyName>
+      <controllingPartyId>3569</controllingPartyId>
+      <addressLine1>3201 SOUTH 40TH STREET</addressLine1>
+      <cityName>PHOENIX</cityName>
+      <stateCode>AZ</stateCode>
+      <zipPostalCode>85040</zipPostalCode>
+      <countryCode>US</countryCode>
+      <fax>6024378856</fax>
+      <phone>6024373216</phone>
+      <audit>
+        <active>true</active>
+        <createUser>JYasuda</createUser>
+        <createTime class="sql-timestamp">2007-08-31 15:13:11.0</createTime>
+        <updateUser>JYasuda</updateUser>
+        <updateTime class="sql-timestamp">2007-08-31 15:13:11.0</updateTime>
+      </audit>
+    </controllingParties>
+    <controllingParties>
+      <controllingPartyName>PATENT CONSTRUCTION - IL</controllingPartyName>
+      <controllingPartyId>3579</controllingPartyId>
+      <addressLine1>2100 SOUTH KILBOURN AVEN</addressLine1>
+      <cityName>CHICAGO</cityName>
+      <stateCode>IL</stateCode>
+      <zipPostalCode>60623</zipPostalCode>
+      <countryCode>US</countryCode>
+      <fax>7732770032</fax>
+      <phone>7732772525</phone>
+      <audit>
+        <active>true</active>
+        <createUser>JYasuda</createUser>
+        <createTime class="sql-timestamp">2007-08-31 15:13:11.0</createTime>
+        <updateUser>JYasuda</updateUser>
+        <updateTime class="sql-timestamp">2007-08-31 15:13:11.0</updateTime>
+      </audit>
+    </controllingParties>
+    <controllingParties>
+      <controllingPartyName>PATENT CONSTRUCTION - FL</controllingPartyName>
+      <controllingPartyId>3574</controllingPartyId>
+      <addressLine1>5000 PHILLIPS HIGHWAY</addressLine1>
+      <cityName>JACKSONVILLE</cityName>
+      <stateCode>FL</stateCode>
+      <zipPostalCode>32207</zipPostalCode>
+      <countryCode>US</countryCode>
+      <fax>9047393293</fax>
+      <phone>9047393337</phone>
+      <audit>
+        <active>true</active>
+        <createUser>JYasuda</createUser>
+        <createTime class="sql-timestamp">2007-08-31 15:13:11.0</createTime>
+        <updateUser>JYasuda</updateUser>
+        <updateTime class="sql-timestamp">2007-08-31 15:13:11.0</updateTime>
+      </audit>
+    </controllingParties>
+    <controllingParties>
+      <controllingPartyName>PATENT CONSTRUCTION - CA</controllingPartyName>
+      <controllingPartyId>3571</controllingPartyId>
+      <addressLine1>21222 SOUTH WILMINGTON A</addressLine1>
+      <cityName>CARSON</cityName>
+      <stateCode>CA</stateCode>
+      <zipPostalCode>90810</zipPostalCode>
+      <countryCode>US</countryCode>
+      <fax>3108345947</fax>
+      <phone>3108308102</phone>
+      <audit>
+        <active>true</active>
+        <createUser>JYasuda</createUser>
+        <createTime class="sql-timestamp">2007-08-31 15:13:11.0</createTime>
+        <updateUser>JYasuda</updateUser>
+        <updateTime class="sql-timestamp">2007-08-31 15:13:11.0</updateTime>
+      </audit>
+    </controllingParties>
+  </milCustomUserControllingParties>
+  <audit>
+    <active>true</active>
+    <createUser>kalim</createUser>
+    <createTime class="sql-timestamp">2007-12-07 00:00:00.0</createTime>
+    <updateUser>kalim </updateUser>
+    <updateTime class="sql-timestamp">2007-12-07 00:00:00.0</updateTime>
+  </audit>
+</customProfile>
+</userProfile>

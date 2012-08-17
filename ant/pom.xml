@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>matson.cas</groupId>
+    <artifactId>ant-mvn-build-test</artifactId>
+    <packaging>jar</packaging>
+
+    <name>Ant Maven Build Test</name>
+    <version>1.0.0-SNAPSHOT</version>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.build.timestamp.format>MMM/dd/yyyy HH:mm:ss [z]</maven.build.timestamp.format>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <!-- use the following if you ARE using a snapshot version. -->
+        <snapshotRepository>
+            <id>nexus</id>
+            <url>http://10.8.7.145:8081/nexus/content/repositories/matson-snapshots</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+        <!-- use the following if you're not using a snapshot version. -->
+        <repository>
+            <id>nexus</id>
+            <name>Matson Release Repository</name>
+            <url>http://10.8.7.145:8081/nexus/content/repositories/matson-releases</url>
+            <!--<uniqueVersion>false</uniqueVersion>-->
+        </repository>
+    </distributionManagement>
+
+</project>

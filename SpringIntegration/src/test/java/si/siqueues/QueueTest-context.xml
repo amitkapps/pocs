@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:int="http://www.springframework.org/schema/integration"
+       xmlns:int-xml="http://www.springframework.org/schema/integration/xml"
+       xmlns:oxm="http://www.springframework.org/schema/oxm"
+       xmlns:int-jms="http://www.springframework.org/schema/integration/jms"
+       xmlns:int-stream="http://www.springframework.org/schema/integration/stream"
+       xmlns:int-jdbc="http://www.springframework.org/schema/integration/jdbc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:int-mail="http://www.springframework.org/schema/integration/mail"
+       xmlns:task="http://www.springframework.org/schema/task" xmlns:jms="http://www.springframework.org/schema/jms"
+       xsi:schemaLocation="http://www.springframework.org/schema/integration/xml http://www.springframework.org/schema/integration/xml/spring-integration-xml-2.0.xsd
+		http://www.springframework.org/schema/integration/mail http://www.springframework.org/schema/integration/mail/spring-integration-mail-2.0.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-2.0.xsd
+		http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+		http://www.springframework.org/schema/integration/jms http://www.springframework.org/schema/integration/jms/spring-integration-jms-2.0.xsd
+		http://www.springframework.org/schema/integration/stream http://www.springframework.org/schema/integration/stream/spring-integration-stream-2.0.xsd
+		http://www.springframework.org/schema/integration/jdbc http://www.springframework.org/schema/integration/jdbc/spring-integration-jdbc-2.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.0.xsd">
+
+    <!--Listen for New Vess XML on jms queue-->
+    <bean id="xmlMessageListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="concurrentConsumers" value="1"/>
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="destinationName" value="jms.xml.inbound"/>
+        <property name="destinationResolver" ref="destResolver"/>
+        <property name="sessionTransacted" value="true"/>
+        <property name="pubSubDomain" value="false"/>
+    </bean>
+
+    <!--<bean id="destResolver" class="org.springframework.jms.support.destination.JndiDestinationResolver" />-->
+    <bean id="destResolver" class="org.springframework.jms.support.destination.BeanFactoryDestinationResolver"/>
+
+    <bean id="connectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+        <property name="targetConnectionFactory">
+            <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                <property name="brokerURL" value="vm://embedded?broker.persistent=false&amp;broker.useShutdownHook=false"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="jms.xml.inbound" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="jms.xml.inbound"/>
+    </bean>
+
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="defaultDestination" ref="jms.xml.inbound"/>
+        <property name="sessionTransacted" value="true"/>
+    </bean>
+
+
+    <int-jms:message-driven-channel-adapter id="xmlInputJms"
+    channel="xmlInput"
+    container="xmlMessageListenerContainer"/>
+
+
+    <int:channel id="xmlInput">
+
+        <int:queue />
+    </int:channel>
+
+    <int:service-activator input-channel="xmlInput" ref="xmlToDomConverter" method="convertToDocument"
+                           output-channel="domPubSubChannel"/>
+    <bean id="xmlToDomConverter" class="org.springframework.integration.xml.DefaultXmlPayloadConverter"/>
+
+    <!--Executor to allow multiple concurrent downstream pollers-->
+    <int:publish-subscribe-channel id="domPubSubChannel"/>
+
+    <!--<int:bridge input-channel="newVessInboundDomChannel" output-channel="newVessDomForSavingVoyages" />-->
+    <int:bridge input-channel="domPubSubChannel" output-channel="orderDomForSaving"/>
+
+    <int:channel id="orderDomForSaving"/>
+
+
+    <int-xml:xpath-splitter input-channel="orderDomForSaving" output-channel="ordersChannel">
+        <int-xml:xpath-expression expression="/ns2:snx/unit" ns-prefix="ns2" ns-uri="http://www.navis.com/argo"/>
+    </int-xml:xpath-splitter>
+
+    <int:channel id="ordersChannel"/>
+
+    <int:recipient-list-router id="customRouter" input-channel="ordersChannel"
+                               timeout="1234"
+                               ignore-send-failures="true"
+                               apply-sequence="true">
+        <int:recipient channel="nlChannel1"/>
+        <int:recipient channel="nlChannel2"/>
+    </int:recipient-list-router>
+    <!--
+        <int-xml:validating-filter input-channel="xmlInput" schema-location="classpath:orders.xsd"
+                                   output-channel="nlChannel"/>
+    -->
+
+    <!--
+        <int-xml:xpath-transformer input-channel="xmlInput" xpath-expression="."
+                output-channel="nlChannel"/>
+    -->
+
+    <bean id="nlChannel1" class="si.extension.LoggingMessageNullChannel"/>
+    <bean id="nlChannel2" class="si.extension.LoggingMessageNullChannel"/>
+
+    <!--Loading XML Strings-->
+    <bean id="ordersXmlString" class="java.lang.String">
+        <constructor-arg>
+            <bean class="org.apache.commons.io.IOUtils" factory-method="toString">
+                <constructor-arg type="java.io.InputStream" value="classpath:orders.xml"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+
+
+</beans>

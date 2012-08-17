@@ -1,0 +1,265 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<ul id="menu">
+<li><a href="about_us/index.html" class="firstItem">About Us<!--[if gte IE 7]><!--></a><!--<![endif]-->
+    <!--[if lte IE 6]>
+    <table>
+        <tr>
+            <td><![endif]-->
+    <ul>
+        <li><a href="about_us/index.html">About Us Overview</a></li>
+        <li><a href="about_us/contact_us.html">Contact Us</a></li>
+        <li><a href="about_us/mission_statement.html">Mission Statement</a></li>
+        <li><a href="about_us/cust_feedback.html">Customer Feedback</a></li>
+        <li><a href="about_us/vessel_stats.html">Vessel Statistics</a></li>
+        <li><a href="../corporate/about_us/sqe_policy.html">SQE Policy</a></li>
+        <li><a href="../corporate/about_us/security_programs.html">Security Programs</a></li>
+    </ul>
+    <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
+
+<li><a href="services/hawaii.html">Hawaii<!--[if gte IE 7]><!--></a><!--<![endif]-->
+    <!--[if lte IE 6]>
+    <table>
+        <tr>
+            <td><![endif]-->
+    <ul>
+        <li><a href="services/hawaii.html">Hawaii Overview</a></li>
+        <li><a href="services/hawaii_equipment.html">Equipment</a></li>
+        <li><a href="services/intermodal.html">Intermodal</a></li>
+        <li><a href="../OversizedCargo/index.html">Oversized Cargo</a></li>
+        <li><a href="../reefer/index.html">Refrigerated Services</a></li>
+        <li><a href="services/special_projects.html">Special Projects</a></li>
+        <li><a href="schedules/index.html" class="fly">Vessel Schedules<!--[if gte IE 7]><!--></a><!--<![endif]-->
+            <!--[if lte IE 6]>
+            <table>
+                <tr>
+                    <td><![endif]-->
+            <ul>
+                <li><a href="/fss/reports/haw_s.pdf">Port to Port</a></li>
+                <li><a href="/fss/reports/haw.pdf">Inland</a></li>
+            </ul>
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+        </li>
+        <li><a href="https://matson.ratebase.net/rateBASE/servlet/loginServlet?user_id=matspass&password=mats01"
+               target="_blank">Tariffs</a></li>
+        <li><a href="ports/gatecam.html?loc=HON">Honolulu Gate Cam</a></li>
+    </ul>
+    <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
+
+<li><a href="services/guam_micronesia.html">Guam/Micronesia<!--[if gte IE 7]><!--></a><!--<![endif]-->
+    <!--[if lte IE 6]>
+    <table>
+        <tr>
+            <td><![endif]-->
+    <ul>
+        <li><a href="services/guam_micronesia.html">Guam/Micronesia Overview</a></li>
+        <li><a href="services/guam_military.html">Guam Military Buildup</a></li>
+        <li><a href="services/guam_equipment.html">Equipment</a></li>
+        <li><a href="services/intermodal.html">Intermodal</a></li>
+        <li><a href="../OversizedCargo/index.html">Oversized Cargo</a></li>
+        <li><a href="../reefer/index.html">Refrigerated Services</a></li>
+        <li><a href="services/special_projects.html">Special Projects</a></li>
+        <li><a href="schedules/index.html" class="fly">Vessel Schedules<!--[if gte IE 7]><!--></a><!--<![endif]-->
+            <!--[if lte IE 6]>
+            <table>
+                <tr>
+                    <td><![endif]-->
+            <ul>
+                <li><a href="/fss/reports/guam_s.pdf">Port to Port</a></li>
+                <li><a href="/fss/reports/guam.pdf">Inland</a></li>
+                <li><a href="/fss/reports/micronesiaSchedule.pdf" target="_blank">Micronesia Island Schedule</a></li>
+            </ul>
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+        </li>
+        <li><a href="https://matson.ratebase.net/rateBASE/servlet/loginServlet?user_id=matspass&password=mats01"
+               target="_blank">Tariffs</a></li>
+    </ul>
+    <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
+
+<li><a href="../china/index.html">China<!--[if gte IE 7]><!--></a><!--<![endif]-->
+    <!--[if lte IE 6]>
+    <table>
+        <tr>
+            <td><![endif]-->
+    <ul>
+        <li><a href="../china/index.html">China Overview</a></li>
+        <li><a href="../china/equipment.html">Equipment</a></li>
+        <li><a href="../china/ges.html">Guaranteed Expedited Service</a></li>
+        <li><a href="services/intermodal.html">Intermodal</a></li>
+        <li><a href="/matnav/pdfs/chinaSchedule.pdf" target="_blank">Vessel Schedules</a></li>
+        <li><a href="../china/Contacts.html">China Office Contact Info</a></li>
+    </ul>
+    <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
+
+<li><a href="ports/index.html">Port Locations<!--[if gte IE 7]><!--></a><!--<![endif]-->
+    <!--[if lte IE 6]>
+    <table>
+        <tr>
+            <td><![endif]-->
+    <ul>
+        <li><a href="ports/index.html">Port Locations Overview</a></li>
+        <li><a href="ports/guam.html">Guam</a></li>
+        <li><a href="ports/hilo.html">Hilo</a></li>
+        <li><a href="ports/honolulu.html" class="fly">Honolulu<!--[if gte IE 7]><!--></a><!--<![endif]-->
+            <!--[if lte IE 6]>
+            <table>
+                <tr>
+                    <td><![endif]-->
+            <ul>
+                <li><a href="ports/honolulu.html">Port Hours &amp; Map</a></li>
+                <li><a href="ports/gatecam.html?loc=HON">Gate Cam</a></li>
+                <li><a href="../images/Sand_Island_trucker_guide.jpg">Sand Island Trucker Guide</a></li>
+            </ul>
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+        </li>
+        <li><a href="ports/kahului.html">Kahului</a></li>
+        <li><a href="ports/kawaihae.html ">Kawaihae</a></li>
+        <li><a href="ports/long_beach.html" class="fly">Long Beach<!--[if gte IE 7]><!--></a><!--<![endif]-->
+            <!--[if lte IE 6]>
+            <table>
+                <tr>
+                    <td><![endif]-->
+            <ul>
+                <li><a href="ports/long_beach.html">Port Hours &amp; Map</a></li>
+                <li><a href="ports/gatecam.html?loc=LAX">Gate Cam</a></li>
+            </ul>
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+        </li>
+        <li><a href="ports/nawiliwili.html">Nawiliwili</a></li>
+        <li><a href="ports/oakland.html" class="fly">Oakland<!--[if gte IE 7]><!--></a><!--<![endif]-->
+            <!--[if lte IE 6]>
+            <table>
+                <tr>
+                    <td><![endif]-->
+            <ul>
+                <li><a href="ports/oakland.html">Port Hours &amp; Map</a></li>
+                <li><a href="ports/gatecam.html?loc=OAK">Gate Cam</a></li>
+            </ul>
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+        </li>
+        <li><a href="ports/portland.html">Portland</a></li>
+        <li><a href="ports/seattle.html" class="fly">Seattle<!--[if gte IE 7]><!--></a><!--<![endif]-->
+            <!--[if lte IE 6]>
+            <table>
+                <tr>
+                    <td><![endif]-->
+            <ul>
+                <li><a href="ports/seattle.html">Port Hours &amp; Map</a></li>
+                <li><a href="ports/gatecam.html?loc=SEA">Gate Cam</a></li>
+            </ul>
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+        </li>
+    </ul>
+    <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
+
+<li><a href="online_services/index.html">Online Services<!--[if gte IE 7]><!--></a><!--<![endif]-->
+    <!--[if lte IE 6]>
+    <table>
+        <tr>
+            <td><![endif]-->
+    <ul>
+        <li><a href="online_services/index.html">Overview</a></li>
+        <li><a href="schedules/index.html" class="fly">View Vessel Schedules<!--[if gte IE 7]><!--></a><!--<![endif]-->
+            <!--[if lte IE 6]>
+            <table>
+                <tr>
+                    <td><![endif]-->
+            <ul>
+                <li><a href="/matnav/pdfs/chinaSchedule.pdf" target="_blank">China - Long Beach Express</a></li>
+                <li><a href="/fss/reports/guam_s.pdf" target="_blank">Guam Service</a></li>
+                <li><a href="/fss/reports/guam.pdf" target="_blank">Guam Service w/ Inland Points</a></li>
+                <li><a href="/fss/reports/haw_s.pdf" target="_blank">Hawaii Service</a></li>
+                <li><a href="/fss/reports/haw.pdf" target="_blank">Hawaii Service w/ Inland Points</a></li>
+                <li><a href="/fss/reports/micronesiaSchedule.pdf" target="_blank">Micronesian Islands Service</a></li>
+            </ul>
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+        </li>
+        <li><a href="#" class="fly">Review Rates/Tariffs<!--[if gte IE 7]><!--></a><!--<![endif]-->
+            <!--[if lte IE 6]>
+            <table>
+                <tr>
+                    <td><![endif]-->
+            <ul>
+                <li><a href="https://matson.ratebase.net/rateBASE/servlet/loginServlet?user_id=matspass&password=mats01"
+                       target="_blank">For Containers</a></li>
+                <li><a href="../pov/booking/shipping_rates.htm">For Personal Vehicles</a></li>
+                <li><a href="../hhg-personal/estimate.html">For Personal Household Goods</a></li>
+            </ul>
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+        </li>
+        <li><a href="#" class="fly">Book<!--[if gte IE 7]><!--></a><!--<![endif]-->
+            <!--[if lte IE 6]>
+            <table>
+                <tr>
+                    <td><![endif]-->
+            <ul>
+                <li><a href="/vcsc/login/matsonlogin.jsp" target="_blank">Your Container</a></li>
+                <li><a href="../pov/index.htm">Your Personal Vehicle</a></li>
+                <li><a href="../hhg-personal/learn.html">Your Personal Household Goods</a></li>
+            </ul>
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+        </li>
+        <li><a href="#" class="fly">Track<!--[if gte IE 7]><!--></a><!--<![endif]-->
+            <!--[if lte IE 6]>
+            <table>
+                <tr>
+                    <td><![endif]-->
+            <ul>
+                <li><a href="/vcsc/login/matsonlogin.jsp" target="_blank">Your Container</a></li>
+                <li><a href="/vcsc/pov/tracking/tracking.jsp">Your Personal Vehicle</a></li>
+                <li><a href="/vcsc/login/matsonlogin.jsp" target="_blank">Your Commercial Vehicle</a></li>
+                <li><a href="../hhgp/tracking">Your Personal Household Goods</a></li>
+            </ul>
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+        </li>
+        <li><a href="/vcsc/login/matsonlogin.jsp" target="_blank">Submit Billing Instructions</a></li>
+        <li><a href="/vcsc/login/matsonlogin.jsp" class="fly">Print Billing Documents<!--[if gte IE 7]><!--></a><!--<![endif]-->
+            <!--[if lte IE 6]>
+            <table>
+                <tr>
+                    <td><![endif]-->
+            <ul>
+                <li><a href="/vcsc/login/matsonlogin.jsp" target="_blank">Bill of Lading</a></li>
+                <li><a href="/vcsc/login/matsonlogin.jsp" target="_blank">Freight Bill</a></li>
+                <li><a href="/vcsc/login/matsonlogin.jsp" target="_blank">Delivery Order</a></li>
+                <li><a href="/vcsc/login/matsonlogin.jsp" target="_blank">Notice of Arrival</a></li>
+            </ul>
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+        </li>
+        <li><a href="/vcsc/login/matsonlogin.jsp" target="_blank">View Account Balances</a></li>
+        <li><a href="online_services/forms.html" class="fly">Obtain Forms<!--[if gte IE 7]><!--></a><!--<![endif]-->
+            <!--[if lte IE 6]>
+            <table>
+                <tr>
+                    <td><![endif]-->
+            <ul>
+                <li><a href="online_services/credit_application.html">Credit Application</a></li>
+                <li><a href="online_services/claim_application.html">Claim of Freight &amp; Damage</a></li>
+            </ul>
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+        </li>
+        <li><a href="/vcsc/ev/containerStatus.jsp">Validate Container</a></li>
+        <li><a href="/hhg">ITGBL</a></li>
+        <li><a href="about_us/vessel_stats.html">Track Your Vessel via GPS</a></li>
+        <li><a href="#" class="fly">View Gate Cams<!--[if gte IE 7]><!--></a><!--<![endif]-->
+            <!--[if lte IE 6]>
+            <table>
+                <tr>
+                    <td><![endif]-->
+            <ul>
+                <li><a href="ports/gatecam.html?loc=HON">Honolulu</a></li>
+                <li><a href="ports/gatecam.html?loc=LAX">Long Beach</a></li>
+                <li><a href="ports/gatecam.html?loc=OAK">Oakland</a></li>
+                <li><a href="ports/gatecam.html?loc=SEA">Seattle</a></li>
+            </ul>
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+        </li>
+        <li><a href="online_services/index.html#edi_services">EDI</a></li>
+    </ul>
+    <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
+</ul>

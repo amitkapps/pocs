@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>Metadata</title>
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+		<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+		<script type="text/javascript" src="../../resource/js/jquery/core/jquery-1.1.4.js"></script>
+		
+		<script type="text/javascript">
+			//******************************
+			//On Document Ready
+			//******************************
+			$(document).ready(function(){
+				
+			});//End Document ready
+			
+			function getData(json, field){
+				data = eval("("+json+")");
+				if(data.hasOwnProperty(field)){
+					return eval("data." + field);
+				}
+				//return eval(this + "." + field);
+			}
+		</script>
+	
+	</head>
+
+	<body>
+		<h1>Advanced Filter</h1>
+		<a href="#" onclick="javascript:$('#filtersGroup').children().attr('filterData', '{column:\'Postal Cd\'}'); alert('updated');return false;">Update Data</a>
+		<form method="post" action="" name="queryFilter">
+			<a href="#" onclick="javascript:$.get('http://localhost:7001/casweb/queryBuilder.do', {method:'validateQuery'}, function(data){alert('response:' + data);});return false;">Validate Query</a>
+			<table cellspacing="80px" valign="top">
+			<tr>
+			<td>
+				<ul>
+					<div id= "viewBuilder" class="groupHeader"><span>-</span>  VIEW BUILDER TREE</div>
+					<ul>
+						<div id="columns" class="groupHeader"><span>-</span>  COLUMNS</div>
+						<ul id="columnsGroup" class="columnsGroup"></ul>
+						<div  id="filters" class="groupHeader"><span>-</span>  FILTERS</div>
+						<ul id="filtersGroup" class="filtersGroup">
+							<div id="filtersState Name" 
+								 class="filtersGroupItem draggable" 
+								 filterData="{column: 'State Name', operator: '=', fieldValue1: 'Arizona'}"
+								 onclick="javascript:alert(getData($(this).attr('filterData'), 'column'))"
+							>State Name</div>
+						</ul>
+						<div id="groups" class="groupHeader"><span>-</span>  GROUPS</div>
+						<ul id="groupsGroup" class="groupsGroup"></ul>
+						<div id="sorts" class="groupHeader"><span>-</span>  SORTS</div>
+						<ul id="sortsGroup" class="sortsGroup"></ul>
+					</ul>
+				</ul>
+			</td>
+			<td align="left" valign="top">
+				<table cellpadding="5px">
+					<tr><td><div class="column">City Name</div></td></tr>
+					<tr><td><div class="column">State Name</div></td></tr>
+					<tr><td><div class="column">Zip Code</div></td></tr>
+					<tr><td><div class="column">Update Date</div></td></tr>
+				</table>
+			</td>
+			</tr>
+			</table>
+			
+		</form>
+		
+	</body>
+</html>

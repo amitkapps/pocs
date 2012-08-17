@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body><br><br><br><br>&nbsp; <br><table width="460" border="1" bgcolor="#ffffff" align="center" height="82" style="" cellspacing="0" cellpadding="4">
+<tbody><tr>
+<td align="left">Group Name</td>
+<td colspan="2"><input type="text" value="CSR @ PHX" name="GroupName"> <br></td></tr>
+<tr><td valign="top" rowspan="1" colspan="3"><br></td></tr><tr>
+<td align="center" rowspan="1">&nbsp;&nbsp;<select multiple="true" size="10" name="Emails">
+<option value="user1@matson.com">user1@matson.com</option>
+<option value="user2@matson.com">user2@matson.com</option>
+</select>
+</td>
+<td valign="top" align="center"><br><br><input type="button" value="&lt;&lt; Add Email" name="AddEmail"><br><br><br><input type="button" value="&gt;&gt; Remove Email" name="Remove"><br> </td><td align="left" valign="top"><br>&nbsp;<br><input type="text" value="user3@matson.com" name="emailId"></td></tr>
+<tr><td valign="top" colspan="3"><br></td></tr><tr>
+<td align="center" colspan="3">&nbsp; <input type="button" value="Save Changes" name="saveChanges"></td>
+</tr>
+</tbody></table></body>
+</html>

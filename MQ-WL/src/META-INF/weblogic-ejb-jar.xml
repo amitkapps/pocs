@@ -1,0 +1,27 @@
+<!DOCTYPE weblogic-ejb-jar PUBLIC '-//BEA Systems, Inc.//DTD WebLogic 8.1.0 EJB//EN' 'http://www.bea.com/servers/wls810/dtd/weblogic-ejb-jar.dtd'>
+
+
+<!-- Generated XML! -->
+
+<weblogic-ejb-jar>
+  <weblogic-enterprise-bean>
+    <ejb-name>SampleMDBBean</ejb-name>
+    <message-driven-descriptor>
+      <pool>
+        <initial-beans-in-free-pool>1</initial-beans-in-free-pool>
+      </pool>
+
+      <destination-jndi-name>MyMDBTopic</destination-jndi-name>
+      <initial-context-factory>com.sun.jndi.fscontext.RefFSContextFactory</initial-context-factory>
+      <provider-url>file:/C:/AmitK/work/project/Learning/EclipseWorkSpace/MQ-WL/env/MQTopic</provider-url>
+      <connection-factory-jndi-name>ReceiverTCF</connection-factory-jndi-name>
+    </message-driven-descriptor>
+
+    <transaction-descriptor>
+      <trans-timeout-seconds>300</trans-timeout-seconds>
+    </transaction-descriptor>
+
+    <jndi-name>SampleMDBBean</jndi-name>
+    <remote-client-timeout>0</remote-client-timeout>
+  </weblogic-enterprise-bean>
+</weblogic-ejb-jar>

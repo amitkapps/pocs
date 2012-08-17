@@ -1,0 +1,8 @@
+<cas-cache xmlns="http://www.matson.com/schema/cas/cache"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.matson.com/schema/cas/cache test.xml.xsd"
+             application-root-node="cas">
+    <default-eviction-config>
+        <no-eviction/>
+    </default-eviction-config>
+</cas-cache>

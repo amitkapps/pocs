@@ -1,0 +1,109 @@
+<project name="VINSightUtils" default="help">
+
+	<!-- This build file was automatically generated at 7:32:04 PM on Sep 25, 2006 by weblogic.BuildXMLGen -->
+
+	<!-- BUILD PROPERTIES ADJUST THESE FOR YOUR ENVIRONMENT -->
+	<property name="tmp.dir" value="./build" />
+	<property name="dist.dir" value="${tmp.dir}/dist"/>
+	<property name="app.name" value="VINSightUtils" />
+	<property name="ear" value="${dist.dir}/${app.name}.ear"/>
+	<property name="ear.exploded" value="${dist.dir}/${app.name}_exploded"/>
+	<property name="verbose" value="true" />
+	<property name="user" value="system" />
+	<property name="password" value="falcon145" />
+	<property name="servername" value="SVR2_145" />
+	<property name="adminurl" value="t3://10.8.7.145:5001" />
+
+	<property name="remote.upload.dir" value="/usr/local/vendor/bea/user_projects/matson/admin/upload/vinsight"/>
+	<property name="remote.ear" value="./vinsight/${app.name}.ear"/>
+	<property name="src.dir" value="source" />
+	<property name="dest.dir" value="${tmp.dir}/${app.name}" />
+
+	<!-- Print's out the project help -->
+	<target name="help">
+		<java fork="no" classname="org.apache.tools.ant.Main">
+			<arg line="-projecthelp"/>
+		</java>
+	</target>
+
+
+
+	<!-- Builds the entire VINSightUtils application -->
+	<target name="build" depends="compile, appc" description="Compiles VINSightUtils application and runs appc"  />
+
+	<!-- Only compiles VINSightUtils application, no appc -->
+	<target name="compile" description="Only compiles VINSightUtils application, no appc">
+		<wlcompile srcdir="${src.dir}" destdir="${dest.dir}" />
+	</target>
+
+	<!-- Runs weblogic.appc on your application -->
+	<target name="appc" description="Runs weblogic.appc on your application">
+		<wlappc source="${dest.dir}" verbose="${verbose}"/>
+	</target>
+
+
+	<!-- Builds just VINSightUtilsWebApp of the application -->
+	<target name="compile.VINSightUtilsWebApp" description="Compiles just the VINSightUtilsWebApp module of the application">
+		<wlcompile srcdir="${src.dir}" destdir="${dest.dir}"
+               includes="VINSightUtilsWebApp" />
+	</target>
+
+
+	<!-- Deploys the entire VINSightUtils application -->
+	<target name="deploy" description="Deploys (and redeploys) the entire VINSightUtils application">
+		<wldeploy  action="deploy" source="${ear}" name="VINSightUtils" 
+             user="${user}" password="${password}"  verbose="true" adminurl="${adminurl}"
+              upload="true" debug="true" targets="${servername}" />
+	</target>
+
+	<!-- UnDeploys the entire VINSightUtils application -->
+	<target name="undeploy" description="UnDeploys the entire VINSightUtils application">
+		<wldeploy action="undeploy" name="VINSightUtils"  user="${user}" password="${password}"
+            verbose="true" adminurl="${adminurl}" />
+	</target>
+
+
+	<!-- Redeploys just VINSightUtilsWebApp of the application -->
+	<target name="redeploy.VINSightUtilsWebApp" description="Redeploys just the VINSightUtilsWebApp module of the application">
+		<wldeploy user="${user}" password="${password}"
+              action="redeploy"  targets="VINSightUtilsWebApp@${servername}"
+              name="VINSightUtils" />
+	</target>
+
+
+	<!-- Generates descriptors for applicaiton and modules 
+    Only required if your application does not have any descriptors.  Only required to run once -->
+	<target name="descriptors" depends="compile" description="Generates application and module descriptors">
+		<ddcreate dir="${dest.dir}" />
+	</target>
+
+	<!-- Package a standard J2EE ear for distribution  -->
+	<target name="ear" depends="build" description="Package a standard J2EE EAR for distribution">
+		<mkdir dir="${dist.dir}"/>
+		<wlpackage srcdir="${src.dir}" destdir="${dest.dir}"
+               toFile="${ear}" />
+	</target>
+
+
+	<!-- Package a standard exploded J2EE ear for distribution  -->
+	<target name="ear.exploded" depends="build" description="Package a standard exploded J2EE EAR">
+		<mkdir dir="${dist.dir}"/>
+		<wlpackage srcdir="${src.dir}" destdir="${dest.dir}"
+               toDir="${ear.exploded}" />
+	</target>
+
+	<target name="ftp.ear" description="Ftp ear to ${remote.upload.dir}">
+		<ftp server="10.8.7.145"  remotedir="${remote.upload.dir}" userid="bea" password="eaGle!">
+			<fileset dir="${dist.dir}">
+                <include name="**/*.ear"/>            
+            </fileset>
+		</ftp>
+	</target>
+
+	<target name="clean" description="Deletes the build and distribution directories">
+		<delete dir="${dest.dir}" />
+		<delete dir="${dist.dir}" />
+	</target>
+
+</project>
+

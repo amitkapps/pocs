@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://preprod.matson.com/" />
+<title>VCSC_Track_By_VIN_TestCase</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">VCSC_Track_By_VIN_TestCase</td></tr>
+</thead><tbody>
+<tr>
+	<td>store</td>
+	<td>JTKDE167380224221</td>
+	<td>pov_track_vin_recently_created_not_exist</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>1B3HB28B57D102977</td>
+	<td>pov_track_vin_received</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>1FMCU03G99KB13212</td>
+	<td>pov_track_vin_ltv</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>3N1CB51DX5L485475</td>
+	<td>pov_track_vin_sailed</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>JTLKE50E291089102</td>
+	<td>pov_track_vin_arrived</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>137FA84334E209898</td>
+	<td>pov_track_vin_available</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>4T1BE32K42U554207</td>
+	<td>pov_track_vin_picked_up</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/vcsc/pov/tracking/tracking.jsp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Tracking</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=vinNumber</td>
+	<td>${pov_track_vin_recently_created_not_exist}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=submitVinNumber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Vehicle not found</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Tracking</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=vinNumber</td>
+	<td>${pov_track_vin_received}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=submitVinNumber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Your vehicle has been received by Matson and is awaiting vessel load</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Tracking</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=vinNumber</td>
+	<td>${pov_track_vin_ltv}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=submitVinNumber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Your vehicle has been loaded to vessel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Tracking</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=vinNumber</td>
+	<td>${pov_track_vin_sailed}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=submitVinNumber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Your vehicle currently is in ocean transit status</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Your estimated available pick-up date is</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Tracking</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=vinNumber</td>
+	<td>${pov_track_vin_arrived}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=submitVinNumber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Your vehicle has arrived</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Tracking</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=vinNumber</td>
+	<td>${pov_track_vin_available}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=submitVinNumber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Your vehicle became available for pick</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Tracking</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=vinNumber</td>
+	<td>${pov_track_vin_picked_up}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=submitVinNumber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Your vehicle was picked up</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

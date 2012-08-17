@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="source/AppUtils"/>
+	<classpathentry kind="src" path="source/VINSightUtilsWebApp/WEB-INF/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="C:/AmitK/Reference/Technical/libraries/jakarta/jakarta-oro-2.0.8/jakarta-oro-2.0.8.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/AmitK/Reference/Technical/libraries/jakarta/commons/commons-net-1.4.1/commons-net-1.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Installs/work/essentials/bea/weblogic81/server/lib/weblogic.jar"/>
+	<classpathentry sourcepath="C:/AmitK/Reference/Technical/libraries/jakarta/jakarta-log4j-1.2.8/src/java" kind="lib" path="source/APP-INF/lib/log4j-1.2.8.jar"/>
+	<classpathentry kind="lib" path="source/APP-INF/lib/commons-beanutils.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

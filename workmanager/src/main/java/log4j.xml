@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+	debug="false">
+	
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%d{dd/MM/yy hh:mm:ss:sss z}] %5p %t %c{2}: %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="CAS_CACHE_LOG_FILE" class="org.apache.log4j.FileAppender">
+	    <param name="File"   value="/home/logs/applogs/cas/${weblogic.Name}_cas_cache.log" />
+	    <param name="Append" value="false" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%d{dd/MM/yy hh:mm:ss:sss z}] %5p %c{2}: %m%n" />
+		</layout>
+	</appender>
+
+	<category name="org.jgroups">
+		<priority value="INFO" />
+		<appender-ref ref="CAS_CACHE_LOG_FILE" />
+	</category>
+
+	<category name="org.jboss">
+		<priority value="INFO" />
+		<appender-ref ref="CAS_CACHE_LOG_FILE" />
+	</category>
+
+
+	<category name="org.springframework">
+		<priority value="INFO" />
+		<appender-ref ref="CAS_CACHE_LOG_FILE" />
+	</category>
+
+	<category name="poc">
+		<priority value="TRACE" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+
+
+</log4j:configuration>

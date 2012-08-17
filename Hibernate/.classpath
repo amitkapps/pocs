@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/java"/>
+	<classpathentry kind="src" path="src/conf"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/hibernate/hibernate-3.2/lib/log4j-1.2.11.jar" sourcepath="C:/AmitK/Reference/Technical/libraries/jakarta/jakarta-log4j-1.2.8/src/java"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/hibernate/hibernate-3.2/lib/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/hibernate/hibernate-3.2/lib/asm.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/hibernate/hibernate-3.2/lib/asm-attrs.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/hibernate/hibernate-3.2/lib/cglib-2.1.3.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/hibernate/hibernate-3.2/lib/commons-collections-2.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/hibernate/hibernate-3.2/lib/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/hibernate/hibernate-3.2/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/hibernate/hibernate-3.2/lib/jta.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/jakarta/commons/commons-lang/commons-lang-2.2/commons-lang-2.2.jar" sourcepath="C:/AmitK/Reference/Technical/libraries/jakarta/commons/commons-lang-2.2/commons-lang-2.2-src/src/java"/>
+	<classpathentry kind="lib" path="C:/AmitK/Installs/work/essentials/bea/weblogic81_wli85/server/lib/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/OpenSymphony/OsCache/OSCache2.1/oscache-2.1.jar" sourcepath="C:/AmitK/Reference/Technical/libraries/OpenSymphony/OsCache/src/core/java"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/hibernate/hibernate-3.2.5/hibernate-3.2/hibernate3.jar" sourcepath="C:/AmitK/Reference/Technical/libraries/hibernate/hibernate-3.2.5/hibernate-3.2/src"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/sourceforge/ehcache/ehcache1.4.1/ehcache-1.4.1/ehcache-1.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/sourceforge/ehcache/ehcache1.4.1/ehcache-1.4.1/lib/backport-util-concurrent-3.0.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/sourceforge/ehcache/ehcache1.4.1/ehcache-1.4.1/lib/jsr107cache-1.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

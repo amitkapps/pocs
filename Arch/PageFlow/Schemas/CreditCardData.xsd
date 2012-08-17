@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://openuri.org/bea/samples/workshop" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ws="http://openuri.org/bea/samples/workshop" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+    <xs:element name="credit-card-data">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="customer" type="ws:customerType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="cardType">
+        <xs:sequence>
+            <xs:element name="available-credit" type="xs:int"/>
+            <xs:element name="credit-used" type="xs:int"/>
+        </xs:sequence>
+        <xs:attribute name="name" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:NMTOKEN">
+                    <xs:enumeration value="MasterCard"/>
+                    <xs:enumeration value="Visa"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="number" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="customerType">
+        <xs:sequence>
+            <xs:element name="card" type="ws:cardType" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+    </xs:complexType>
+</xs:schema>
+
+

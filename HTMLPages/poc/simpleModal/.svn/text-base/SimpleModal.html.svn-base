@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>Simple Modal</title>
+		<style type="text/css">
+			#modalOverlay {
+			  background-color:#000;
+			  cursor:wait;
+			}
+			
+			#modalContainer {
+			  height:400px;
+			  width:600px;
+			  left:50%;
+			  top:15%;
+			  margin-left:-300px; // half the width, to center
+			  background-color:#fff;
+			  border:3px solid #ccc;
+			}
+			
+			#modalContainer a.modalCloseImg {
+			  width:25px;
+			  height:29px;
+			  display:inline;
+			  z-index:3200;
+			  position:absolute;
+			  top:-14px;
+			  left:588px;
+			  cursor:pointer;
+			}	
+		</style>
+<!-- IE 6 hacks -->
+<!--[if lt IE 7]>
+<link type='text/css' href='simpleModal_ie.css' rel='stylesheet' media='screen' />
+<![endif]-->
+		
+		<script type="text/javascript" src="../../resource/js/jquery/core/jquery-1.2.1.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/simpleModal/jquery.simplemodal-1.1.js"></script>
+		<script type="text/javascript">
+		
+			$(document)
+				.ready( function(){
+					$("#simpleModalInvoker")
+						.click(function(){
+							updateFilterCriteria($(this).text());
+						})
+				});
+			
+			function updateFilterCriteria(fieldName){
+				$("#chooseFilterCriteria #filterField").val(fieldName);
+				//alert(element);
+				$("#chooseFilterCriteria").modal({close:false});
+				return false;
+			}
+		</script>
+		
+	</head>
+
+	<body>
+		<form name="f1" id="f1" action="" method="post">
+			
+			<a id="simpleModalInvoker" href="#">Simple Modal</a>
+			
+			<div style="display: none;" id="chooseFilterCriteria">
+				<label>Choose Filter Criteria</label>
+				<input type="button" class="modalClose"/>
+			</div>
+			
+		</form>
+	</body>
+</html>

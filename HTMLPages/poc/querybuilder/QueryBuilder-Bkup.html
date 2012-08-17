@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Tree View</title>
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+		<style media="all" type="text/css">
+			.droppablehover{
+				background: yellow;
+			}
+			.transferEffect {
+				border:1px solid #000000;
+			}
+		</style>
+		<link rel="stylesheet" href="../../resource/js/jquery/plugins/treeview/jquery.treeview.css" type="text/css"></link>
+		<link rel="stylesheet" href="../../resource/js/jquery/plugins/treeview/red-treeview.css" type="text/css"></link>
+		
+		<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+		<script type="text/javascript" src="../../resource/js/jquery/core/jquery-1.1.4.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/iutil.js"></script>	
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/idrag.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/idrop.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/ifxtransfer.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/treeview/jquery.treeview.js"></script>
+
+		<script type="text/javascript">
+		
+			function makeColumnsDraggable(){
+ 				$(".column")
+ 					//Style cols to look like 
+ 					.attr("style", "width: 110px; border: 2px solid black; border-style: outset; background: lightGray; margin: 10px")
+ 					.attr("title", "Draggable column")
+ 					//.wrap("<div class='canDrag'></div>")
+ 					.attr("class","column dragColumn")
+ 					;
+
+				$('.dragColumn').Draggable({
+					zIndex: 	1000,
+					ghosting:	true,
+					opacity: 	0.7,
+					revert: true
+				});
+
+			}
+			
+			function formatQueryTree(){
+				$("#red").treeview({
+					 animated: "fast",
+					 collapsed: false,
+					 unique: false
+				 });
+				 
+			}
+			
+			function makeQueryTreeClauseNodesDroppable(){
+				$("#columns, #filters, #groups, #sorts").each(function(i){
+								colText = $(this).text();
+								$(this).text("")
+									.append("<span class='clauseColumnDrop' title='Drop columns here'>"+ colText +"</span>")
+									.append("<ul></ul>")
+									;
+							});
+							
+				$('.clauseColumnDrop').Droppable({
+					accept: 'dragColumn', //all columns have been set previously as dragColumn
+					hoverclass:	'droppablehover',
+					ondrop:	function(drag){
+						var func = new acceptDraggableToQueryBuilderTree(drag, this);
+						func.invoke();
+					}
+				});
+				
+			}
+			
+			function isDuplicateColAllowed(clauseId){
+				return clauseId=='columns' || clauseId=='groups' || clauseId=='sorts';	
+			}
+			
+			function addColumnToQueryBuilderTreeNode(clauseNode, column){
+				var clauseId = $(clauseNode).parent().attr('id');
+				var clauseIdDropClass = clauseId + "Drop";
+				var clauseIdDragClass = clauseId + "Drag";
+				var isDupAllowed = isDuplicateColAllowed(clauseId);
+				var fields_jquery = $(clauseNode).parent().children('ul');
+				var columnText = $(column).text();
+				//dont add if it already exists
+				matches = 
+					fields_jquery.children()
+						.filter( function(index){
+									return isDupAllowed && ($(this).text() == columnText);			
+								 })
+						.size();
+				
+				if( matches > 0 ){
+					alert('Column "' + columnText + '" already in list.');
+				}else{
+					$(clauseNode).parent().children('ul')
+						.children('li:last').attr('class','first')
+						.end()
+						.append("<li class='last'></li>")
+						.children("li:last")
+						.append("<span>"+ columnText +"</span>")
+						.children()
+						.addClass(clauseIdDropClass + " " + clauseIdDragClass )
+						;
+					
+					$(clauseNode).parent().children('ul').children("li:last > span").Droppable({
+						accept: clauseIdDragClass, //we just set this column as clauseIdDropClass
+						hoverclass:	'droppablehover',
+						ondrop:	function(drag){
+							$(this).before(drag);
+						}
+					});
+
+					$(clauseNode).parent().children('ul').children("li:last > span").Draggable({
+						zIndex: 	1000,
+						ghosting:	true,
+						opacity: 	0.7,
+						revert: true
+					});
+
+				}
+			}
+			
+			//The Drag item will be added under the 
+			//tree node identified by drop
+			function acceptDraggableToQueryBuilderTree(drag, drop){
+				this.drag = drag;
+				this.drop = drop
+				me = this;
+				this.invoke = function(){
+					//this generates the transfer to effect
+					//driven by the transferer1 class
+					$(drag).TransferTo({
+						to:me.drop,
+						className:'transferEffect', 
+						duration: 400,
+						complete: function(){
+							//call back that will be executed after the transfer
+							//effect finishes
+							addColumnToQueryBuilderTreeNode(me.drop, me.drag);
+						}
+					});
+				};
+			}
+			
+		</script>
+
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				
+				makeColumnsDraggable(); 				
+ 				
+				makeQueryTreeClauseNodesDroppable(); 				
+
+ 				formatQueryTree();
+
+			});
+			
+		</script>
+	
+	</head>
+
+	<body>
+		<form method="post" action="filterValidate.do" name="queryFilter">
+			<table cellspacing="80px">
+			<tr>
+			<td>
+				<ul id="red">
+					<li><span>VIEW BUILDER TREE</span>
+						<ul>
+							<li id="columns">COLUMNS</li>
+							<li id="filters">FILTER CRITERIA</li>
+							<li id="groups">GROUP BY</li>
+							<li id="sorts">SORT BY</li>
+						</ul>
+					</li>
+				</ul>
+			</td>
+			<td align="left" valign="top">
+				<table cellpadding="5px">
+					<tr><td><span class="column">City Name</span></td></tr>
+					<tr><td><span class="column">State Name</span></td></tr>
+					<tr><td><span class="column">Zip Code</span></td></tr>
+					<tr><td><span class="column">Update Date</span></td></tr>
+				</table>
+			</td>
+			</tr>
+			</table>
+			
+		</form>
+	</body>
+</html>

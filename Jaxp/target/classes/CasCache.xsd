@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<xsd:schema xmlns="http://www.matson.com/schema/cas/cache"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		targetNamespace="http://www.matson.com/schema/cas/cache">
+
+    <xsd:element name="cas-cache">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="root-cache-node" minOccurs="1" maxOccurs="1"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="root-cache-node">
+       	<xsd:annotation>
+       		<xsd:documentation>
+       			The node for the application under which its cache regions will be
+       			created.
+       		</xsd:documentation>
+       	</xsd:annotation>
+        <xsd:complexType>
+        	<xsd:sequence>
+	            <xsd:element  ref="cache-region" minOccurs="0" maxOccurs="unbounded"/>
+        	</xsd:sequence>
+            <xsd:attribute name="name" use="required">
+            	<xsd:annotation>
+            		<xsd:documentation>
+            			A unique name across the cluster of servers where the application is deployed.
+            		</xsd:documentation>
+            	</xsd:annotation>
+           	    <xsd:simpleType>
+   					<xsd:restriction base="xsd:string">
+   						<xsd:pattern value="[^ /]+"></xsd:pattern>
+   					</xsd:restriction>
+   				</xsd:simpleType>
+            </xsd:attribute>
+        </xsd:complexType>
+    	<xsd:unique name="uniqueRegionName">
+    		<xsd:selector xpath="region"/>
+    		<xsd:field xpath="@name"/>
+    	</xsd:unique>
+    </xsd:element>
+
+    <xsd:element name="cache-region">
+        <xsd:annotation>
+        	<xsd:documentation>
+        		A cache region which can have its own configurations for
+        		max limits, eviction policy etc.
+        	</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+    		<xsd:attribute name="name" use="required">
+    			<xsd:annotation>
+    				<xsd:documentation>
+    					Name for the region, should be a unique name
+    					under the root-node.Not allowed to use a "/" as part of the region name.
+    					"/" has a special meaning.Region configurations under a region with name 'template'
+    					is used as the default configuration for all the regions that are not specified in
+    					this configuration file. It can work as a blanket configuration for all regions.
+    				</xsd:documentation>
+    			</xsd:annotation>
+           	    <xsd:simpleType>
+   					<xsd:restriction base="xsd:string">
+   						<xsd:pattern value="[^ /]+"></xsd:pattern>
+   					</xsd:restriction>
+   				</xsd:simpleType>
+    		</xsd:attribute>
+   			<xsd:attribute name="eviction-algorithm" use="optional">
+   				<xsd:annotation>
+   					<xsd:documentation>
+   						Algorithm to be used for eviction. Only LRU for now.
+   					</xsd:documentation>
+   				</xsd:annotation>
+   				<xsd:simpleType>
+   					<xsd:restriction base="xsd:string">
+   						<xsd:enumeration value="LRU">
+   							<xsd:annotation>
+   								<xsd:documentation>
+   									Least Recently Used Algorithm.
+   								</xsd:documentation>
+   							</xsd:annotation>
+   						</xsd:enumeration>
+
+   					</xsd:restriction>
+   				</xsd:simpleType>
+   			</xsd:attribute>
+   			<xsd:attribute name="max-elements" default="100" use="optional">
+   				<xsd:annotation>
+   					<xsd:documentation>
+   						maximum number of elements allowed under
+   						this cache region. If the cache region has a
+   						number of elements greater than this
+   						configured value, the elements will be
+   						evicted based on the configured Eviction
+   						Algorithm.
+   					</xsd:documentation>
+   				</xsd:annotation>
+   				<xsd:simpleType>
+   					<xsd:restriction base="xsd:nonNegativeInteger">
+   						<xsd:pattern value="\d+"></xsd:pattern>
+   					</xsd:restriction>
+   				</xsd:simpleType>
+   			</xsd:attribute>
+   			<xsd:attribute name="time-to-idle-secs" default="300" type="xsd:nonNegativeInteger">
+   				<xsd:annotation>
+   					<xsd:documentation>
+   						Maximum time after which if an element has
+   						not been accessed will be evicted. 0 means it can idle any amount of time without being evicted.
+   						The eviction can still occur due to other configuration params e.g. max-age-secs/max-elements.
+   					</xsd:documentation>
+   				</xsd:annotation>
+   			</xsd:attribute>
+   			<xsd:attribute name="max-age-secs" default="600" type="xsd:nonNegativeInteger">
+   				<xsd:annotation>
+   					<xsd:documentation>
+   						Time since create/update of the element
+   						after which it will be evicted. 0 means it can age any amount of time without being evicted.
+   						The eviction can still occur due to other configuration params e.g. time-to-idle-secs/max-elements.
+   					</xsd:documentation>
+   				</xsd:annotation>
+   			</xsd:attribute>
+    	</xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:batch="http://www.springframework.org/schema/batch"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-2.0.xsd">
+
+
+	<bean id="fileReader" class="org.springframework.batch.item.file.FlatFileItemReader">
+
+		<property name="lineMapper">
+			<bean id="lineMapper"
+				class="org.springframework.batch.item.file.mapping.PatternMatchingCompositeLineMapper">
+				<property name="tokenizers">
+					<map>
+						<entry key="HDR*" value-ref="asnHdrTokenizer" />
+						<entry key="VEH*" value-ref="asnVehTokenizer" />
+					</map>
+				</property>
+				<property name="fieldSetMappers">
+					<map>
+						<entry key="*" value-ref="fieldSetMapper" />
+					</map>
+				</property>
+			</bean>
+
+		</property>
+		<property name="resource" value="src/main/resources/ASN.txt"></property>
+	</bean>
+	<bean id="fieldSetMapper"
+		class="org.springframework.batch.item.file.mapping.PassThroughFieldSetMapper">
+	</bean>
+	<bean id="asnHdrTokenizer"
+		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
+		<property name="columns" value="1-3, 4-6, 7-9"></property>
+		<property name="names" value="recordType,fileType,totalCount"></property>
+		<property name="strict" value="false"></property>
+	</bean>
+
+	<bean id="asnVehTokenizer"
+		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
+		<property name="columns" value="1-3, 4-13, 14-16, 17-23"></property>
+		<property name="names" value="recordType, vin,make,model"></property>
+		<property name="strict" value="false"></property>
+	</bean>
+
+	<bean id="customEditorConfigurer"
+		class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+				<entry key="int[]">
+					<bean class="org.springframework.batch.support.IntArrayPropertyEditor" />
+				</entry>
+				<entry key="org.springframework.batch.item.file.transform.Range[]">
+					<bean
+						class="org.springframework.batch.item.file.transform.RangeArrayPropertyEditor" />
+				</entry>
+				<entry key="java.util.Date">
+					<bean class="org.springframework.beans.propertyeditors.CustomDateEditor">
+						<constructor-arg>
+							<bean class="java.text.SimpleDateFormat">
+								<constructor-arg value="yyyyMMdd" />
+							</bean>
+						</constructor-arg>
+						<constructor-arg value="false" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+</beans>

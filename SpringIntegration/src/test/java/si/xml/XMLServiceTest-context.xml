@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:int="http://www.springframework.org/schema/integration"
+       xmlns:int-xml="http://www.springframework.org/schema/integration/xml"
+       xmlns:oxm="http://www.springframework.org/schema/oxm"
+       xmlns:int-jms="http://www.springframework.org/schema/integration/jms"
+       xmlns:int-stream="http://www.springframework.org/schema/integration/stream"
+       xmlns:int-jdbc="http://www.springframework.org/schema/integration/jdbc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:int-mail="http://www.springframework.org/schema/integration/mail"
+       xmlns:task="http://www.springframework.org/schema/task" xmlns:jms="http://www.springframework.org/schema/jms"
+       xsi:schemaLocation="http://www.springframework.org/schema/integration/xml http://www.springframework.org/schema/integration/xml/spring-integration-xml-2.0.xsd
+		http://www.springframework.org/schema/integration/mail http://www.springframework.org/schema/integration/mail/spring-integration-mail-2.0.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-2.0.xsd
+		http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+		http://www.springframework.org/schema/integration/jms http://www.springframework.org/schema/integration/jms/spring-integration-jms-2.0.xsd
+		http://www.springframework.org/schema/integration/stream http://www.springframework.org/schema/integration/stream/spring-integration-stream-2.0.xsd
+		http://www.springframework.org/schema/integration/jdbc http://www.springframework.org/schema/integration/jdbc/spring-integration-jdbc-2.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.0.xsd">
+
+    <context:component-scan base-package="si.extension"/>
+    <context:component-scan base-package="si.services"/>
+    <context:component-scan base-package="si.xml"/>
+
+    <context:annotation-config/>
+    <int:annotation-config/>
+
+    <import resource="classpath:db-config.xml"/>
+    <import resource="classpath:jms-config.xml"/>
+    <!--<import resource="classpath:test-data-config.xml"/>-->
+
+    <!--Orders xml received by this listener container -->
+    <int-jms:message-driven-channel-adapter id="xmlInputJms" channel="ordersMessage"
+                                            destination-name="jms.queue.poc.ordersystem"
+                                            destination-resolver="destinationResolver"
+                                            pub-sub-domain="false" connection-factory="connectionFactory"
+                                            concurrent-consumers="1"
+                                            transaction-manager="transactionManager" acknowledge="client"
+            />
+
+
+    <int:channel id="ordersMessage"/>
+
+    <int:header-enricher input-channel="ordersMessage" output-channel="headerEnrichedOrdersMessage">
+        <int:header name="ordersMessageId" ref="ordersMessageIdGenerator" method="getNextMessageId"/>
+    </int:header-enricher>
+
+    <int:channel id="headerEnrichedOrdersMessage"/>
+
+    <!--Orders splitted to individual fragments of order each -->
+    <!--
+        <int-xml:xpath-splitter input-channel="headerEnrichedOrdersMessage" output-channel="orders" create-documents="false">
+            <int-xml:xpath-expression expression="/orders/order"/>
+        </int-xml:xpath-splitter>
+    -->
+    <!--
+        <bean id="xpathSplitterWithTailMessage" class="org.springframework.integration.xml.splitter.XPathMessageSplitter">
+            <constructor-arg type="org.springframework.xml.xpath.XPathExpression" ref="ordersSplitExpression"/>
+            <property name=""
+            <property name="outputChannel" ref="headerEnrichedOrdersMessage"/>
+        </bean>
+        <int-xml:xpath-expression id="ordersSplitExpression" expression="/orders/order"/>
+    -->
+    <int:splitter id="xpathSplitterWithCustomTailMessage" input-channel="headerEnrichedOrdersMessage"
+                  method="splitAndAppendTailMessage" output-channel="orders">
+        <bean class="si.extension.XPathSplitterWithCustomTailMessageAppender">
+            <constructor-arg type="java.lang.String" value="/orders/order"/>
+        </bean>
+    </int:splitter>
+
+    <int:channel id="orders">
+        <!--message-store="ordersJdbcMessageStore"-->
+        <int:queue capacity="1"/>
+    </int:channel>
+
+    <int-jdbc:message-store id="ordersJdbcMessageStore" data-source="dataSource" region="ORDERS"/>
+
+
+    <int:bridge input-channel="orders" output-channel="errorHandlingGatewayChannel">
+        <int:poller fixed-delay="5000" max-messages-per-poll="1" task-executor="taskExecutor">
+            <int:transactional propagation="REQUIRES_NEW" transaction-manager="transactionManager"/>
+        </int:poller>
+    </int:bridge>
+    <task:executor id="taskExecutor" pool-size="10"/>
+
+    <int:channel id="errorHandlingGatewayChannel"/>
+
+    <int:service-activator input-channel="errorHandlingGatewayChannel" ref="errorHandlingGateway"
+                           output-channel="ordersInvoiced"/>
+    <int:gateway id="errorHandlingGateway"
+                 error-channel="orderError"
+                 default-reply-timeout="0"
+                 default-request-channel="ordersForInvoicing"
+                 service-interface="si.services.TransactionGateway"
+            />
+
+
+    <int:channel id="ordersForInvoicing"/>
+
+    <int-xml:xpath-header-enricher id="orderIdEnricher"
+                                   input-channel="ordersForInvoicing" output-channel="orderIdEnriched">
+        <int-xml:header name="orderId" xpath-expression="//@id"/>
+    </int-xml:xpath-header-enricher>
+
+    <int:channel id="orderIdEnriched"/>
+
+    <int:service-activator id="orderInvoicingService" input-channel="orderIdEnriched"
+                           ref="orderInvoiceService" method="invoice"
+                           output-channel="ordersInvoiced"/>
+
+    <int:channel id="ordersInvoiced"/>
+
+    <int:service-activator id="orderLicensingService" input-channel="ordersInvoiced"
+                           ref="orderLicenseService" method="license"
+                           output-channel="ordersLicensed"/>
+
+    <int:channel id="ordersLicensed"/>
+
+    <int:channel id="orderError"/>
+
+    <int:bridge input-channel="ordersLicensed" output-channel="ordersFinished"/>
+
+    <int:transformer input-channel="orderError" output-channel="ordersFinished"
+                     expression="payload.failedMessage"/>
+
+    <int:channel id="ordersFinished"/>
+
+    <!--
+                        correlation-strategy="ordersCorrelator" correlation-strategy-method="correlate"
+                        release-strategy="ordersReleaseStrategy" release-strategy-method="releaseChecker"
+
+    -->
+
+    <int:aggregator id="ordersAggregator" input-channel="ordersFinished"
+                    correlation-strategy="ordersCorrelator" correlation-strategy-method="correlate"
+                    output-channel="ordersFinishedOutput"
+                    ref="ordersMessageAggregator" method="aggregate"
+            />
+
+    <!--<int:bridge input-channel="ordersFinished" output-channel="ordersFinishedOutput"/>-->
+
+    <bean id="ordersFinishedOutput" class="si.extension.LoggingMessageNullChannel"/>
+    <!--<bean id="ordersFinished" class="si.extension.LoggingMessageNullChannel"/>-->
+
+    <!--
+        <int-stream:stdout-channel-adapter id="ordersInvoicedLogger" channel="ordersInvoiced" append-newline="true" auto-startup="true"/>
+        <int-stream:stderr-channel-adapter id="orderErrorLogger" channel="orderError" append-newline="true" auto-startup="true"/>
+    -->
+</beans>

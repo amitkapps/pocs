@@ -1,0 +1,67 @@
+8
+
+dir
+7
+file:///C:/AmitK/work/LocalSVNRepositories/LearningRep/HTMLPages/poc
+file:///C:/AmitK/work/LocalSVNRepositories/LearningRep
+
+
+
+2008-01-20T10:46:27.752356Z
+7
+axk
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+cef59cfc-71cf-0940-ae69-28c195c84059
+
+jquery
+dir
+
+tree
+dir
+
+metadata
+dir
+
+sample
+dir
+
+dragdrop
+dir
+
+livequery
+dir
+
+simpleModal
+dir
+
+jqModal
+dir
+
+css
+dir
+
+contextMenu
+dir
+
+genJQuery
+dir
+
+dragDropSort
+dir
+
+querybuilder
+dir
+

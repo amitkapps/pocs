@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FlexJson/FlexJson.iml" filepath="$PROJECT_DIR$/FlexJson/FlexJson.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jqGrid.iml" filepath="$PROJECT_DIR$/jqGrid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webapp/webapp.iml" filepath="$PROJECT_DIR$/webapp/webapp.iml" />
+    </modules>
+  </component>
+</project>
+

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="CasAuthenticator">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../../../Reference/Projects/cas-WL10G/CasSpringSecurity/src" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib" recursive="false" />
+  </library>
+</component>

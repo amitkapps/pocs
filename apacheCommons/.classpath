@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/jakarta/commons/commons-logging/commons-logging-1.1.1/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/jakarta/commons/commons-collections-3.1/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/jakarta/commons/commons-net-1.4.1/commons-net-1.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/jakarta/jakarta-oro-2.0.8/jakarta-oro-2.0.8.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/jakarta/commons/commons-httpclient-3.1/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/jsch/jsch-0.1.41/dist/lib/jsch-0.1.41.jar" sourcepath="/Jsch/src"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/jakarta/commons/commons-vfs-1.0/commons-vfs-1.0.jar" sourcepath="C:/AmitK/Reference/Technical/libraries/jakarta/commons/commons-vfs-1.0/commons-vfs-1.0-src/core/src/main/java"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

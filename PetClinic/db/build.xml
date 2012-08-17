@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<project name="setupDB" basedir="." default="initializeDB">
+	<property name="db.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+	<property name="db.url" value="jdbc:derby:/Users/jmoore/src/i21-sandbox/people/jmoore/Projects/PetClinic_simplified/db/PetClinic;create=true"/>
+	<property name="db.dir" value="."/>
+	<property name="db.user" value=""/>
+	<property name="db.pw" value=""/>
+
+	<target name="initializeDB" >
+		<echo message="Initializing database with: ${db.driver} ${db.url}" />
+		<sql driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.pw}">
+			<classpath>
+				<fileset dir="../lib">
+					<include name="derby-10.3.2.1.jar" />
+				</fileset>
+			</classpath>
+			<transaction src="${db.dir}/init.sql" />
+		</sql>
+	</target>
+
+</project>

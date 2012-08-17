@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="TestWicketApp/WEB-INF/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="TestWicketApp/WEB-INF/lib/wicket-1.3.5.jar" sourcepath="C:/AmitK/Reference/Technical/libraries/apache/Wicket/apache-wicket-1.3.5/src/jdk-1.4/wicket/src/main/java"/>
+	<classpathentry kind="output" path="TestWicketApp/WEB-INF/classes"/>
+</classpath>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?><component name="dataSourceStorage">
+  <data-source source="LOCAL" name="wljdbcc@idb2" product="DB2" version="DSN08015" uuid="d8999c48-bd84-45b2-84f2-9a9030f42344">
+    <jdbc-driver>com.ibm.db2.jcc.DB2Driver</jdbc-driver>
+    <jdbc-url>jdbc:db2://10.200.2.3:446/MATSFDB2T</jdbc-url>
+    <user-name>WLJDBCC</user-name>
+    <user-password>dffedfefdff9dffedf93df93</user-password>
+    <libraries>
+      <library>
+        <url>jar://$PROJECT_DIR$/../../../../../Reference/Technical/libraries/database/db2/drivers/2010/db2jcc.jar!/</url>
+      </library>
+      <library>
+        <url>jar://$PROJECT_DIR$/../../../../../Reference/Technical/libraries/database/db2/drivers/2010/db2jcc_license_cisuz.jar!/</url>
+      </library>
+    </libraries>
+  </data-source>
+</component>

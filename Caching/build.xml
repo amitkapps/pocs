@@ -1,0 +1,38 @@
+<project basedir="." default="all" name="JBossCacheServlet">
+
+	<property file="build.properties" />	
+	<path id="project.libs">
+			<fileset includes="**/*.jar" dir="${cas.clusterd.cache.lib.dir}" />
+			<pathelement location="${weblogic.jar.file}" />
+	</path>
+	
+	<target name="init" description="Initialises the build environment">
+		<property name="project.webapp" value="${basedir}/ClusteredCacheWebApp" />
+		<property name="project.src" value="${project.webapp}/src" />
+	</target>
+	
+	<target name="clean" description="Cleans the build environment" depends="init">
+		<delete file="${project.war}" />
+	</target>
+	
+	<target name="prepare" description="Prepares the build environment" depends="clean">
+	</target>
+	
+	<target name="build" description="Builds the sourcecode" depends="prepare">
+	</target>
+	
+	<target name="package" description="packages the webapp" depends="build">
+
+		<war 
+			destfile="${project.war}" 
+			basedir="${project.webapp}" 
+			compress="false"
+			webxml="${project.webapp}/WEB-INF/web.xml">
+		</war>
+		
+	</target>
+	
+	<target name="all" description="Default build target" depends="package">
+		<echo>WAR creation complete</echo>
+	</target>
+</project>

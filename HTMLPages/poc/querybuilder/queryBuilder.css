@@ -1,0 +1,122 @@
+/*styles used by query builder*/
+body{
+	background-color: #EFEFEF;
+	overflow: hidden;
+	max-height: 100%;
+	font-family: inherit;
+}
+
+#mainContent{
+	overflow: auto;
+	height: 80%;
+}
+
+td{
+	vertical-align: top;
+}
+
+.sortAscending{
+	display:block;
+	padding-left: 20px;
+	background-image:url(../../resource/img/sortAscending.gif);
+	background-repeat:no-repeat;
+}
+.sortDescending{
+	display:block;
+	padding-left: 20px;
+	background-image:url(../../resource/img/sortDescending.gif);
+	background-repeat:no-repeat;
+}
+
+.columnList{
+	height: 300px; 
+	overflow-y: scroll;
+	border: 1px solid silver;
+}
+.column{
+	width: 110px; 
+	/*border: 1px solid #523810;*/ 
+	/*border-style: outset;*/
+	border-right: 1px solid #523810;
+	border-bottom: 1px solid #523810;
+	background-color: #FFCF63; /*lightGray*/
+	color: maroon;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1em;
+	margin: 5px
+}
+h1{
+	background-color: #B5B6B5; /*#BDCBEF*/
+	border-bottom-color: black;
+	border-bottom: solid 2px #333333;
+	color: black;
+}
+#filterCriteriaModal table td{
+	padding: 12px;
+	text-align: center;
+}
+#filterCriteriaModal #validationErrorDetail.errorMessage{
+	color: red;
+	text-align: center;
+}
+
+.filterExprError{
+	display:block;
+	padding-left: 20px;
+	background-image:url(../../resource/img/warning_small.gif);
+	background-repeat:no-repeat;
+}
+#filtersGroup .selected{
+	background-color: #B5B6B5;
+}
+.filterConjunction, .filterClause, .filterBracket{
+	cursor: default;
+}
+#filterCriteriaModal table td table td{
+	padding: 0px;
+}
+
+#filterCriteriaModal input.validationError{
+	border: thin solid red;
+}
+#viewDefintionFrame{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 20%;
+	width: 100%;
+	overflow: auto;
+	background: white;
+	color: blue;
+	border-top: thin;
+	border-top-color: silver;
+	border-top-style: inset;
+}
+#viewDefintionFrame #viewDefinitionHeader{
+	color: black;
+	background-color: #B5B6B5; /*#BDCBEF*/
+	border-bottom: solid 1px #333333;
+	padding-left: 4px;
+	font-size: medium;
+	font-weight: bold;
+	height: 1.2em;
+	cursor: pointer;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+#viewDefintionFrame .viewDefinitionLabel{
+	color: maroon;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: silver; /*#BDCBEF*/
+	border-bottom: 1px solid #333333;
+	border-right: 1px solid #333333;
+	float: left;
+	width: 7em;
+}
+#viewDefintionFrame .viewDefinitionItem{
+	margin-bottom: 11px;
+	/*border: 1pz solid #EFEFEF;*/
+	background: #EFEFEF;
+}

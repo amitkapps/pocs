@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="VINSightAdministration/adminwebapp/WEB-INF/src"/>
+	<classpathentry kind="src" path="VINSightAdministration/EJBModules"/>
+	<classpathentry kind="src" path="VINSightAdministration/VINSightAdminCore"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="VINSightAdministration/bin"/>
+</classpath>

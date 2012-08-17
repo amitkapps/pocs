@@ -1,0 +1,6 @@
+Booking#,Booking Agent,Vvd,Equipment Requested,Equipment Released,EIR#,EIR Status,Equipment User,Pickup Location,Issued Date
+2208203,SHANGHAI FORWARDER,MWI042E,D45H,D45H,32,ISSUED,中大-德威国际货运有限公司,上海江海国际集装箱货运公司,7/16/2008
+2208203,SHANGHAI FORWARDER,MWI042E,D45H,D45H,33,ISSUED,上港集团物流有限公司,上海珉钧集装箱服务有限公司,7/16/2008
+2208203,SHANGHAI FORWARDER,MWI042E,D45H,D45H,34,ISSUED,上港集团物流有限公司,上海珉钧集装箱服务有限公司,7/16/2008
+上海华洋货运有限公司
+上海亚太国际集装箱储运有限公司

@@ -1,0 +1,17 @@
+<ivy-module version="2.0">
+    <info organisation="org.apache" module="hello-ivy"/>
+    <configurations>
+        <conf name="test" visibility="public" />
+        <conf name="compile" visibility="public" />
+    </configurations>
+    <publications>
+        <artifact name="${project.name}" type="jar"  conf="compile" ext="jar"/>
+        <artifact name="${project.name}-test" type="jar"  conf="test" ext="jar"/>
+    </publications>
+    <dependencies>
+        <!-- COMPILE  -->
+        <dependency org="log4j" name="log4j" rev="1.2.14" conf="compile->*"/>
+        <dependency org="jsch" name="jsch" rev="0.1.29" conf="test->*"/>
+        <!-- TEST -->
+    </dependencies>
+</ivy-module>

@@ -1,0 +1,26 @@
+<cas-cache xmlns="http://www.matson.com/schema/cas/cache"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.matson.com/schema/cas/cache test.xml.xsd"
+    application-root-node="CAS">
+
+    <cache-mode>
+        <cluster/>
+    </cache-mode>
+    
+    <default-eviction-config>
+        <lru-eviction min-time-to-live-secs="15"
+                      max-time-to-live-secs="900"
+                      max-node-count="1000"/>
+    </default-eviction-config>
+
+    <region node-name="search">
+        <eviction-config>
+            <no-eviction/>
+        </eviction-config>
+    </region>
+    <region node-name="report">
+        <eviction-config>
+            <no-eviction/>
+        </eviction-config>
+    </region>
+</cas-cache>

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<link rel="stylesheet" type="text/css" href="./static/css/default.css"/>
+		<title>DEV Enable Servlet</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript">
+			function callServlet() {
+			  for (var i=0; i < document.forms['enable'].server.length; i++) {
+			    if (document.forms['enable'].server[i].selected) {
+			      document.forms['enable'].action = 'http://' + document.forms['enable'].server[i].value + '/AMISPollerStartupServlet/servlets/enable/VINServlet';
+			      break;
+			    }
+			  }
+			}
+		</script>
+	</head>
+	<body>
+		<div id="container"><div align="center"> 
+			</div><h2 align="left"> 
+				DEV VINSight Enabler&nbsp; 
+			</h2>
+			
+			<form name="enable" method="post"
+				action="/AMISPollerStartupServlet/servlets/enable/VINServlet"
+				onsubmit="javascript:callServlet();">
+				<input type="hidden" name="qKey" value="3760565290974525751" />
+				<label for="server">
+					<span class="required">*</span> &nbsp;Server:
+				</label>
+				<br />
+				<select size="1" id="server" name="server">
+					<option selected="selected" value="localhost:7001">
+						Local Machine
+					</option>
+					<option value="10.8.7.145:9001">
+						PHX Development
+					</option>
+					<option value="10.8.7.46:9001">
+						CSC Development
+					</option>
+					<option value="10.201.0.6:9001">
+						CSC QA
+					</option>
+					<option value="10.201.2.7:9001">
+						CSC Pre-production
+					</option>
+				</select>
+				<br /><br />
+				<label for="environment">
+					<span class="required">*</span> &nbsp;Environment:
+				</label>
+				<br />
+				<select size="1" id="environment" name="environment">
+					<option selected="selected" value="jdbc/vinsDS">
+						VINsight
+					</option>
+					<option value="jdbc/mfDS">
+						Mainframe
+					</option>
+					<option value="t3://localhost:9001">
+						Message Queue
+					</option>
+					<option value="t3://localhost:7001">
+						Local Message Queue
+					</option>
+				</select>
+				<br /><br />
+				<label for="qType">
+					<span class="required">*</span> &nbsp;Type:
+				</label>
+				<br />
+				<input type="radio" name="qType" id="query" value="Q" />
+				<label for="query">Query</label><br />
+				<input type="radio" name="qType" id="update" value="U" />
+				<label for="update">Update</label><br />
+				<input type="radio" name="qType" id="mesg" value="M" />
+				<label for="mesg">Message</label><br />
+				<br />
+				<input type="checkbox" name="qSep" id="tabChar" value="T" />
+				<label for="tabChar">Use tab instead of comma seperator?</label><br />
+				<br />
+				<input type="checkbox" name="qCommit" id="commit" value="Y" />
+				<label for="commit">Commit?</label><br />
+				<br />
+				<label for="qText"><span class="required">*</span> &nbsp;Text:</label><br />
+				<textarea cols="75" rows="10"  id="textareainput" name="qText" class="textarea"></textarea>
+				<br />
+				<br />
+				<input type="submit" value="Submit" class="buttonSubmit" />
+				<input type="reset" value="Reset" class="buttonSubmit" />
+				<div id="stylesheetTest"></div>
+			</form>
+		</div>
+	</body>
+</html>

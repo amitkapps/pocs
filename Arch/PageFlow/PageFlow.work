@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<application>
+  <option name="excludedirs" value="cvs;sccs;rcs;" />
+  <option name="excludefiles" value="\..*|.*\.[0-9]+|wlw_[0-9]+\..*" />
+  <option name="excludefilesFromEar" value="[default]" />
+  <option name="name" value="PageFlow" />
+  <option name="version" value="1" />
+  <projects>
+    <project name="CreditCardReport_JPFTutorial">
+      <option name="project.path" value="./CreditCardReport_JPFTutorial" />
+      <option name="type" value="urn:com-bea-ide:project.type:WebApp" />
+    </project>
+    <project name="InvestigateJavaControl">
+      <option name="project.path" value="./InvestigateJavaControl" />
+      <option name="type" value="urn:com-bea-ide:project.type:Control" />
+    </project>
+    <project name="InvestigateWebService">
+      <option name="project.path" value="./InvestigateWebService" />
+      <option name="type" value="urn:com-bea-ide:project.type:WebApp" />
+    </project>
+    <project name="PageFlowTutorialWeb">
+      <option name="project.path" value="./PageFlowTutorialWeb" />
+      <option name="type" value="urn:com-bea-ide:project.type:WebApp" />
+    </project>
+    <project name="Read_Me">
+      <option name="project.path" value="./Read_Me" />
+      <option name="type" value="urn:com-bea-ide:project.type:Control" />
+    </project>
+    <project name="Schemas">
+      <option name="project.path" value="./Schemas" />
+      <option name="type" value="urn:com-bea-ide:project.type:Schema" />
+      <components>
+        <component name="workshop.workspace.project.build.SchemaBuilderPrefs" />
+      </components>
+    </project>
+  </projects>
+  <node name="roles" />
+</application>
+

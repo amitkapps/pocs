@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<XMLTransmission Sender="SNDR" Receiver="RCVR" Timestamp="20060210 000001" CtrlNumber="00001">
+    <XMLGroup CtrlNumber="00001" GroupType="OR" IncludedMessages="1">
+        <XMLTransaction CtrlNumber="00001" TransactionType="ORGREL">
+            <Organization>
+                <OrganizationID>CUST_ABC</OrganizationID>
+                <OrganizationName>ABC Corporation</OrganizationName>
+                <ParentOrgID>CUST</ParentOrgID>
+                <Responsible>
+                    <TradePartner>
+                        <TradePartnerName>ACME</TradePartnerName>
+                        <TradePartnerID Qualifier="ZZ">12345</TradePartnerID>
+                        <TradePartnerAddress>
+                            <Street>101 MAIN ST</Street>
+                            <City>CARY</City>
+                            <StateProvinceCd>NC</StateProvinceCd>
+                            <PostalCd>27513</PostalCd>
+                            <CountryCd>USA</CountryCd>
+                        </TradePartnerAddress>
+                    </TradePartner>
+                </Responsible>
+                <Access ActionCd="ADD">
+                    <TradePartner>
+                        <TradePartnerName>ACME</TradePartnerName>
+                        <TradePartnerID Qualifier="ZZ">12345</TradePartnerID>
+                    </TradePartner>
+                </Access>
+                <AppUser DisabledFlag="N" ExpirationDate="20060510 000000">
+                    <UserID>SALLYSMITH</UserID>
+                    <FirstName>Sally</FirstName>
+                    <LastName>Smith</LastName>
+                    <RoleID>GOLD</RoleID>
+                    <Password>lCFTm5YP5sQBMOFnkrLb</Password>
+                    <Company>My Shipping Company</Company>
+                    <Citizenship>US</Citizenship>
+                    <PhoneNumber>919-555-1234</PhoneNumber>
+                    <EmailAddress>SallySmith@MyShippingCo.com</EmailAddress>
+                    <UserAddress>
+                        <Street>101 MAIN ST</Street>
+                        <City>CARY</City>
+                        <StateProvinceCd>NC</StateProvinceCd>
+                        <PostalCd>27513</PostalCd>
+                        <CountryCd>USA</CountryCd>
+                    </UserAddress>
+                    <DisplayPreference ActionCd="DELETE" PrefTypeCd="DTZ"/>
+                </AppUser>
+                <AppUser ExpirationDate="20060510 000000">
+                    <UserID>JOHNJONES</UserID>
+                    <FirstName>John</FirstName>
+                    <LastName>Jones</LastName>
+                    <RoleID>PLATINUM</RoleID>
+                    <Company>My Shipping Company</Company>
+                    <PhoneNumber>919-555-1234</PhoneNumber>
+                    <DisplayPreference ActionCd="ADD" PrefTypeCd="TZ">LTE</DisplayPreference>
+                </AppUser>
+            </Organization>
+        </XMLTransaction>
+    </XMLGroup>
+</XMLTransmission>

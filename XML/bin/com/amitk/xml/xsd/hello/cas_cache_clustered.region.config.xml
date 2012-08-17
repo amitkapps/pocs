@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<cas-cache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xsi:noNamespaceSchemaLocation="CasCache.xsd"
+>
+	<root-node name="CAS-Cache-Clst-Sample">
+		<region name="default" 
+				eviction-algorithm="LRU"
+				max-age-secs="600"
+				max-elements="100"
+				time-to-idle-secs="300"
+		/>
+	</root-node>
+</cas-cache>

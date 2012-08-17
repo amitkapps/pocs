@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Query Builder Page</title>
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+		<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+		<script type="text/javascript" src="../../resource/js/jquery/core/jquery-1.2.1.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/datepicker/date.js"></script>
+		<style type="text/css">@import url(../../resource/js/jquery/plugins/datepicker/datePicker.css);</style> 
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/datepicker/jquery.datePicker.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/flydom/jquery.flydom-3.1.1.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+					$('#fieldValue1, #fieldValue2').datePicker();
+					//$('#fieldValue2').dpSetDisabled(true);
+					$('#fieldValue2').hide();
+					$('a.dp-choose-date').hide();
+				});
+		</script>
+		<script type="text/javascript">
+			function chkAndDisableFieldValues(){
+				//only enable fieldValue2 for operator BETWEEN
+				if( $("#operator").val() == 'BETWEEN'){
+					$("#fieldValue1, #fieldValue2").dpSetDisabled(false);
+					$('#fieldValue1, #fieldValue2').show();
+				} else if(    ( $("#operator").val() == 'IS NULL')
+						   || ( $("#operator").val() == 'IS NOT NULL')
+				         ){
+					$("#fieldValue1, #fieldValue2").dpSetDisabled(true);
+					$("#fieldValue1, #fieldValue2").hide();
+					
+				} else{
+					$('#fieldValue1').dpSetDisabled(false);
+			        $('#fieldValue2').dpSetDisabled(true);
+			        $('#fieldValue1').show();
+			        $('#fieldValue2').hide();
+				}
+			}
+			
+			function chkFieldsAndShowDateSelectors(){
+				if( $('#fields > option:selected').attr('class') == 'Date' ){
+					$('a.dp-choose-date').show();
+				}else{
+					$('a.dp-choose-date').hide();
+				}
+			}
+			
+			function addFilter(conjunction){
+				if($('#whereClause>option').size() == 0)
+					conjunction = '';
+				var field = $('#fields > option:selected').text();
+				var operator = $('#operator > option:selected').text();
+				var value1 = $('#fieldValue1').val();
+				var value2 = $('#fieldValue2').val();
+				
+				var criterion = conjunction + " \"" + field + "\" " + operator + " '" + value1 + "'";
+				if( $("#operator").val() == 'BETWEEN')
+					criterion = criterion + " AND '" + value2 + "'";
+				$("#whereClause").createAppend(
+									'option', {value: criterion}, criterion
+								);
+				
+				
+			}
+			
+			function removeFilter(){
+				$('#whereClause > option:selected').remove();
+			}
+			
+			function surroundCriteriaWithBracs(){
+				$('#whereClause > option:selected:first').before('<option>(</option>');
+				$('#whereClause > option:selected:last').after('<option>)</option>');
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<form method="post" action="filterValidate.do" name="queryFilter">
+			<table border="1" cellspacing="0" align="center" cellpadding="10">
+				<tbody>
+					<tr>
+						<td align="center" valign="top" width="">
+							<select style="width: 100px" size="7" id="fields" onchange="javascript:chkFieldsAndShowDateSelectors();">
+								<option class="String" value="CITY_NAME">City Name</option>
+								<option class="String" value="POSTAL_CD">Postal Cd</option>
+								<option class="String" value="STATE_CD">State Cd</option>
+								<option class="Date" value="UPDATE_DT">Update Dt</option>
+							</select>
+						</td>
+						<td align="center" valign="top">
+							<select id="operator"
+								onchange="javascript:chkAndDisableFieldValues();">
+								<option value="=">=</option>
+								<option value="&lt;&gt;">&lt;&gt;</option>
+								<option value="&gt;">&gt;</option>
+								<option value="&gt;=">&gt;=</option>
+								<option value="&lt;">&lt;</option>
+								<option value="&lt;=">&lt;=</option>
+								<option value="LIKE">LIKE</option>
+								<option value="BETWEEN">BETWEEN</option>
+								<option value="IS NOT NULL">IS NOT NULL</option>
+								<option value="IS NULL">IS NULL</option>
+							</select>
+						</td>
+						<td align="center" valign="top">
+							<table width="100%">
+								<tr><td><input type="text" class="inputFields" id="fieldValue1" /></td></tr>
+								<tr><td><input type="text" class="inputFields" id="fieldValue2" /></td></tr>
+							</table>
+						</td>
+					</tr>
+					<tr><td colspan="3" >
+						<table  align="center" border="0" width="100%"><tr>
+							<td  align="center"><input type="button" value="And Filter" onclick="javascipt:addFilter('AND')"/></td>
+							<td align="left"><input type="button" value="Or Filter" onclick="javascipt:addFilter('OR')"/></td>
+						</tr></table>
+					</td></tr>
+					<tr>
+						<td colspan="3" align="center">
+							<table>
+								<tr><td>
+										<select id="whereClause" size="10" multiple="multiple" style="min-width: 200px"/>
+									</td>
+								    <td><input type="button" value="Surround with (  )" onclick="surroundCriteriaWithBracs();"/></td>
+								</tr>
+								<tr><td><input type="button" value="Remove Filter" onclick="removeFilter();"/></td><td></td></tr>
+							</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</body>
+</html>

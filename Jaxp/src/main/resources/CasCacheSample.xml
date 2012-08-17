@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<cas-cache xmlns="http://www.matson.com/schema/cas/cache"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.matson.com/schema/cas/cache CasCache.xsd"
+        application-root-node="CAS">
+
+        
+
+        <region name="myRegion"
+                      eviction-algorithm="LRU"
+                      max-age-secs="600"
+                      max-elements="4"
+                      time-to-idle-secs="300"
+                />
+        <region name="com.matson.cas.service.cache.sample.hibernate.Mail"
+                      eviction-algorithm="LRU"
+                      max-age-secs="600"
+                      max-elements="3"
+                      time-to-idle-secs="300"
+                />
+</cas-cache>

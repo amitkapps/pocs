@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>MavenEar</artifactId>
+        <groupId>MavenEar</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>entapp</artifactId>
+    <packaging>ear</packaging>
+
+    <name>entapp</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>MavenEar</groupId>
+            <artifactId>webapp</artifactId>
+            <version>1.0</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.0-api</artifactId>
+            <version>1.0.0.Final</version>
+        </dependency>
+        
+    </dependencies>
+
+    <build>
+        <finalName>entapp</finalName>
+        <defaultGoal>package</defaultGoal>
+        <!-- The file: application.xml will be automatically generated. -->
+        <!-- The file: application.xml will be automatically generated. -->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.4.2</version>
+                <configuration>
+                    <modules>
+                        <webModule>
+                            <groupId>MavenEar</groupId>
+                            <artifactId>webapp</artifactId>
+
+                            <!-- 4.5.3.1. Only if you want different file name inside "ear" file. -->
+                            <bundleFileName>webapp.war</bundleFileName>
+
+                            <!-- 4.5.3.2. Specify the context root if you need different name. -->
+                            <!-- Default is: "/${pom.artifactId} -->
+                            <contextRoot>webapp</contextRoot>
+                        </webModule>
+                        <javaModule>
+                            <groupId>org.hibernate.javax.persistence</groupId>
+                            <artifactId>hibernate-jpa-2.0-api</artifactId>
+                            <bundleDir>APP-INF/lib</bundleDir>
+                        </javaModule>
+                    </modules>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.4.3</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${pom.build.directory}/${artifactId}/META-INF</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>meta-inf</directory>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

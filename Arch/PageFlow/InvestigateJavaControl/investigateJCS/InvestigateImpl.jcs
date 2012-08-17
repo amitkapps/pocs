@@ -1,0 +1,272 @@
+package investigateJCS; 
+
+import com.bea.control.*;
+import com.bea.xml.XmlException;
+import org.openuri.bea.samples.workshop.CardType;
+import org.openuri.bea.samples.workshop.CustomerType;
+import org.openuri.bea.samples.workshop.CreditCardDataDocument.CreditCardData; 
+import org.openuri.bea.samples.workshop.CreditCardDataDocument;
+import org.openuri.bea.samples.workshop.ScoreRequestDocument;
+import org.openuri.bea.samples.workshop.ScoreRequestDocument.ScoreRequest;
+import org.openuri.bea.samples.workshop.ScoreResponseDocument;
+import com.bea.wlw.util.Logger;
+//import weblogic.jws.util.Logger;
+/**
+ * @jcs:jc-jar icon-16="images/investigate.gif" version="1.0" description="Compiles a loan applicant credit profile." label="Investigate"
+ * @jcs:control-tags file="InvestigateProperties.xml"
+ * @editor-info:code-gen control-interface="true"
+ */
+public class InvestigateImpl implements Investigate, ControlSource
+{
+    static final long serialVersionUID = 1L;
+    
+    /**
+     * @common:control
+     */
+    private investigateJCS.CreditScoreJMS creditScoreJMS;
+
+    /** 
+     * @common:context 
+     */
+    ControlContext context;
+        
+    /**
+     * @common:control
+     * @jc:timer timeout="5 minutes"
+     */
+    private com.bea.control.TimerControl creditCardReportTimer;
+
+    /**
+     * @common:control
+     */
+    private investigateJCS.ValidateCreditEJB validateCreditEJB;
+
+    /**
+     * @common:control
+     */
+    private investigateJCS.CreditCardReportControl creditCardReportControl;
+
+    /**
+     * @common:control
+     */
+    private investigateJCS.BankruptciesDatabase bankruptciesDB;
+
+    public Callback callback;
+
+    Applicant m_currentApplicant = new Applicant(); 
+    
+    private String phoneNumber;
+    
+    /**
+     * @common:operation
+     * @common:message-buffer enable="true"
+     */
+    public void requestCreditReport(String taxID)
+    {
+        /**
+         * Set the 'phone-number' attribute on the control property 'error-message'.
+         */        
+        String phoneNumber = 
+            context.getControlAttribute("jc:error-message", "phone-number");        
+                
+        m_currentApplicant.taxID = taxID;
+    
+        /**
+         * Retrieve data from the database and store it in the rec object.
+         */
+        Record rec = bankruptciesDB.checkForBankruptcies(taxID);
+        /**
+         * If the database returns substantial data, then store that data
+         * in the m_currentApplicant object.
+         */
+        if(rec != null)
+        {
+            m_currentApplicant.firstName = rec.firstname;
+            m_currentApplicant.lastName = rec.lastname;
+            m_currentApplicant.currentlyBankrupt = rec.currentlyBankrupt;
+
+            /**
+             * Set the username and password necessary to access the Credit
+             * Card Report web service.
+             * Then invoke the getCreditCardData method.
+             * Results from the web service will be provided via a callback.
+             */
+            creditCardReportControl.setUsername("weblogic");
+            creditCardReportControl.setPassword("weblogic");
+            creditCardReportControl.getCreditCardData(taxID);
+    
+             /*
+              * Start the timer.  If the credit card report is not
+              * received within 5 minutes, the conversation will be finished
+              * and the client will be notified that
+              * there was a problem.
+              */
+             creditCardReportTimer.start();        
+        }
+        /**
+         * If the database does not return substantial data, notify the client
+         * that there is a problem.
+         */
+        else
+        {
+            m_currentApplicant.message = "No data could be found on the applicant. Please call " + phoneNumber + " for assistance. ";
+            callback.onCreditReportDone(m_currentApplicant);
+        }
+        
+    }
+
+
+    public void creditCardReportControl_onCreditCardDataReady(java.lang.String cardData)
+    {
+        /*
+         * Now that the credit card web service has returned its results, 
+         * stop the timer started in the requestCreditReportAsynch method. 
+         */
+        creditCardReportTimer.stop();
+        
+        try
+        {
+            /*
+             * When a report is delivered, extract the relevant credit card info,
+             * and store it in m_currentApplicant
+             */
+            CreditCardDataDocument cardInfo = CreditCardDataDocument.Factory.parse(cardData);
+            CustomerType[] customer = cardInfo.getCreditCardData().getCustomerArray();
+            CardType[] cards = customer[0].getCardArray();
+            for(int i = 0; i < cards.length; i++) 
+            {
+                m_currentApplicant.availableCCCredit += cards[i].getAvailableCredit();
+            }
+        }
+        catch(XmlException xe)
+        {
+            /*
+             * If there is a problem with extracting the credit card info,
+             * store an error message in m_currentApplicant.
+             */
+            m_currentApplicant.message =  "There was an error retrieving the credit card information. Please call " + phoneNumber + " for assistance.";
+            callback.onCreditReportDone(m_currentApplicant);
+        }
+                
+        /*
+         * Construct and send an XML message through the JMS control
+         * to the credit scoring application.         
+         */                 
+        String messageToJMSControl = makeMessageToJMS(m_currentApplicant.availableCCCredit, m_currentApplicant.currentlyBankrupt);
+        creditScoreJMS.subscribe();
+        creditScoreJMS.sendTextMessage(messageToJMSControl);
+
+    }
+    
+    /**
+     * This method uses the XMLBean ScoreRequestDocument (compiled from the XML schema
+     * ScoreMessageJMS.xsd) to construct a string of the following form.
+     *
+     * <score_request>
+     *   <credit_remaining>[integer_value]</credit_remaining>
+     *   <is_bankrupt>[boolean_value]</is_bankrupt>
+     * </score_request>
+     */
+    private String makeMessageToJMS(int availableCredit, boolean currentlyBankrupt)
+    {
+        ScoreRequestDocument reqDoc = ScoreRequestDocument.Factory.newInstance();
+        ScoreRequest req = reqDoc.addNewScoreRequest(); 
+        req.setCreditRemaining((short)availableCredit);
+        req.setIsBankrupt(currentlyBankrupt);
+        
+        String str = reqDoc.xmlText();
+        return reqDoc.xmlText();  
+    }
+
+    public void creditScoreJMS_receiveTextMessage(java.lang.String payload)
+    {
+        try
+        {
+            /**
+             * Extract the the credit score from the JMS response string
+             * and store it in m_currentApplicant.
+             */
+            ScoreResponseDocument scoreInfo = ScoreResponseDocument.Factory.parse(payload);
+            m_currentApplicant.creditScore = scoreInfo.getScoreResponse().getCalculatedScore();
+        }
+        catch(XmlException e)
+        {
+            m_currentApplicant.message = "There was a problem retrieving the credit score. Please call " + phoneNumber + " for assistance.";
+            callback.onCreditReportDone(m_currentApplicant);
+        }
+        
+        try
+        {
+            /* 
+             * Pass the credit score to the EJB's validate method. Store the value returned
+             * with other applicant data.
+             */
+            m_currentApplicant.approvalLevel = validateCreditEJB.validate(m_currentApplicant.creditScore);
+        }
+        catch(java.rmi.RemoteException e)
+        {
+            m_currentApplicant.message = "There was a problem retrieving the approval level. Please call " + phoneNumber + " for assistance.";
+            callback.onCreditReportDone(m_currentApplicant);
+        }
+        
+        /**
+         * Send the complete report (or error message) back to the client.
+         */
+        callback.onCreditReportDone(m_currentApplicant);
+    }
+
+    /**
+     * @common:operation
+     */
+    public void cancelInvestigation()
+    {
+        /*
+         * Cancel the request to the credit card company because it is now unnecessary. 
+         */
+        creditCardReportControl.cancelRequest();
+        /*
+         * Use the callback to send a message to the client. Note that this also ends
+         * the conversation because the callback's conversation phase property is set to "finish". 
+         */
+        m_currentApplicant.message = "Investigation canceled at client's request.";
+
+        callback.onCreditReportDone(m_currentApplicant);
+    }
+
+    public void creditCardReportTimer_onTimeout(long arg0)
+    {
+        /**
+         * Because the credit card service has not yet returned, cancel the request. 
+         */
+        creditCardReportControl.cancelRequest();
+        /**
+         * Send a response to the client, saying that the Credit Card Report 
+         * web service did not respond in time. 
+         */
+        m_currentApplicant.message = "Unable to retrieve credit card information: Credit Card Report did not respond in time period provided.";
+        callback.onCreditReportDone(m_currentApplicant);        
+    }
+
+    public void context_onException(Exception e, String methodName, Object[] arguments)
+    {
+        /**
+         * Create a logger variable to use for logging messages. Assigning it the 
+         * "Investigate" category name will make it easier to find its messages 
+         * in the log file. 
+         */
+        Logger logger = context.getLogger("Investigate");
+        /**
+         * Log an error message, giving the name of the method that threw the 
+         * exception and a stack trace from the exception object.
+         * The message will be written to the jws.log file located 
+         * in the server root folder, in this case: 
+         * BEA_HOME/weblogic81/samples/domains/workshop 
+         */
+        logger.error("Exception in " + methodName + ": " + e);
+        /**
+         * Invoke the callback to send the client a response. 
+         */
+        m_currentApplicant.message = "Unable to respond to request at this time. Please call " + phoneNumber + " for assistance.";
+        callback.onCreditReportDone(m_currentApplicant);
+    }
+} 

@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Maven: opensymphony:sitemesh:2.4.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/opensymphony/sitemesh/2.4.1/sitemesh-2.4.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/opensymphony/sitemesh/2.4.1/sitemesh-2.4.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/opensymphony/sitemesh/2.4.1/sitemesh-2.4.1-sources.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../../../Reference/Technical/libraries/sitemesh/sitemesh2.4.1/src/java" />
+    </SOURCES>
+  </library>
+</component>

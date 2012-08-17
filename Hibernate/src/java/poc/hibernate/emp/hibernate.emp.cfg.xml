@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+<session-factory>
+
+	<!-- Database connection settings -->
+	<property name="connection.driver_class">
+		oracle.jdbc.OracleDriver
+	</property>
+	<property name="connection.url">
+		jdbc:oracle:thin:@10.3.4.65:1521:MATD01
+	</property>
+	<property name="connection.username">akapoor</property>
+	<property name="connection.password">akapoor</property>
+
+	<!-- JDBC connection pool (use the built-in) -->
+	<property name="connection.pool_size">1</property>
+
+	<!-- SQL dialect -->
+	<property name="dialect">
+		org.hibernate.dialect.Oracle9Dialect
+	</property>
+
+	<!-- Enable Hibernate's automatic session context management -->
+	<property name="current_session_context_class">thread</property>
+
+	<!-- Disable the second-level cache  -->
+	<property name="cache.provider_class">
+		org.hibernate.cache.NoCacheProvider
+	</property>
+
+	<!-- Echo all executed SQL to stdout -->
+	<property name="show_sql">true</property>
+
+	<mapping resource="poc/hibernate/emp/vo/Project.hbm.xml" />
+	<mapping resource="poc/hibernate/emp/vo/Department.hbm.xml" />
+	<mapping resource="poc/hibernate/emp/vo/Employee.hbm.xml" />
+	<mapping resource="poc/hibernate/emp/vo/Mail.hbm.xml" />
+	<mapping resource="poc/hibernate/emp/vo/Phone.hbm.xml" />
+
+</session-factory>
+
+</hibernate-configuration>

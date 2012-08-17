@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="webapp:war exploded">
+    <output-path>$PROJECT_DIR$/webapp/target/webapp</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="webapp/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="webapp" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="FlexJson-1.0.jar">
+            <element id="module-output" name="FlexJson" />
+          </element>
+          <element id="library" level="project" name="Maven: com.google.collections:google-collections:1.0" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,61 @@
+8
+
+dir
+7
+file:///C:/AmitK/work/LocalSVNRepositories/LearningRep/HTMLPages
+file:///C:/AmitK/work/LocalSVNRepositories/LearningRep
+
+
+
+2008-01-20T10:46:27.752356Z
+7
+axk
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+cef59cfc-71cf-0940-ae69-28c195c84059
+
+.classpath
+file
+
+
+
+
+2007-02-06T19:23:48.074887Z
+b8a1deb8ac5a7b0572a0601331d2ba4b
+2008-01-19T14:27:43.064608Z
+3
+axk
+
+poc
+dir
+
+.project
+file
+
+
+
+
+2007-02-06T19:23:47.996759Z
+85c32518bda2e6e61d18b04fd7be4b6a
+2008-01-19T14:27:43.064608Z
+3
+axk
+
+resource
+dir
+
+WEB-INF
+dir
+

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="0.015" errors="0" skipped="0" tests="2" name="org.springframework.sample.batch.example.ExampleItemReaderTests">
+  <properties>
+    <property name="java.vendor" value="Sun Microsystems Inc."/>
+    <property name="localRepository" value="C:\Documents and Settings\axk\.m2\repository"/>
+    <property name="env.VMS_PATH" value="C:\Program Files\Avaya\VisAbility"/>
+    <property name="env.DEFLOGDIR" value="C:\Documents and Settings\All Users\Application Data\McAfee\DesktopProtection"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
+    <property name="env.PROMPT" value="$P$G"/>
+    <property name="os.name" value="Windows XP"/>
+    <property name="env.FP_NO_HOST_CHECK" value="NO"/>
+    <property name="sun.boot.class.path" value="C:\bea10.3\jdk160_05\jre\lib\resources.jar;C:\bea10.3\jdk160_05\jre\lib\rt.jar;C:\bea10.3\jdk160_05\jre\lib\sunrsasign.jar;C:\bea10.3\jdk160_05\jre\lib\jsse.jar;C:\bea10.3\jdk160_05\jre\lib\jce.jar;C:\bea10.3\jdk160_05\jre\lib\charsets.jar;C:\bea10.3\jdk160_05\jre\classes"/>
+    <property name="env.COMPUTERNAME" value="PHX10086"/>
+    <property name="env.ALLUSERSPROFILE" value="C:\Documents and Settings\All Users"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="java.runtime.version" value="1.6.0_05-b13"/>
+    <property name="env.HOMEPATH" value="\Documents and Settings\axk"/>
+    <property name="user.name" value="axk"/>
+    <property name="env.USER" value="axk"/>
+    <property name="user.language" value="en"/>
+    <property name="sun.boot.library.path" value="C:\bea10.3\jdk160_05\jre\bin"/>
+    <property name="classworlds.conf" value="C:\AmitK\work\project\Learning\EclipseWorkSpace\.metadata\.plugins\org.maven.ide.eclipse\launches\m2conf11098.tmp"/>
+    <property name="env.PO" value="PHXPOST1"/>
+    <property name="java.version" value="1.6.0_05"/>
+    <property name="env.PROCESSOR_IDENTIFIER" value="x86 Family 6 Model 15 Stepping 11, GenuineIntel"/>
+    <property name="user.timezone" value="America/Phoenix"/>
+    <property name="env.CLIENTNAME" value="Console"/>
+    <property name="env.TEMP" value="C:\DOCUME~1\axk\LOCALS~1\Temp"/>
+    <property name="sun.arch.data.model" value="32"/>
+    <property name="env.SA_PATH" value="C:\Program Files\Avaya\Site Administration"/>
+    <property name="java.endorsed.dirs" value="C:\bea10.3\jdk160_05\jre\lib\endorsed"/>
+    <property name="env.VSEDEFLOGDIR" value="C:\Documents and Settings\All Users\Application Data\McAfee\DesktopProtection"/>
+    <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
+    <property name="env.HOMEDRIVE" value="C:"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="50.0"/>
+    <property name="user.country" value="US"/>
+    <property name="java.home" value="C:\bea10.3\jdk160_05\jre"/>
+    <property name="env.APPDATA" value="C:\Documents and Settings\axk\Application Data"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="env.ComSpec" value="C:\WINDOWS\system32\cmd.exe"/>
+    <property name="env.OS" value="Windows_NT"/>
+    <property name="env.CommonProgramFiles" value="C:\Program Files\Common Files"/>
+    <property name="os.version" value="5.1"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.version" value="10.0-b19"/>
+    <property name="env.USERPROFILE" value="C:\Documents and Settings\axk"/>
+    <property name="user.variant" value=""/>
+    <property name="env.USR" value="axk"/>
+    <property name="env.JAVA_PLUGIN_WEBCONTROL_ENABLE" value="TRUE"/>
+    <property name="env.JAVA_HOME" value="C:\java\jdk1.5.0_06"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="env.TMP" value="C:\DOCUME~1\axk\LOCALS~1\Temp"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="user.home" value="C:\Documents and Settings\axk"/>
+    <property name="env.FSSF" value="MNC03P0S"/>
+    <property name="env.SESSIONNAME" value="Console"/>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="env.M2_HOME" value="C:\AmitK\Reference\Technical\libraries\apache\Maven\apache-maven-2.0.9"/>
+    <property name="env.NUMBER_OF_PROCESSORS" value="2"/>
+    <property name="java.library.path" value="C:\bea10.3\jdk160_05\bin;.;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\java\jdk1.5.0_06\bin;C:\java\j2sdk1.4.2_13\bin;C:\AmitK\Reference\Technical\libraries\apache\Maven\apache-maven-2.0.9\bin;C:\java\jdk1.5.0_06\bin;C:\oracle\product\10.2.0\client_1\bin;C:\Program Files\Common Files\OTG\;c:\oracle\ora90\bin;C:\Program Files\Oracle\jre\1.1.8\bin;C:\Program Files\Oracle\jre\1.3.1\bin;C:\Program Files\Microsoft SQL Server\90\Tools\binn\;C:\Program Files\Common Files\OTG;C:\Program Files\Microsoft SQL Server\80\Tools\Binn\;C:\Program Files\Altiris\Software Virtualization Agent\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Common Files\Roxio Shared\DLLShared\;C:\PROGRA~1\IBM\CLIENT~1;C:\PROGRA~1\IBM\CLIENT~1\Shared;C:\PROGRA~1\IBM\CLIENT~1\Emulator;C:\AmitK\Reference\Technical\libraries\javatools\jvmstat\jvmstat\bat;C:\AmitK\Reference\Technical\libraries\apache-ant-1.6.5\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\SSH Communications Security\SSH Secure Shell;C:\Program Files\CVSNT\"/>
+    <property name="java.vendor.url" value="http://java.sun.com/"/>
+    <property name="env.USERDNSDOMAIN" value="CSC.MATSON.COM"/>
+    <property name="java.vm.vendor" value="Sun Microsystems Inc."/>
+    <property name="maven.home" value="EMBEDDED"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.class.path" value="/C:/Program Files/springsource/sts-2.1.0.SR01/plugins/org.maven.ide.components.maven_embedder_2.1.0.20080530-2300/jars/plexus-classworlds-1.2-alpha-12.jar"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="env.windir" value="C:\WINDOWS"/>
+    <property name="env.LOGONSERVER" value="\\MNC08DC2"/>
+    <property name="java.vm.specification.version" value="1.0"/>
+    <property name="env.PROCESSOR_ARCHITECTURE" value="x86"/>
+    <property name="env.LAN" value="PHX"/>
+    <property name="m2eclipse.workspace.state" value="C:\AmitK\work\project\Learning\EclipseWorkSpace\.metadata\.plugins\org.maven.ide.eclipse\workspacestate.properties"/>
+    <property name="sun.os.patch.level" value="Service Pack 2"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="env.ProgramFiles" value="C:\Program Files"/>
+    <property name="surefire.test.class.path" value="C:\AmitK\work\project\Learning\EclipseWorkSpace\SpringBatch\target\test-classes;C:\AmitK\work\project\Learning\EclipseWorkSpace\SpringBatch\target\classes;C:\Documents and Settings\axk\.m2\repository\junit\junit\4.4\junit-4.4.jar;C:\Documents and Settings\axk\.m2\repository\org\springframework\spring-test\2.5.6\spring-test-2.5.6.jar;C:\Documents and Settings\axk\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar;C:\Documents and Settings\axk\.m2\repository\org\springframework\spring-jdbc\2.5.6\spring-jdbc-2.5.6.jar;C:\Documents and Settings\axk\.m2\repository\org\springframework\spring-beans\2.5.6\spring-beans-2.5.6.jar;C:\Documents and Settings\axk\.m2\repository\org\springframework\spring-core\2.5.6\spring-core-2.5.6.jar;C:\Documents and Settings\axk\.m2\repository\org\springframework\spring-context\2.5.6\spring-context-2.5.6.jar;C:\Documents and Settings\axk\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Documents and Settings\axk\.m2\repository\org\springframework\spring-tx\2.5.6\spring-tx-2.5.6.jar;C:\Documents and Settings\axk\.m2\repository\org\springframework\batch\spring-batch-core\2.0.3.RELEASE\spring-batch-core-2.0.3.RELEASE.jar;C:\Documents and Settings\axk\.m2\repository\org\springframework\batch\spring-batch-infrastructure\2.0.3.RELEASE\spring-batch-infrastructure-2.0.3.RELEASE.jar;C:\Documents and Settings\axk\.m2\repository\com\thoughtworks\xstream\xstream\1.3\xstream-1.3.jar;C:\Documents and Settings\axk\.m2\repository\xpp3\xpp3_min\1.1.4c\xpp3_min-1.1.4c.jar;C:\Documents and Settings\axk\.m2\repository\org\codehaus\jettison\jettison\1.0\jettison-1.0.jar;C:\Documents and Settings\axk\.m2\repository\org\springframework\spring-aop\2.5.6\spring-aop-2.5.6.jar;C:\Documents and Settings\axk\.m2\repository\commons-dbcp\commons-dbcp\1.2.2\commons-dbcp-1.2.2.jar;C:\Documents and Settings\axk\.m2\repository\commons-pool\commons-pool\1.3\commons-pool-1.3.jar;C:\Documents and Settings\axk\.m2\repository\commons-io\commons-io\1.4\commons-io-1.4.jar;C:\Documents and Settings\axk\.m2\repository\log4j\log4j\1.2.14\log4j-1.2.14.jar;C:\Documents and Settings\axk\.m2\repository\hsqldb\hsqldb\1.8.0.7\hsqldb-1.8.0.7.jar;C:\Documents and Settings\axk\.m2\repository\org\aspectj\aspectjrt\1.5.4\aspectjrt-1.5.4.jar;C:\Documents and Settings\axk\.m2\repository\org\aspectj\aspectjweaver\1.5.4\aspectjweaver-1.5.4.jar;"/>
+    <property name="java.io.tmpdir" value="C:\DOCUME~1\axk\LOCALS~1\Temp\"/>
+    <property name="env.PROCESSOR_REVISION" value="0f0b"/>
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"/>
+    <property name="env.SystemRoot" value="C:\WINDOWS"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="os.arch" value="x86"/>
+    <property name="java.ext.dirs" value="C:\bea10.3\jdk160_05\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="env.DSA_PATH" value="C:\Program Files\Avaya\Site Administration\bin\ASA.exe"/>
+    <property name="user.dir" value="C:\AmitK\work\project\Learning\EclipseWorkSpace\SpringBatch"/>
+    <property name="env.S_USER" value="Amit Kapoor"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM"/>
+    <property name="env.PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH"/>
+    <property name="env.Path" value="C:\java\jdk1.5.0_06\bin;C:\java\j2sdk1.4.2_13\bin;C:\AmitK\Reference\Technical\libraries\apache\Maven\apache-maven-2.0.9\bin;C:\java\jdk1.5.0_06\bin;C:\oracle\product\10.2.0\client_1\bin;C:\Program Files\Common Files\OTG\;c:\oracle\ora90\bin;C:\Program Files\Oracle\jre\1.1.8\bin;C:\Program Files\Oracle\jre\1.3.1\bin;C:\Program Files\Microsoft SQL Server\90\Tools\binn\;C:\Program Files\Common Files\OTG;C:\Program Files\Microsoft SQL Server\80\Tools\Binn\;C:\Program Files\Altiris\Software Virtualization Agent\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Common Files\Roxio Shared\DLLShared\;C:\PROGRA~1\IBM\CLIENT~1;C:\PROGRA~1\IBM\CLIENT~1\Shared;C:\PROGRA~1\IBM\CLIENT~1\Emulator;C:\AmitK\Reference\Technical\libraries\javatools\jvmstat\jvmstat\bat;C:\AmitK\Reference\Technical\libraries\apache-ant-1.6.5\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\SSH Communications Security\SSH Secure Shell;C:\Program Files\CVSNT\"/>
+    <property name="env.FS" value="MNC08FS1"/>
+    <property name="basedir" value="C:\AmitK\work\project\Learning\EclipseWorkSpace\SpringBatch"/>
+    <property name="maven.mode.standalone" value="true"/>
+    <property name="env.M2" value="C:\AmitK\Reference\Technical\libraries\apache\Maven\apache-maven-2.0.9\bin"/>
+    <property name="env.USERNAME" value="axk"/>
+    <property name="env.SystemDrive" value="C:"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="env.USERDOMAIN" value="PHXP01"/>
+    <property name="env.Card_ID" value="002170A0BF6B"/>
+    <property name="java.specification.version" value="1.6"/>
+    <property name="env.PROCESSOR_LEVEL" value="6"/>
+  </properties>
+  <testcase time="0.015" classname="org.springframework.sample.batch.example.ExampleItemReaderTests" name="testReadOnce"/>
+  <testcase time="0" classname="org.springframework.sample.batch.example.ExampleItemReaderTests" name="testReadTwice"/>
+</testsuite>

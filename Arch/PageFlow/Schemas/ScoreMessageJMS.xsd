@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://openuri.org/bea/samples/workshop"
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:ws="http://openuri.org/bea/samples/workshop"
+elementFormDefault="qualified">
+
+	<xs:element name="score_request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="credit_remaining" type="xs:short"/>
+				<xs:element name="is_bankrupt" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:element name="score_response">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="calculated_score" type="xs:short"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
+
+

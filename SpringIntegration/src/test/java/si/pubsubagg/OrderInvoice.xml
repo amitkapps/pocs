@@ -1,0 +1,10 @@
+<orders>
+    <order>
+        <order-id>Order1</order-id>
+        <invoice-id>Invoice1</invoice-id>
+    </order>
+    <order>
+        <order-id>Order2</order-id>
+        <invoice-id>Invoice2</invoice-id>
+    </order>
+</orders>

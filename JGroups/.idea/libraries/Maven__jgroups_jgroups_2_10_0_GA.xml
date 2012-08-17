@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Maven: jgroups:jgroups:2.10.0.GA">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../../Reference/Technical/libraries/Jboss/JGroups/JGroups-2.10.0.GA.src/jgroups-2.10.0.GA.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/jgroups/jgroups/2.10.0.GA/jgroups-2.10.0.GA-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/jgroups/jgroups/2.10.0.GA/jgroups-2.10.0.GA-sources.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../../../Reference/Technical/libraries/Jboss/JGroups/JGroups-2.10.0.GA.src/src" />
+      <root url="file://$PROJECT_DIR$/../../../../../Reference/Technical/libraries/Jboss/JGroups/JGroups-2.10.0.GA.src/tests/junit-functional" />
+      <root url="file://$PROJECT_DIR$/../../../../../Reference/Technical/libraries/Jboss/JGroups/JGroups-2.10.0.GA.src/tests/junit" />
+    </SOURCES>
+  </library>
+</component>

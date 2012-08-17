@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+                    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <script src="../../resource/js/jquery/core/jquery-1.1.4.js"></script>
+  
+  <script>
+  $(document).ready(function(){
+    $("#first").filter(' ~ ').css("background", "yellow");
+  });
+  
+	function stuff(){
+	  	this.show = function(){
+	  		alert('hello');
+	  	}
+	  }
+  </script>
+  
+</head>
+<body>
+  <a href="#" onclick="javascript: stuff.show(); return true;">Click Me</a>
+  <div><span>Hello</span></div>
+  <p id="first">First</p>
+  <p class="a">Second</p>
+  <p class="selected">Third</p>
+  <p id="fourth">Fourth</p>
+</body>
+</html>

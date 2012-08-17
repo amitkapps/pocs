@@ -1,0 +1,3 @@
+<config>
+    <test>${buildTimestamp}</test>
+</config>

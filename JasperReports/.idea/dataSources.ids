@@ -1,0 +1,94 @@
+<?xml version="1.0"?><component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Jasperreport Sample H2" product="H2" version="1.2.127 (2010-01-15)" uuid="00cf41fd-915c-496e-8c89-0af32ec9281b">
+    <jdbc-driver>org.h2.Driver</jdbc-driver>
+    <jdbc-url>jdbc:h2:tcp://localhost/C:\AmitK\work\project\poc\Projects\JasperReports\database\h2\root</jdbc-url>
+    <user-name>sa</user-name>
+    <libraries>
+      <library>
+        <url>jar://$MAVEN_REPOSITORY$/com/h2database/h2/1.2.127/h2-1.2.127.jar!/</url>
+      </library>
+    </libraries>
+    <table name="ADDRESS" schema="PUBLIC" catalog="ROOT" type="TABLE">
+      <column name="ID" sqlType="INTEGER" length="10" precision="0" nullable="false" jdbcType="4" />
+      <column name="FIRSTNAME" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="LASTNAME" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="STREET" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="CITY" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="CONSTRAINT_E" columns="id" />
+      <index name="PRIMARY_KEY_E" unique="true" columns="ID" />
+    </table>
+    <table name="DOCUMENT" schema="PUBLIC" catalog="ROOT" type="TABLE">
+      <column name="ID" sqlType="INTEGER" length="10" precision="0" nullable="false" jdbcType="4" />
+      <column name="ADDRESSID" sqlType="INTEGER" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="TOTAL" sqlType="DECIMAL" length="65535" precision="32767" nullable="true" jdbcType="3" />
+      <primary-key name="CONSTRAINT_6" columns="id" />
+      <index name="PRIMARY_KEY_6" unique="true" columns="ID" />
+    </table>
+    <table name="ORDERS" schema="PUBLIC" catalog="ROOT" type="TABLE">
+      <column name="ORDERID" sqlType="INTEGER" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="CUSTOMERID" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="EMPLOYEEID" sqlType="INTEGER" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="ORDERDATE" sqlType="TIMESTAMP" length="23" precision="10" nullable="true" jdbcType="93" />
+      <column name="REQUIREDDATE" sqlType="TIMESTAMP" length="23" precision="10" nullable="true" jdbcType="93" />
+      <column name="SHIPPEDDATE" sqlType="TIMESTAMP" length="23" precision="10" nullable="true" jdbcType="93" />
+      <column name="SHIPVIA" sqlType="INTEGER" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="FREIGHT" sqlType="DECIMAL" length="65535" precision="32767" nullable="true" jdbcType="3" />
+      <column name="SHIPNAME" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="SHIPADDRESS" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="SHIPCITY" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="SHIPREGION" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="SHIPPOSTALCODE" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="SHIPCOUNTRY" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+    </table>
+    <table name="POSITIONS" schema="PUBLIC" catalog="ROOT" type="TABLE">
+      <column name="DOCUMENTID" sqlType="INTEGER" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="POSITIONNO" sqlType="INTEGER" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="PRODUCTID" sqlType="INTEGER" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="QUANTITY" sqlType="INTEGER" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="PRICE" sqlType="DECIMAL" length="65535" precision="32767" nullable="true" jdbcType="3" />
+      <index name="SYS_CT_1_INDEX_B" unique="true" columns="DOCUMENTID" />
+      <index name="SYS_CT_1_INDEX_B" unique="true" columns="POSITIONNO" />
+    </table>
+    <table name="PRODUCT" schema="PUBLIC" catalog="ROOT" type="TABLE">
+      <column name="ID" sqlType="INTEGER" length="10" precision="0" nullable="false" jdbcType="4" />
+      <column name="NAME" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="COST" sqlType="DECIMAL" length="65535" precision="32767" nullable="true" jdbcType="3" />
+      <primary-key name="CONSTRAINT_1" columns="id" />
+      <index name="PRIMARY_KEY_1" unique="true" columns="ID" />
+    </table>
+    <table name="SHIPMENT_INFO" schema="PUBLIC" catalog="ROOT" type="TABLE">
+      <column name="BKG_NO" sqlType="INTEGER" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="CNTR_NO" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="STATUS" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="SHPR_ORG_NAME" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="CNEE_ORG_NAME" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="EVENT" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="PORT" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="DATE_TIME" sqlType="TIMESTAMP" length="23" precision="10" nullable="true" jdbcType="93" />
+      <column name="ORIG_PORT" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="DEST_PORT" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="TEMP" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="E_F" sqlType="CHAR" length="1" precision="0" nullable="true" jdbcType="1" />
+      <column name="CUR_VV" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="CNTR_TYPE" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="LOAD" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="DISC" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="HAZ" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="COMMODITY" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="BL_DEST" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="SEAL_NO" sqlType="INTEGER" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="REF_NO" sqlType="INTEGER" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="PO_NO" sqlType="INTEGER" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="LOCATION" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="TRUCKER" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+    </table>
+    <table name="TASKS" schema="PUBLIC" catalog="ROOT" type="TABLE">
+      <column name="SERIES" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="TASK" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="SUBTASK" sqlType="VARCHAR" length="2147483647" precision="0" nullable="true" jdbcType="12" />
+      <column name="STARTTIMESTAMP" sqlType="TIMESTAMP" length="23" precision="10" nullable="true" jdbcType="93" />
+      <column name="ENDTIMESTAMP" sqlType="TIMESTAMP" length="23" precision="10" nullable="true" jdbcType="93" />
+      <column name="PERCENT" sqlType="DECIMAL" length="65535" precision="32767" nullable="true" jdbcType="3" />
+    </table>
+  </data-source>
+</component>

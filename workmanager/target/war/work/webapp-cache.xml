@@ -1,0 +1,25 @@
+<webapp-structure>
+  <registeredFiles>
+    <entry>
+      <string>currentBuild</string>
+      <path-set>
+        <pathsSet class="linked-hash-set">
+          <string>index.jsp</string>
+          <string>META-INF/MANIFEST.MF</string>
+          <string>WEB-INF/web.xml</string>
+          <string>WEB-INF/classes/log4j.xml</string>
+          <string>WEB-INF/classes/poc/workmanager/ApplicationInit$1.class</string>
+          <string>WEB-INF/classes/poc/workmanager/ApplicationInit.class</string>
+          <string>WEB-INF/lib/slf4j-api-1.5.10.jar</string>
+          <string>WEB-INF/lib/slf4j-log4j12-1.5.10.jar</string>
+          <string>WEB-INF/lib/log4j-1.2.15.jar</string>
+          <string>WEB-INF/lib/mail-1.4.jar</string>
+          <string>WEB-INF/lib/activation-1.1.jar</string>
+          <string>WEB-INF/lib/jms-1.1.jar</string>
+          <string>WEB-INF/lib/jmxtools-1.2.1.jar</string>
+          <string>WEB-INF/lib/jmxri-1.2.1.jar</string>
+        </pathsSet>
+      </path-set>
+    </entry>
+  </registeredFiles>
+</webapp-structure>

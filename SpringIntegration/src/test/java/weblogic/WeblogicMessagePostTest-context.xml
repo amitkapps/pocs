@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="jndiTemplate" class="org.springframework.jndi.JndiTemplate">
+        <property name="environment">
+            <props>
+                <!-- tos context factory -->
+                <prop key="java.naming.factory.initial">weblogic.jndi.WLInitialContextFactory</prop>
+
+                <!-- localhost -->
+                <prop key="java.naming.provider.url">t3://localhost:7001/</prop>
+
+                <!-- tos dev -->
+                <!--<prop key="java.naming.provider.url">t3://10.3.4.179:9301/</prop>-->
+
+                <!-- tos preprod -->
+                <!--<prop key="java.naming.provider.url">t3://10.201.2.27:9301/</prop>-->
+            </props>
+        </property>
+    </bean>
+
+
+    <bean id="connectionFactory" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiTemplate">
+            <ref bean="jndiTemplate"/>
+        </property>
+        <property name="jndiName">
+            <value>jms.cf.oceanevent</value>
+
+            <!-- tos connection factory -->
+            <!-- <value>jms/WLQueueConnectionFactory</value>-->
+        </property>
+    </bean>
+
+
+    <bean id="inboundTopic" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiTemplate">
+            <ref bean="jndiTemplate"/>
+        </property>
+        <property name="jndiName">
+            <value>jms.tos.newvess.inbound</value>
+            <!--<value>jms.topic.tdp.newVesselHon</value>-->
+        </property>
+    </bean>
+
+
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="defaultDestination" ref="inboundTopic"/>
+        <property name="receiveTimeout" value="10000"/>
+    </bean>
+
+
+    <bean id="newVessXML" class="java.lang.String">
+        <constructor-arg>
+            <bean class="org.apache.commons.io.IOUtils" factory-method="toString">
+                <constructor-arg type="java.io.InputStream" value="classpath:orders.xml"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+</beans>

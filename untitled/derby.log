@@ -1,0 +1,30 @@
+----------------------------------------------------------------
+2012-01-18 16:48:04.213 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instance a816c00e-0134-f1b7-d358-000000d82d10
+on database directory C:\AmitK\work\project\poc\Projects\untitled\repository\version\db  
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+2012-01-18 16:48:05.072 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instance 888c4022-0134-f1b7-d358-000000d82d10
+on database directory C:\AmitK\work\project\poc\Projects\untitled\repository\workspaces\default\db  
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+2012-01-18 16:48:05.822 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instance e1734037-0134-f1b7-d358-000000d82d10
+on database directory C:\AmitK\work\project\poc\Projects\untitled\repository\workspaces\security\db  
+
+Database Class Loader started - derby.database.classpath=''
+
+2012-01-18 16:48:06.260 GMT:
+Shutting down instance 888c4022-0134-f1b7-d358-000000d82d10
+----------------------------------------------------------------
+
+2012-01-18 16:48:06.619 GMT:
+Shutting down instance e1734037-0134-f1b7-d358-000000d82d10
+----------------------------------------------------------------
+
+2012-01-18 16:48:06.869 GMT:
+Shutting down instance a816c00e-0134-f1b7-d358-000000d82d10
+----------------------------------------------------------------

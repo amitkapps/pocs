@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!-- ====================================================================== 
+     May 11, 2007 6:08:42 PM                                                        
+
+     project    
+     description
+                   
+     axk                                                                
+     ====================================================================== -->
+<project name="VINSight Administration Project" default="cleanDeploy" basedir=".">
+	<description>
+            description
+    </description>
+	<property file="build.properties"/>
+	<path >
+	</path>
+
+	<!-- ================================= 
+          target: default              
+         ================================= -->
+	<target name="cleanDeploy" depends="cleanAll,buildAll,deploywar" description="--> description">
+
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: cleanAll                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="cleanAll" description="Deletes everything inside the ${build.dir} directory">
+		<delete includeemptydirs="true">
+			<fileset dir="${build.dir}" includes="*" />
+		</delete>
+	</target>
+
+	<target name="buildAll" depends="alljars,allejbs,allwars">
+	</target>
+
+	<target name="alljars" depends="coreJar">
+	</target>
+
+	<target name="allejbs" depends="">
+	</target>
+
+	<target name="allwars" depends="war">
+	</target>
+
+	<target name="coreJar" description="build the application's core jar">
+		<tstamp>
+			<format property="build.time" pattern="MM/dd/yyyy hh:mm aa"/>
+		</tstamp>
+
+		<!--  -->
+		<property name="jarDir" value="${build.dir}/coreClasses"/>
+		<mkdir dir="${jarDir}"/>
+
+		<!-- Compile sources -->
+		<javac srcdir="${core.src.dir}"
+         destdir="${jarDir}"
+         debug="on">
+			<classpath>
+				<fileset dir="${app-inf.lib.path}">
+					<include name="*.jar"/>
+				</fileset>
+			</classpath>
+			<include name="**/*.java"/>
+		</javac>
+
+		<!-- Create the jar -->
+		<jar destfile="${build.dir}/${core.jar.name}">
+			<fileset dir="${jarDir}" id="id">
+				<include name="**/*.class"/>
+			</fileset>
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+				<attribute name="Implementation-Title" value="${app.implementation.title}"/>
+				<attribute name="Specification-Version" value="${app.implementation.version} "/>
+				<attribute name="Implementation-Version" value="${app.implementation.version} Built: ${build.time}"/>
+				<attribute name="Implementation-Vendor" value="${app.implementation.vendor}"/>
+			</manifest>
+		</jar>
+
+		<delete dir="${jarDir}" includeemptydirs="true"/>
+	</target>
+
+	<target name="war">
+		<war destfile="${build.dir}/${webapp.war}" webxml="${webapp.src.dir}/WEB-INF/web.xml">
+			<fileset dir="${webapp.src.dir}" excludes="WEB-INF/web.xml"/>
+			<lib file="${build.dir}/${core.jar.name}"/>
+		</war>
+	</target>
+
+	<target name="deploywar">
+		<delete file="${bea.defaultapp.dir}/${webapp.war}"/>
+		<copy file="${build.dir}/${webapp.war}" overwrite="true" todir="${bea.defaultapp.dir}"/>
+	</target>
+
+</project>

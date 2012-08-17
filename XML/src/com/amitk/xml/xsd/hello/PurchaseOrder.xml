@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<purchaseOrder orderDate="2000-01-01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<shipTo country="US">
+		<name>Amit Kapoor</name>
+		<street>4424 E Baseline Rd</street>
+		<city>Phoenix</city>
+		<state>AZ</state>
+		<zip>85042</zip>
+	</shipTo>
+	<billTo country="US">
+		<name>Ritu Shrivastava</name>
+		<street>1720 E Broadway Rd</street>
+		<city>Tempe</city>
+		<state>CA</state>
+		<zip>85282</zip>
+	</billTo>
+	<comment>Ship it ASAP</comment>
+	<items>
+		<item partNum="872-AA">
+			<productName>Electric shaver</productName>
+			<quantity>1</quantity>
+			<USPrice>128.45</USPrice>
+			<comment>Does it have rechargeable batteries</comment>
+		</item>
+		<item partNum="926-AA">
+			<productName>Java book</productName>
+			<quantity>1</quantity>
+			<USPrice>34.59</USPrice>
+			<comment>Is this edition 5</comment>
+			<shipDate>2000-01-02</shipDate>
+		</item>
+	</items>
+</purchaseOrder>

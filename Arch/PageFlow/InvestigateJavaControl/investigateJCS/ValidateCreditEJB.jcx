@@ -1,0 +1,15 @@
+package investigateJCS; 
+
+import com.bea.control.*; 
+
+/**
+ *   @jc:ejb home-jndi-name="financial.ValidateCredit"
+ *   @editor-info:ejb home="ValidateCreditBean.jar" bean="ValidateCreditBean.jar"
+ */
+public interface ValidateCreditEJB 
+        extends financial.ValidateCreditHome,    // home interface
+                financial.ValidateCredit,    // bean interface
+                com.bea.control.SessionEJBControl,     // control interface
+                com.bea.control.ControlExtension     // control extension marker
+{ 
+} 

@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<script type="text/javascript" src="../../resource/js/jquery/core/jquery-1.1.4.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/livequery/jquery.livequery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//alert('hello');
+				
+			});
+		</script>
+	</head>
+	<body>
+		<div>Hello</div>
+		
+	</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Query Builder</title>
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+		<link rel="stylesheet" href="dragDropSort.css" type="text/css"></link>
+		<link rel="stylesheet" href="queryBuilder.css" type="text/css"></link>
+		<link rel="stylesheet" href="../../resource/js/jquery/plugins/jqModal/jqModal.css" type="text/css"></link>
+		<link rel="stylesheet" href="../../resource/js/jquery/plugins/datepicker/datePicker.css" type="text/css"></link>
+		
+		
+		<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+		<script type="text/javascript" src="../../resource/js/jquery/core/jquery-1.1.4.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/iutil.js"></script>	
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/idrag.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/idrop.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/ifxtransfer.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/isortables.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/iautoscroller.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/jqModal/jqModal.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/contextMenu/jquery.contextmenu.r2.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/livequery/jquery.livequery.js"></script>
+		<!-- dimensions required for datepicker to work with jquery 1.1 version not containing offset related methods -->
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/dimensions/jquery.dimensions.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/datepicker/date.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/datepicker/jquery.datePicker.js"></script>
+		<script type="text/javascript" src="queryBuilder.js"></script>
+		
+		<script type="text/javascript">
+			//******************************
+			//On Document Ready
+			//******************************
+			$(document).ready(function(){
+				QueryBuilderTree.initialSetup();				
+				FilterCriteriaModal.initialSetup();
+				ViewDefinition.initialSetup();
+			});//End Document ready
+			
+		</script>
+	
+	</head>
+
+	<body>
+		<div id="mainContent">
+			<h1>Advanced View Builder</h1>
+			<form method="post" action="" name="queryFilter">
+				<input type="button" 
+				   onclick="javascript:$.get('http://localhost:7001/casweb/queryBuilder.do', 
+				   							 {	method:'validateQuery',
+				   							 	columns: {cols: ['col1','col2','col3'], filts: 'filters'}
+				   							 }, 
+				   							 function(data){
+				   							 	//alert($(data).text());
+				   							 	$('#responseDescription').text($(data).text());
+				   							 });return false;
+				   			"
+				 value="Validate View" />
+	
+	 			<div id="responseDescription"></div>
+				<br/>
+				 
+				<table cellspacing="40px" valign="top">
+				<tr>
+				<td>
+					<ul>
+						<div id= "viewBuilder" class="groupHeader"><span>-</span>  VIEW BUILDER TREE</div>
+						<ul>
+							<div id="columns" class="groupHeader"><span>-</span>  COLUMNS</div>
+							<ul id="columnsGroup" class="columnsGroup"></ul>
+							<div  id="filters" class="groupHeader"><span>-</span>  FILTERS</div>
+							<ul id="filtersGroup" class="filtersGroup"></ul>
+							<div id="groups" class="groupHeader"><span>-</span>  GROUPS</div>
+							<ul id="groupsGroup" class="groupsGroup"></ul>
+							<div id="sorts" class="groupHeader"><span>-</span>  SORTS</div>
+							<ul id="sortsGroup" class="sortsGroup"></ul>
+						</ul>
+					</ul>
+				</td>
+				
+				<td style="padding-top: 50px">
+					<input type="button" onclick="javascript:new FilterClauseItem().surroundSelectedFilterClausesWithBracket();" value="Surround with ( )"/>
+				</td>
+				<td align="left" valign="top">
+					<div class="columnList">			
+						<div class="column" type="number" >Booking #</div>
+						<div class="column" type="text">Shipper Class</div>
+						<div class="column" type="textr">Shp Name</div>
+						<div class="column" type="text">Cnee Name</div>
+						<div class="column" type="number">VIN #</div>
+						<div class="column" type="text">Payment Type</div>
+						<div class="column" type="text">Origin Port</div>
+						<div class="column" type="text">Dest port</div>
+						<div class="column" type="date">Booked Dt</div>
+						<div class="column" type="number">Charges</div>
+						<div class="column" type="date">Ingate Dt</div>
+						<div class="column" type="date">Receive Dt</div>
+						<div class="column" type="number">Unit #</div>
+						<div class="column" type="number">Container #</div>
+						<div class="column" type="date">Stuff Dt</div>
+						<div class="column" type="date">Load Dt</div>
+						<div class="column" type="text">Load VVD</div>
+						<div class="column" type="date">Discharge Dt</div>
+						<div class="column" type="date">Unstuf Dt</div>
+						<div class="column" type="date">Available Dt</div>
+						<div class="column" type="date">Delivery Dt</div>
+						<div class="column" type="date">Pickup Dt</div>
+					</div>
+				</td>
+				</tr>
+				</table>
+				
+			</form>
+		</div>
+				
+		<!-- Div used to generate filter criteria html modal -->
+		<div class="jqmWindow" style="display: none;" id="filterCriteriaModal">
+			<div class="filterCriteriaModalContent">
+				<h2>Choose Filter Criteria</h2>
+				<div id="validationErrorDetail" class="errorMessage"></div>
+				<table align="center">
+					<tr valign="center">
+					
+						<td>
+							<input id="filterField" dataType="" type="text" value="" readonly="readonly"/>
+						</td>
+						
+						<td>
+							<select id="filterOperator">
+								<option>=</option>
+								<option>&lt;&gt;</option>
+								<option>&gt;</option>
+								<option>&gt;=</option>
+								<option>&lt;</option>
+								<option>&lt;=</option>
+								<option>Between</option>
+								<option>Is Not Null</option>
+								<option>Is Null</option>
+							</select>
+							
+						</td>
+						
+						<td>
+							<table>
+							<tr><td> <input type="text" value="" class="inputFields" id="fieldValue1" style="display: none"/></td></tr>
+							<tr><td> <input type="text" value="" class="inputFields" id="fieldValue2" style="display: none"/></td></tr>
+							</table>
+							
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2"> <input id="accept" type="button" value="Accept"/> </td>
+						<td colspan="2"> <input id="cancel" type="button" value="Cancel"/> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+		<!-- Context Menu for clause items-->
+		<div class="contextMenu" id="clauseItemMenu">
+	      <ul>
+	        <li id="delete"><img src="../../resource/img/cross.png" /> Delete</li>
+	      </ul>
+	    </div>
+		
+		<div id="viewDefintionFrame" style="display:show">
+			<div id="viewDefinitionHeader" class="viewDefinitionHeader" class="showContent"><span>-</span>View Definition:</div>
+			<div id="viewDefinitionContent">
+				<div class="viewDefinitionLabel">Show Columns:</div><div class="viewDefinitionItem" id="viewDefinitionColumns">None</div>
+				<div class="viewDefinitionLabel">Filter By:</div><div class="viewDefinitionItem" id="viewDefinitionFilterBy">None</div>
+				<div class="viewDefinitionLabel">Group By:</div><div class="viewDefinitionItem" id="viewDefinitionGroupBy">None</div>
+				<div class="viewDefinitionLabel">Sort By:</div><div class="viewDefinitionItem" id="viewDefinitionSortBy">None</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

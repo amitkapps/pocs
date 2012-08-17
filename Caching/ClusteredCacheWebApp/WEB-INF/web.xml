@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+	<display-name>CasSharedClusterCacheService</display-name>
+
+  <!-- Action Servlet Configuration -->
+  <servlet>
+    <servlet-name>ManipulateCacheServlet</servlet-name>
+    <servlet-class>com.matson.cas.cache.sample.servlet.ManipulateCache</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ViewCacheContentsServlet</servlet-name>
+    <servlet-class>com.matson.cas.cache.sample.servlet.ViewCacheContents</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+
+  <!-- Action Servlet Mapping -->
+  <servlet-mapping>
+    <servlet-name>ManipulateCacheServlet</servlet-name>
+    <url-pattern>ManipulateCache</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ViewCacheContentsServlet</servlet-name>
+    <url-pattern>ViewCacheContents</url-pattern>
+  </servlet-mapping>
+
+  <!-- The Welcome File List -->
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+</web-app>

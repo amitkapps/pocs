@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>SQLCriteriaPage</title>
+
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type"
+			content="text/html; charset=ISO-8859-1">
+
+		<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+	</head>
+
+	<body>
+		<form name="f1" id="f1" action="" method="post">
+
+
+			<div class="searchTable">
+				<table>
+					<tr>
+						<td class="dataField">
+							VIN:
+							<input type="hidden" name="column1" value="u.vin_number">
+						</td>
+						<td align="center" class="quickSearchFldBgColor">
+							<input type="text" id="u.vin_number" class="formField"
+								name="filterValue1" value="ALL"
+								onkeypress="return submitViaEnter(event)">
+						</td>
+						<td class="dataField">
+							Shipper:
+							<input type="hidden" name="column2" value="u.shipper_name">
+						</td>
+						<td align="center" class="quickSearchFldBgColor">
+							<input type="text" id="u.shipper_name" class="formField"
+								name="filterValue2" value="ALL"
+								onkeypress="return submitViaEnter(event)">
+						</td>
+						<td class="dataField">
+							Consignee:
+							<input type="hidden" name="column3" value="u.consignee_name">
+						</td>
+						<td align="center" class="quickSearchFldBgColor">
+							<input type="text" id="u.consignee_name" class="formField"
+								name="filterValue3" value="ALL"
+								onkeypress="return submitViaEnter(event)">
+						</td>
+					</tr>
+				</table>
+			</div>
+
+
+		</form>
+	</body>
+</html>

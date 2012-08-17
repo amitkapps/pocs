@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="conf"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/sourceforge/spring/spring-framework-2.0.6/dist/spring.jar" sourcepath="C:/AmitK/Reference/Technical/libraries/sourceforge/spring/spring-framework-2.0.6/dist/spring-src.zip"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/jakarta/commons/commons-logging-1.0.4/commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/apache/Xerces/Xerces-2.9.0/xerces-2_9_0/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/apache/Xerces/Xerces-2.9.0/xerces-2_9_0/xml-apis.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/sourceforge/spring/spring-framework-2.0.6/lib/aspectj/aspectjrt.jar" sourcepath="C:/AmitK/Reference/Technical/libraries/sourceforge/spring/spring-framework-2.0.6/src"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/sourceforge/spring/spring-framework-2.0.6/lib/aspectj/aspectjweaver.jar"/>
+	<classpathentry kind="lib" path="C:/AmitK/Reference/Technical/libraries/sourceforge/spring/spring-framework-2.0.6/lib/cglib/cglib-nodep-2.1_3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

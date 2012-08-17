@@ -1,0 +1,175 @@
+<dynatrace>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.framework.ulc.server.application.controller.navigation.shields.TabbedNavigatorNavisLookAndFeel"
+		id="Open Tab View" methodname="openPanel">
+		<thresholds threshold.upper.severe="1.0" />
+		<argument
+			argumenttype="com.navis.framework.ulc.server.application.navigation.INavigation" />
+		<argument argumenttype="boolean" />
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.framework.ulc.server.application.util.PrimaryKeyQueryRowProvider"
+		id="Table data query" methodname="attachMandatoryFields">
+		<thresholds threshold.upper.severe="1.0" />
+		<argument argumenttype="com.navis.framework.portal.query.DomainQuery" />
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.framework.ulc.server.application.controller.form.UpdateFormDataCommand"
+		usedmethod="all" matchignorewhitespaces="true" evaluation="stringValue"
+		id="Form Save" methodname="execute"
+		description="When save is clicked on an Edit form this is activated."
+		ischartable="true" metricid="Argument Value" measuretype="MethodMeasure"
+		isaggregated="false" match="starts" metricgroupid="Methods"
+		displayaggregations="31" displayunit="number">
+		<thresholds threshold.upper.severe="1.0" />
+		<argument argumenttype="java.lang.String" />
+		<argument argumenttype="java.io.Serializable" />
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.services.business.event.GroovyEventHandler" id="Groovy Events"
+		argumentnotomatch="2" methodname="invoke"
+		description="Gathers metrics on executed Groovy code." ischartable="true"
+		metricid="Argument Value" measuretype="MethodMeasure" isaggregated="false"
+		match="starts" metricgroupid="Methods" displayaggregations="31"
+		displayunit="number">
+		<thresholds threshold.upper.severe="1.0" />
+		<argument argumenttype="java.lang.String" />
+		<argument argumenttype="com.navis.services.business.event.Event" />
+		<argument argumenttype="com.navis.argo.business.api.Serviceable" />
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.inventory.ulc.server.application.controller.InventoryUiEntityCommandProvider$UnitAdaptiveUiEntityCommand"
+		id="Command" methodname="execute"
+		description="When a command is executed (e.g., Action menu) this is triggered."
+		ischartable="true" metricid="Argument Value" measuretype="MethodMeasure"
+		isaggregated="false" match="starts" metricgroupid="Methods"
+		displayaggregations="31" displayunit="number">
+		<argument argumenttype="java.lang.String" />
+		<argument argumenttype="java.io.Serializable[]" />
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.framework.ulc.server.application.controller.form.SubmitWithoutFormCommand"
+		id="Submit Without F orm Command" methodname="execute"
+		description="Submit Without F orm Command" ischartable="true"
+		metricid="Argument Value" measuretype="MethodMeasure" isaggregated="false"
+		match="starts" metricgroupid="Methods" displayaggregations="31"
+		displayunit="number">
+		<argument argumenttype="java.lang.String" />
+		<argument argumenttype="java.io.Serializable[]" />
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals" classname="org.quartz.Job"
+		id="Quartz" methodname="execute" description="This measure gathers metrics on Quartz jobs."
+		ischartable="true" metricid="Argument Value" measuretype="MethodMeasure"
+		isaggregated="false" match="starts" metricgroupid="Methods"
+		displayaggregations="31" displayunit="number">
+		<argument argumenttype="org.quartz.JobExecutionContext" />
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.argo.business.reports.DigitalAsset" id="Groovy - Find Class"
+		methodname="findGroovyClassCode" description="Metrics on looking up Groovy code in the database."
+		ischartable="true" metricid="Argument Value" measuretype="MethodMeasure"
+		isaggregated="false" match="starts" metricgroupid="Methods"
+		displayaggregations="31" displayunit="number">
+		<argument argumenttype="java.lang.String" />
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.road.ulc.server.application.controller.form.GateFormViewController$5"
+		id="Gate - Proceed to Next Stage" argumentnotomatch="-1"
+		methodname="safeActionPerformed">
+		<argument argumenttype="com.ulcjava.base.application.event.ActionEvent" />
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.road.ulc.server.application.controller.form.GateFormViewController"
+		id="Save Transaction - Gate" argumentnotomatch="-1" methodname="saveTransaction">
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.argo.ulc.server.application.controller.form.AbstractArgoInspectorViewController"
+		id="Inspector Show View" argumentnotomatch="-1" methodname="showView">
+		<argument argumenttype="boolean" />
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.road.business.util.RoadBizUtil" id="Groovy - Road Call Custom Code"
+		argumentnotomatch="-1" methodname="callCustomCode"
+		description="Represents metrics on calling custom code in the road module.">
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.argo.util.CustomGroovyInvoker" id="Groovy - Call Custom Code"
+		argumentnotomatch="-1" methodname="invokeCustomGroovy" ischartable="false"
+		metricid="Invocation" measuretype="MethodMeasure" isaggregated="false"
+		match="equals" metricgroupid="Methods" displayaggregations="31"
+		displayunit="number">
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.apex.business.xps.mediators.CacheMasterHeartbeatTask"
+		id="Cache Heartbeat" argumentnotomatch="-1" methodname="execute">
+		<argument argumenttype="org.quartz.JobExecutionContext" />
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.apex.business.xps.mediators.CacheMasterHeartbeatTask"
+		id="Cache HB" argumentnotomatch="-1" methodname="execute" description="Cache HB">
+		<argument argumenttype="org.quartz.JobExecutionContext" />
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.argo.webservice. ArgoWebServices" id="Web Service - Generic Invoke"
+		argumentnotomatch="-1" methodname="genericInvoke"
+		description="Metrics on Web Service generic invoke." ischartable="false"
+		metricid="Invocation" measuretype="MethodMeasure" isaggregated="false"
+		match="equals" metricgroupid="Methods" displayaggregations="31"
+		displayunit="number">
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.argo.webservice. ArgoWebServices" id="Web Service - Basic Invoke"
+		argumentnotomatch="-1" methodname="basicInvoke"
+		description="Metrics on web service basicInvoke." ischartable="false"
+		metricid="Invocation" measuretype="MethodMeasure" isaggregated="false"
+		match="equals" metricgroupid="Methods" displayaggregations="31"
+		displayunit="number">
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.apex.business.ApexInterceptor" id="Apex Intercepter"
+		argumentnotomatch="-1" methodname="handleSpecialCases"
+		description="Metrics on the overhead of the APEX intercepter."
+		ischartable="false" metricid="Invocation" measuretype="MethodMeasure"
+		isaggregated="false" match="equals" metricgroupid="Methods"
+		displayaggregations="31" displayunit="number">
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.argo.business.snx.ArgoGenericWebServiceHandler"
+		id="Web Service - Generic Update" argumentnotomatch="-1" methodname="processUpdate"
+		description="Metrics on the ARGO base web service update method."
+		ischartable="false" metricid="Invocation" measuretype="MethodMeasure"
+		isaggregated="false" match="equals" metricgroupid="Methods"
+		displayaggregations="31" displayunit="number">
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.framework.ulc.server.application.controller.search.AbstractApplyFilterEntityCommand"
+		id="ULC Table Filter"
+		description="This measures the impact of the table view filter. This is triggered when the user changes the filter, or when the Carina application opens into a table view with a filter applied to it."
+		ischartable="false" metricid="Invocation" measuretype="MethodMeasure"
+		isaggregated="false" match="equals" metricgroupid="Methods"
+		displayaggregations="31" displayunit="number">
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.vessel.web.VesselMobileNewHatchClerkInspection"
+		id="Hatch Clerk Discharge" argumentnotomatch="-1" methodname="dischargeFromVessel">
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.vessel.web.HatchclerkMobileUtil" id="Hatch Clerk - Discharge Inspection"
+		argumentnotomatch="-1" methodname="commitUnitInformation">
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.vessel.web.VesselMobileNewHatchClerkInspection"
+		id="Hatch Clerk Load – Bento Msg" argumentnotomatch="-1" methodname="loadToVessel">
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.inventory.business.units.JobRefreshUnits" id="Refresh Units Job"
+		argumentnotomatch="-1" methodname="executeInternal">
+		<argument argumenttype="org.quartz.JobExecutionContext" />
+	</measure>
+	<measure valuetomatch="" methodnamematch="equals"
+		classname="com.navis.inventory.business.units.JobRemoveOutgateUnits"
+		id="Remove Outgate Units Job" argumentnotomatch="-1" methodname="executeInternal"
+		description="Remove Outgate Units Job">
+		<argument argumenttype="org.quartz.JobExecutionContext" />
+	</measure>
+</dynatrace>

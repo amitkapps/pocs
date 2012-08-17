@@ -1,0 +1,20 @@
+#
+#Sun Feb 04 22:54:17 GMT-07:00 2007
+genBasicCompId=false
+sessionFactoryName=com.poc.db.hibernate.HibernateSessionFactory
+profile=
+daoSFId=
+version=3.1
+jndiPath=
+springDaoFile=
+useJavaTypes=true
+keyGenerator=
+libInstallFolder=/WebRoot/WEB-INF/lib
+addLibs2Project=true
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=java.lang.Object
+reSettingsFile=/POC/hibernate.reveng.xml
+configFile=/POC/src/hibernate.cfg.xml
+createConfigFile=true
+addLibs2Classpath=true

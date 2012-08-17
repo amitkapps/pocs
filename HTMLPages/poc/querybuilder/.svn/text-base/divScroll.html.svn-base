@@ -1,0 +1,5 @@
+<div style="{height: 50px; overflow-y: scroll}"><div class="column draggable" title="Draggable column" style="-moz-user-select: none;">City Name</div>
+<div class="column draggable" title="Draggable column" style="-moz-user-select: none; position: relative;">State Name</div>
+<div class="column draggable" title="Draggable column" style="-moz-user-select: none;">Zip Code</div>
+<div class="column draggable" title="Draggable column" style="-moz-user-select: none; position: relative;">Update Date</div>
+</div>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:int="http://www.springframework.org/schema/integration"
+       xmlns:int-xml="http://www.springframework.org/schema/integration/xml"
+       xmlns:oxm="http://www.springframework.org/schema/oxm"
+       xmlns:int-jms="http://www.springframework.org/schema/integration/jms"
+       xmlns:int-stream="http://www.springframework.org/schema/integration/stream"
+       xmlns:int-jdbc="http://www.springframework.org/schema/integration/jdbc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:int-mail="http://www.springframework.org/schema/integration/mail"
+       xmlns:task="http://www.springframework.org/schema/task" xmlns:jms="http://www.springframework.org/schema/jms"
+       xsi:schemaLocation="http://www.springframework.org/schema/integration/xml http://www.springframework.org/schema/integration/xml/spring-integration-xml-2.0.xsd
+		http://www.springframework.org/schema/integration/mail http://www.springframework.org/schema/integration/mail/spring-integration-mail-2.0.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-2.0.xsd
+		http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+		http://www.springframework.org/schema/integration/jms http://www.springframework.org/schema/integration/jms/spring-integration-jms-2.0.xsd
+		http://www.springframework.org/schema/integration/stream http://www.springframework.org/schema/integration/stream/spring-integration-stream-2.0.xsd
+		http://www.springframework.org/schema/integration/jdbc http://www.springframework.org/schema/integration/jdbc/spring-integration-jdbc-2.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.0.xsd" >
+
+    <context:component-scan base-package="si.extension"/>
+    <context:component-scan base-package="si.services"/>
+    <context:component-scan base-package="si.jms"/>
+
+    <context:annotation-config/>
+    <int:annotation-config/>
+
+    <import resource="classpath:db-config.xml"/>
+    <import resource="classpath:si/jms/jms-config.xml"/>
+    <import resource="classpath:si/jms/OrderProcessor-context.xml"/>
+
+    <bean id="ordersMessageListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="concurrentConsumers" value="1"/>
+        <property name="destinationName" value="jms.queue.poc.ordersystem"/>
+        <property name="pubSubDomain" value="false"/>
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="destinationResolver" ref="destinationResolver"/>
+    </bean>
+
+    <!--Orders xml received by this listener container -->
+    <int-jms:message-driven-channel-adapter id="xmlInputJms" container="ordersMessageListenerContainer"
+                                            channel="ordersMessage" error-channel="ordersMessageError"/>
+
+    <int:channel id="ordersMessage"/>
+
+    <int:header-enricher id="ordersMessageIdEnricher" input-channel="ordersMessage" output-channel="idEnrichedOrdersMessage">
+        <int:header name="ordersMessageId" ref="ordersMessageIdGenerator" method="getNextMessageId"/>
+    </int:header-enricher>
+
+    <int:channel id="idEnrichedOrdersMessage"/>
+
+    <int:service-activator input-channel="idEnrichedOrdersMessage" output-channel="ordersMessageForSplitting"
+                           ref="passthrough" method="passthrough"/>
+
+    <int:channel id="ordersMessageForSplitting"/>
+
+    <!--Orders splitted to individual fragments of order each -->
+    <int-xml:xpath-splitter id="ordersToOrderSplitter" input-channel="ordersMessageForSplitting" output-channel="ordersSplitted" create-documents="false">
+        <int-xml:xpath-expression expression="/orders/order"/>
+    </int-xml:xpath-splitter>
+
+    <!--JDBC message store backed queue-->
+    <int:channel id="ordersSplitted" />
+
+    <int:service-activator id="passthroughToJMS" input-channel="ordersSplitted" ref="passthrough" method="passthrough"
+            output-channel="ordersSplittedForJms"/>
+
+    <int:channel id="ordersSplittedForJms"/>
+
+    <int-jms:outbound-channel-adapter id="outboundToOrdersJms" channel="ordersSplittedForJms" connection-factory="connectionFactory"
+                                      destination-name="jms.queue.poc.orders" pub-sub-domain="false"
+            destination-resolver="destinationResolver" />
+
+
+    <int:channel id="ordersMessageError"/>
+
+    <int-stream:stderr-channel-adapter id="ordersMessageStdErr" channel="ordersMessageError" auto-startup="true"/>
+
+</beans>

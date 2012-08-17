@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>VINSight Message Archive Servlet</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="CalendarPopup.js"></script>
+		<script type="text/javascript" src="PopupWindow.js"></script>
+		<script type="text/javascript" src="AnchorPosition.js"></script>
+		<script type="text/javascript" src="date.js"></script>
+		<script type="text/javascript" src="niceforms.js"></script>
+		<style type="text/css" media="screen">@import url(niceforms-default.css);</style>
+		<script type="text/javascript">
+function callServlet() {
+  for (var i=0; i < document.forms['message'].server.length; i++) {
+    if (document.forms['message'].server[i].selected) {
+      document.forms['message'].action = 'http://' + document.forms['message'].server[i].value + '/AMISPollerStartupServlet/servlets/retrieve/MessageServlet';
+      break;
+    }
+  }
+}
+</script>
+	</head>
+
+	<body>
+		<div id="container">
+			<h2>
+				Search for Archived Messages
+			</h2>
+			<p>
+				&nbsp;
+			</p>
+			<form name="message" method="post"
+				action="/AMISPollerStartupServlet/servlets/retrieve/MessageServlet"
+				onsubmit="javascript:callServlet();">
+				<input type="hidden" name="qKey" value="3760565290974525751" />
+				<label for="server">
+					<span class="required">*</span> &nbsp;Server:
+				</label>
+				<br />
+				<select size="1" id="server" name="server">
+					<option selected="selected" value="localhost:7001">
+						Local Machine
+					</option>
+					<option value="10.8.7.145:9001">
+						PHX Development
+					</option>
+					<option value="10.8.7.46:9001">
+						CSC Development
+					</option>
+					<option value="10.201.0.6:9001">
+						CSC QA
+					</option>
+					<option value="10.201.2.7:9001">
+						CSC Pre-production
+					</option>
+				</select>
+				<br />
+				<label for="qSource">
+					Source of Message:
+				</label>
+				<br />
+				<input type="radio" name="qSource" id="all" value="" />
+				<label for="all">
+					All
+				</label>
+				<br />
+				<input type="radio" name="qSource" id="mf" value="MF" />
+				<label for="mf">
+					Mainframe
+				</label>
+				<br />
+				<input type="radio" name="qSource" id="vs" value="VS" />
+				<label for="vs">
+					VINsight
+				</label>
+				<br />
+				<br />
+				<input type="checkbox" name="qSuccess" id="successFlag" value="Y" />
+				<label for="qSuccess">
+					All Messages &nbsp;
+					<span class="rules">(defaults to errors only)</span>
+				</label>
+				<br />
+				<br />
+				<label for="qStart">
+					Start Date:
+				</label>
+				<br />
+				<input type="text" id="qStart" name="qStart" class="textinput"
+					maxlength="25" />
+				<a id='dateAnchorStart'
+					onclick="javascript: (new CalendarPopup()).select(document.message.qStart, 'dateAnchorStart', 'MM/dd/yyyy HH:mm:ss'); return false;"
+					href="#" name="dateAnchorStart"><img src="images/calendar.gif"
+						border=0 />
+				</a> &nbsp;
+				<span class="rules">(MM/dd/yyyy HH:mm:ss)</span>
+				<br />
+				<label for="qEnd">
+					End Date:
+				</label>
+				<br />
+				<input type="text" id="qEnd" name="qEnd" class="textinput"
+					maxlength="25" />
+				<a id='dateAnchorEnd'
+					onclick="javascript: (new CalendarPopup()).select(document.message.qEnd, 'dateAnchorEnd', 'MM/dd/yyyy HH:mm:ss'); return false;"
+					href="#" name="dateAnchorEnd"><img src="images/calendar.gif"
+						border=0 />
+				</a> &nbsp;
+				<span class="rules">(MM/dd/yyyy HH:mm:ss)</span>
+				<br />
+				<br />
+				<label for="qText">
+					Message Text Contains
+					<span class="rules">(at least 4 characters)</span>:
+				</label>
+				<br />
+				<textarea id="textareainput" name="qText" class="textarea"></textarea>
+				<br />
+				<br />
+				<input type="submit" value="Submit" class="buttonSubmit" />
+				<input type="reset" value="Reset" class="buttonSubmit" />
+				<div id="stylesheetTest"></div>
+			</form>
+
+			<p>
+				&nbsp;
+			</p>
+			<p>
+				&nbsp;
+			</p>
+			<p>
+				<a href="submit.html">VINsight Enabler</a>
+			</p>
+			<p>
+				<a href="admin.xml">Admin Menu</a>
+			</p>
+		</div>
+	</body>
+</html>

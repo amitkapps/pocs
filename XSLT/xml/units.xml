@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xslt/unitsDynaAttributes.xslt"?>
+<unitsShipped>
+	<unit id="1">
+		<shipperClass>POV</shipperClass>
+		<shipperName>Amit Kapoor</shipperName>
+		<consigneeName>Tom Sawyer</consigneeName>
+		<originPort>OAK</originPort>
+		<destinationPort>HON</destinationPort>
+		<bookedVVD>MAT444W</bookedVVD>
+		<location>
+			<type>T</type>
+			<code>HON</code>
+		</location>
+	</unit>
+	<unit id="2">
+		<shipperClass>MSC</shipperClass>
+		<shipperName>US GOVT</shipperName>
+		<consigneeName>ALASKA GOVT.</consigneeName>
+		<originPort>SEA</originPort>
+		<destinationPort>GUM</destinationPort>
+		<bookedVVD>LUR598W</bookedVVD>
+		<location>
+			<type>V</type>
+			<code>MHI350E</code>
+		</location>
+	</unit>
+	<unit id="3">
+		<shipperClass>ASN</shipperClass>
+		<shipperName>General Mortor Corp.</shipperName>
+		<consigneeName>GMC of Kwajalein</consigneeName>
+		<originPort>LAX</originPort>
+		<destinationPort>KWJ</destinationPort>
+		<bookedVVD>GTL500W</bookedVVD>
+		<location>
+			<type>T</type>
+			<code>LAX</code>
+		</location>
+	</unit>
+</unitsShipped>

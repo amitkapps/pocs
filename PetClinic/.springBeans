@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[2.0.4.v200802202100]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[true]]></enableImports>
+	<configs>
+		<config>src/main/resources/META-INF/spring/petclinic/aspects-context.xml</config>
+		<config>src/main/resources/META-INF/spring/petclinic/datasource-context.xml</config>
+		<config>src/main/resources/META-INF/spring/petclinic-context.xml</config>
+		<config>src/main/resources/META-INF/spring/petclinic/application-context.xml</config>
+	</configs>
+	<configSets>
+		<configSet>
+			<name><![CDATA[ClinicTests]]></name>
+			<allowBeanDefinitionOverriding>false</allowBeanDefinitionOverriding>
+			<incomplete>false</incomplete>
+			<configs>
+				<config>src/main/resources/META-INF/spring/petclinic-context.xml</config>
+			</configs>
+		</configSet>
+	</configSets>
+</beansProjectDescription>

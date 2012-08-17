@@ -1,0 +1,49 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        <property name="format_sql">true</property>
+        <property name="use_sql_comments">true</property>
+        <property name="cache.use_query_cache">true</property>
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="show_sql">false</property>
+
+        <!--Cache Provider-->
+        <!--<property name="cache.provider_class">org.hibernate.cache.HashtableCacheProvider</property>-->
+
+        <!--Infinispan cache provider-->
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.infinispan.InfinispanRegionFactory</property>
+        <property name="hibernate.cache.infinispan.cfg">Infinispan-Config.xml</property>
+
+        <property name="hibernate.cache.infinispan.entity.cfg">entity</property>
+        <property name="hibernate.cache.infinispan.collection.cfg">entity</property>
+        <property name="hibernate.cache.infinispan.query.cfg">local-query</property>
+        <property name="hibernate.cache.infinispan.timestamp.cfg">timestamps</property>
+
+
+        <!--<property name="hibernate.hbm2ddl.auto">create</property>-->
+        <!--Hibernate Search-->
+        <property name="hibernate.search.default.directory_provider">filesystem</property>
+        <property name="hibernate.search.default.indexBase">/temp/hibernateSearchIndex</property>
+        
+        
+        <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="connection.url">jdbc:oracle:thin:@10.8.7.32:1521:MATD01PH</property>
+        <property name="connection.username">mnsuser</property>
+        <property name="connection.password">user2003</property>
+
+        <!--MNS Entities-->
+        <mapping class="hibernateSearch.OceanEvent"/>
+        <mapping class="hibernateSearch.OceanEventBol"/>
+        <mapping class="hibernateSearch.OceanEventCommodity"/>
+        <mapping class="hibernateSearch.OceanEventParty"/>
+
+        <!--Entities that are cached-->
+        <class-cache class="hibernateSearch.OceanEvent" usage="read-only" />
+
+
+    </session-factory>
+</hibernate-configuration>

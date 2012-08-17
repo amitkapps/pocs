@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ear" name="entapp:ear">
+    <output-path>$PROJECT_DIR$/entapp/target</output-path>
+    <root id="archive" name="entapp.ear">
+      <element id="artifact" artifact-name="entapp:ear exploded" />
+    </root>
+  </artifact>
+</component>

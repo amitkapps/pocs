@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Drag Drop</title>
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<style media="all" type="text/css">
+
+
+body
+{
+ background: #fff;
+ margin: 0;
+ padding: 0;
+ height: 100%;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 10pt;
+}
+
+.draggable {
+ position: absolute;
+ width: 80px;
+ height: 40px;
+ border: 1px solid #0090DF;
+ background-color: #68BFEF;
+ padding: 10px;
+ text-align: center;
+}
+
+#parentElem
+{
+ width: 402px;
+ height: 160px;
+ background-color: #FFDFDF;
+ border: 10px solid #900;
+ padding: 20px;
+ top: 150px;
+ left: 0px;
+ position: absolute;
+ overflow: hidden;
+ margin: 10px;
+ color: #000;
+ border-left-width: 10px;
+}
+#insideParent
+{
+ width: 100px;
+ height: 100px;
+ background-color: #9c0;
+ color: #fff;
+}
+#drag1
+{
+ top: 10px;
+ left: 10px;
+}
+#drag2
+{
+ top: 10px;
+ left: 130px;
+}
+#drag3
+{
+ top: 10px;
+ left: 250px;
+}
+#drag4
+{
+ top: 10px;
+ left: 370px;
+}
+#drag5
+{
+ top: 80px;
+ left: 10px;
+}
+#drag6
+{
+ top: 80px;
+ left: 130px;
+}
+#drag7
+{
+ top: 80px;
+ left: 250px;
+}
+#drag7 div
+{
+ cursor: move;
+ background-color: #900;
+ height: 15px;
+}
+#drag8
+{
+ top: 80px;
+ left: 370px;
+}
+.frameClass
+{
+ border: 1px dotted #999;
+}
+.droppablehover{
+	background: yellow;
+}
+.transferer1 {
+	border:1px solid #000000;
+}
+</style>
+		
+		<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+		<script type="text/javascript" src="../../resource/js/jquery/core/jquery-1.2.1.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/iutil.js"></script>	
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/idrag.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/idrop.js"></script>
+		<script type="text/javascript" src="../../resource/js/jquery/plugins/interface/ifxtransfer.js"></script>
+
+		
+		<script type="text/javascript">
+			function transferFxDisplayer(drag, drop){
+				this.drag = drag;
+				this.drop = drop;
+				var me = this;
+				this.invoke = function(){
+					$(me.drop).append($(me.drag).text());
+				};
+			};
+			
+			$(document).ready(function(){
+
+				$('#button1').Draggable({
+					zIndex: 	1000,
+					ghosting:	true,
+					opacity: 	0.7,
+					revert: false
+				});
+
+				$('.droppables').Droppable({
+					accept: 'canDrop',
+					hoverclass:	'droppablehover',
+					ondrop:	function (drag){
+						$(drag).TransferTo({
+							to:this,
+							className:'transferer1', 
+							duration: 400,
+							complete: new transferFxDisplayer(drag, this).invoke
+						});
+						
+						//alert(this); the droppable
+						//alert(drag); //the draggable
+						//return false;
+					}
+				});
+
+
+			});
+			
+		</script>
+	</head>
+
+	<body>
+		<form method="post" action="filterValidate.do" name="queryFilter">
+			<table width="100%">
+			<tr>
+			<td>
+			<table width="100%" border="1">
+				<tr>
+					<td>drag the field to any of the columns below</td>
+					<td><div id="button1" class="canDrop"><button name="Field1">Field1</button></div></td>
+				</tr>
+				<tr><td><div class="droppables" id="droppable1">1</div></td></tr>
+				<tr><td><div class="droppables" id="droppable2">1</div></td></tr>
+				<tr><td><div class="droppables" id="droppable3">1</div></td></tr>
+				<tr><td><div class="droppables" id="droppable4">1</div></td></tr>
+				<tr><td><div class="droppables" id="droppable5">1</div></td></tr>
+				<tr><td><div class="droppables" id="droppable6">1</div></td></tr>
+				<tr><td><div class="droppables" id="droppable7">1</div></td></tr>
+				<tr><td><div class="droppables" id="droppable8">1</div></td></tr>
+				<tr><td><div class="droppables" id="droppable9">1</div></td></tr>
+				<tr><td><div class="droppables" id="droppable10">1</div></td></tr>
+				<tr><td><div class="droppables" id="droppable11">1</div></td></tr>
+				<tr><td><div class="droppables" id="droppable12">1</div></td></tr>
+			</table>
+			</td>
+				
+			</tr>
+			</table>
+		</form>
+	</body>
+</html>

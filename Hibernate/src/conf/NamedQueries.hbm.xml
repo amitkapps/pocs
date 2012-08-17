@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    
+    <sql-query name="my.upcoming.booking">
+      <return entity-name="bookingDisplay" />
+      <![CDATA[  
+       	SELECT 
+       	bookingDisp.BOOKING_ID AS bookingId  ,
+        bookingDisp.BOOKING_NUMBER AS bookingNumber  ,
+        bookingDisp.BOOKED_DATE AS bookedDate  ,
+        bookingDisp.ORIGIN AS origin  ,
+        bookingDisp.DESTINATION AS destination  ,
+        (select name  from MZ_VESSEL  where code=bookingDisp.VESSEL_CODE)||' '||VOYAGE||' '||VOYAGE_DIRECTION AS vvd  ,
+        PVIM_ARR_DEP_DATE AS sailDate ,
+        	(select 
+        		orgn.organization_name
+  			from mz_organization orgn,
+          		mt_booking_party barl2,
+          		mt_booking bkng2
+  			where 
+  				bookingDisp.BOOKING_ID = bkng2.BOOKING_ID
+   			and bkng2.BOOKING_ID = barl2.BOOKING_ID
+     		and barl2.PARTY_TYPE = '03'
+      		and barl2.ORGANIZATION_ID = orgn.organization_id) consignee         
+        FROM MT_BOOKING bookingDisp,
+       	ML_WEB_BOOKING web,
+        PF_VVD_ITN_MATSON vvd
+		WHERE  bookingDisp.BOOKING_ID = web.BOOKING_ID
+		AND  vvd.PVIM_VESSEL_CODE = bookingDisp.VESSEL_CODE
+		AND  vvd.PVIM_VOYAGE = bookingDisp.VOYAGE 
+		AND  vvd.PVIM_DIR = bookingDisp.VOYAGE_DIRECTION
+		AND  vvd.PVIM_ARR_DEP='D'
+		AND  vvd.PVIM_ARR_DEP_DATE >=trunc(sysdate)
+		AND  vvd.PVIM_CITY = bookingDisp.origin
+		and  exists (
+                  SELECT null 
+                    FROM WEB_AUTHORIZATION weba, MT_BOOKING_PARTY barl  
+                   WHERE bookingDisp.BOOKING_ID = barl.BOOKING_ID 
+                     AND BARL.PARTY_TYPE = '02' 
+                     AND BARL.ADDRESS_ROLE = WEBA.WEBA_AROL_ID 
+                     AND WEBA.WEBA_SERVICE_CODE IN ('BM','VB') 
+                     AND WEBA_WEB_ID = web.WEB_ID 
+                     AND WEBA.WEBA_TRADE = bookingDisp.TRADE 
+                 ) 
+  order by 7 asc   
+   ]]>
+  </sql-query>
+</hibernate-mapping>
+

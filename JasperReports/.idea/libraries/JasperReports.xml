@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="JasperReports">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../../Reference/Technical/libraries/jasperforge/jasperreports/dist/jasperreports-3.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../Reference/Technical/libraries/jasperforge/jasperreports/lib/commons-logging-1.0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../Reference/Technical/libraries/jasperforge/jasperreports/lib/commons-digester-1.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../Reference/Technical/libraries/jasperforge/jasperreports/lib/commons-collections-2.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../Reference/Technical/libraries/jasperforge/jasperreports/lib/groovy-all-1.5.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../Reference/Technical/libraries/jasperforge/jasperreports/lib/iText-2.1.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../Reference/Technical/libraries/jasperforge/jasperreports/lib/commons-beanutils-1.8.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../../../Reference/Technical/libraries/jasperforge/jasperreports/src" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 sp1 (http://www.altova.com) by SS (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.matson.com/milportal/schema" xmlns:miltns="http://www.matson.com/milportal/schema" targetNamespace="http://www.matson.com/milportal/schema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Order" type="tns:OrderType"/>
+	<xs:element name="Stop" type="tns:StopType"/>
+	<xs:element name="ReferenceNumber" type="tns:ReferenceNumberType"/>
+	<xs:element name="Event" type="tns:EventType"/>
+	<xs:element name="StopEvent" type="tns:StopEventType"/>
+	<xs:complexType name="BaseObjectType">
+		<xs:annotation>
+			<xs:documentation>Base Schema for any complex type</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="createdUser" type="xs:string" minOccurs="0"/>
+			<xs:element name="createdDate" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="updatedUser" type="xs:string" minOccurs="0"/>
+			<xs:element name="updatedDate" type="xs:dateTime" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OrderType">
+		<xs:annotation>
+			<xs:documentation>Order Schema to represent order's details</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tns:BaseObjectType">
+				<xs:sequence>
+					<xs:element name="commandType" type="xs:string" />
+					<xs:element name="orderNumber" type="xs:string" />
+					<xs:element name="subsidiaryId" type="xs:string" />
+					<xs:element name="orderStatus" type="xs:string" />
+					<xs:element name="customerName" type="xs:string" />
+                    <xs:element name="controllingPartyID" type="xs:string" minOccurs="1" maxOccurs="1"></xs:element>
+                    <xs:element name="projectNumber" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="originCity" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="originState" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="destinationCity" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="destinationState" type="xs:string"
+						minOccurs="0" />
+					<xs:element ref="tns:ReferenceNumber" minOccurs="0"
+						maxOccurs="unbounded" />
+					<xs:element name="totalMiles" type="xs:float"
+						minOccurs="0" />
+					<xs:element name="totalPieces" type="xs:float"
+						minOccurs="0" />
+					<xs:element name="totalWeight" type="xs:float"
+						minOccurs="0" />
+					<xs:element ref="tns:Shipment"
+						maxOccurs="unbounded" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ReferenceNumberType">
+		<xs:annotation>
+			<xs:documentation>Reference Schema to represent reference's details</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tns:BaseObjectType">
+				<xs:sequence>
+					<xs:element name="type" type="xs:string"/>
+					<xs:element name="number" type="xs:string"/>
+					<xs:element name="isPrimary" type="xs:boolean" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StopType">
+		<xs:annotation>
+			<xs:documentation>Stop Schema to represent stop's details</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tns:BaseObjectType">
+				<xs:sequence>
+					<xs:element name="sequenceNo" type="xs:string" />
+					<xs:element name="stopType">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:length value="1" />
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="locationName" type="xs:string"
+						minOccurs="0" />
+                    <xs:element name="locationID" type="xs:string" minOccurs="0" maxOccurs="1"></xs:element>
+                    <xs:element name="address" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="city" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="state" minOccurs="0" />
+					<xs:element name="requestedDate" type="xs:dateTime"
+						minOccurs="0" />
+
+
+					<xs:element ref="tns:StopEvent" minOccurs="0"
+						maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="EventType">
+		<xs:annotation>
+			<xs:documentation>Event Schema to represent event's details</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tns:BaseObjectType">
+				<xs:sequence>
+					<xs:element name="eventID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="eventDateTime" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="eventType" minOccurs="1" type="xs:string" maxOccurs="1">
+					</xs:element>
+					<xs:element name="attributeName" type="xs:string" minOccurs="0"/>
+					<xs:element name="attributeValue" type="xs:anySimpleType" minOccurs="0"/>
+					<xs:element name="note" minOccurs="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="2000"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StopEventType">
+		<xs:annotation>
+			<xs:documentation>Stop Event Schema to represent stop event's details</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tns:EventType">
+				<xs:sequence>
+					<xs:element name="stopSequenceNo" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ShipmentType">
+		<xs:complexContent>
+			<xs:extension base="tns:BaseObjectType">
+				<xs:sequence>
+					<xs:element name="shipmentID" type="xs:string" minOccurs="0"/>
+					<xs:element ref="tns:Stop" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Shipment" type="tns:ShipmentType"/>
+</xs:schema>

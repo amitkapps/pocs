@@ -1,0 +1,103 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>apache-commons-net-poc</groupId>
+    <artifactId>apache-commons-net-poc</artifactId>
+    <packaging>jar</packaging>
+    <version>1.4.1</version>
+    <name>apache-commons-net-poc</name>
+    <url>http://maven.apache.org</url>
+
+    <repositories>
+        <repository>
+            <id>matson-nexus</id>
+            <url>http://10.8.7.145:8081/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+<!--
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.5.11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.5.11</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+-->
+
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>1.4.1</version>
+<!--
+            <exclusions>
+                <exclusion>
+                    <groupId>oro</groupId>
+                    <artifactId>oro</artifactId>
+                </exclusion>
+            </exclusions>
+-->
+        </dependency>
+
+<!--
+        <dependency>
+            <groupId>oro</groupId>
+            <artifactId>oro</artifactId>
+            <version>2.0.7</version>
+        </dependency>
+-->
+<!--
+        <dependency>
+            <groupId>weblogic</groupId>
+            <artifactId>weblogic</artifactId>
+            <version>10.3</version>
+            <scope>system</scope>
+            <systemPath>C:\bea103\wlserver_10.3\server\lib\consoleapp\APP-INF\lib\jakarta-oro.jar</systemPath>
+        </dependency>
+-->
+<!--
+        <dependency>
+            <groupId>oro</groupId>
+            <artifactId>oro</artifactId>
+            <version>2.0.1</version>
+            <scope>system</scope>
+            <systemPath>C:\AmitK\downloads\jakarta-oro-2.0.jar</systemPath>
+        </dependency>
+-->
+
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>poc.apache.commons.net.FtpClientTest</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

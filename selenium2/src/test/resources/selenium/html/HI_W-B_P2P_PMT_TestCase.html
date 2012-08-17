@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://preprod.matson.com/" />
+<title>HI_W-B_P2P_PMT_TestCase</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">HI_W-B_P2P_PMT_TestCase</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/povbooking</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=origin</td>
+	<td>label=Long Beach</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=destination</td>
+	<td>label=Honolulu</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=destination</td>
+	<td>label=Honolulu</td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>id=serviceType</td>
+	<td>,Port To Port,Door To Port</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=serviceType</td>
+	<td>label=Port To Port</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=vin</td>
+	<td>3FAFP113X2R154258</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>id=vin</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=make</td>
+	<td>regexp:.+</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=make</td>
+	<td>FORD</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=year</td>
+	<td>2002</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=model</td>
+	<td>ESCORT ZX2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=color</td>
+	<td>BLACK</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=licenseNumber</td>
+	<td>TESTSJ</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=licenseState</td>
+	<td>label=AZ</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=handlingInstructions</td>
+	<td>Stacey Jackson's Test</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=trgDateField</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='calendar']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//div[@class='calendar']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>//div[@class='calendar']/table/thead/tr[@class='headrow']/td[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=pickUpDate</td>
+	<td>regexp:.+</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=flowSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=rateType</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=flowSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=shipperFirstName</td>
+	<td>Stacey</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=shipperLastName</td>
+	<td>Jackson</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=shipperAddress</td>
+	<td>123 Test Lane</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=shipperCity</td>
+	<td>Phoenix</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=shipperState</td>
+	<td>label=AZ</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=shipperZip</td>
+	<td>85040</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=shipperAreaCode</td>
+	<td>480</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=shipperExchange</td>
+	<td>902</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=shipperStation</td>
+	<td>5000</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=shipperEmail</td>
+	<td>akapoor@matson.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=consigneeFirstName</td>
+	<td>Stacey</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=consigneeLastName</td>
+	<td>Jackson</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=consigneeAddress</td>
+	<td>123 Test Lane</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=consigneeCity</td>
+	<td>Kilauea</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=consigneeState</td>
+	<td>label=HI</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=consigneeZip</td>
+	<td>96754</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=consigneeAreaCode</td>
+	<td>480</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=consigneeExchange</td>
+	<td>902</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=consigneeStation</td>
+	<td>5000</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=consigneeEmail</td>
+	<td>akapoor@matson.com</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=notifyTypeEmail</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=contactNotifyEmail</td>
+	<td>akapoor@matson.com</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=flowSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=paymentMethodCC</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=cardType</td>
+	<td>label=VISA</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=creditCardNumber</td>
+	<td>4111111111111111</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=expirationMonth</td>
+	<td>label=01</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=expirationYear</td>
+	<td>label=2015</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=flowSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@id='flowSubmit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Your automobile shipment has been successfully booked</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//td[@id='content']/table/tbody/tr[3]/td/table/tbody/tr[2]/td[2]/table/tbody/tr[3]/td[2]</td>
+	<td>bookingNumber</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>bookingNumber='${bookingNumber}'</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

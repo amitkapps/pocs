@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
+<!-- -->
+        <property name="connection.url">jdbc:oracle:thin:@10.3.4.65:1521:MATD01</property>
+        <property name="connection.username">akapoor</property>
+        <property name="connection.password">akapoor</property>
+         
+<!-- 
+        <property name="connection.url">jdbc:oracle:thin:@10.8.7.55:1521:VCSCD01</property>
+        <property name="connection.username">vcscuser</property>
+        <property name="connection.password">user2003</property>
+ --> 
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.Oracle9Dialect</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+<!-- 
+        <property name="current_session_context_class">thread</property>
+ -->
+        <!-- enable the second-level cache  -->
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.use_query_cache">true</property>
+         <!-- Oscache at alternative location doesn't work -->
+<!--          
+        <property name="cache.provider_class">org.hibernate.cache.OSCacheProvider</property>
+        <property name="hibernate.cache.provider_configuration_file_resource_path">/poc/hibernate/caching/oscache.properties</property>
+-->
+        <!-- 
+        <property name="hibernate.cache.region_prefix">TEST_REGION</property>
+         -->
+<!-- For this to work do not put in the leading forward slash in the config file resource path 
+ -->
+        <!--property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+        <property name="hibernate.cache.provider_configuration_file_resource_path">cluster.ehcache.xml</property-->
+        <property name="hibernate.cache.provider_class">net.sf.ehcache.hibernate.EhCacheProvider</property>
+		<property name="net.sf.ehcache.configurationResourceName">/cluster.ehcache2.xml</property>
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <mapping resource="poc/hibernate/emp/vo/Project.hbm.xml" />
+
+    </session-factory>
+
+</hibernate-configuration>

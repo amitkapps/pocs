@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Maven: flexjson:flexjson:1.9.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../../Reference/Technical/libraries/FlexJson/flexjson1.9.2/flexjson.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

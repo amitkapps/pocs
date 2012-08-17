@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Sitemesh:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="Sitemesh.war">
+      <element id="artifact" artifact-name="Sitemesh:war exploded" />
+    </root>
+  </artifact>
+</component>

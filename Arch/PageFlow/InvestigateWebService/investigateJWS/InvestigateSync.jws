@@ -1,0 +1,108 @@
+package investigateJWS; 
+
+public class InvestigateSync implements com.bea.jws.WebService
+{ 
+    /** @common:context */ 
+    com.bea.control.JwsContext context;
+        
+    /**
+     * @common:control
+     */
+    private investigateJCS.Investigate investigateControl;
+
+    static final long serialVersionUID = 1L;
+    
+    /*
+     * m_applicant stores the credit report returned by the Investigate Java control
+     * for retrieval at a latter time by the client.
+     */
+    public investigateJCS.Applicant m_applicant = new investigateJCS.Applicant();
+    
+    /*
+     * m_isReportReady is set to true when the credit report from the Investigate Java control
+     * has been received, signaling the client to retrieve the report.
+     */
+    public boolean m_isReportReady = false; 
+    
+    /**
+     * Calling this method requests a credit report from the Investigate Java control.
+     * 
+     * @common:operation
+     * @common:message-buffer enable="true"
+     * @jws:conversation phase="start"
+     */
+    public void requestCreditReport(String taxID)
+    {
+        investigateControl.requestCreditReport(taxID);
+    }
+
+    /**
+     * After making a request for credit report, clients check this method periodically
+     * to see if the report is ready.  When this method returns true, clients should invoke
+     * the getCreditReport method to retrieve the credit report.
+     * 
+     * @common:operation
+     * @jws:conversation phase="continue"
+     */
+    public boolean isReportReady()
+    {
+       return m_isReportReady;
+    }
+
+    /**
+     * Clients collect the completed credit report by invoking this method.
+     *
+     * @common:operation
+     * @jws:conversation phase="continue"
+     */
+    public investigateJCS.Applicant getCreditReport()
+    {
+        /*
+         * If m_isReportReady is true (i.e., if the callback handler investigateControl_onCreditReportDone
+         * has been invoked) return the results to the client.
+         * If m_isReportReady is false, tell the client to check back later for the results.
+         */
+        if(m_isReportReady)
+        {
+            /* 
+             * Calling context.finishConversation ends the current conversation.
+             *
+             * Although the call to context.finishCoversation() appears before the return
+             * statement, it is executed after the return statement.
+             */
+            context.finishConversation();           
+            return m_applicant;
+        }
+        else
+        {
+            m_applicant.message = "The report is not yet ready.  Please check back later.";
+            return m_applicant;   
+        }
+    }
+    
+    /**
+     * This method allows the client to cancel the request for a credit report.
+     * 
+     * @common:operation
+     * @jws:conversation phase="finish"
+     * @jws:message-buffer enable="true"
+     */
+    public void cancelInvestigation()
+    {
+        investigateControl.cancelInvestigation();
+    }  
+
+    /*
+     * When the callback handler is invoked by the Investigate Java control,
+     * store the credit report in the member variable m_applicant
+     * and set m_isReportReady to true.
+     */ 
+    public void investigateControl_onCreditReportDone(investigateJCS.Applicant applicantReport)
+    {
+        m_applicant = applicantReport;
+        
+        m_isReportReady = true;
+    }
+    
+    
+} 
