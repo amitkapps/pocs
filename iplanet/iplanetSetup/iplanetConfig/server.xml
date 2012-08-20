@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+   Copyright (c) 2003 Sun Microsystems, Inc.  All rights reserved.
+   Use is subject to license terms.
+-->
+<!DOCTYPE SERVER PUBLIC "-//Sun Microsystems Inc.//DTD Sun ONE Web Server 6.1//EN" "file:///C:/Sun/WebServer6.1/bin/https/dtds/sun-web-server_6_1.dtd">
+<SERVER qosactive="false">
+  <PROPERTY name="docroot" value="C:/Sun/WebServer6.1/docs"/>
+  <PROPERTY name="accesslog" value="C:/Sun/WebServer6.1/https-AmitKapoor-Dell/logs/access"/>
+  <PROPERTY name="user" value=""/>
+  <PROPERTY name="group" value=""/>
+  <PROPERTY name="chroot" value=""/>
+  <PROPERTY name="dir" value=""/>
+  <PROPERTY name="nice" value=""/>
+  <LS id="ls1" port="80" servername="AmitKapoor-Dell" defaultvs="https-AmitKapoor-Dell" security="false" ip="any" blocking="false" acceptorthreads="1"/>
+  <MIME id="mime1" file="mime.types"/>
+  <ACLFILE id="acl1" file="C:/Sun/WebServer6.1/httpacl/generated.https-AmitKapoor-Dell.acl"/>
+  <VSCLASS id="vsclass1" objectfile="obj.conf" rootobject="default" acceptlanguage="off">
+    <PROPERTY name="docroot" value="C:/Sun/WebServer6.1/docs"/>
+    <VS id="https-AmitKapoor-Dell" connections="ls1" mime="mime1" aclids="acl1" urlhosts="AmitKapoor-Dell" state="on">
+      <PROPERTY name="docroot" value="C:/Sun/WebServer6.1/docs"/>
+      <USERDB id="default"/>
+      <SEARCH>
+        <WEBAPP uri="/search" path="C:/Sun/WebServer6.1/bin/https/webapps/search" enabled="true"/>
+      </SEARCH>
+    </VS>
+  </VSCLASS>
+    <!--To have two virtual servers for the same listener service - listen ip/port- we need to have 2 virtual server classes - each pointing to its own
+        obj.conf file. Those individual virtual server classes will have the corresponding virtual servers that service their own host
+    -->
+    <VSCLASS id="poc1.akapoor.com" objectfile="poc1.akapoor.com.obj.conf" rootobject="default" acceptlanguage="false">
+    <PROPERTY name="docroot" value="C:/Sun/docroots/poc1.akapoor.com"/>
+    <!--This virtual server serves host poc1.akapoor.com-->
+    <VS id="vs.poc1.akapoor.com" state="on" connections="ls1" urlhosts="poc1.akapoor.com" mime="mime1" aclids="acl1">
+      <USERDB id="default" database="default"/>
+    </VS>
+  </VSCLASS>
+  <VSCLASS id="poc2.akapoor.com" objectfile="poc2.akapoor.com.obj.conf" rootobject="default" acceptlanguage="false">
+    <PROPERTY name="docroot" value="C:/Sun/docroots/poc2.akapoor.com"/>
+  </VSCLASS>
+  <JAVA javahome="C:/Sun/WebServer6.1/bin/https/jdk" serverclasspath="C:/Sun/WebServer6.1/bin/https/jar/webserv-rt.jar;${java.home}/lib/tools.jar;C:/Sun/WebServer6.1/bin/https/jar/webserv-ext.jar;C:/Sun/WebServer6.1/bin/https/jar/webserv-jstl.jar;C:/Sun/WebServer6.1/bin/https/jar/ktsearch.jar" classpathsuffix="" envclasspathignored="true" nativelibrarypathprefix="" debug="false" debugoptions="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n" dynamicreloadinterval="-1">
+    <JVMOPTIONS>-Djava.security.auth.login.config=C:/Sun/WebServer6.1/https-AmitKapoor-Dell/config/login.conf</JVMOPTIONS>
+    <JVMOPTIONS>-Djava.util.logging.manager=com.iplanet.ias.server.logging.ServerLogManager</JVMOPTIONS>
+    <JVMOPTIONS>-Xmx256m</JVMOPTIONS>
+    <SECURITY defaultrealm="native" anonymousrole="ANYONE" audit="false">
+      <AUTHREALM name="file" classname="com.iplanet.ias.security.auth.realm.file.FileRealm">
+        <PROPERTY name="file" value="C:/Sun/WebServer6.1/https-AmitKapoor-Dell/config/keyfile"/>
+        <PROPERTY name="jaas-context" value="fileRealm"/>
+      </AUTHREALM>
+      <AUTHREALM name="native" classname="com.iplanet.ias.security.auth.realm.webcore.NativeRealm">
+        <PROPERTY name="jaas-context" value="nativeRealm"/>
+      </AUTHREALM>
+      <AUTHREALM name="ldap" classname="com.iplanet.ias.security.auth.realm.ldap.LDAPRealm">
+        <PROPERTY name="directory" value="ldap://localhost:389"/>
+        <PROPERTY name="base-dn" value="o=isp"/>
+        <PROPERTY name="jaas-context" value="ldapRealm"/>
+      </AUTHREALM>
+    </SECURITY>
+    <RESOURCES/>
+  </JAVA>
+  <LOG file="C:/Sun/WebServer6.1/https-AmitKapoor-Dell/logs/errors" loglevel="info" logtoconsole="true" usesyslog="false" createconsole="false" logstderr="true" logstdout="true" logvsid="false"/>
+</SERVER>
