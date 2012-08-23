@@ -530,7 +530,11 @@
       <created>1345683459839</created>
       <updated>1345683459839</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="iws">
+      <created>1345683472605</created>
+      <updated>1345683472605</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -601,7 +605,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated NameVirtualHost" />
+    <option name="LAST_COMMIT_MESSAGE" value="iws" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -617,6 +621,7 @@
     <MESSAGE value="cluster app" />
     <MESSAGE value="deleted target" />
     <MESSAGE value="updated NameVirtualHost" />
+    <MESSAGE value="iws" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
