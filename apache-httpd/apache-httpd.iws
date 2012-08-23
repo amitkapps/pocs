@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d203196d-6952-4b2a-a338-f901f08a636b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apache-httpd.ipr" afterPath="$PROJECT_DIR$/apache-httpd.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apache-httpd.iws" afterPath="$PROJECT_DIR$/apache-httpd.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/httpd-setup/conf/httpd.conf" afterPath="$PROJECT_DIR$/httpd-setup/conf/httpd.conf" />
     </list>
     <ignored path="apache-httpd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -528,7 +526,11 @@
       <created>1345683394540</created>
       <updated>1345683394540</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="updated NameVirtualHost">
+      <created>1345683459839</created>
+      <updated>1345683459839</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -599,7 +601,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted target" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated NameVirtualHost" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -614,6 +616,7 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="cluster app" />
     <MESSAGE value="deleted target" />
+    <MESSAGE value="updated NameVirtualHost" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
