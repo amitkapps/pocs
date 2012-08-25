@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Definition of new Model -->
+<model name="gat:gatesmodel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+    <!-- Optional meta-data about the model -->
+    <description>Gates Model</description>
+    <author>Amit Kapoor</author>
+    <version>1.0</version>
+    <!-- Imports are required to allow references to definitions in other models
+    -->
+    <imports>
+        <!-- Import Alfresco Dictionary Definitions -->
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d" />
+        <!-- Import Alfresco Content Domain Model Definitions -->
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm" />
+    </imports>
+    <!-- Introduction of new namespaces defined by this model -->
+    <namespaces>
+        <namespace uri="http://www.matson.com//gates/model/content/1.0" prefix="gat" />
+    </namespaces>
+    <types>
+        <!-- Gates Quote Document Type -->
+        <type name="gat:quote">
+            <title>Quote Document</title>
+            <parent>cm:content</parent>
+            <properties>
+                <property name="gat:quoteNumber">
+                    <type>d:int</type>
+                    <mandatory>false</mandatory>
+                </property>
+            </properties>
+        </type>
+    </types>
+    <!--Customer Aspect - applied on docs that belong to a specific customer-->
+    <aspects>
+        <aspect name="gat:customer">
+            <title>Customer</title>
+            <properties>
+                <property name="gat:customerName">
+                    <type>d:text</type>
+                </property>
+            </properties>
+        </aspect>
+    </aspects>
+</model>

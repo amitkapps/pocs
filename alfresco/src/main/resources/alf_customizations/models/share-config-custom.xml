@@ -1,0 +1,284 @@
+<alfresco-config>
+
+    <!-- Document Library config section, view custom aspects and allow change type -->
+    <config evaluator="string-compare" condition="DocumentLibrary" replace="true">
+
+        <tree>
+            <!--
+               Whether the folder Tree component should enumerate child folders or not.
+               This is a relatively expensive operation, so should be set to "false" for Repositories with broad folder structures.
+            -->
+            <evaluate-child-folders>false</evaluate-child-folders>
+
+            <!--
+               Optionally limit the number of folders shown in treeview throughout Share.
+            -->
+            <maximum-folder-count>-1</maximum-folder-count>
+        </tree>
+
+        <!--
+           Used by the "Manage Aspects" action
+
+           For custom aspects, remember to also add the relevant i18n string(s)
+              cm_myaspect=My Aspect
+        -->
+        <aspects>
+            <!-- Aspects that a user can see -->
+            <visible>
+                <aspect name="cm:generalclassifiable" />
+                <aspect name="cm:complianceable" />
+                <aspect name="cm:dublincore" />
+                <aspect name="cm:effectivity" />
+                <aspect name="cm:summarizable" />
+                <aspect name="cm:versionable" />
+                <aspect name="cm:templatable" />
+                <aspect name="cm:emailed" />
+                <aspect name="emailserver:aliasable" />
+                <aspect name="cm:taggable" />
+                <aspect name="app:inlineeditable" />
+                <aspect name="gd:googleEditable" />
+                <aspect name="cm:geographic" />
+                <aspect name="exif:exif" />
+                <aspect name="gat:customer"/>
+            </visible>
+
+            <!-- Aspects that a user can add. Same as "visible" if left empty -->
+            <addable>
+            </addable>
+
+            <!-- Aspects that a user can remove. Same as "visible" if left empty -->
+            <removeable>
+            </removeable>
+        </aspects>
+
+        <!--
+           Used by the "Change Type" action
+
+           Define valid subtypes using the following example:
+              <type name="cm:content">
+                 <subtype name="cm:mysubtype" />
+              </type>
+
+           Remember to also add the relevant i18n string(s):
+              cm_mysubtype=My SubType
+        -->
+        <types>
+            <type name="cm:content">
+                <subtype name="gat:quote"/>
+                <subtype name="hon:invoice"/>
+                <subtype name="hr:employeeDocument"/>
+            </type>
+
+            <type name="cm:folder">
+            </type>
+        </types>
+
+        <!--
+           If set, will present a WebDAV link for the current item on the Document and Folder details pages.
+           Also used to generate the "View in Alfresco Explorer" action for folders.
+        -->
+        <repository-url>http://localhost:8080/alfresco</repository-url>
+
+        <!--
+           Google Docs™ integration
+        -->
+        <google-docs>
+            <!--
+               Enable/disable the Google Docs UI integration (Extra types on Create Content menu, Google Docs actions).
+            -->
+            <enabled>false</enabled>
+
+            <!--
+               The mimetypes of documents Google Docs allows you to create via the Share interface.
+               The I18N label is created from the "type" attribute, e.g. google-docs.doc=Google Docs&trade; Document
+            -->
+            <creatable-types>
+                <creatable type="doc">application/msword</creatable>
+                <creatable type="xls">application/vnd.ms-excel</creatable>
+                <creatable type="ppt">application/vnd.ms-powerpoint</creatable>
+            </creatable-types>
+        </google-docs>
+
+        <!--
+           File upload configuration
+        -->
+        <file-upload>
+            <!--
+               Adobe Flash™
+               In certain environments, an HTTP request originating from Flash cannot be authenticated using an existing session.
+               See: http://bugs.adobe.com/jira/browse/FP-4830
+               For these cases, it is useful to disable the Flash-based uploader for Share Document Libraries.
+            -->
+            <adobe-flash-enabled>true</adobe-flash-enabled>
+        </file-upload>
+    </config>
+
+
+    <!--Form gets displayed on edit properties-->
+    <config evaluator="node-type" condition="gat:quote">
+        <forms>
+            <form>
+                <field-visibility>
+                    <show id="cm:name"/>
+                    <show id="gat:quoteNumber"/>
+                </field-visibility>
+                <appearance>
+                    <field id="gat:quoteNumber" label="Quote Number"/>
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+    <config evaluator="aspect" condition="gat:customer">
+        <forms>
+            <form>
+                <field-visibility>
+                    <show id="gat:customerName"/>
+                </field-visibility>
+                <appearance>
+                    <field id="gat:customerName" label="Customer Name"/>
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+    <!--Form gets displayed on edit properties-->
+    <config evaluator="node-type" condition="hon:invoice">
+        <forms>
+            <form>
+                <field-visibility>
+                    <show id="hon:invoiceNumber"/>
+                    <show id="hon:customerName"/>
+                    <show id="hon:organizationName"/>
+                    <show id="hon:invoiceDate"/>
+                </field-visibility>
+                <appearance>
+                    <set id="hon-invoice" appearance="bordered-panel" label="Invoice"/>
+                    <field id="hon:invoiceNumber" label="Invoice Number" set="hon-invoice" />
+                    <field id="hon:customerName" label="Customer Name" set="hon-invoice"/>
+                    <field id="hon:organizationName" label="Organization Name" set="hon-invoice"/>
+                    <field id="hon:invoiceDate" label="Invoice Date" set="hon-invoice"/>
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+    <!--Form gets displayed on edit properties-->
+    <config evaluator="node-type" condition="hr:employeeDocument">
+        <forms>
+            <form>
+                <field-visibility>
+                    <show id="hr:firstName"/>
+                    <show id="hr:lastName"/>
+                    <show id="hr:documentType"/>
+                </field-visibility>
+                <appearance>
+                    <set id="hr-employeeDocument" appearance="bordered-panel" label="Employee Document"/>
+                    <field id="hr:firstName" label="First Name" set="hr-employeeDocument" />
+                    <field id="hr:lastName" label="Last Name" set="hr-employeeDocument" />
+                    <field id="hr:documentType" label="Document Type" set="hr-employeeDocument" />
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+
+    <config evaluator="string-compare" condition="AdvancedSearch">
+        <advanced-search>
+            <forms>
+                <form label="Quote Documents" description="Search for Quote Documents">gat:quote</form>
+                <form label="Customer Documents" description="Search for all customer related documents" id="customerSearch">cm:content</form>
+                <form label="Invoice" description="Search Invoices">hon:invoice</form>
+                <form label="Employee Documents" description="Search Employee Documents">hr:employeeDocument</form>
+            </forms>
+        </advanced-search>
+    </config>
+
+    <!-- gat:quote type (search form) -->
+    <config evaluator="model-type" condition="gat:quote">
+        <forms>
+            <!-- Search form -->
+            <form id="search">
+                <field-visibility>
+                    <show id="gat:quoteNumber"/>
+                    <show id="gat:customerName" force="true"/>
+                    <show id="mimetype"/>
+                    <show id="cm:modified"/>
+                    <show id="cm:modifier"/>
+                </field-visibility>
+                <appearance>
+                    <field id="gat:customerName" label="Customer Name"/>
+                    <field id="gat:quoteNumber" label="Quote Number"/>
+                    <field id="mimetype" label="Document Format">
+                        <control template="/org/alfresco/components/form/controls/mimetype.ftl"/>
+                    </field>
+                    <field id="cm:modifier" label="Modified By User">
+                        <control>
+                            <control-param name="forceEditable">true</control-param>
+                        </control>
+                    </field>
+                    <field id="cm:modified" label="Modified">
+                        <control template="/org/alfresco/components/form/controls/daterange.ftl"/>
+                    </field>
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+    <!-- gat:customer aspect (search form) -->
+    <config evaluator="model-type" condition="cm:content">
+        <forms>
+            <!-- Search form -->
+            <form id="customerSearch">
+                <field-visibility>
+                    <show id="gat:customerName" force="true"/>
+                </field-visibility>
+                <appearance>
+                    <field id="gat:customerName" label="Customer Name" />
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+    <config evaluator="model-type" condition="hon:invoice">
+        <forms>
+            <form id="search">
+                <field-visibility>
+                    <show id="hon:invoiceNumber"/>
+                    <show id="hon:customerName"/>
+                    <show id="hon:organizationName"/>
+                    <show id="hon:invoiceDate"/>
+                </field-visibility>
+                <appearance>
+                    <field id="hon:invoiceNumber" label="Invoice Number" />
+                    <field id="hon:customerName" label="Customer Name" />
+                    <field id="hon:organizationName" label="Organization Name" />
+                    <field id="hon:invoiceDate" label="Invoice Date">
+                        <control template="/org/alfresco/components/form/controls/daterange.ftl"/>
+                    </field>
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+    <config evaluator="model-type" condition="hr:employeeDocument">
+        <forms>
+            <form id="search">
+                <field-visibility>
+                    <show id="hr:firstName"/>
+                    <show id="hr:lastName"/>
+                    <show id="hr:documentType"/>
+                </field-visibility>
+                <appearance>
+                    <set id="hr-employeeDocument" appearance="bordered-panel" label="Employee Document"/>
+                    <field id="hr:firstName" label="First Name" set="hr-employeeDocument" />
+                    <field id="hr:lastName" label="Last Name" set="hr-employeeDocument" />
+                    <field id="hr:documentType" label="Document Type" set="hr-employeeDocument">
+                        <control template="/org/alfresco/components/form/controls/selectmany.ftl"/>
+                    </field>
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+</alfresco-config>

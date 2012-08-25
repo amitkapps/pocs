@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="hon:honmodel" xmlns="http://www.alfresco.org/model/dictionary/1.0"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.alfresco.org/model/dictionary/1.0 http://svn.alfresco.com/repos/alfresco-open-mirror/alfresco/HEAD/root/projects/repository/config/alfresco/model/modelSchema.xsd">
+
+    <description>Hono Model</description>
+    <version>1.0</version>
+
+    <imports>
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+    </imports>
+
+    <namespaces>
+        <namespace uri="http://www.matson.com/model/hono/1.0" prefix="hon"/>
+    </namespaces>
+
+    <types>
+        <type name="hon:invoice">
+            <parent>cm:content</parent>
+            <properties>
+                <property name="hon:invoiceNumber">
+                    <type>d:int</type>
+                </property>
+                <property name="hon:customerName">
+                    <type>d:text</type>
+                </property>
+                <property name="hon:organizationName">
+                    <type>d:text</type>
+                </property>
+                <property name="hon:invoiceDate">
+                    <type>d:date</type>
+                </property>
+            </properties>
+        </type>
+    </types>
+
+</model>

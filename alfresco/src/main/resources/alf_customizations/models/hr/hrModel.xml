@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="hr:hrmodel" xmlns="http://www.alfresco.org/model/dictionary/1.0"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.alfresco.org/model/dictionary/1.0 http://svn.alfresco.com/repos/alfresco-open-mirror/alfresco/HEAD/root/projects/repository/config/alfresco/model/modelSchema.xsd">
+
+    <description>HR Model</description>
+    <version>1.0</version>
+
+    <imports>
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+    </imports>
+
+    <namespaces>
+        <namespace uri="http://www.matson.com/model/hr/1.0" prefix="hr"/>
+    </namespaces>
+
+    <constraints>
+        <constraint name="hr:documentTypeList" type="LIST">
+            <parameter name="allowedValues">
+                <list>
+                    <value>Withholding Allowance Certificate</value>
+                    <value>Beneficiary Designation</value>
+                </list>
+            </parameter>
+        </constraint>
+    </constraints>
+
+    <types>
+        <type name="hr:employeeDocument">
+            <parent>cm:content</parent>
+            <properties>
+                <property name="hr:firstName">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <property name="hr:lastName">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <property name="hr:documentType">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                    <constraints>
+                        <constraint ref="hr:documentTypeList"/>
+                    </constraints>
+                </property>
+            </properties>
+        </type>
+
+    </types>
+
+
+
+</model>

@@ -1,0 +1,629 @@
+<alfresco-config>
+
+    <!-- Repository Library config section -->
+    <config evaluator="string-compare" condition="RepositoryLibrary" replace="true">
+        <!--
+           Whether the link to the Repository Library appears in the header component or not.
+        -->
+        <visible>true</visible>
+    </config>
+
+    <!-- Document Library config section -->
+    <config evaluator="string-compare" condition="DocumentLibrary">
+        <types>
+            <type name="cm:content">
+                <subtype name="gat:quote"/>
+            </type>
+        </types>
+
+        <aspects>
+            <!-- Aspects that a user can see -->
+            <visible>
+                <aspect name="gat:customer"/>
+            </visible>
+            <!-- Aspects that a user can add. Same as "visible" if left empty -->
+            <addable>
+            </addable>
+            <!-- Aspects that a user can remove. Same as "visible" if left empty
+            -->
+            <removeable>
+            </removeable>
+        </aspects>
+
+    </config>
+
+    <!-- gat:quote type -->
+    <config evaluator="node-type" condition="gat:quote">
+        <forms>
+            <!-- Default form configuration for the gat:quote type -->
+            <form>
+                <field-visibility>
+                       <!-- gat:customer aspect -->
+                    <show id="gat:customerName"/>
+
+                    <!-- Custom attributes -->
+                    <show id="gat:quoteNumber"/>
+
+                    <!-- Standard attributes -->
+                    <show id="cm:name"/>
+                    <show id="cm:title" force="true"/>
+                    <show id="cm:description" force="true"/>
+                    <show id="mimetype"/>
+                    <show id="cm:author" force="true"/>
+                    <show id="size" for-mode="view"/>
+                    <show id="cm:creator" for-mode="view"/>
+                    <show id="cm:created" for-mode="view"/>
+                    <show id="cm:modifier" for-mode="view"/>
+                    <show id="cm:modified" for-mode="view"/>
+
+                    <!-- tags and categories -->
+                    <show id="cm:taggable" for-mode="edit" force="true"/>
+                    <show id="cm:categories"/>
+
+                    <!-- cm:dublincore aspect -->
+                    <show id="cm:publisher"/>
+                    <show id="cm:contributor"/>
+                    <show id="cm:type"/>
+                    <show id="cm:identifier"/>
+                    <show id="cm:dcsource"/>
+                    <show id="cm:coverage"/>
+                    <show id="cm:rights"/>
+                    <show id="cm:subject"/>
+
+                    <!-- cm:complianceable aspect -->
+                    <show id="cm:removeAfter"/>
+
+                    <!-- cm:effectivity aspect -->
+                    <show id="cm:from"/>
+                    <show id="cm:to"/>
+
+                    <!--  cm:summarizable aspect -->
+                    <show id="cm:summary"/>
+
+                    <!-- cm:translatable aspect -->
+                    <show id="cm:translations"/>
+
+                    <!-- cm:localizable aspect -->
+                    <show id="cm:locale"/>
+
+                    <!-- cm:ownable aspect -->
+                    <show id="cm:owner"/>
+
+                    <!-- cm:attachable aspect -->
+                    <show id="cm:attachments"/>
+
+                    <!-- cm:emailed aspect -->
+                    <show id="cm:originator"/>
+                    <show id="cm:addressee"/>
+                    <show id="cm:addressees"/>
+                    <show id="cm:sentdate"/>
+                    <show id="cm:subjectline"/>
+
+                    <!-- exif:exif aspect -->
+                    <show id="exif:dateTimeOriginal"/>
+                    <show id="exif:pixelXDimension"/>
+                    <show id="exif:pixelYDimension"/>
+                    <show id="exif:exposureTime"/>
+                    <show id="exif:fNumber"/>
+                    <show id="exif:flash"/>
+                    <show id="exif:focalLength"/>
+                    <show id="exif:isoSpeedRatings"/>
+                    <show id="exif:manufacturer"/>
+                    <show id="exif:model"/>
+                    <show id="exif:software"/>
+                    <show id="exif:orientation"/>
+                    <show id="exif:xResolution"/>
+                    <show id="exif:yResolution"/>
+                    <show id="exif:resolutionUnit"/>
+
+                    <!-- cm:geographic aspect -->
+                    <show id="cm:latitude"/>
+                    <show id="cm:longitude"/>
+                </field-visibility>
+                <appearance>
+                    <!-- Custom Fields -->
+                    <field id="gat:customerName" label="Customer Name">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+                    </field>
+                     
+                    <field id="gat:quoteNumber" label="Quote Number">
+                        <control template="/org/alfresco/components/form/controls/number.ftl"/>
+                    </field>
+
+                    <!-- Standard Fields -->
+                    <field id="cm:title">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+                    </field>
+                    <field id="cm:description">
+                        <control>
+                            <control-param name="activateLinks">true</control-param>
+                        </control>
+                    </field>
+                    <field id="mimetype">
+                        <control template="/org/alfresco/components/form/controls/mimetype.ftl"/>
+                    </field>
+                    <field id="size">
+                        <control template="/org/alfresco/components/form/controls/size.ftl"/>
+                    </field>
+                    <field id="cm:taggable">
+                        <control>
+                            <control-param name="compactMode">true</control-param>
+                            <control-param name="params">aspect=cm:taggable</control-param>
+                            <control-param name="createNewItemUri">/api/tag/workspace/SpacesStore</control-param>
+                            <control-param name="createNewItemIcon">tag</control-param>
+                        </control>
+                    </field>
+                    <field id="cm:categories">
+                        <control>
+                            <control-param name="compactMode">true</control-param>
+                        </control>
+                    </field>
+                    <field id="cm:originator" read-only="true"/>
+                    <field id="cm:addressee" read-only="true"/>
+                    <field id="cm:addressees" read-only="true"/>
+                    <field id="cm:sentdate" read-only="true"/>
+                    <field id="cm:subjectline" read-only="true"/>
+                </appearance>
+            </form>
+
+            <!-- Document Library pop-up Edit Metadata form -->
+            <form id="doclib-simple-metadata">
+                <field-visibility>
+                       <!-- gat:customer aspect -->
+                    <show id="gat:customerName"/>
+
+                    <!-- Custom attributes -->
+                    <show id="gat:quoteNumber"/>
+
+                    <!-- Standard attributes -->
+                    <show id="cm:name"/>
+                    <show id="cm:title" force="true"/>
+                    <show id="cm:description" force="true"/>
+                    <!-- tags and categories -->
+                    <show id="cm:taggable" for-mode="edit" force="true"/>
+                    <show id="cm:categories"/>
+                </field-visibility>
+                <!--<edit-form template="../documentlibrary/forms/doclib-simple-metadata.ftl" />-->
+                <appearance>
+                    <!-- Custom Fields -->
+                    <field id="gat:customerName" label="Customer Name">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+                    </field>
+                     
+                    <field id="gat:quoteNumber" label="Quote Number">
+                        <control template="/org/alfresco/components/form/controls/number.ftl"/>
+                    </field>
+
+                    <!-- Standard Fields -->
+                    <field id="cm:title">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+                    </field>
+                    <field id="cm:description">
+                        <control>
+                            <control-param name="activateLinks">true</control-param>
+                        </control>
+                    </field>
+                    <field id="cm:taggable">
+                        <control>
+                            <control-param name="compactMode">true</control-param>
+                            <control-param name="params">aspect=cm:taggable</control-param>
+                            <control-param name="createNewItemUri">/api/tag/workspace/SpacesStore</control-param>
+                            <control-param name="createNewItemIcon">tag</control-param>
+                        </control>
+                    </field>
+                    <field id="cm:categories">
+                        <control>
+                            <control-param name="compactMode">true</control-param>
+                        </control>
+                    </field>
+                </appearance>
+            </form>
+
+            <!-- Document Library Inline Edit form -->
+            <form id="doclib-inline-edit">
+                <field-visibility>
+                       <!-- gat:customer aspect -->
+                    <show id="gat:customerName"/>
+
+                    <!-- Custom attributes -->
+                    <show id="gat:quoteNumber"/>
+
+                    <!-- Standard attributes -->
+                    <show id="cm:name"/>
+                    <show id="cm:title" force="true"/>
+                    <show id="cm:description" force="true"/>
+                    <show id="cm:content" force="true"/>
+                </field-visibility>
+                <appearance>
+                    <!-- Custom Fields -->
+                    <field id="gat:customerName" label="Customer Name">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+                    </field>
+                     
+                    <field id="gat:quoteNumber" label="Quote Number">
+                        <control template="/org/alfresco/components/form/controls/number.ftl"/>
+                    </field>
+
+                    <!-- Standard Fields -->
+                    <field id="cm:title">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+                    </field>
+                    <field id="cm:content">
+                        <control>
+                            <control-param name="editorAppearance">explorer</control-param>
+                            <control-param name="forceEditor">true</control-param>
+                        </control>
+                    </field>
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+
+    <!--
+        <config evaluator="aspect" condition="gat:customer">
+            <forms>
+                &lt;!&ndash; Default form configuration for the gat:quote type &ndash;&gt;
+                <form>
+                    <field-visibility>
+                           &lt;!&ndash; gat:customer aspect &ndash;&gt;
+                        <show id="gat:customerName" />
+
+                        &lt;!&ndash; Standard attributes &ndash;&gt;
+                        <show id="cm:name" />
+                        <show id="cm:title" force="true" />
+                        <show id="cm:description" force="true" />
+                        <show id="mimetype" />
+                        <show id="cm:author" force="true" />
+                        <show id="size" for-mode="view" />
+                        <show id="cm:creator" for-mode="view" />
+                        <show id="cm:created" for-mode="view" />
+                        <show id="cm:modifier" for-mode="view" />
+                        <show id="cm:modified" for-mode="view" />
+
+                        &lt;!&ndash; tags and categories &ndash;&gt;
+                        <show id="cm:taggable" for-mode="edit" force="true" />
+                        <show id="cm:categories" />
+
+                        &lt;!&ndash; cm:dublincore aspect &ndash;&gt;
+                        <show id="cm:publisher"/>
+                        <show id="cm:contributor"/>
+                        <show id="cm:type"/>
+                        <show id="cm:identifier"/>
+                        <show id="cm:dcsource"/>
+                        <show id="cm:coverage"/>
+                        <show id="cm:rights"/>
+                        <show id="cm:subject"/>
+
+                        &lt;!&ndash; cm:complianceable aspect &ndash;&gt;
+                        <show id="cm:removeAfter" />
+
+                        &lt;!&ndash; cm:effectivity aspect &ndash;&gt;
+                        <show id="cm:from"/>
+                        <show id="cm:to"/>
+
+                        &lt;!&ndash;  cm:summarizable aspect &ndash;&gt;
+                        <show id="cm:summary" />
+
+                        &lt;!&ndash; cm:translatable aspect &ndash;&gt;
+                        <show id="cm:translations" />
+
+                        &lt;!&ndash; cm:localizable aspect &ndash;&gt;
+                        <show id="cm:locale" />
+
+                        &lt;!&ndash; cm:ownable aspect &ndash;&gt;
+                        <show id="cm:owner" />
+
+                        &lt;!&ndash; cm:attachable aspect &ndash;&gt;
+                        <show id="cm:attachments" />
+
+                        &lt;!&ndash; cm:emailed aspect &ndash;&gt;
+                        <show id="cm:originator" />
+                        <show id="cm:addressee" />
+                        <show id="cm:addressees" />
+                        <show id="cm:sentdate" />
+                        <show id="cm:subjectline" />
+
+                        &lt;!&ndash; exif:exif aspect &ndash;&gt;
+                        <show id="exif:dateTimeOriginal" />
+                        <show id="exif:pixelXDimension" />
+                        <show id="exif:pixelYDimension" />
+                        <show id="exif:exposureTime" />
+                        <show id="exif:fNumber" />
+                        <show id="exif:flash" />
+                        <show id="exif:focalLength" />
+                        <show id="exif:isoSpeedRatings" />
+                        <show id="exif:manufacturer" />
+                        <show id="exif:model" />
+                        <show id="exif:software" />
+                        <show id="exif:orientation" />
+                        <show id="exif:xResolution" />
+                        <show id="exif:yResolution" />
+                        <show id="exif:resolutionUnit" />
+
+                        &lt;!&ndash; cm:geographic aspect &ndash;&gt;
+                        <show id="cm:latitude" />
+                        <show id="cm:longitude" />
+                    </field-visibility>
+                    <appearance>
+                        &lt;!&ndash; Custom Fields &ndash;&gt;
+                        <field id="gat:customerName" label="Customer Name">
+                            <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+                        </field>
+
+                        &lt;!&ndash; Standard Fields &ndash;&gt;
+                        <field id="cm:title">
+                            <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                        </field>
+                        <field id="cm:description">
+                            <control>
+                                <control-param name="activateLinks">true</control-param>
+                            </control>
+                        </field>
+                        <field id="mimetype">
+                            <control template="/org/alfresco/components/form/controls/mimetype.ftl" />
+                        </field>
+                        <field id="size">
+                            <control template="/org/alfresco/components/form/controls/size.ftl" />
+                        </field>
+                        <field id="cm:taggable">
+                            <control>
+                                <control-param name="compactMode">true</control-param>
+                                <control-param name="params">aspect=cm:taggable</control-param>
+                                <control-param name="createNewItemUri">/api/tag/workspace/SpacesStore</control-param>
+                                <control-param name="createNewItemIcon">tag</control-param>
+                            </control>
+                        </field>
+                        <field id="cm:categories">
+                            <control>
+                                <control-param name="compactMode">true</control-param>
+                            </control>
+                        </field>
+                        <field id="cm:originator" read-only="true" />
+                        <field id="cm:addressee" read-only="true" />
+                        <field id="cm:addressees" read-only="true" />
+                        <field id="cm:sentdate" read-only="true" />
+                        <field id="cm:subjectline" read-only="true" />
+                    </appearance>
+                </form>
+
+                &lt;!&ndash; Document Library pop-up Edit Metadata form &ndash;&gt;
+                <form id="doclib-simple-metadata">
+                    <field-visibility>
+                           &lt;!&ndash; gat:customer aspect &ndash;&gt;
+                        <show id="gat:customerName" />
+
+                        &lt;!&ndash; Standard attributes &ndash;&gt;
+                        <show id="cm:name" />
+                        <show id="cm:title" force="true" />
+                        <show id="cm:description" force="true" />
+                        &lt;!&ndash; tags and categories &ndash;&gt;
+                        <show id="cm:taggable" for-mode="edit" force="true" />
+                        <show id="cm:categories" />
+                    </field-visibility>
+                    &lt;!&ndash;<edit-form template="../documentlibrary/forms/doclib-simple-metadata.ftl" />&ndash;&gt;
+                    <appearance>
+                        &lt;!&ndash; Custom Fields &ndash;&gt;
+                        <field id="gat:customerName" label="Customer Name">
+                            <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+                        </field>
+
+                        &lt;!&ndash; Standard Fields &ndash;&gt;
+                        <field id="cm:title">
+                            <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                        </field>
+                        <field id="cm:description">
+                            <control>
+                                <control-param name="activateLinks">true</control-param>
+                            </control>
+                        </field>
+                        <field id="cm:taggable">
+                            <control>
+                                <control-param name="compactMode">true</control-param>
+                                <control-param name="params">aspect=cm:taggable</control-param>
+                                <control-param name="createNewItemUri">/api/tag/workspace/SpacesStore</control-param>
+                                <control-param name="createNewItemIcon">tag</control-param>
+                            </control>
+                        </field>
+                        <field id="cm:categories">
+                            <control>
+                                <control-param name="compactMode">true</control-param>
+                            </control>
+                        </field>
+                    </appearance>
+                </form>
+
+                &lt;!&ndash; Document Library Inline Edit form &ndash;&gt;
+                <form id="doclib-inline-edit">
+                    <field-visibility>
+                           &lt;!&ndash; gat:customer aspect &ndash;&gt;
+                        <show id="gat:customerName" />
+
+                        &lt;!&ndash; Standard attributes &ndash;&gt;
+                        <show id="cm:name" />
+                        <show id="cm:title" force="true" />
+                        <show id="cm:description" force="true" />
+                        <show id="cm:content" force="true" />
+                    </field-visibility>
+                    <appearance>
+                        &lt;!&ndash; Custom Fields &ndash;&gt;
+                        <field id="gat:customerName" label="Customer Name">
+                            <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+                        </field>
+
+                        &lt;!&ndash; Standard Fields &ndash;&gt;
+                        <field id="cm:title">
+                            <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                        </field>
+                        <field id="cm:content">
+                            <control>
+                                <control-param name="editorAppearance">explorer</control-param>
+                                <control-param name="forceEditor">true</control-param>
+                            </control>
+                        </field>
+                    </appearance>
+                </form>
+            </forms>
+        </config>
+    -->
+
+    <!-- Custom Forms Extension -->
+      
+    <config evaluator="node-type" condition="cm:content">
+             
+        <forms>
+                     <!-- Default form configuration used on the document details and edit metadata pages -->
+                    
+            <form>
+                <field-visibility>
+                    <show id="gat:customerName"/>
+                </field-visibility>
+                           
+                <appearance>
+                    <field id="gat:customerName" label="Customer Name"/>
+                </appearance>
+            </form>
+
+                     <!-- Document Library pop-up Edit Metadata form -->
+                    
+            <form id="doclib-simple-metadata">
+                <field-visibility>
+                    <show id="gat:customerName"/>
+                </field-visibility>
+                           
+                <appearance>
+                    <field id="gat:customerName" label="Customer Name"/>
+                </appearance>
+            </form>
+
+                     <!-- Document Library Inline Edit form -->
+                    
+            <form id="doclib-inline-edit">
+                <field-visibility>
+                    <show id="gat:customerName"/>
+                </field-visibility>
+                           
+                <appearance>
+                    <field id="gat:customerName" label="Customer Name"/>
+                </appearance>
+            </form>
+                 
+        </forms>
+          
+    </config>
+
+    <!-- Advanced Search Configuration -->
+    <config evaluator="string-compare" condition="AdvancedSearch">
+        <advanced-search>
+            <!-- Forms for the advanced search type list -->
+            <forms>
+                <!--
+                   The 'form' config element contains the name of the model type
+                   of the form to display.
+
+                   The element supports the following optional attributes:
+                      id = form id, the id of "search" will be assumed if not set
+                      label = label text to display - defaults to model type if not set
+                      labelId = I18N message id of label text to display
+                      description = description text to display
+                      descriptionId = I18N message id of description text to display
+                -->
+                <form label="Quote Documents" description="Search for Quote Documents">gat:quote</form>
+                <form label="Customer Files" description="Search for all customer related files" id="customerSearch">
+                    cm:content
+                </form>
+            </forms>
+        </advanced-search>
+    </config>
+
+
+    <!-- gat:customer aspect (search form) -->
+    <config evaluator="model-type" condition="cm:content">
+        <forms>
+            <!-- Search form -->
+            <form id="customerSearch">
+                <field-visibility>
+                    <show id="gat:customerName"/>
+                    <show id="cm:name"/>
+                </field-visibility>
+                <appearance>
+                    <field id="gat:customerName" label="Customer Name">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+                    </field>
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+    <!-- gat:quote type (search form) -->
+    <config evaluator="model-type" condition="gat:quote">
+        <forms>
+            <!-- Search form -->
+            <form id="search">
+                <field-visibility>
+                    <show id="gat:quoteNumber"/>
+                    <show id="gat:customerName"/>
+                    <show id="cm:name"/>
+                    <show id="cm:title" force="true"/>
+                    <show id="cm:description" force="true"/>
+                    <show id="mimetype"/>
+                    <show id="cm:modified"/>
+                    <show id="cm:modifier"/>
+                </field-visibility>
+                <appearance>
+                    <field id="gat:customerName" label="Customer Name">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+                    </field>
+                    <field id="gat:quoteNumber" label="Quote Number">
+                        <control template="/org/alfresco/components/form/controls/number.ftl"/>
+                    </field>
+
+                    <field id="mimetype">
+                        <control template="/org/alfresco/components/form/controls/mimetype.ftl"/>
+                    </field>
+                    <field id="cm:modifier">
+                        <control>
+                            <control-param name="forceEditable">true</control-param>
+                        </control>
+                    </field>
+                    <field id="cm:modified">
+                        <control template="/org/alfresco/components/form/controls/daterange.ftl"/>
+                    </field>
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+    <config evaluator="string-compare" condition="Remote">
+        <remote>
+            <endpoint>
+                <id>alfresco-noauth</id>
+                <name>Alfresco - unauthenticated access</name>
+                <description>Access to Alfresco Repository WebScripts that do not require authentication</description>
+                <connector-id>alfresco</connector-id>
+                <endpoint-url>http://localhost:8080/alfresco/s</endpoint-url>
+                <identity>none</identity>
+            </endpoint>
+
+            <endpoint>
+                <id>alfresco</id>
+                <name>Alfresco - user access</name>
+                <description>Access to Alfresco Repository WebScripts that require user authentication</description>
+                <connector-id>alfresco</connector-id>
+                <endpoint-url>http://localhost:8080/alfresco/s</endpoint-url>
+                <identity>user</identity>
+            </endpoint>
+
+            <endpoint>
+                <id>alfresco-feed</id>
+                <name>Alfresco Feed</name>
+                <description>Alfresco Feed - supports basic HTTP authentication via the EndPointProxyServlet</description>
+                <connector-id>http</connector-id>
+                <endpoint-url>http://localhost:8080/alfresco/s</endpoint-url>
+                <basic-auth>true</basic-auth>
+                <identity>user</identity>
+            </endpoint>
+        </remote>
+    </config>
+
+</alfresco-config>
