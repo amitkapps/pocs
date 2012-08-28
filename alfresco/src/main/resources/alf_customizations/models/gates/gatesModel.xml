@@ -27,6 +27,10 @@
                     <type>d:int</type>
                     <mandatory>false</mandatory>
                 </property>
+                <property name="gat:gatesUser">
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                </property>
             </properties>
         </type>
     </types>

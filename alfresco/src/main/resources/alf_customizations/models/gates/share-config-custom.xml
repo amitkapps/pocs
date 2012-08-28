@@ -43,6 +43,7 @@
 
                     <!-- Custom attributes -->
                     <show id="gat:quoteNumber"/>
+                    <show id="gat:gatesUser"/>
 
                     <!-- Standard attributes -->
                     <show id="cm:name"/>
@@ -174,6 +175,7 @@
 
                     <!-- Custom attributes -->
                     <show id="gat:quoteNumber"/>
+                    <show id="gat:gatesUser"/>
 
                     <!-- Standard attributes -->
                     <show id="cm:name"/>
@@ -227,6 +229,7 @@
 
                     <!-- Custom attributes -->
                     <show id="gat:quoteNumber"/>
+                    <show id="gat:gatesUser"/>
 
                     <!-- Standard attributes -->
                     <show id="cm:name"/>
@@ -562,6 +565,7 @@
             <form id="search">
                 <field-visibility>
                     <show id="gat:quoteNumber"/>
+                    <show id="gat:gatesUser"/>
                     <show id="gat:customerName"/>
                     <show id="cm:name"/>
                     <show id="cm:title" force="true"/>
