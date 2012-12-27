@@ -121,9 +121,11 @@
                 <field-visibility>
                     <show id="cm:name"/>
                     <show id="gat:quoteNumber"/>
+                    <show id="gat:gatesUser"/>
                 </field-visibility>
                 <appearance>
                     <field id="gat:quoteNumber" label="Quote Number"/>
+                    <field id="gat:gatesUser" label="Gates User"/>
                 </appearance>
             </form>
         </forms>
@@ -201,6 +203,7 @@
             <form id="search">
                 <field-visibility>
                     <show id="gat:quoteNumber"/>
+                    <show id="gat:gatesUser"/>
                     <show id="gat:customerName" force="true"/>
                     <show id="mimetype"/>
                     <show id="cm:modified"/>
@@ -209,6 +212,7 @@
                 <appearance>
                     <field id="gat:customerName" label="Customer Name"/>
                     <field id="gat:quoteNumber" label="Quote Number"/>
+                    <field id="gat:gatesUser" label="Gates User"/>
                     <field id="mimetype" label="Document Format">
                         <control template="/org/alfresco/components/form/controls/mimetype.ftl"/>
                     </field>
