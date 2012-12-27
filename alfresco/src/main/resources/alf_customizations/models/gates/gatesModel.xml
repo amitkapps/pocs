@@ -18,27 +18,181 @@
         <namespace uri="http://www.matson.com//gates/model/content/1.0" prefix="gat" />
     </namespaces>
     <types>
-        <!-- Gates Quote Document Type -->
-        <type name="gat:quote">
-            <title>Quote Document</title>
+        <!-- GATES Parent Types -->
+        <!-- Highest level generic GATES document -->
+        <type name="gat:gatesGenericDocument">
+            <title>GATES Generic Document</title>
             <parent>cm:content</parent>
             <properties>
-                <property name="gat:quoteNumber">
-                    <type>d:int</type>
+                <property name="gat:sendingMethod">
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                </property>
+                <property name="gat:requestingUser">
+                    <type>d:text</type>
                     <mandatory>false</mandatory>
                 </property>
             </properties>
         </type>
-    </types>
-    <!--Customer Aspect - applied on docs that belong to a specific customer-->
-    <aspects>
-        <aspect name="gat:customer">
-            <title>Customer</title>
+        <!-- Booking document (non-report) -->
+        <type name="gat:gatesGenericBookingDocument">
+            <title>GATES Generic Booking Document</title>
+            <parent>gat:gatesGenericDocument</parent>
             <properties>
-                <property name="gat:customerName">
+                <property name="gat:bookingNumber">
                     <type>d:text</type>
+                    <mandatory>true</mandatory>
                 </property>
             </properties>
-        </aspect>
-    </aspects>
+        </type>
+        <!-- Quote document (non-report) -->
+        <type name="gat:gatesGenericQuoteDocument">
+            <title>GATES Generic Quote Document</title>
+            <parent>gat:gatesGenericDocument</parent>
+            <properties>
+                <property name="gat:quoteIdentifier">
+                    <type>d:int</type>
+                    <mandatory>true</mandatory>
+                </property>
+            </properties>
+        </type>
+        <!-- High level GATES report -->
+        <type name="gat:gatesGenericReport">
+            <title>GATES Generic Report</title>
+            <parent>gat:gatesGenericDocument</parent>
+            <properties>
+                <property name="gat:reportIdentifier">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <property name="gat:reportName">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+            </properties>
+        </type>
+
+        <!-- GATES Document Types -->
+        <type name="gat:gcpMailingList">
+            <title>Customer Profile - Mailing List</title>
+            <parent>gat:gatesGenericDocument</parent>
+            <properties>
+                <property name="gat:publicationName">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+            </properties>
+        </type>
+        <type name="gat:gtmGriReport">
+            <title>Tariff Maintenance - General Rate Increase Report</title>
+            <parent>gat:gatesGenericDocument</parent>
+            <properties>
+                <property name="gat:tariffGroupType">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+            </properties>
+        </type>
+        <type name="gat:gdtInvoice">
+            <title>Detention Billing - Invoice</title>
+            <parent>gat:gatesGenericDocument</parent>
+            <properties>
+                <property name="gat:detentionInvoiceNumber">
+                    <type>d:int</type>
+                    <mandatory>true</mandatory>
+                </property>
+            </properties>
+        </type>
+        <type name="gat:gfpRemitAdvice">
+            <title>Freight Payment System - Remittance Advice</title>
+            <parent>gat:gatesGenericDocument</parent>
+            <properties>
+                <property name="gat:remittanceAdviceId">
+                    <type>d:int</type>
+                    <mandatory>true</mandatory>
+                </property>
+            </properties>
+        </type>
+        <type name="gat:gqtCustomer">
+            <title>Quotes - Document Sent to Customer</title>
+            <parent>gat:gatesGenericQuoteDocument</parent>
+        </type>
+        <type name="gat:gqtInternal">
+            <title>Quotes - Document Sent Internal</title>
+            <parent>gat:gatesGenericQuoteDocument</parent>
+        </type>
+        <type name="gat:gbkConfirmation">
+            <title>Booking - Booking Confirmation</title>
+            <parent>gat:gatesGenericBookingDocument</parent>
+        </type>
+        <type name="gat:gbkBlDraft">
+            <title>Booking - BL Draft</title>
+            <parent>gat:gatesGenericBookingDocument</parent>
+        </type>
+        <type name="gat:gspDispatch">
+            <title>Spot and Pull - Dispatch Request</title>
+            <parent>gat:gatesGenericBookingDocument</parent>
+        </type>
+
+        <!-- GATES Report Types -->
+        <type name="gat:gcpReport">
+            <title>Customer Profile - Reports</title>
+            <parent>gat:gatesGenericReport</parent>
+        </type>
+        <type name="gat:gtmReport">
+            <title>Tariff Maintenance - Reports</title>
+            <parent>gat:gatesGenericReport</parent>
+        </type>
+        <type name="gat:gbkReport">
+            <title>Booking - Reports</title>
+            <parent>gat:gatesGenericReport</parent>
+        </type>
+        <type name="gat:grdsReport">
+            <title>Billing Batch - Reports</title>
+            <parent>gat:gatesGenericReport</parent>
+        </type>
+        <type name="gat:gdtReport">
+            <title>Detention Billing - Reports</title>
+            <parent>gat:gatesGenericReport</parent>
+        </type>
+        <type name="gat:gfpReport">
+            <title>Freight Payment - Reports</title>
+            <parent>gat:gatesGenericReport</parent>
+        </type>
+        <!-- GATES Customer Paper Type -->
+        <type name="gat:gCustomerPaper">
+            <title>GATES Customer Paper</title>
+            <parent>gat:gatesGenericReport</parent>
+            <properties>
+                <property name="gat:documentType">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <property name="gat:shipmentNumber">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <property name="gat:sequenceNumber">
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                </property>
+                <property name="gat:service">
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                </property>
+        		<property name="gat:requestId">
+        			<type>d:text</type>
+        			<mandatory>false</mandatory>
+                </property>
+				<property name="gat:slczId">
+        			<type>d:text</type>
+        			<mandatory>false</mandatory>
+        		</property>
+				<property name="gat:jobId">
+        			<type>d:text</type>
+        			<mandatory>false</mandatory>
+        		</property>
+            </properties>
+        </type>
+    </types>
 </model>
