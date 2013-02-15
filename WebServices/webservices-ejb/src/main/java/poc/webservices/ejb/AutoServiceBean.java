@@ -28,7 +28,7 @@ import java.util.List;
         targetNamespace = "http://amitk.poc/AutoService")
 // Below annotation activates MTOM, without this the PDF response
 // would be inlined as base64Binary within the SOAP response
-@BindingType(value= SOAPBinding.SOAP11HTTP_MTOM_BINDING)
+@BindingType(value= SOAPBinding.SOAP12HTTP_MTOM_BINDING)
 public class AutoServiceBean {
     public AutoServiceBean() {
     }

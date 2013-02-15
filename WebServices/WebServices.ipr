@@ -312,6 +312,12 @@
       </item>
     </group>
   </component>
+  <component name="PlugProxyProjectComponent">
+    <option name="host" value="127.0.0.1" />
+    <option name="hostPort" value="8080" />
+    <option name="localPort" value="8081" />
+    <option name="hexDump" />
+  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
@@ -325,11 +331,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/webservices-client/webservices-client.iml" filepath="$PROJECT_DIR$/webservices-client/webservices-client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/webservices-ear/webservices-ear.iml" filepath="$PROJECT_DIR$/webservices-ear/webservices-ear.iml" />
-      <module fileurl="file://$PROJECT_DIR$/webservices-ejb/webservices-ejb.iml" filepath="$PROJECT_DIR$/webservices-ejb/webservices-ejb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/webservices-jar/webservices-jar.iml" filepath="$PROJECT_DIR$/webservices-jar/webservices-jar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webservices-ear/webservices-ear.iml" filepath="$PROJECT_DIR$/webservices-ear/webservices-ear.iml" group="webservices-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/webservices-ejb/webservices-ejb.iml" filepath="$PROJECT_DIR$/webservices-ejb/webservices-ejb.iml" group="webservices-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/webservices-jar/webservices-jar.iml" filepath="$PROJECT_DIR$/webservices-jar/webservices-jar.iml" group="webservices-parent and modules" />
       <module fileurl="file://$PROJECT_DIR$/webservices-parent.iml" filepath="$PROJECT_DIR$/webservices-parent.iml" />
-      <module fileurl="file://$PROJECT_DIR$/webservices-web/webservices-web.iml" filepath="$PROJECT_DIR$/webservices-web/webservices-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webservices-web/webservices-web.iml" filepath="$PROJECT_DIR$/webservices-web/webservices-web.iml" group="webservices-parent and modules" />
     </modules>
   </component>
   <component name="ProjectReloadState">

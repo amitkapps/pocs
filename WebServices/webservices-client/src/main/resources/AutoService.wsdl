@@ -1,4 +1,4 @@
-<definitions name='AutoService' targetNamespace='http://amitk.poc/AutoService' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://amitk.poc/AutoService' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+<definitions name='AutoService' targetNamespace='http://amitk.poc/AutoService' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap12='http://schemas.xmlsoap.org/wsdl/soap12/' xmlns:tns='http://amitk.poc/AutoService' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
     <types>
         <xs:schema targetNamespace='http://amitk.poc/AutoService' version='1.0' xmlns:tns='http://amitk.poc/AutoService' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
             <xs:element name='IOException' type='tns:IOException'/>
@@ -65,32 +65,32 @@
         </operation>
     </portType>
     <binding name='AutoServiceWSBinding' type='tns:AutoServiceWS'>
-        <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+        <soap12:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
         <operation name='getDeliveryReceiptPDF'>
-            <soap:operation soapAction=''/>
+            <soap12:operation soapAction=''/>
             <input>
-                <soap:body use='literal'/>
+                <soap12:body use='literal'/>
             </input>
             <output>
-                <soap:body use='literal'/>
+                <soap12:body use='literal'/>
             </output>
             <fault name='IOException'>
-                <soap:fault name='IOException' use='literal'/>
+                <soap12:fault name='IOException' use='literal'/>
             </fault>
         </operation>
         <operation name='getStatuses'>
-            <soap:operation soapAction=''/>
+            <soap12:operation soapAction=''/>
             <input>
-                <soap:body use='literal'/>
+                <soap12:body use='literal'/>
             </input>
             <output>
-                <soap:body use='literal'/>
+                <soap12:body use='literal'/>
             </output>
         </operation>
     </binding>
     <service name='AutoService'>
         <port binding='tns:AutoServiceWSBinding' name='AutoServiceWSPort'>
-            <soap:address location='http://127.0.0.1:8080/webservices-ear-1.0-SNAPSHOT-webservices-ejb-1.0-SNAPSHOT/AutoServiceEJB'/>
+            <soap12:address location='http://127.0.0.1:8180/webservices-ear-1.0-SNAPSHOT-webservices-ejb-1.0-SNAPSHOT/AutoServiceEJB'/>
         </port>
     </service>
 </definitions>

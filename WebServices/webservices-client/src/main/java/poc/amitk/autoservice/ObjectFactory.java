@@ -38,14 +38,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetDeliveryReceiptPDFResponse }
-     * 
-     */
-    public GetDeliveryReceiptPDFResponse createGetDeliveryReceiptPDFResponse() {
-        return new GetDeliveryReceiptPDFResponse();
-    }
-
-    /**
      * Create an instance of {@link GetDeliveryReceiptPDF }
      * 
      */
@@ -59,6 +51,14 @@ public class ObjectFactory {
      */
     public GetStatuses createGetStatuses() {
         return new GetStatuses();
+    }
+
+    /**
+     * Create an instance of {@link GetDeliveryReceiptPDFResponse }
+     * 
+     */
+    public GetDeliveryReceiptPDFResponse createGetDeliveryReceiptPDFResponse() {
+        return new GetDeliveryReceiptPDFResponse();
     }
 
     /**
