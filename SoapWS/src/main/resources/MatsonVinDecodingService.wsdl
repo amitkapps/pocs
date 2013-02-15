@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+			xmlns:tns="http://www.matson.com"
+			xmlns:wsr="http://www.openuri.org/2002/10/soap/reliability/"
+			xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+			xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+			xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+			xmlns:soap12enc="http://www.w3.org/2003/05/soap-encoding"
+			xmlns:conv="http://www.openuri.org/2002/04/wsdl/conversation/"
+			xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+			xmlns:s="http://www.w3.org/2001/XMLSchema"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns="http://schemas.xmlsoap.org/wsdl/"
+			targetNamespace="http://www.matson.com">
+
+	<types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:matson="http://www.matson.com"
+			xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+			xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+			targetNamespace="http://www.matson.com"
+			elementFormDefault="qualified"
+			attributeFormDefault="unqualified">
+			<xs:annotation>
+				<xs:documentation xml:lang="en">The VehicleInfo contains vehicle's information.</xs:documentation>
+			</xs:annotation>
+			<xs:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+			<xs:complexType name="VehicleInfo">
+				<xs:attribute name="vinNumber" type="xs:string" use="required"/>
+				<xs:attribute name="make" type="xs:string" use="required"/>
+				<xs:attribute name="model" type="xs:string" use="required"/>
+				<xs:attribute name="year" type="xs:int" use="required"/>
+				<xs:attribute name="vehicleType" type="xs:string" use="required"/>
+				<xs:attribute name="bodyType" type="xs:string" use="required"/>
+				<xs:attribute name="assemblyPlant" type="xs:string" use="required"/>
+				<xs:attribute name="length" type="xs:double" use="required"/>
+				<xs:attribute name="height" type="xs:double" use="required"/>
+				<xs:attribute name="width" type="xs:double" use="required"/>
+				<xs:attribute name="weight" type="xs:int" use="required"/>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+
+	<message name="getVehicleDetails">
+		<part name="vinNumber" type="xs:string"/>
+	</message>
+	<message name="getVehicleDetailsResponse">
+		<part name="vehicleResults" type="tns:VehicleInfo"/>
+	</message>
+	<portType name="MatsonVinDecodingService">
+		<operation name="getVehicleDetails">
+			<input message="tns:getVehicleDetails"/>
+			<output message="tns:getVehicleDetailsResponse"/>
+		</operation>
+	</portType>
+	<binding name="MatsonVinDecodingService" type="tns:MatsonVinDecodingService">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getVehicleDetails">
+			<soap:operation style="rpc"/>
+			<wsr:reliability persistDuration="60000"/>
+			<input>
+				<soap:body use="literal" namespace="http://www.matson.com"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://www.matson.com"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="MatsonVinDecodingService">
+		<port name="MatsonVinDecodingService" binding="tns:MatsonVinDecodingService">
+			<soap:address location="http://localhost:9001/vindecoding/MatsonVinDecodingService"/>
+		</port>
+	</service>
+</definitions>
