@@ -1,0 +1,96 @@
+<definitions name='AutoService' targetNamespace='http://amitk.poc/AutoService' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://amitk.poc/AutoService' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+    <types>
+        <xs:schema targetNamespace='http://amitk.poc/AutoService' version='1.0' xmlns:tns='http://amitk.poc/AutoService' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+            <xs:element name='IOException' type='tns:IOException'/>
+            <xs:element name='getDeliveryReceiptPDF' type='tns:getDeliveryReceiptPDF'/>
+            <xs:element name='getDeliveryReceiptPDFResponse' type='tns:getDeliveryReceiptPDFResponse'/>
+            <xs:element name='getStatuses' type='tns:getStatuses'/>
+            <xs:element name='getStatusesResponse' type='tns:getStatusesResponse'/>
+            <xs:complexType name='getStatuses'>
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name='getStatusesResponse'>
+                <xs:sequence>
+                    <xs:element maxOccurs='unbounded' minOccurs='0' name='unit' type='tns:unit'/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name='unit'>
+                <xs:sequence>
+                    <xs:element minOccurs='0' name='bookingNumber' type='xs:string'/>
+                    <xs:element minOccurs='0' name='receivedDate' type='xs:dateTime'/>
+                    <xs:element name='unitId' type='xs:int'/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name='getDeliveryReceiptPDF'>
+                <xs:sequence>
+                    <xs:element name='arg0' type='xs:int'/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name='getDeliveryReceiptPDFResponse'>
+                <xs:sequence>
+                    <xs:element minOccurs='0' name='pdf' type='xs:base64Binary'/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name='IOException'>
+                <xs:sequence>
+                    <xs:element minOccurs='0' name='message' type='xs:string'/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </types>
+    <message name='AutoServiceWS_getStatusesResponse'>
+        <part element='tns:getStatusesResponse' name='getStatusesResponse'></part>
+    </message>
+    <message name='IOException'>
+        <part element='tns:IOException' name='IOException'></part>
+    </message>
+    <message name='AutoServiceWS_getDeliveryReceiptPDFResponse'>
+        <part element='tns:getDeliveryReceiptPDFResponse' name='getDeliveryReceiptPDFResponse'></part>
+    </message>
+    <message name='AutoServiceWS_getDeliveryReceiptPDF'>
+        <part element='tns:getDeliveryReceiptPDF' name='getDeliveryReceiptPDF'></part>
+    </message>
+    <message name='AutoServiceWS_getStatuses'>
+        <part element='tns:getStatuses' name='getStatuses'></part>
+    </message>
+    <portType name='AutoServiceWS'>
+        <operation name='getDeliveryReceiptPDF' parameterOrder='getDeliveryReceiptPDF'>
+            <input message='tns:AutoServiceWS_getDeliveryReceiptPDF'></input>
+            <output message='tns:AutoServiceWS_getDeliveryReceiptPDFResponse'></output>
+            <fault message='tns:IOException' name='IOException'></fault>
+        </operation>
+        <operation name='getStatuses' parameterOrder='getStatuses'>
+            <input message='tns:AutoServiceWS_getStatuses'></input>
+            <output message='tns:AutoServiceWS_getStatusesResponse'></output>
+        </operation>
+    </portType>
+    <binding name='AutoServiceWSBinding' type='tns:AutoServiceWS'>
+        <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+        <operation name='getDeliveryReceiptPDF'>
+            <soap:operation soapAction=''/>
+            <input>
+                <soap:body use='literal'/>
+            </input>
+            <output>
+                <soap:body use='literal'/>
+            </output>
+            <fault name='IOException'>
+                <soap:fault name='IOException' use='literal'/>
+            </fault>
+        </operation>
+        <operation name='getStatuses'>
+            <soap:operation soapAction=''/>
+            <input>
+                <soap:body use='literal'/>
+            </input>
+            <output>
+                <soap:body use='literal'/>
+            </output>
+        </operation>
+    </binding>
+    <service name='AutoService'>
+        <port binding='tns:AutoServiceWSBinding' name='AutoServiceWSPort'>
+            <soap:address location='http://127.0.0.1:8080/webservices-ear-1.0-SNAPSHOT-webservices-ejb-1.0-SNAPSHOT/AutoServiceEJB'/>
+        </port>
+    </service>
+</definitions>

@@ -20,6 +20,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="webservices-ejb" />
     <orderEntry type="module" module-name="webservices-jar" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-io:1.3.2" level="project" />
     <orderEntry type="module" module-name="webservices-web" />
   </component>
 </module>

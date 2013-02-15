@@ -35,6 +35,12 @@
             <version>1.0-SNAPSHOT</version>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
@@ -47,10 +53,6 @@
                     <version>1.4</version>
                     <defaultLibBundleDir>APP-INF/lib</defaultLibBundleDir>
                     <modules>
-                        <jarModule>
-                            <groupId>poc.webservices</groupId>
-                            <artifactId>webservices-jar</artifactId>
-                        </jarModule>
                         <webModule>
                             <groupId>poc.webservices</groupId>
                             <artifactId>webservices-web</artifactId>
