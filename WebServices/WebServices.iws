@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6b93e1f-3ec9-47b8-9743-71ad9decb614" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebServices.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MQJavaClient/src/test/java/MQJavaClient/EirMqUpdater.java" afterPath="$PROJECT_DIR$/../MQJavaClient/src/test/java/MQJavaClient/EirMqUpdater.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebServices.iws" afterPath="$PROJECT_DIR$/WebServices.iws" />
     </list>
     <ignored path="WebServices.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360954038060" ignored="false" />
+    <file path="/Dummy.txt" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360954047051" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,7 +289,11 @@
       <created>1360954040593</created>
       <updated>1360954040593</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Sync">
+      <created>1360954049608</created>
+      <updated>1360954049608</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
