@@ -78,7 +78,7 @@
                             <sourceRoot>${basedir}/src/main/java</sourceRoot>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${basedir}/src/main/resources/AutoService.wsdl</wsdl>
+                                    <wsdl>http://127.0.0.1:8080/webservices-ear-1.0-SNAPSHOT-webservices-ejb-1.0-SNAPSHOT/AutoServiceEJB?wsdl</wsdl>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>

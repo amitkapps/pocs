@@ -5,6 +5,7 @@ import poc.webservices.Unit;
 
 import javax.activation.DataHandler;
 import javax.ejb.Stateless;
+import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.mail.util.ByteArrayDataSource;
@@ -46,10 +47,9 @@ public class AutoServiceBean {
 
     @WebResult(name = "pdf")
     @XmlMimeType("application/octet-stream")
-    public DataHandler getDeliveryReceiptPDF(int unitId) throws IOException {
-        String pdfPath = "/Users/amitkapps/Downloads/bill.pdf";
+    public DataHandler getDeliveryReceiptPDF(@WebParam(name = "filePath") String path) throws IOException {
 
-        byte[] bytes = IOUtils.toByteArray(new FileInputStream(pdfPath));
+        byte[] bytes = IOUtils.toByteArray(new FileInputStream(path));
         System.out.println("Byte array size: " + bytes.length);
         ByteArrayDataSource ds = new ByteArrayDataSource(bytes, "application/pdf");
         System.out.println("Returning DataHandler");

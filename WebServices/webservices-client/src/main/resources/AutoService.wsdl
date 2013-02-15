@@ -23,7 +23,7 @@
             </xs:complexType>
             <xs:complexType name='getDeliveryReceiptPDF'>
                 <xs:sequence>
-                    <xs:element name='arg0' type='xs:int'/>
+                    <xs:element minOccurs='0' name='arg0' type='xs:string'/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name='getDeliveryReceiptPDFResponse'>

@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="arg0" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="filePath" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,26 +27,34 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getDeliveryReceiptPDF", propOrder = {
-    "arg0"
+    "filePath"
 })
 public class GetDeliveryReceiptPDF {
 
-    protected int arg0;
+    protected String filePath;
 
     /**
-     * Gets the value of the arg0 property.
+     * Gets the value of the filePath property.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getArg0() {
-        return arg0;
+    public String getFilePath() {
+        return filePath;
     }
 
     /**
-     * Sets the value of the arg0 property.
+     * Sets the value of the filePath property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setArg0(int value) {
-        this.arg0 = value;
+    public void setFilePath(String value) {
+        this.filePath = value;
     }
 
 }

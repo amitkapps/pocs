@@ -28,7 +28,8 @@ public class AutoServiceTest {
         AutoServiceEndPoint autoService = new AutoService().getAutoServicePort();
 //        Binding binding = ((BindingProvider)autoService).getBinding();
 //        ((SOAPBinding)binding).setMTOMEnabled(true);
-        DataHandler deliveryReceiptPDF = autoService.getDeliveryReceiptPDF(1);
+        String pdfPath = "/tmp/abc.pdf";
+        DataHandler deliveryReceiptPDF = autoService.getDeliveryReceiptPDF(pdfPath);
 
         //fos.write(deliveryReceiptPDF.getDataSource().getInputStream());
 
