@@ -26,8 +26,8 @@ public class AutoServiceTest {
     public void testGetPDF() throws IOException_Exception, IOException {
         URL wsdlLocation = new URL("http://127.0.0.1:8180/webservices-ear-1.0-SNAPSHOT-webservices-ejb-1.0-SNAPSHOT/AutoServiceEJB?wsdl");
         AutoServiceEndPoint autoService = new AutoService().getAutoServicePort();
-        Binding binding = ((BindingProvider)autoService).getBinding();
-        ((SOAPBinding)binding).setMTOMEnabled(true);
+//        Binding binding = ((BindingProvider)autoService).getBinding();
+//        ((SOAPBinding)binding).setMTOMEnabled(true);
         DataHandler deliveryReceiptPDF = autoService.getDeliveryReceiptPDF(1);
 
         //fos.write(deliveryReceiptPDF.getDataSource().getInputStream());
