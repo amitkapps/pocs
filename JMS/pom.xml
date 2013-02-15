@@ -5,7 +5,10 @@
     <groupId>JMS</groupId>
     <artifactId>JMS</artifactId>
     <version>1.0</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>jms-client-webapp</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <name>JMS</name>
     <url>http://maven.apache.org</url>
@@ -38,6 +41,11 @@
             <version>1.2.16</version>
         </dependency>
 
+        <dependency>
+            <groupId>javax.jms</groupId>
+            <artifactId>jms-api</artifactId>
+            <version>1.1-rev-1</version>
+        </dependency>
     </dependencies>
 
 

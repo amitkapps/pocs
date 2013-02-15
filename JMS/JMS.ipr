@@ -3,6 +3,30 @@
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
   </component>
+  <component name="ArtifactManager">
+    <artifact type="war" name="jms-client-webapp:war">
+      <output-path>$PROJECT_DIR$/jms-client-webapp/target</output-path>
+      <root id="archive" name="jms-client-webapp.war">
+        <element id="artifact" artifact-name="jms-client-webapp:war exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="jms-client-webapp:war exploded">
+      <output-path>$PROJECT_DIR$/jms-client-webapp/target/jms-client-webapp</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="jms-client-webapp/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="jms-client-webapp" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.5.11" />
+            <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.5.11" />
+            <element id="library" level="project" name="Maven: log4j:log4j:1.2.16" />
+          </element>
+        </element>
+      </root>
+    </artifact>
+  </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions />
@@ -18,7 +42,18 @@
       <entry name="?*.tld" />
       <entry name="?*.ftl" />
     </wildcardResourcePatterns>
-    <annotationProcessing enabled="false" useClasspath="true" />
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="jms-client-webapp" />
+      </profile>
+    </annotationProcessing>
   </component>
   <component name="CopyrightManager" default="">
     <module2copyright />
@@ -27,10 +62,20 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/../../../../ECommerce/work/ProjectCVS/MatsonNotify" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../ECommerce/work/ProjectCVS/MatsonNotify/notify-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../ECommerce/work/ProjectCVS/MatsonNotify/notify-ocean" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../ECommerce/work/ProjectCVS/MatsonNotify/notifybatchapp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../ECommerce/work/ProjectCVS/MatsonNotify/notifyentapp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../ECommerce/work/ProjectCVS/MatsonNotify/notifywebapp" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jms-client-webapp" charset="UTF-8" />
   </component>
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
+  </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/jms-client-webapp" />
   </component>
   <component name="IdProvider" IDEtalkID="9A67BB81CA6E2596697B7311E8FB584A" />
   <component name="MavenProjectsManager">
@@ -195,12 +240,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JMS.iml" filepath="$PROJECT_DIR$/JMS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jms-client-webapp/jms-client-webapp.iml" filepath="$PROJECT_DIR$/jms-client-webapp/jms-client-webapp.iml" />
     </modules>
   </component>
   <component name="ProjectResources">
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="VcsDirectoryMappings">
@@ -211,16 +257,36 @@
   <component name="libraryTable">
     <library name="jboss-client">
       <CLASSES>
-        <root url="file://$USER_HOME$/Applications/jboss/jboss-eap-5.1/jboss-as/client" />
-        <root url="file://$USER_HOME$/Applications/jboss/jboss-eap-5.1/jboss-as/client" />
+        <root url="file:///home/programs/jboss/jboss-eap-5.1/jboss-as/client" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="file://$USER_HOME$/Applications/jboss/jboss-eap-5.1/jboss-as/client" />
-        <root url="file://$USER_HOME$/Applications/jboss/jboss-eap-5.1/jboss-as/client" />
+        <root url="file:///home/programs/jboss/jboss-eap-5.1/jboss-as/client" />
       </SOURCES>
-      <jarDirectory url="file://$USER_HOME$/Applications/jboss/jboss-eap-5.1/jboss-as/client" recursive="false" />
-      <jarDirectory url="file://$USER_HOME$/Applications/jboss/jboss-eap-5.1/jboss-as/client" recursive="false" type="SOURCES" />
+      <jarDirectory url="file:///home/programs/jboss/jboss-eap-5.1/jboss-as/client" recursive="false" />
+      <jarDirectory url="file:///home/programs/jboss/jboss-eap-5.1/jboss-as/client" recursive="false" type="SOURCES" />
+    </library>
+    <library name="Maven: javax.jms:jms-api:1.1-rev-1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/jms/jms-api/1.1-rev-1/jms-api-1.1-rev-1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/jms/jms-api/1.1-rev-1/jms-api-1.1-rev-1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/jms/jms-api/1.1-rev-1/jms-api-1.1-rev-1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.servlet:servlet-api:2.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar!/" />
+      </SOURCES>
     </library>
     <library name="Maven: junit:junit:4.8.1">
       <CLASSES>
