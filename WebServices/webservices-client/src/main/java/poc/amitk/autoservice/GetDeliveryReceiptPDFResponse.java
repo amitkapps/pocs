@@ -1,8 +1,10 @@
 
 package poc.amitk.autoservice;
 
+import javax.activation.DataHandler;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlMimeType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -31,16 +33,18 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class GetDeliveryReceiptPDFResponse {
 
-    protected byte[] pdf;
+    @XmlMimeType("application/octet-stream")
+    protected DataHandler pdf;
 
     /**
      * Gets the value of the pdf property.
      * 
      * @return
      *     possible object is
-     *     byte[]
+     *     {@link DataHandler }
+     *     
      */
-    public byte[] getPdf() {
+    public DataHandler getPdf() {
         return pdf;
     }
 
@@ -49,10 +53,11 @@ public class GetDeliveryReceiptPDFResponse {
      * 
      * @param value
      *     allowed object is
-     *     byte[]
+     *     {@link DataHandler }
+     *     
      */
-    public void setPdf(byte[] value) {
-        this.pdf = ((byte[]) value);
+    public void setPdf(DataHandler value) {
+        this.pdf = value;
     }
 
 }

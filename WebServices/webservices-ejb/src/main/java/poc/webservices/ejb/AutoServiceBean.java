@@ -8,6 +8,7 @@ import javax.ejb.Stateless;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.mail.util.ByteArrayDataSource;
+import javax.xml.bind.annotation.XmlMimeType;
 import javax.xml.ws.BindingType;
 import javax.xml.ws.soap.SOAPBinding;
 import java.io.File;
@@ -24,7 +25,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 @Stateless(name = "AutoServiceEJB", mappedName = "AutoServiceEJB")
-@WebService(name = "AutoServiceWS", serviceName = "AutoService", portName = "AutoServiceWSPort",
+@WebService(name = "AutoServiceEndPoint", serviceName = "AutoService", portName = "AutoServicePort",
         targetNamespace = "http://amitk.poc/AutoService")
 // Below annotation activates MTOM, without this the PDF response
 // would be inlined as base64Binary within the SOAP response
@@ -44,6 +45,7 @@ public class AutoServiceBean {
     }
 
     @WebResult(name = "pdf")
+    @XmlMimeType("application/octet-stream")
     public DataHandler getDeliveryReceiptPDF(int unitId) throws IOException {
         String pdfPath = "/Users/amitkapps/Downloads/bill.pdf";
 

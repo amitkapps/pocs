@@ -46,14 +46,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetStatuses }
-     * 
-     */
-    public GetStatuses createGetStatuses() {
-        return new GetStatuses();
-    }
-
-    /**
      * Create an instance of {@link GetDeliveryReceiptPDFResponse }
      * 
      */
@@ -70,19 +62,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Unit }
-     * 
-     */
-    public Unit createUnit() {
-        return new Unit();
-    }
-
-    /**
      * Create an instance of {@link IOException }
      * 
      */
     public IOException createIOException() {
         return new IOException();
+    }
+
+    /**
+     * Create an instance of {@link GetStatuses }
+     * 
+     */
+    public GetStatuses createGetStatuses() {
+        return new GetStatuses();
+    }
+
+    /**
+     * Create an instance of {@link Unit }
+     * 
+     */
+    public Unit createUnit() {
+        return new Unit();
     }
 
     /**

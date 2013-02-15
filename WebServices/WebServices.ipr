@@ -334,7 +334,7 @@
       <module fileurl="file://$PROJECT_DIR$/webservices-ear/webservices-ear.iml" filepath="$PROJECT_DIR$/webservices-ear/webservices-ear.iml" group="webservices-parent and modules" />
       <module fileurl="file://$PROJECT_DIR$/webservices-ejb/webservices-ejb.iml" filepath="$PROJECT_DIR$/webservices-ejb/webservices-ejb.iml" group="webservices-parent and modules" />
       <module fileurl="file://$PROJECT_DIR$/webservices-jar/webservices-jar.iml" filepath="$PROJECT_DIR$/webservices-jar/webservices-jar.iml" group="webservices-parent and modules" />
-      <module fileurl="file://$PROJECT_DIR$/webservices-parent.iml" filepath="$PROJECT_DIR$/webservices-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webservices-parent.iml" filepath="$PROJECT_DIR$/webservices-parent.iml" group="webservices-parent and modules" />
       <module fileurl="file://$PROJECT_DIR$/webservices-web/webservices-web.iml" filepath="$PROJECT_DIR$/webservices-web/webservices-web.iml" group="webservices-parent and modules" />
     </modules>
   </component>
@@ -501,6 +501,28 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/javaee/javaee-api/5/javaee-api-5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.activation:activation:1.1.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/activation/activation/1.1.1/activation-1.1.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/activation/activation/1.1.1/activation-1.1.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/activation/activation/1.1.1/activation-1.1.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.mail:mail:1.4.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/mail/mail/1.4.1/mail-1.4.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/mail/mail/1.4.1/mail-1.4.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/mail/mail/1.4.1/mail-1.4.1-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: javax.servlet.jsp:jsp-api:2.1">

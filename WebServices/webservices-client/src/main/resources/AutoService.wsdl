@@ -28,7 +28,7 @@
             </xs:complexType>
             <xs:complexType name='getDeliveryReceiptPDFResponse'>
                 <xs:sequence>
-                    <xs:element minOccurs='0' name='pdf' type='xs:base64Binary'/>
+                    <xs:element minOccurs='0' name='pdf' ns1:expectedContentTypes='application/octet-stream' type='xs:base64Binary' xmlns:ns1='http://www.w3.org/2005/05/xmlmime'/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name='IOException'>
@@ -38,33 +38,33 @@
             </xs:complexType>
         </xs:schema>
     </types>
-    <message name='AutoServiceWS_getStatusesResponse'>
-        <part element='tns:getStatusesResponse' name='getStatusesResponse'></part>
-    </message>
     <message name='IOException'>
         <part element='tns:IOException' name='IOException'></part>
     </message>
-    <message name='AutoServiceWS_getDeliveryReceiptPDFResponse'>
-        <part element='tns:getDeliveryReceiptPDFResponse' name='getDeliveryReceiptPDFResponse'></part>
-    </message>
-    <message name='AutoServiceWS_getDeliveryReceiptPDF'>
-        <part element='tns:getDeliveryReceiptPDF' name='getDeliveryReceiptPDF'></part>
-    </message>
-    <message name='AutoServiceWS_getStatuses'>
+    <message name='AutoServiceEndPoint_getStatuses'>
         <part element='tns:getStatuses' name='getStatuses'></part>
     </message>
-    <portType name='AutoServiceWS'>
+    <message name='AutoServiceEndPoint_getDeliveryReceiptPDF'>
+        <part element='tns:getDeliveryReceiptPDF' name='getDeliveryReceiptPDF'></part>
+    </message>
+    <message name='AutoServiceEndPoint_getDeliveryReceiptPDFResponse'>
+        <part element='tns:getDeliveryReceiptPDFResponse' name='getDeliveryReceiptPDFResponse'></part>
+    </message>
+    <message name='AutoServiceEndPoint_getStatusesResponse'>
+        <part element='tns:getStatusesResponse' name='getStatusesResponse'></part>
+    </message>
+    <portType name='AutoServiceEndPoint'>
         <operation name='getDeliveryReceiptPDF' parameterOrder='getDeliveryReceiptPDF'>
-            <input message='tns:AutoServiceWS_getDeliveryReceiptPDF'></input>
-            <output message='tns:AutoServiceWS_getDeliveryReceiptPDFResponse'></output>
+            <input message='tns:AutoServiceEndPoint_getDeliveryReceiptPDF'></input>
+            <output message='tns:AutoServiceEndPoint_getDeliveryReceiptPDFResponse'></output>
             <fault message='tns:IOException' name='IOException'></fault>
         </operation>
         <operation name='getStatuses' parameterOrder='getStatuses'>
-            <input message='tns:AutoServiceWS_getStatuses'></input>
-            <output message='tns:AutoServiceWS_getStatusesResponse'></output>
+            <input message='tns:AutoServiceEndPoint_getStatuses'></input>
+            <output message='tns:AutoServiceEndPoint_getStatusesResponse'></output>
         </operation>
     </portType>
-    <binding name='AutoServiceWSBinding' type='tns:AutoServiceWS'>
+    <binding name='AutoServiceEndPointBinding' type='tns:AutoServiceEndPoint'>
         <soap12:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
         <operation name='getDeliveryReceiptPDF'>
             <soap12:operation soapAction=''/>
@@ -89,8 +89,8 @@
         </operation>
     </binding>
     <service name='AutoService'>
-        <port binding='tns:AutoServiceWSBinding' name='AutoServiceWSPort'>
-            <soap12:address location='http://127.0.0.1:8180/webservices-ear-1.0-SNAPSHOT-webservices-ejb-1.0-SNAPSHOT/AutoServiceEJB'/>
+        <port binding='tns:AutoServiceEndPointBinding' name='AutoServicePort'>
+            <soap12:address location='http://127.0.0.1:8080/webservices-ear-1.0-SNAPSHOT-webservices-ejb-1.0-SNAPSHOT/AutoServiceEJB'/>
         </port>
     </service>
 </definitions>
