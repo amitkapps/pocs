@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>poc.webservices</groupId>
+    <artifactId>webservices-ear</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>ear</packaging>
+
+    <parent>
+        <groupId>poc.webservices</groupId>
+        <artifactId>webservices-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <name>webservices-ear</name>
+    <url>http://maven.apache.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>poc.webservices</groupId>
+            <artifactId>webservices-ejb</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>poc.webservices</groupId>
+            <artifactId>webservices-web</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.4.2</version>
+                <configuration>
+
+                    <modules>
+                        <webModule>
+                            <groupId>poc.webservices</groupId>
+                            <artifactId>webservices-web</artifactId>
+
+                            <!-- 4.5.3.1. Only if you want different file name inside "ear" file. -->
+                            <!--<bundleFileName>notify.war</bundleFileName>-->
+
+                            <!-- 4.5.3.2. Specify the context root if you need different name. -->
+                            <!-- Default is: "/${pom.artifactId} -->
+                            <contextRoot>ws</contextRoot>
+                        </webModule>
+<!--
+                        <ejbModule>
+                            <groupId>poc.webservices</groupId>
+                            <artifactId>webservices-ejb</artifactId>
+                            <version>1.0-SNAPSHOT</version>
+                        </ejbModule>
+-->
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
