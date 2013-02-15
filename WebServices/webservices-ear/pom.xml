@@ -21,6 +21,7 @@
             <groupId>poc.webservices</groupId>
             <artifactId>webservices-ejb</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <type>ejb</type>
         </dependency>
         <dependency>
             <groupId>poc.webservices</groupId>
@@ -28,16 +29,28 @@
             <version>1.0-SNAPSHOT</version>
             <type>war</type>
         </dependency>
+        <dependency>
+            <groupId>poc.webservices</groupId>
+            <artifactId>webservices-jar</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-ear-plugin</artifactId>
-                <version>2.4.2</version>
+                <version>2.8</version>
                 <configuration>
-
+                    <includeLibInApplicationXml/>
+                    <version>1.4</version>
+                    <defaultLibBundleDir>APP-INF/lib</defaultLibBundleDir>
                     <modules>
+                        <jarModule>
+                            <groupId>poc.webservices</groupId>
+                            <artifactId>webservices-jar</artifactId>
+                        </jarModule>
                         <webModule>
                             <groupId>poc.webservices</groupId>
                             <artifactId>webservices-web</artifactId>
@@ -49,13 +62,10 @@
                             <!-- Default is: "/${pom.artifactId} -->
                             <contextRoot>ws</contextRoot>
                         </webModule>
-<!--
                         <ejbModule>
                             <groupId>poc.webservices</groupId>
                             <artifactId>webservices-ejb</artifactId>
-                            <version>1.0-SNAPSHOT</version>
                         </ejbModule>
--->
                     </modules>
                 </configuration>
             </plugin>

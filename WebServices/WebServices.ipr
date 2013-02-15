@@ -31,6 +31,13 @@
         <element id="directory" name="webservices-ejb-1.0-SNAPSHOT.jar">
           <element id="artifact" artifact-name="webservices-ejb:ejb exploded" />
         </element>
+        <element id="directory" name="APP-INF">
+          <element id="directory" name="lib">
+            <element id="archive" name="webservices-jar-1.0-SNAPSHOT.jar">
+              <element id="module-output" name="webservices-jar" />
+            </element>
+          </element>
+        </element>
         <element id="directory" name="webservices-web-1.0-SNAPSHOT.war">
           <element id="artifact" artifact-name="webservices-web:war exploded" />
         </element>
@@ -80,6 +87,7 @@
         <processorPath useClasspath="true" />
         <module name="webservices-ear" />
         <module name="webservices-ejb" />
+        <module name="webservices-jar" />
         <module name="webservices-web" />
       </profile>
     </annotationProcessing>
@@ -99,7 +107,11 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/webservices-ear" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/webservices-ejb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webservices-jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/webservices-web" charset="UTF-8" />
+  </component>
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="ejb" url="file://$PROJECT_DIR$/webservices-ejb" />
@@ -261,6 +273,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/webservices-ear/webservices-ear.iml" filepath="$PROJECT_DIR$/webservices-ear/webservices-ear.iml" />
       <module fileurl="file://$PROJECT_DIR$/webservices-ejb/webservices-ejb.iml" filepath="$PROJECT_DIR$/webservices-ejb/webservices-ejb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webservices-jar/webservices-jar.iml" filepath="$PROJECT_DIR$/webservices-jar/webservices-jar.iml" />
       <module fileurl="file://$PROJECT_DIR$/webservices-parent.iml" filepath="$PROJECT_DIR$/webservices-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/webservices-web/webservices-web.iml" filepath="$PROJECT_DIR$/webservices-web/webservices-web.iml" />
     </modules>
@@ -304,6 +317,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: junit:junit:3.8.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8.1/junit-3.8.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8.1/junit-3.8.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8.1/junit-3.8.1-sources.jar!/" />
       </SOURCES>
     </library>
   </component>

@@ -22,6 +22,11 @@
             <version>5</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>poc.webservices</groupId>
+            <artifactId>webservices-jar</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <repositories>
