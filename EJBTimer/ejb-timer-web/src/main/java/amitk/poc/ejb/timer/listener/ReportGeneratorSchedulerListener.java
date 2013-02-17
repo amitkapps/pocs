@@ -28,10 +28,21 @@ public class ReportGeneratorSchedulerListener implements ServletContextListener 
 
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        logger.info("Scheduling ReportGenerator Execution");
+        logger.info("Inside Scheduler");
         try {
             reportGenerator = (ReportGenerator) new InitialContext().lookup(jndi);
-            reportGenerator.scheduleTimer(20000, 20000, "ReportGenerator");
+            if(null == reportGenerator){
+                logger.info("Report Generator is not running on this node");
+                return;
+            }
+
+            //Jboss does not cause multiple timer callbacks if several executions were missed due to downtime
+            if(!reportGenerator.timerExists("ReportGenerator")){
+                logger.info("Timer doesn't exist, we'll create one");
+                reportGenerator.scheduleTimer(20000, 20000, "ReportGenerator");
+            }else {
+                logger.info("Timer already exists");
+            }
         } catch (NamingException e) {
             logger.info("The EJB is not deployed on this server, ignore...");
         }
@@ -39,8 +50,8 @@ public class ReportGeneratorSchedulerListener implements ServletContextListener 
 
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
-        logger.info("Cancelling ReportGenerator schedule");
-        if(null != reportGenerator)
-            reportGenerator.cancelTimer("ReportGenerator");
+//        logger.info("Cancelling ReportGenerator schedule");
+//        if(null != reportGenerator)
+//            reportGenerator.cancelTimer("ReportGenerator");
     }
 }

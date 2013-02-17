@@ -13,4 +13,6 @@ public interface ReportGenerator {
     void scheduleTimer(long initialDuration, long intervalDuration, Serializable info);
 
     void cancelTimer(Serializable info);
+
+    boolean timerExists(Serializable info);
 }
