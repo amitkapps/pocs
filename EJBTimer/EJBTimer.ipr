@@ -25,6 +25,32 @@
       <root id="root">
         <element id="javaee-facet-resources" facet="ejb-timer-ear/javaeeApplication/JavaEE" />
         <element id="dir-copy" path="$PROJECT_DIR$/ejb-timer-ear/src/main/application" />
+        <element id="directory" name="ejb-timer-ejb-1.0-SNAPSHOT.jar">
+          <element id="artifact" artifact-name="ejb-timer-ejb:ejb exploded" />
+        </element>
+        <element id="directory" name="ejb-timer-web-1.0-SNAPSHOT.war">
+          <element id="artifact" artifact-name="ejb-timer-web:war exploded" />
+        </element>
+      </root>
+    </artifact>
+    <artifact type="war" name="ejb-timer-web:war">
+      <output-path>$PROJECT_DIR$/ejb-timer-web/target</output-path>
+      <root id="archive" name="ejb-timer-web-1.0-SNAPSHOT.war">
+        <element id="artifact" artifact-name="ejb-timer-web:war exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="ejb-timer-web:war exploded">
+      <output-path>$PROJECT_DIR$/ejb-timer-web/target/ejb-timer-web-1.0-SNAPSHOT</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ejb-timer-web/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="ejb-timer-web" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="Maven: javaee:javaee-api:5" />
+          </element>
+        </element>
       </root>
     </artifact>
   </component>
@@ -52,13 +78,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="ejb-timer-client" />
         <module name="ejb-timer-ear" />
         <module name="ejb-timer-ejb" />
+        <module name="ejb-timer-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ejb-timer-ear" target="1.5" />
-      <module name="ejb-timer-ejb" target="1.5" />
+      <module name="ejb-timer-ejb" target="1.6" />
+      <module name="ejb-timer-web" target="1.6" />
     </bytecodeTargetLevel>
   </component>
   <component name="CopyrightManager" default="">
@@ -69,10 +98,18 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejb-timer-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejb-timer-ear" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejb-timer-ejb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejb-timer-web" charset="UTF-8" />
+  </component>
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="ejb" url="file://$PROJECT_DIR$/ejb-timer-ejb" />
     <file type="javaeeApplication" url="file://$PROJECT_DIR$/ejb-timer-ear" />
+    <file type="web" url="file://$PROJECT_DIR$/ejb-timer-web" />
   </component>
   <component name="IdProvider" IDEtalkID="D0B661B2CBFE71A54A4313F2001E41AB" />
   <component name="MavenProjectsManager">
@@ -207,9 +244,11 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ejb-timer-client/ejb-timer-client.iml" filepath="$PROJECT_DIR$/ejb-timer-client/ejb-timer-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/ejb-timer-ear/ejb-timer-ear.iml" filepath="$PROJECT_DIR$/ejb-timer-ear/ejb-timer-ear.iml" />
       <module fileurl="file://$PROJECT_DIR$/ejb-timer-ejb/ejb-timer-ejb.iml" filepath="$PROJECT_DIR$/ejb-timer-ejb/ejb-timer-ejb.iml" />
       <module fileurl="file://$PROJECT_DIR$/ejb-timer-parent.iml" filepath="$PROJECT_DIR$/ejb-timer-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ejb-timer-web/ejb-timer-web.iml" filepath="$PROJECT_DIR$/ejb-timer-web/ejb-timer-web.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
@@ -228,6 +267,50 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/javaee/javaee-api/5/javaee-api-5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.servlet.jsp:jsp-api:2.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.servlet:servlet-api:2.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: junit:junit:4.11">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.hamcrest:hamcrest-core:1.3">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar!/" />
       </SOURCES>
     </library>
   </component>

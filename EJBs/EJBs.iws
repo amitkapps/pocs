@@ -2,15 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcbc8b19-831f-41a4-b617-b318c5e9f81b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ejbs-ejb/src/main/java/poc/ejbs/ejb/ReceiveHelloMDB.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ejbs-client/src/test/java/poc/ejbs/client/ReceiveHelloMDBClientTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ejbs-ejb/src/main/resources/META-INF/ejb-jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EJBTimer/EJBTimer.ipr" afterPath="$PROJECT_DIR$/../EJBTimer/EJBTimer.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EJBTimer/EJBTimer.iws" afterPath="$PROJECT_DIR$/../EJBTimer/EJBTimer.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EJBs.ipr" afterPath="$PROJECT_DIR$/EJBs.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EJBs.iws" afterPath="$PROJECT_DIR$/EJBs.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EJBTimer/ejb-timer-ejb/src/main/java/amitk/poc/ejb/timer/ReportGenerator.java" afterPath="$PROJECT_DIR$/../EJBTimer/ejb-timer-ejb/src/main/java/amitk/poc/ejb/timer/ReportGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EJBTimer/ejb-timer-ejb/src/main/java/amitk/poc/ejb/timer/ReportGeneratorBean.java" afterPath="$PROJECT_DIR$/../EJBTimer/ejb-timer-ejb/src/main/java/amitk/poc/ejb/timer/ReportGeneratorBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EJBTimer/ejb-timer-web/src/main/java/amitk/poc/ejb/timer/listener/ReportGeneratorSchedulerListener.java" afterPath="$PROJECT_DIR$/../EJBTimer/ejb-timer-web/src/main/java/amitk/poc/ejb/timer/listener/ReportGeneratorSchedulerListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EJBTimer/ejb-timer-client/ejb-timer-client.iml" afterPath="$PROJECT_DIR$/../EJBTimer/ejb-timer-client/ejb-timer-client.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ejbs-client/ejbs-client.iml" afterPath="$PROJECT_DIR$/ejbs-client/ejbs-client.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ejbs-ejb/ejbs-ejb.iml" afterPath="$PROJECT_DIR$/ejbs-ejb/ejbs-ejb.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ejbs-jar/ejbs-jar.iml" afterPath="$PROJECT_DIR$/ejbs-jar/ejbs-jar.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ejbs-client/pom.xml" afterPath="$PROJECT_DIR$/ejbs-client/pom.xml" />
     </list>
     <ignored path="EJBs.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/ejbs-ear/target/application.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1360956160086" ignored="false" />
-    <file path="/Dummy.txt" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361066800184" ignored="false" />
+    <file path="/Dummy.txt" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361415357722" ignored="false" />
     <file path="/pom.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361064915152" ignored="false" />
     <file path="$PROJECT_DIR$/../EJBTimer/ejb-timer-client/src/test/java/poc/amitk/ejb/timer/ScheduleClusterTimerTest.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361062830989" ignored="false" />
     <file path="/AppTest.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361062830348" ignored="false" />
@@ -25,6 +33,120 @@
     <file path="/web.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361064839891" ignored="false" />
     <file path="/ReportGeneratorSchedulerListener.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361072206884" ignored="false" />
     <file path="/fragment.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361070947711" ignored="false" />
+    <file path="/ejb-jar.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361402221696" ignored="false" />
+    <file path="/ReceiveHelloMDB.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361390552854" ignored="false" />
+    <file path="/ReceiveHelloMDBClientTest.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361392862795" ignored="false" />
+    <file path="/jboss-classloading.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361411447788" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/WebContent/META-INF/jboss-classloading.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414819283" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/arch/META-INF/jboss-classloading.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361409281794" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/build/WebContent/WEB-INF/vmiservice-webapp-config.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361410413244" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/META-INF/jboss.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361409281794" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/arch/META-INF/jboss.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361409281794" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/META-INF/jboss-classloading.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361409281794" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/build/WebContent/WEB-INF/application-config.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361410413244" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/config/hbm/quote.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/config/hbm/eventLog.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/vinsightInt/startupWebApp/WEB-INF/web.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/com/matson/cars/tests/test-mapping.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/config/hbm/unit.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/com/matson/cars/tests/TestSuite.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/config/hbm/purgeDetail.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/com/matson/cars/vinsightInterface/META-INF/ejb-jar.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/config/hbm/scnLocation.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/config/hbm/InterfaceConfigParam.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/xsd/tracking/scn_tracking_1_0.xsd" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/vinsightInt/startupWebApp/WEB-INF/tld/c.tld" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/config/hbm/shipmentOrder.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/config/hbm/eventTranslator.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/vinsightInt/META-INF/weblogic-ejb-jar.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/config/hbm/purge.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/xsd/order/scn_order_1_0.xsd" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/config/hbm/shipmentDetail.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/xsd/logistics/scn_logistics_1_0.xsd" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/config/hbm/quoteVehicle.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/vinsightInt/startupWebApp/WEB-INF/classes/config/hbm/InterfaceConfigParam.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/config/hbm/namedQuries.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/com/matson/cars/vinsightInterface/META-INF/weblogic-ejb-jar.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/vinsightInt/META-INF/ejb-jar.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/config/hbm/purgeProcess.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/vinsightInt/startupWebApp/WEB-INF/weblogic.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/wsdl/Equipment/EquipmentServices.wsdl" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/config/hbm/terminalLocation.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/vinsightInt/startupWebApp/WEB-INF/test-mapping.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/wsdl/Logistics/scn_logistics_1_0.wsdl" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/wsdl/Order/scn_order_1_0.wsdl" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/config/hbm/inlandTransportMode.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/wsdl/Shipment/scn_shipment_1_0.wsdl" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/wsdl/Tracking/scn_tracking_1_0.wsdl" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/vinsightInt/startupWebApp/enabler.jsp" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/xsd/common/scn_types_1_0.xsd" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/config/hbm/inlandInventory.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/vinsightInt/startupWebApp/WEB-INF/classes/config/hbm/hibernate.cfg.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/vinsightInt/startupWebApp/WEB-INF/classes/com/matson/cars/vinsightInterface/startupServlet/WEB-INF/web.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301791" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/com/matson/cars/vinsightInterface/startupServlet/WEB-INF/classes/config/hbm/InterfaceConfigParam.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301792" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/vinsightInt/startupWebApp/WEB-INF/classes/com/matson/cars/vinsightInterface/startupServlet/WEB-INF/classes/config/hbm/hibernate.cfg.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301791" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/com/matson/cars/vinsightInterface/startupServlet/WEB-INF/test-mapping.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/vinsightInt/startupWebApp/WEB-INF/classes/com/matson/cars/vinsightInterface/startupServlet/WEB-INF/classes/config/hbm/InterfaceConfigParam.hbm.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301792" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/vinsightInt/startupWebApp/WEB-INF/classes/com/matson/cars/vinsightInterface/startupServlet/WEB-INF/weblogic.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301791" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/com/matson/cars/vinsightInterface/startupServlet/WEB-INF/web.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/vinsightInt/startupWebApp/WEB-INF/classes/com/matson/cars/vinsightInterface/startupServlet/WEB-INF/test-mapping.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301791" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/com/matson/cars/vinsightInterface/startupServlet/WEB-INF/classes/config/hbm/hibernate.cfg.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301791" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/com/matson/cars/vinsightInterface/startupServlet/WEB-INF/weblogic.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414301479" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/build.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361413517398" ignored="false" />
+    <file path="/build.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414271008" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/log4j.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361409281794" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/META-INF/application_exploded.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361409281794" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/objectmapping.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361409281794" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/META-INF/application.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361409281794" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414272792" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VehicleActualArrivalDateResponseList.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VehicleDetail.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VehicleDetailQueryByVehicleIdentificationNumber.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VehicleDetailQueryByVehicleIdentificationNumberList.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VehicleDetailQueryByVinsightNumber.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VehicleDetailQueryByVinsightNumberList.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VehicleDetailResponse.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VehicleDetailResponsList.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VehicleLoadDetail.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VehicleLoadDetailQueryByVinsightNumberAndVvd.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VehicleLoadDetailQueryByVinsightNumberAndVvdList.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/ManufacturerAvailableDate.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VehicleLoadDetailResponse.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/ManufacturerAvailableDateQueryByVinsightNumber.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VehicleLoadDetailResponseList.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/ManufacturerAvailableDateQueryByVinsightNumberList.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/ManufacturerAvailableDateResponse.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/ManufacturerAvailableDateResponseList.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/ResponseStatus.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/Vvd.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VehicleActualArrivalDate.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VehicleActualArrivalDateAtDestinationQueryByVinsightNumber.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VehicleActualArrivalDateAtDestinationQueryByVinsightNumberList.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VehicleActualArrivalDateResponse.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/Booking.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/ShipmentDetail.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/ShipmentDetailQueryByBooking.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/ShipmentDetailQueryByBookingList.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/ShipmentDetailQueryByVinNumbersAndManufactureCode.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/ShipmentDetailQueryByVinNumbersAndManufactureCodeList.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/ShipmentDetailQueryByVinsightNumber.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/ShipmentDetailQueryByVinsightNumberList.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/ShipmentDetailResponse.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/ShipmentDetailResponseList.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/WebContent/WEB-INF/vmiservice-servlet-config.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361413443842" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VesselDetail.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VesselDetailResponse.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VesselDetailResponseList.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VesselDetailsQueryByVesselCode.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VesselDetailsQueryByVesselCodeList.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VesselEventDetail.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VesselEventDetailQueryByVinsightNumberAndVvd.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VesselEventDetailQueryByVinsightNumberAndVvdList.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VesselEventDetailResponse.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/com/matson/vmiws/ws/types/VesselEventDetailResponseList.java" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361412651119" ignored="false" />
+    <file path="/vmiservice-servlet-config.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361413387775" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight_vmiservice/src/main/java/log4j.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414119678" ignored="false" />
+    <file path="/log4j.xml" changelist="bcbc8b19-831f-41a4-b617-b318c5e9f81b" time="1361414119678" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +161,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -74,6 +195,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -83,33 +205,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="web.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ejbs-web/src/main/webapp/WEB-INF/web.xml">
-          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
-            <state />
-          </provider>
-          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ejbs-ejb/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="28" selection-start="714" selection-end="714" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="application.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ejbs-ear/src/main/application/META-INF/application.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -119,28 +214,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ejbs-ear/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="12" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Unit.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ejbs-jar/src/main/java/poc/ejbs/Unit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="13" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ejbs-client/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="20" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.0">
+            <state line="18" column="13" selection-start="361" selection-end="361" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -167,16 +244,63 @@
       <file leaf-file-name="AutoServiceBean.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ejbs-ejb/src/main/java/poc/ejbs/ejb/AutoServiceBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="1057" selection-end="1057" vertical-scroll-proportion="0.0">
+            <state line="26" column="7" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#882#888#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReceiveHelloMDB.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ejbs-ejb/src/main/java/poc/ejbs/ejb/ReceiveHelloMDB.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="105" selection-start="933" selection-end="933" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MANIFEST.MF" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ejbs-ejb/src/main/resources/META-INF/MANIFEST.MF">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ejbs-web/pom.xml">
+      <file leaf-file-name="ejb-jar.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ejbs-ejb/src/main/resources/META-INF/ejb-jar.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="44" selection-start="1102" selection-end="1102" vertical-scroll-proportion="0.7079646">
+            <state line="88" column="64" selection-start="4437" selection-end="4437" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1361402222000" expanded="true" signature="2801:3054" placeholder="..." />
+                <marker date="1361402222000" expanded="true" signature="3099:3340" placeholder="..." />
+                <marker date="1361402222000" expanded="true" signature="3385:3641" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReceiveHelloMDBClientTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ejbs-client/src/test/java/poc/ejbs/client/ReceiveHelloMDBClientTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="68" column="43" selection-start="2315" selection-end="2316" vertical-scroll-proportion="0.3783784">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ejbs-client/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="14" selection-start="1096" selection-end="1096" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -206,8 +330,11 @@
         <option value="$PROJECT_DIR$/ejbs-ear/pom.xml" />
         <option value="$PROJECT_DIR$/ejbs-ejb/src/main/java/poc/ejbs/ejb/AutoServiceBean.java" />
         <option value="$PROJECT_DIR$/ejbs-ear/src/main/application/META-INF/application.xml" />
-        <option value="$PROJECT_DIR$/ejbs-client/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/ejbs-ejb/src/main/java/poc/ejbs/ejb/ReceiveHelloMDB.java" />
+        <option value="$PROJECT_DIR$/ejbs-client/pom.xml" />
+        <option value="$PROJECT_DIR$/ejbs-client/src/test/java/poc/ejbs/client/ReceiveHelloMDBClientTest.java" />
+        <option value="$PROJECT_DIR$/ejbs-ejb/src/main/resources/META-INF/ejb-jar.xml" />
       </list>
     </option>
   </component>
@@ -247,8 +374,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1920" />
-    <option name="height" value="1174" />
+    <option name="width" value="1680" />
+    <option name="height" value="1024" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -278,6 +405,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -296,8 +424,18 @@
               <option name="myItemId" value="ejbs-parent and modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleGroupNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ejbs-web" />
+              <option name="myItemId" value="EJBs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ejbs-parent and modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleGroupNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ejbs-jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -311,7 +449,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleGroupNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ejbs-web" />
+              <option name="myItemId" value="ejbs-jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -323,48 +461,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EJBs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ejbs-parent and modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleGroupNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ejbs-web" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="ejbs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EJBs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ejbs-parent and modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleGroupNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -400,6 +502,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -461,31 +571,262 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ejbs-web" />
+              <option name="myItemId" value="ejbs-ejb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EJBs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ejbs-parent and modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleGroupNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EJBs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ejbs-ejb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EJBs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ejbs-parent and modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleGroupNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EJBs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ejbs-ejb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ejb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EJBs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ejbs-parent and modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleGroupNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EJBs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ejbs-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EJBs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ejbs-parent and modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleGroupNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EJBs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ejbs-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EJBs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ejbs-parent and modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleGroupNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EJBs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ejbs-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="false" />
     <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/EJBs.ipr" />
+    <property name="last_opened_file_path" value="/home/programs/jboss/jboss-eap-5.1/jboss-as/client" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ReceiveHelloMDBClientTest">
+    <configuration default="false" name="ReceiveHelloMDBClientTest.sendQueueMessage" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="poc.ejbs.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ejbs-client" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="poc.ejbs.client" />
+      <option name="MAIN_CLASS_NAME" value="poc.ejbs.client.ReceiveHelloMDBClientTest" />
+      <option name="METHOD_NAME" value="sendQueueMessage" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ReceiveHelloMDBClientTest.sendTopicMessage" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="poc.ejbs.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ejbs-client" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="poc.ejbs.client" />
+      <option name="MAIN_CLASS_NAME" value="poc.ejbs.client.ReceiveHelloMDBClientTest" />
+      <option name="METHOD_NAME" value="sendTopicMessage" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ReceiveHelloMDBClientTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="poc.ejbs.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ejbs-client" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="poc.ejbs.client" />
+      <option name="MAIN_CLASS_NAME" value="poc.ejbs.client.ReceiveHelloMDBClientTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -598,7 +939,18 @@
       <patterns />
       <method />
     </configuration>
-    <list size="0" />
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.ReceiveHelloMDBClientTest.sendQueueMessage" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ReceiveHelloMDBClientTest.sendTopicMessage" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ReceiveHelloMDBClientTest" />
+    </list>
+    <recent_temporary>
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ReceiveHelloMDBClientTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ReceiveHelloMDBClientTest.sendTopicMessage" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ReceiveHelloMDBClientTest.sendQueueMessage" />
+      </list>
+    </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
@@ -632,10 +984,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="1174" extended-state="6" />
+    <frame x="0" y="22" width="1680" height="1024" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.497552" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32964602" sideWeight="0.49265605" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -643,19 +995,20 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33017078" sideWeight="0.35495716" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32964602" sideWeight="0.50306" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="EJB" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1189968" sideWeight="0.66982925" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1364749" sideWeight="0.670354" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17769477" sideWeight="0.66982925" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.6407589" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2362301" sideWeight="0.670354" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4358407" sideWeight="0.70379436" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -718,40 +1071,37 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ejbs-web/pom.xml">
+    <entry file="file://$PROJECT_DIR$/ejbs-client/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="441" selection-end="441" vertical-scroll-proportion="0.0">
+        <state line="23" column="0" selection-start="846" selection-end="846" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ejbs-jar/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="35" selection-start="501" selection-end="501" vertical-scroll-proportion="0.0">
+        <state line="21" column="32" selection-start="824" selection-end="824" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ejbs-web/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ejbs-ejb/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="39" selection-start="885" selection-end="885" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
+        <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ejbs-ear/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="12" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
+        <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ejbs-client/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="846" selection-end="846" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ejbs-ejb/pom.xml">
@@ -775,46 +1125,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="29" selection-start="669" selection-end="669" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ejbs-web/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="44" selection-start="1102" selection-end="1102" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ejbs-jar/src/main/java/poc/ejbs/Unit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0">
+        <state line="18" column="13" selection-start="361" selection-end="361" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ejbs-jar/pom.xml">
+    <entry file="file://$PROJECT_DIR$/ejbs-ejb/src/main/java/poc/ejbs/ejb/AutoServiceBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="32" selection-start="824" selection-end="824" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="26" column="7" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#882#888#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ejbs-web/src/main/webapp/WEB-INF/web.xml">
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/ejbs-ejb/src/main/resources/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ejbs-client/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="20" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="29" selection-start="669" selection-end="669" vertical-scroll-proportion="0.0">
+        <state line="33" column="14" selection-start="1096" selection-end="1096" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -826,20 +1177,125 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ejbs-ejb/src/main/java/poc/ejbs/ejb/AutoServiceBean.java">
+    <entry file="file://$PROJECT_DIR$/ejbs-ejb/src/main/java/poc/ejbs/ejb/ReceiveHelloMDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1057" selection-end="1057" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="26" column="105" selection-start="933" selection-end="933" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ejbs-web/pom.xml">
+    <entry file="file://$PROJECT_DIR$/ejbs-ejb/src/main/resources/META-INF/ejb-jar.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="44" selection-start="1102" selection-end="1102" vertical-scroll-proportion="0.7079646">
-          <folding />
+        <state line="88" column="64" selection-start="4437" selection-end="4437" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1361402222000" expanded="true" signature="2801:3054" placeholder="..." />
+            <marker date="1361402222000" expanded="true" signature="3099:3340" placeholder="..." />
+            <marker date="1361402222000" expanded="true" signature="3385:3641" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ejbs-client/src/test/java/poc/ejbs/client/ReceiveHelloMDBClientTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="43" selection-start="2315" selection-end="2316" vertical-scroll-proportion="0.3783784">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>ejbs-ear:ear</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>EJB</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>client</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>ejbs-parent and modules</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: commons-io:commons-io:1.3.2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 

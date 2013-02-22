@@ -2,28 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6b93e1f-3ec9-47b8-9743-71ad9decb614" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../EJBs/ejbs-client/src/test/java/poc/ejbs/client/EjbClientTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../EJBs/ejbs-client/ejbs-client.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../EJBs/ejbs-ear/ejbs-ear.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../EJBs/ejbs-ejb/ejbs-ejb.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../EJBs/ejbs-jar/ejbs-jar.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../EJBs/ejbs-parent.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../EJBs/ejbs-web/ejbs-web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebServices.ipr" afterPath="$PROJECT_DIR$/WebServices.ipr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../EJBs/ejbs-ejb/src/main/java/poc/ejbs/ejb/ReceiveHelloMDB.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../EJBs/ejbs-client/src/test/java/poc/ejbs/client/ReceiveHelloMDBClientTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../EJBs/ejbs-ejb/src/main/resources/META-INF/ejb-jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../EJBTimer/ejb-timer-parent.iws" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../EJBs/ejbs-ear/target/ejbs-ear-1.0-SNAPSHOT.ear" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../EJBs/ejbs-ear/target/ejbs-ear-1.0-SNAPSHOT/ejbs-ejb-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../EJBs/ejbs-ear/target/ejbs-ear-1.0-SNAPSHOT/ejbs-web-1.0-SNAPSHOT.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../EJBs/ejbs-ear/target/maven-archiver/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../EJBs/ejbs-ejb/target/ejbs-ejb-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../EJBs/ejbs-web/target/ejbs-web-1.0-SNAPSHOT.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../EJBs/ejbs-web/target/maven-archiver/pom.properties" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EJBTimer/EJBTimer.ipr" afterPath="$PROJECT_DIR$/../EJBTimer/EJBTimer.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EJBTimer/EJBTimer.iws" afterPath="$PROJECT_DIR$/../EJBTimer/EJBTimer.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EJBs/EJBs.ipr" afterPath="$PROJECT_DIR$/../EJBs/EJBs.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EJBs/EJBs.iws" afterPath="$PROJECT_DIR$/../EJBs/EJBs.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebServices.iws" afterPath="$PROJECT_DIR$/WebServices.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webservices-ear/webservices-ear.iml" afterPath="$PROJECT_DIR$/webservices-ear/webservices-ear.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webservices-ejb/webservices-ejb.iml" afterPath="$PROJECT_DIR$/webservices-ejb/webservices-ejb.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webservices-jar/webservices-jar.iml" afterPath="$PROJECT_DIR$/webservices-jar/webservices-jar.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EJBTimer/ejb-timer-client/ejb-timer-client.iml" afterPath="$PROJECT_DIR$/../EJBTimer/ejb-timer-client/ejb-timer-client.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EJBs/ejbs-client/ejbs-client.iml" afterPath="$PROJECT_DIR$/../EJBs/ejbs-client/ejbs-client.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EJBs/ejbs-ejb/ejbs-ejb.iml" afterPath="$PROJECT_DIR$/../EJBs/ejbs-ejb/ejbs-ejb.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EJBs/ejbs-jar/ejbs-jar.iml" afterPath="$PROJECT_DIR$/../EJBs/ejbs-jar/ejbs-jar.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EJBTimer/ejb-timer-ejb/src/main/resources/META-INF/jboss.xml" afterPath="$PROJECT_DIR$/../EJBTimer/ejb-timer-ejb/src/main/resources/META-INF/jboss.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EJBs/ejbs-client/pom.xml" afterPath="$PROJECT_DIR$/../EJBs/ejbs-client/pom.xml" />
     </list>
     <ignored path="WebServices.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361061197653" ignored="false" />
+    <file path="/Dummy.txt" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361560360364" ignored="false" />
     <file path="$PROJECT_DIR$/../EJBs/pom.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360957127250" ignored="false" />
     <file path="$PROJECT_DIR$/../EJBs/ejbs-web/pom.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360956245952" ignored="false" />
     <file path="$PROJECT_DIR$/../EJBs/ejbs-jar/pom.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360956272840" ignored="false" />
     <file path="$PROJECT_DIR$/../EJBs/ejbs-ejb/pom.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360956295102" ignored="false" />
     <file path="$PROJECT_DIR$/../EJBs/ejbs-ear/pom.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360956320032" ignored="false" />
-    <file path="$PROJECT_DIR$/../EJBs/ejbs-client/pom.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360956997737" ignored="false" />
     <file path="$PROJECT_DIR$/../EJBs/ejbs-ejb/src/main/java/poc/ejbs/ejb/AutoServiceBean.java" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360956639305" ignored="false" />
     <file path="$PROJECT_DIR$/../EJBs/ejbs-ear/src/main/application/META-INF/application.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360956871622" ignored="false" />
     <file path="/pom.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361061580840" ignored="false" />
@@ -32,9 +41,9 @@
     <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/src/com/matson/cars/ws/auto/AutoTrackBean.java" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360967988458" ignored="false" />
     <file path="/AutoTrackBean.java" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360960551886" ignored="false" />
     <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/src/META-INF/ejb-jar.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361046049034" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/vinsightInt/startupWebApp/WEB-INF/classes/config/hbm/hibernate.cfg.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360995129318" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/vinsightInt/startupWebApp/WEB-INF/classes/com/matson/cars/vinsightInterface/startupServlet/WEB-INF/classes/config/hbm/hibernate.cfg.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360995129318" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/com/matson/cars/vinsightInterface/startupServlet/WEB-INF/classes/config/hbm/hibernate.cfg.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360995129318" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/vinsightInt/startupWebApp/WEB-INF/classes/config/hbm/hibernate.cfg.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361485078170" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/vinsightInt/startupWebApp/WEB-INF/classes/com/matson/cars/vinsightInterface/startupServlet/WEB-INF/classes/config/hbm/hibernate.cfg.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361485078170" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/com/matson/cars/vinsightInterface/startupServlet/WEB-INF/classes/config/hbm/hibernate.cfg.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361485078170" ignored="false" />
     <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/lib/auto.jar!/com/matson/auto/model/Unit.class" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360995945369" ignored="false" />
     <file path="/a.dummy" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360995076369" ignored="false" />
     <file path="/Pov.java" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360963784770" ignored="false" />
@@ -100,7 +109,7 @@
     <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/common/auto/com/matson/auto/model/Unit.java" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360975051959" ignored="false" />
     <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/VINSightClient/lib/Unit.java" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360975241143" ignored="false" />
     <file path="/log4j.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360976043083" ignored="false" />
-    <file path="/build.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361014901919" ignored="false" />
+    <file path="/build.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361486815191" ignored="false" />
     <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/serviceWebapp/WEB-INF/wsdl/VINSightAuthWebService.wsdl" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360983341550" ignored="false" />
     <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/serviceWebapp/WEB-INF/wsdl/VINSightVesselWebService.wsdl" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360983357394" ignored="false" />
     <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/serviceWebapp/WEB-INF/wsdl/VINSightYardWebService.wsdl" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360983365727" ignored="false" />
@@ -115,11 +124,10 @@
     <file path="/VINSightAuthWebServicePortImpl.java" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360994970103" ignored="false" />
     <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/serviceWebapp/WEB-INF/web.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361015132374" ignored="false" />
     <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/src/com/matson/cars/ws/session/VINSightTOAssembler.java" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1360995841248" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/src/com/matson/cars/ws/dr/DrServiceImpl.java" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361014976866" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/src/com/matson/cars/ws/dr/DrServiceImpl.java" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361485054078" ignored="false" />
     <file path="/DrServiceImpl.java" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361013952077" ignored="false" />
     <file path="/web.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361015126497" ignored="false" />
     <file path="$PROJECT_DIR$/../EJBTimer/pom.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361061756474" ignored="false" />
-    <file path="$PROJECT_DIR$/../EJBTimer/EJBTimer.ipr" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361057802975" ignored="false" />
     <file path="$PROJECT_DIR$/../EJBTimer/ejb-timer-ejb/pom.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361058581089" ignored="false" />
     <file path="$PROJECT_DIR$/../EJBTimer/ejb-timer-ear/pom.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361058698240" ignored="false" />
     <file path="/ReportGenerator.java" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361060346232" ignored="false" />
@@ -130,13 +138,26 @@
     <file path="$PROJECT_DIR$/../EJBTimer/ejb-timer-ejb/src/main/java/amitk/poc/ejb/timer/ReportGenerator.java" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361060160025" ignored="false" />
     <file path="/AppTest.java" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361062236895" ignored="false" />
     <file path="/ScheduleClusterTimerTest.java" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361062214428" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/VINSightClient/src/test/java/com/matson/cars/ws/dr/DeliveryReceiptWSTest.java" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361487293846" ignored="false" />
+    <file path="/DeliveryReceiptWSTest.java" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361487293071" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/VINSightClient/build.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361486829354" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/VINSightClient/build/printDrWs/src/com/matson/cars/ws/dr/client/Exception.java" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361485923087" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/VINSightClient/lib/vinsight-printdr-ws-client.jar!/com/matson/cars/ws/dr/client/Exception_Exception.class" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361485949600" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/VINSightClient/lib/vinsight-printdr-ws-client.jar!/com/matson/cars/ws/dr/client/VINSightDeliveryReceiptWebService.class" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361485949600" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/VINSightClient/lib/vinsight-printdr-ws-client.jar!/com/matson/cars/ws/dr/client/VINSightDeliveryReceiptWebService_VINSightDeliveryReceiptWebServicePort_Client.class" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361485949600" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/VINSightClient/lib/vinsight-printdr-ws-client.jar!/com/matson/cars/ws/dr/client/VINSightDeliveryReceiptWebService_Service.class" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361485949601" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/META-INF/weblogic-ejb-jar.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361485078170" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/META-INF/jboss.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361485078170" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/arch/META-INF/jboss.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361485078170" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/ProjectCVS/vinsight/build/cars/classes/META-INF/ejb-jar.xml" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361485078170" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Architecture/Arch2.0/Applications/VINSightClient/.classpath" changelist="b6b93e1f-3ec9-47b8-9743-71ad9decb614" time="1361487462269" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="ChangesViewManager" flattened_view="false" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -218,7 +239,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webservices-client/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="23" column="46" selection-start="881" selection-end="881" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -227,7 +248,16 @@
       <file leaf-file-name="AutoServiceTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webservices-client/src/test/java/amitk/autoservice/AutoServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="13" selection-start="591" selection-end="591" vertical-scroll-proportion="0.09090909">
+            <state line="26" column="37" selection-start="730" selection-end="730" vertical-scroll-proportion="0.4182156">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AutoService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webservices-client/src/main/java/poc/amitk/autoservice/AutoService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="37" selection-start="876" selection-end="876" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -269,10 +299,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="10" />
     <option name="y" value="22" />
-    <option name="width" value="1900" />
-    <option name="height" value="1160" />
+    <option name="width" value="1680" />
+    <option name="height" value="1024" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -397,6 +426,74 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebServices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebServices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webservices-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="poc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebServices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebServices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webservices-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="poc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="autoservice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -519,10 +616,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="22" width="1900" height="1160" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="22" width="1680" height="1024" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33557692" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33554083" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -539,9 +636,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="EJB" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32955772" sideWeight="0.66442305" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1126071" sideWeight="0.66445917" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24919094" sideWeight="0.66442305" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24908201" sideWeight="0.66445917" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -612,6 +709,27 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/webservices-client/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservices-client/src/test/java/amitk/autoservice/AutoServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="13" selection-start="591" selection-end="591" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservices-ejb/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="21" selection-start="0" selection-end="2190" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webservices-ejb/src/main/java/poc/webservices/ejb/AutoServiceBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="65" selection-start="990" selection-end="990" vertical-scroll-proportion="0.0">
@@ -682,16 +800,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webservices-client/src/main/java/poc/amitk/autoservice/AutoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="37" selection-start="876" selection-end="876" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webservices-client/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="23" column="46" selection-start="881" selection-end="881" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webservices-client/src/test/java/amitk/autoservice/AutoServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="13" selection-start="591" selection-end="591" vertical-scroll-proportion="0.09090909">
+        <state line="26" column="37" selection-start="730" selection-end="730" vertical-scroll-proportion="0.4182156">
           <folding />
         </state>
       </provider>
