@@ -17,7 +17,7 @@ import javax.mail.*;
 public class GetEmailAttachment{
 
     public static void main(String[] args){
-        new GetEmailAttachment().processEmailAttachemnt();
+//        new GetEmailAttachment().processEmailAttachemnt();
     }
 
     public GetEmailAttachment() {}
@@ -28,7 +28,7 @@ public class GetEmailAttachment{
      * This method get the email message(s) from email box for specific username
      *
      */
-    public void processEmailAttachemnt() {
+    public void processEmailAttachemnt() throws MessagingException, IOException {
 
         try {
             System.out.println("######### email process is started @ " + new java.util.Date() + " ######### \n");
@@ -77,21 +77,21 @@ public class GetEmailAttachment{
                 Object content = message[i].getContent();
 
                 if (content instanceof Multipart) {
-                    handleMultipart((Multipart)content);
+                    //handleMultipart((Multipart)content);
                 }
             }
 
             if(totalMessage > 0) {
-                boolean bmoveMsg = udpateChassisData(emailMsgVector);
+                //boolean bmoveMsg = udpateChassisData(emailMsgVector);
                 emailMsgVector.clear();
 
                 //folder.setFlags(message, new Flags(Flags.Flag.FLAGGED) , true);\
-                logger.debug("MoveMessage() called :: " + bmoveMsg);
-                if(bmoveMsg) {
-                    MoveMessage(folder, store, message);
+                //logger.debug("MoveMessage() called :: " + bmoveMsg);
+                //if(bmoveMsg) {
+                //    MoveMessage(folder, store, message);
                 }
-            } else {
-                logger.debug("NO NEW MESSAGES IN INBOX \n");
+            else {
+                //logger.debug("NO NEW MESSAGES IN INBOX \n");
             }
             emailMsgVector = null;
             // Close connection
