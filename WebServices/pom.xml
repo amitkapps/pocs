@@ -13,6 +13,7 @@
         <module>webservices-ejb</module>
         <module>webservices-web</module>
         <module>webservices-ear</module>
+        <module>spring-ws</module>
     </modules>
 
     <properties>
