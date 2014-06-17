@@ -7,14 +7,11 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SpringRestfulWS/SpringRestfulWS.iws" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SpringRestfulWS/src/main/java/poc/arch/spring/rest/ws/controller/VesselServiceController.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SpringRestfulWS/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com.matson.arch.poc.alfresco.cmis.opencmis/AlfrescoIntegrationTest.java" afterPath="$PROJECT_DIR$/src/test/java/com.matson.arch.poc.alfresco.cmis.opencmis/AlfrescoIntegrationTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com.matson.arch.poc.alfresco.cmis.opencmis/GatesIntegrationTest.java" afterPath="$PROJECT_DIR$/src/test/java/com.matson.arch.poc.alfresco.cmis.opencmis/GatesIntegrationTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/matson/arch/poc/alfresco/cmis/opencmis/GatesIntegrationTestMain.java" afterPath="$PROJECT_DIR$/src/main/java/com/matson/arch/poc/alfresco/cmis/opencmis/GatesIntegrationTestMain.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alfresco.iws" afterPath="$PROJECT_DIR$/alfresco.iws" />
     </list>
     <ignored path="alfresco.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="e753a9b2-456e-4151-9c22-7057e3b4916a" time="1403027752617" ignored="false" />
+    <file path="/Dummy.txt" changelist="e753a9b2-456e-4151-9c22-7057e3b4916a" time="1403040113518" ignored="false" />
     <file path="/fragment.java" changelist="e753a9b2-456e-4151-9c22-7057e3b4916a" time="1402949480747" ignored="false" />
     <file path="/GatesIntegrationTest.java" changelist="e753a9b2-456e-4151-9c22-7057e3b4916a" time="1403030905834" ignored="false" />
     <file path="/GatesIntegrationTestMain.java" changelist="e753a9b2-456e-4151-9c22-7057e3b4916a" time="1403032079493" ignored="false" />
@@ -1390,7 +1387,11 @@
       <created>1356638828338</created>
       <updated>1356638828338</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Web service binding">
+      <created>1403040123839</created>
+      <updated>1403040123839</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1469,7 +1470,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated per Vaibhav 2012-12-27" />
+    <option name="LAST_COMMIT_MESSAGE" value="Web service binding" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1484,6 +1485,7 @@
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="updated per Vaibhav 2012-12-27" />
+    <MESSAGE value="Web service binding" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
