@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AntConfiguration">
+    <defaultAnt bundledAnt="true" />
+  </component>
+  <component name="ArtifactManager">
+    <artifact type="war" name="clusterapp:war">
+      <output-path>$PROJECT_DIR$/sample-webapps/clusterapp/target</output-path>
+      <root id="archive" name="clusterapp.war">
+        <element id="artifact" artifact-name="clusterapp:war exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="clusterapp:war exploded">
+      <output-path>$PROJECT_DIR$/sample-webapps/clusterapp/target/clusterapp</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="clusterapp/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="clusterapp" />
+          </element>
+        </element>
+      </root>
+    </artifact>
+  </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions />
@@ -15,7 +37,18 @@
       <entry name="?*.tld" />
       <entry name="?*.ftl" />
     </wildcardResourcePatterns>
-    <annotationProcessing enabled="false" useClasspath="true" />
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="clusterapp" />
+      </profile>
+    </annotationProcessing>
   </component>
   <component name="CopyrightManager" default="">
     <module2copyright />
@@ -26,6 +59,9 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
+  </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/sample-webapps/clusterapp" />
   </component>
   <component name="IdProvider" IDEtalkID="9B3AD2B3449442A5A88AA0AAC71B82D1" />
   <component name="JavadocGenerationManager">
@@ -50,6 +86,7 @@
       <list>
         <option value="$PROJECT_DIR$/sample-webapps/webapp1/pom.xml" />
         <option value="$PROJECT_DIR$/sample-webapps/webapp1/pom.xml" />
+        <option value="$PROJECT_DIR$/sample-webapps/clusterapp/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -200,5 +237,18 @@
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
+  <component name="libraryTable">
+    <library name="Maven: junit:junit:3.8.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8.1/junit-3.8.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8.1/junit-3.8.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8.1/junit-3.8.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+  </component>
 </project>
 

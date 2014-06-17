@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://java.sun.com/xml/ns/javaee"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="5"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/application_5.xsd">
+    <display-name>ejbs-ear</display-name>
+    <module>
+        <web>
+            <web-uri>ejbs-web-1.0-SNAPSHOT.war</web-uri>
+            <context-root>ws</context-root>
+        </web>
+    </module>
+    <module>
+        <ejb>ejbs-ejb-1.0-SNAPSHOT.jar</ejb>
+    </module>
+    <library-directory>APP-INF/lib</library-directory>
+</application>

@@ -46,26 +46,27 @@ public class JMSMessageSenderTest {
             NamingException {
 
         Properties p = new Properties();
-        p.put(Context.INITIAL_CONTEXT_FACTORY,
-                "weblogic.jndi.WLInitialContextFactory");
-        //p.put(Context.URL_PKG_PREFIXES, "org.jboss.naming:org.jnp.interfaces");
-        p.put(Context.PROVIDER_URL, "t3://10.201.2.59:8103");
-
+        //p.put(Context.INITIAL_CONTEXT_FACTORY, "weblogic.jndi.WLInitialContextFactory");
+        p.put(Context.INITIAL_CONTEXT_FACTORY, "org.jnp.interfaces.NamingContextFactory");
+        p.put(Context.URL_PKG_PREFIXES, "org.jboss.naming:org.jnp.interfaces");
+        //p.put(Context.PROVIDER_URL, "t3://10.201.2.59:8103");
+        p.put(Context.PROVIDER_URL, "jnp://10.8.7.121:1099/");
 
         InitialContext iniCtx = new InitialContext(p);
-        Object tmp = iniCtx.lookup("jms/cf/gems");
+        Object tmp = iniCtx.lookup("jms.cf.eir.wl");
+        logger.info("Obtained EirMQConnectionFactory " + tmp);
         QueueConnectionFactory qcf = (QueueConnectionFactory) tmp;
         conn = qcf.createQueueConnection();
-        que = (Queue) iniCtx.lookup("gems/all/equipment/events");
+        que = (Queue) iniCtx.lookup("jms.queue.eir.to.facts");
         session = conn.createQueueSession(false,
                 QueueSession.AUTO_ACKNOWLEDGE);
         conn.start();
     }
 
-    public void sendRecvAsync(String text)
+    public void sendMessage(String text)
             throws JMSException,
             NamingException {
-        logger.info("Begin sendRecvAsync");
+        logger.info("Begin sendMessage");
         // Setup the PTP connection, session
         setupPTP();
 
@@ -77,9 +78,9 @@ public class JMSMessageSenderTest {
         QueueSender send = session.createSender(que);
         TextMessage tm = session.createTextMessage(text);
         send.send(tm);
-        logger.info("sendRecvAsync, sent text=" + tm.getText());
+        logger.info("sendMessage, sent text=" + tm.getText());
         send.close();
-        logger.info("End sendRecvAsync");
+        logger.info("End sendMessage");
     }
 
     public void stop()
@@ -93,7 +94,7 @@ public class JMSMessageSenderTest {
             throws Exception {
         logger.info("Begin SendRecvClient, now=" + System.currentTimeMillis());
         JMSMessageSenderTest client = new JMSMessageSenderTest();
-        client.sendRecvAsync("A text msg");
+        client.sendMessage("MATU457203:70004  :376232    :201210290438");
         client.stop();
         logger.info("End SendRecvClient");
         System.exit(0);

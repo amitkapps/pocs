@@ -65,7 +65,7 @@ public class JMSReceiverListenerTest {
     public void sendRecvAsync(String text)
             throws JMSException,
             NamingException {
-        logger.info("Begin sendRecvAsync");
+        logger.info("Begin sendMessage");
         // Setup the PTP connection, session
         setupPTP();
 
@@ -77,9 +77,9 @@ public class JMSReceiverListenerTest {
         QueueSender send = session.createSender(que);
         TextMessage tm = session.createTextMessage(text);
         send.send(tm);
-        logger.info("sendRecvAsync, sent text=" + tm.getText());
+        logger.info("sendMessage, sent text=" + tm.getText());
         send.close();
-        logger.info("End sendRecvAsync");
+        logger.info("End sendMessage");
     }
 
     public void stop()

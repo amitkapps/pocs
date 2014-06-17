@@ -1,0 +1,58 @@
+<project name="VinDecoding" default="dist" basedir="..">
+    <description>vin decoding build file</description>
+    <!--splash/-->
+    <!-- home properties -->
+    <!-- set default properties for this build if they haven't been set-->
+    <property name="lib.dir" location="lib"/>
+
+    <property name="src" location="src"/>
+    <property name="build" location="build"/>
+    <property name="conf.dir" location="conf"/>
+    <property name="src.test" location="test"/>
+    <property name="build.test" location="test-bin"/>
+    <property name="reports.test" location="reports"/>
+    <property name="dist"  location="dist"/>
+    <property name="resource.dir" location="resources"/>
+    <property name="generated.dir"  location="generated"/>
+
+    <!-- =================================================================== -->
+    <!-- Define the class paths                                              -->
+    <!-- =================================================================== -->
+
+    <target name="banner">
+        <!-- <property name="classpath-property" refid="axis.class.path" /> -->
+        <echo>          *********************************</echo>
+        <echo>          *                               *</echo>
+        <echo>          *   VIN Decoding Module         *</echo>
+        <echo>          *                               *</echo>
+        <echo>          *********************************</echo>
+    </target>
+    <target name="init" depends="banner">
+        <!-- Create the time stamp -->
+        <tstamp/>
+        <!-- Create the build directory structure used by compile -->
+        <mkdir dir="${build}"/>
+        <mkdir dir="${dist}/Webapps"/>
+        <mkdir dir="${dist}/EJBs" />
+        <!-- web services generated stuff goes here -->
+        <mkdir dir="${generated.dir}"/>
+
+        <!-- Used for 8.1 only -->
+        <mkdir dir="${dist}/APP-INF/lib"/>
+    </target>
+
+
+    <!-- Clean up build directorties -->
+    <target name="clean" description="clean up" >
+        <!-- Delete the ${build} and ${dist} directory trees -->
+        <delete dir="${build}"/>
+        <delete dir="${build.test}"/>
+        <delete dir="${dist}"/>
+        <delete dir="${reports.test}"/>
+        <delete dir="javadoc"/>
+        <delete dir="${generated.dir}"/>
+    </target>
+
+
+
+</project>
