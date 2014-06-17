@@ -172,6 +172,12 @@
       </item>
     </group>
   </component>
+  <component name="PlugProxyProjectComponent">
+    <option name="host" value="" />
+    <option name="hostPort" value="" />
+    <option name="localPort" value="" />
+    <option name="hexDump" />
+  </component>
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/alfresco.iml" filepath="$PROJECT_DIR$/alfresco.iml" />
