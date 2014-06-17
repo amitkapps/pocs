@@ -1,0 +1,13 @@
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+
+    <stream name="usersfixedlength" format="fixedlength">
+        <record name="user" class="poc.amitk.springbatch.User" >
+            <field name="id" type="Integer" length="5" padding=" " justify="left"  />
+            <field name="firstName" type="String" length="25" padding=" " justify="left"  />
+            <field name="lastName" type="String" length="25" padding=" " justify="left"  />
+            <field name="age" type="Integer" length="8" padding=" " justify="right"  />
+            <field name="phoneNumber" type="String" length="14" padding=" " justify="right"  />
+      </record>
+    </stream>
+</beanio>

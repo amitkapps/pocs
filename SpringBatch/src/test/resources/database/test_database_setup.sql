@@ -1,0 +1,112 @@
+DROP TABLE `users`;
+
+CREATE TABLE `users` (
+  `id` mediumint(8) unsigned NOT NULL auto_increment,
+  `user_name` varchar(255) default NULL,
+  `birth_dt` varchar(255),
+  `phone_number` varchar(100) default NULL,
+  `salary` mediumint default NULL,
+  `age` mediumint default NULL,
+  PRIMARY KEY (`id`)
+) AUTO_INCREMENT=1;
+
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Ezra","2013-12-18 13:30:35","1-244-784-1037",92168,75);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Moana","2015-04-28 00:11:03","1-907-359-4925",6143,20);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Louis","2014-01-18 06:09:53","1-648-888-0297",70769,57);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Alfonso","2014-09-23 08:12:11","1-999-940-9839",42031,55);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Paloma","2013-06-17 14:46:18","1-973-805-1089",32430,46);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("MacKenzie","2014-01-21 13:39:40","1-285-220-2144",41349,27);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Willow","2015-02-20 11:07:37","1-334-965-6393",56039,34);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Iliana","2014-10-25 21:04:36","1-480-200-5555",19584,44);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Lucian","2014-07-15 21:01:19","1-377-503-1620",94129,27);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Inez","2013-12-03 01:45:25","1-545-193-0519",54185,61);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Donovan","2013-12-08 18:21:04","1-730-315-9174",52897,61);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Pandora","2014-12-22 01:13:40","1-640-181-2782",88396,70);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Joan","2013-12-19 19:23:32","1-466-213-0996",9352,56);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Stacy","2013-11-18 23:23:13","1-869-447-8152",1456,63);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Arthur","2015-04-24 07:49:11","1-185-459-9618",88442,56);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Neil","2015-05-17 13:25:33","1-948-153-4229",84287,26);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Mannix","2013-06-06 01:12:48","1-459-622-0774",9416,20);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Malik","2015-05-10 14:40:43","1-813-153-1639",77436,38);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Briar","2014-03-07 12:53:20","1-756-999-4949",56191,54);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Sybill","2013-07-09 22:28:47","1-412-206-3868",47121,80);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Chantale","2013-06-18 09:52:51","1-166-326-8873",10540,54);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Benjamin","2014-07-15 13:45:59","1-647-720-2127",22628,49);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Shelby","2014-06-23 11:50:37","1-166-672-4612",33306,52);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Jeanette","2013-10-25 06:01:48","1-683-283-7106",51747,78);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Herrod","2014-05-14 02:12:20","1-302-863-0487",27615,80);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Carlos","2014-06-15 08:15:22","1-142-982-5006",40206,45);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Rafael","2015-01-13 13:58:02","1-917-759-5152",97987,63);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Mohammad","2014-06-08 15:51:30","1-843-672-6509",55558,56);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Tiger","2015-03-18 12:46:37","1-987-340-7379",99254,66);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Anthony","2014-03-21 03:23:52","1-223-974-0819",19519,31);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Kadeem","2013-08-25 08:01:05","1-390-767-5047",57408,32);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Travis","2014-05-30 04:15:43","1-931-718-6421",30516,55);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Melyssa","2014-12-18 02:25:25","1-823-199-9881",61600,39);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Lara","2013-07-17 12:54:34","1-187-817-1052",90231,79);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Yardley","2015-02-05 22:06:46","1-818-750-5272",93384,61);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Cassidy","2015-01-12 00:07:03","1-935-463-2421",21536,68);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Hadley","2013-11-27 09:31:00","1-652-863-6741",58476,67);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Alyssa","2014-12-06 10:22:49","1-727-499-1862",57593,73);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Remedios","2015-04-03 08:10:41","1-686-589-8685",29172,47);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Dacey","2014-06-25 09:14:37","1-380-812-5768",20945,35);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Xenos","2014-09-28 17:06:57","1-263-311-4981",43380,65);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Dahlia","2014-04-21 02:58:18","1-799-127-8292",41511,23);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Chaney","2015-05-20 16:39:43","1-508-983-3078",48444,58);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Winifred","2014-08-03 06:46:23","1-186-317-7779",27536,61);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Mercedes","2014-09-09 23:46:51","1-726-149-6202",74385,55);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Derek","2014-02-11 17:33:46","1-871-534-9221",1962,19);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Joy","2014-04-06 08:51:12","1-846-393-5629",60780,71);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Octavia","2013-10-04 08:03:33","1-574-769-5619",3250,70);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Lee","2014-05-24 02:52:14","1-429-873-8655",37552,40);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Todd","2014-07-05 02:58:32","1-336-933-4954",45271,31);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Tanner","2015-03-05 23:22:26","1-283-241-0872",10257,47);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Cheryl","2014-09-22 09:41:17","1-982-576-9123",64970,27);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Madison","2014-10-20 20:30:31","1-599-286-7898",33079,30);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Zane","2014-06-20 02:30:32","1-745-966-1852",26014,78);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Macon","2014-07-11 15:39:45","1-750-374-3540",29450,25);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Blair","2014-10-27 09:25:13","1-771-494-0348",4939,23);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Grant","2013-10-15 05:39:19","1-865-277-6091",99750,58);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Richard","2014-07-29 19:55:41","1-619-711-2715",23529,38);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Noelle","2014-03-26 04:28:09","1-738-871-0523",36011,28);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Veronica","2013-09-18 12:29:04","1-613-976-6935",82643,72);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Mufutau","2014-02-15 11:49:56","1-776-485-0939",29626,29);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Avye","2013-12-28 19:42:26","1-429-136-3091",59615,73);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Thane","2015-05-05 06:54:56","1-652-386-8991",15065,41);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Rina","2013-11-22 06:43:08","1-821-224-6661",85475,31);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Yuri","2014-01-07 22:33:16","1-389-195-6433",81124,29);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Henry","2013-06-18 18:52:59","1-114-796-8035",59449,36);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Herrod","2013-09-29 15:31:43","1-554-996-0061",85517,47);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Raymond","2015-02-02 11:00:37","1-232-625-3478",61930,30);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Norman","2014-08-11 17:23:10","1-789-444-5619",91527,18);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Anjolie","2015-01-10 13:22:59","1-517-862-2478",47638,24);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Alexa","2014-02-10 00:17:35","1-421-742-9614",36468,68);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Calista","2014-05-05 03:39:11","1-237-552-9192",99905,18);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Mason","2014-09-28 13:56:51","1-973-370-9943",20722,35);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Genevieve","2015-03-08 07:16:14","1-465-432-9365",52280,26);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Vera","2013-08-22 06:01:44","1-411-100-9956",71951,67);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Mara","2013-12-14 10:38:14","1-744-585-7297",88044,72);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Abbot","2015-02-14 09:20:40","1-720-101-5138",51573,61);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Suki","2014-06-06 04:36:25","1-589-803-0842",10356,21);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Sean","2015-01-13 11:38:09","1-855-908-8834",79693,67);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Nathaniel","2015-03-27 23:28:27","1-409-564-8699",61522,62);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Brianna","2013-08-07 02:59:16","1-333-824-8878",54235,41);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Whoopi","2014-11-09 02:29:20","1-157-970-0029",99542,73);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Mercedes","2014-01-01 10:50:36","1-522-342-1357",48301,58);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Barrett","2014-06-20 22:17:16","1-143-123-2136",60152,80);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Josephine","2014-10-24 13:43:36","1-705-111-5992",12511,47);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Cora","2014-12-30 21:41:42","1-723-665-8786",36663,51);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Austin","2014-04-13 14:11:49","1-553-240-6238",43113,43);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Jillian","2013-06-29 07:13:24","1-945-355-8411",39291,73);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Phillip","2013-07-01 09:30:05","1-667-903-2909",30244,24);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Tobias","2014-05-24 20:13:08","1-756-539-0689",92833,73);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Amy","2014-04-30 20:58:39","1-421-483-6573",19337,57);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Armando","2013-11-24 23:19:47","1-344-802-3299",89674,20);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Jessamine","2015-03-19 11:57:59","1-106-486-0652",38554,32);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Kennan","2013-12-25 12:07:32","1-349-916-5931",84985,80);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Cally","2015-05-18 00:30:43","1-498-610-4854",40744,22);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Elliott","2013-09-23 02:10:55","1-828-610-2760",78367,39);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Jolie","2014-12-13 09:56:12","1-322-688-9090",21099,23);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Lillith","2014-12-27 03:45:11","1-490-794-1189",34542,62);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Lacota","2013-08-26 01:27:48","1-719-828-2985",63066,34);
+INSERT INTO `users` (`user_name`,`birth_dt`,`phone_number`,`salary`,`age`) VALUES ("Ezra","2015-01-05 07:52:10","1-370-681-5066",7765,35);

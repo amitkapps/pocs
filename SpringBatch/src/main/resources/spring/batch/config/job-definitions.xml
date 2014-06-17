@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:batch="http://www.springframework.org/schema/batch"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/batch
+		http://www.springframework.org/schema/batch/spring-batch-2.1.xsd
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util-3.2.xsd
+		">
+
+    <import resource="./context.xml" />
+
+    <batch:job-repository data-source="dataSource" transaction-manager="transactionManager"
+                          isolation-level-for-create="READ_COMMITTED" />
+
+    <batch:step id="parentStep" abstract="true">
+        <batch:listeners>
+            <batch:listener ref="errorLoggingStepExecutionListener"/>
+        </batch:listeners>
+    </batch:step>
+
+    <batch:job id="helloJob" restartable="true">
+        <batch:step id="step_1" parent="parentStep">
+            <batch:tasklet>
+                <batch:chunk reader="helloReader" writer="helloWriter" commit-interval="10"/>
+                <batch:transaction-attributes isolation="READ_COMMITTED" propagation="REQUIRES_NEW"/>
+                <batch:listeners merge="true">
+                    <batch:listener ref="itemReadListener"/>
+                </batch:listeners>
+            </batch:tasklet>
+        </batch:step>
+    </batch:job>
+
+    <bean id="helloReader" class="org.springframework.batch.item.database.JdbcCursorItemReader">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="sql" value="select id, first_name, last_name, birth_dt, phone_number, salary, age from users"/>
+        <property name="rowMapper">
+            <bean class="poc.amitk.springbatch.UserRowMapper" />
+        </property>
+    </bean>
+    <bean id="helloWriter" class="org.beanio.spring.BeanIOFlatFileItemWriter">
+        <property name="streamMapping" value="classpath:/spring/batch/config/beanio/users-beanio.xml" />
+        <property name="streamName" value="usersfixedlength" />
+        <property name="resource" value="file:csv/outputs/users.txt" />
+    </bean>
+
+    <bean id="itemReadListener" class="poc.amitk.springbatch.ItemReadWriteListener"/>
+    <bean id="errorLoggingStepExecutionListener" class="poc.amitk.springbatch.ErrorLoggingStepExecutionListener"/>
+
+
+</beans>
