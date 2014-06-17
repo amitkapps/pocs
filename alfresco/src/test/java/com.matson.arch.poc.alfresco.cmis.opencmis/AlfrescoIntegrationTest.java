@@ -34,6 +34,12 @@ import java.util.*;
 public class AlfrescoIntegrationTest{
 
     public static final String ALFRESCO_WEB_SERVER = "http://alfresco.matson.com";
+    private static String serviceUrl = "http://10.3.6.181:8080/alfresco/cmis";   //DEV
+//    private static String serviceUrl = "http://10.3.5.130:8080/alfresco/cmis"; //PRE
+    public static final String QUOTE_ID = "1690739_000";//DEV
+//    public static final String QUOTE_ID = "7815936_000";//PRE
+//    public static final String QUOTE_ID = "9346758_000";//PROD
+
     public static final String HTTP_ALFRESCO_ATOMPUB_URL = ALFRESCO_WEB_SERVER + "/alfresco/cmisatom";
     public static final String ALFRESCO_DOC_DETAILS_PATH_PREFIX = ALFRESCO_WEB_SERVER + "/share/page/document-details?nodeRef=";
     static Logger log = LoggerFactory.getLogger(AlfrescoIntegrationTest.class);
@@ -47,11 +53,27 @@ public class AlfrescoIntegrationTest{
         sessionFactory = SessionFactoryImpl.newInstance();
         sessionFactoryParameters = new HashMap<String, String>();
         //credentials
-        sessionFactoryParameters.put(SessionParameter.USER, "admin");
-        sessionFactoryParameters.put(SessionParameter.PASSWORD, "admin");
-        //Connection setting
+        sessionFactoryParameters.put(SessionParameter.USER, "akapoor");
+        sessionFactoryParameters.put(SessionParameter.PASSWORD, "akapoor");
+
+        //Connection setting - Atompub binding
+/*
         sessionFactoryParameters.put(SessionParameter.ATOMPUB_URL, HTTP_ALFRESCO_ATOMPUB_URL);
         sessionFactoryParameters.put(SessionParameter.BINDING_TYPE, BindingType.ATOMPUB.value());
+*/
+
+        //Connection setting - Web service binding
+        sessionFactoryParameters.put(SessionParameter.BINDING_TYPE, BindingType.WEBSERVICES.value()); // Uncomment for Web Services binding
+        sessionFactoryParameters.put(SessionParameter.WEBSERVICES_ACL_SERVICE, getServiceUrl() + "/ACLService");
+        sessionFactoryParameters.put(SessionParameter.WEBSERVICES_DISCOVERY_SERVICE, getServiceUrl() + "/DiscoveryService");
+        sessionFactoryParameters.put(SessionParameter.WEBSERVICES_MULTIFILING_SERVICE, getServiceUrl() + "/MultiFilingService");
+        sessionFactoryParameters.put(SessionParameter.WEBSERVICES_NAVIGATION_SERVICE, getServiceUrl() + "/NavigationService");
+        sessionFactoryParameters.put(SessionParameter.WEBSERVICES_OBJECT_SERVICE, getServiceUrl() + "/ObjectService");
+        sessionFactoryParameters.put(SessionParameter.WEBSERVICES_POLICY_SERVICE, getServiceUrl() + "/PolicyService");
+        sessionFactoryParameters.put(SessionParameter.WEBSERVICES_RELATIONSHIP_SERVICE, getServiceUrl() + "/RelationshipService");
+        sessionFactoryParameters.put(SessionParameter.WEBSERVICES_REPOSITORY_SERVICE, getServiceUrl() + "/RepositoryService");
+        sessionFactoryParameters.put(SessionParameter.WEBSERVICES_VERSIONING_SERVICE, getServiceUrl() + "/VersioningService");
+
 
         // Set the alfresco object factory
         //This allows for being able to use Aspects
@@ -74,6 +96,10 @@ public class AlfrescoIntegrationTest{
         //OpenCMIS is thread-safe. The Session object can and should be reused across thread boundaries.
         session = sessionFactory.createSession(sessionFactoryParameters);
         log.info("Got a connection to repository:{}, with id:{}", repository.getName(), repository.getId());
+    }
+
+    private static String getServiceUrl() {
+        return serviceUrl;
     }
 
     @After
@@ -131,7 +157,7 @@ public class AlfrescoIntegrationTest{
     @Test
     public void test_showFolderContentsRecursively() throws IOException {
         //Get the Gates/reports/accounting folder
-        String folderPath = "/Sites/gates";
+        String folderPath = "/Sites/swsdp";
         showFolderContentsRecursively(folderPath);
     }
 
@@ -201,8 +227,9 @@ public class AlfrescoIntegrationTest{
 */
         //Issue running timestamp clause with in_folder or other clauses need lucene configuration
         //https://issues.alfresco.com/jira/browse/ALF-5378
-        String query = "SELECT * FROM gat:quote where" +
-                " IN_FOLDER('workspace://SpacesStore/4fea0095-0ba4-4636-bcc4-e8401556cbfd') " ;
+//        String query = "SELECT * FROM gat:quote where" +
+//                " IN_FOLDER('workspace://SpacesStore/4fea0095-0ba4-4636-bcc4-e8401556cbfd') " ;
+        String query = "SELECT * FROM gat:gqtCustomer  WHERE   ( gat:quoteIdentifier = '"+ QUOTE_ID+"' )" ;
 
         ItemIterable<QueryResult> q = session.query(query, false);
 
@@ -213,7 +240,7 @@ public class AlfrescoIntegrationTest{
             log.info("--------------------------------------------\n" + i + " , "
                     + qr.getPropertyByQueryName("cmis:objectTypeId").getFirstValue() + " , "
                     + qr.getPropertyByQueryName("cmis:name").getFirstValue() + " , "
-                    + qr.getPropertyByQueryName("gat:quoteNumber").getFirstValue() + " , "
+                    + qr.getPropertyByQueryName("gat:quoteIdentifier").getFirstValue() + " , "
 //                    + ((Calendar)qr.getPropertyByQueryName("crp:generationDateTime").getFirstValue()).getTime() + " , "
 //                    + qr.getPropertyByQueryName("cmis:objectId").getFirstValue() + " , "
 //                    + qr.getPropertyByQueryName("cmis:contentStreamFileName").getFirstValue() + " , "
@@ -235,7 +262,7 @@ public class AlfrescoIntegrationTest{
 
         byte[] buf = content.getBytes("UTF-8");
         ByteArrayInputStream bais = new ByteArrayInputStream(buf);
-        String reportDropbox = "/Sites/gates/documentLibrary/Reports/Dropbox";
+        String reportDropbox = "/Sites/swsdp/documentLibrary/akapoor";
         String documentId = uploadContentToRepository(reportDropbox, bais, mimetype, textFileName, null);
 
         log.info("Document Id: {}" + documentId);
@@ -263,7 +290,7 @@ public class AlfrescoIntegrationTest{
         //Upload new content to Dropbox
         // Create a simple text document in the new folder
         // First, create the content stream
-        String localFileDirectory = "src\\test\\reports\\";
+        String localFileDirectory = "src/test/reports/";
         String reportName = "AvailableContainers";
         String fileExtension = ".pdf";
         String localFileName = reportName + fileExtension;
@@ -273,7 +300,7 @@ public class AlfrescoIntegrationTest{
         String reportCategory = "Operations";
         final String pdfFileName = reportCategory + "_" +reportName+"_Report_"+ dateStamp +".pdf";
 
-        String reportDropbox = "/Sites/gates/documentLibrary/Reports/Dropbox";
+        String reportDropbox = "/Sites/swsdp/documentLibrary/akapoor";
         InputStream is = new ByteArrayInputStream(readBytesFromFile(localFileDirectory, localFileName));
         String documentId = uploadContentToRepository(reportDropbox, is, mimetype, pdfFileName, null);
 
@@ -312,7 +339,7 @@ public class AlfrescoIntegrationTest{
         //Upload new content to Dropbox
         // Create a simple text document in the new folder
         // First, create the content stream
-        String localFileDirectory = "src\\test\\reports\\";
+        String localFileDirectory = "src/test/reports/";
         String localFileName = "quote";
         String fileExtension = ".pdf";
         String mimetype = "application/pdf";
@@ -320,16 +347,18 @@ public class AlfrescoIntegrationTest{
         String dateStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         final String uploadedFileName = localFileName+"_"+ dateStamp + fileExtension;
 
-        String quotesDirectory = "/Sites/gates/documentLibrary/Quotes";
+        String quotesDirectory = "/Sites/swsdp/documentLibrary/akapoor";
         InputStream is = new ByteArrayInputStream(readBytesFromFile(localFileDirectory, localFileName+fileExtension));
         //Add custom Type gat:Quote and Add Aspect gat:customer
         //The type definitions need to be uploaded to the Alfresco server before doing this
         Map <String, Object> properties = new HashMap<String, Object>();
-        properties.put(PropertyIds.OBJECT_TYPE_ID,"D:gat:quote,P:gat:customer");
+//        properties.put(PropertyIds.OBJECT_TYPE_ID,"D:gat:quote,P:gat:customer");
+        properties.put(PropertyIds.OBJECT_TYPE_ID,"D:gat:gqtCustomer");
         //gat:quoteNumber attribute of the gat:quote type
-        properties.put("gat:quoteNumber", 1817500);
+        properties.put("gat:quoteIdentifier", "9346758_000");
+//        properties.put("gat:quoteNumber", 1817500);
         //gat:customerName attribute of the aspect gat:customer
-        properties.put("gat:customerName", "DHX-DEPENDABLE");
+//        properties.put("gat:customerName", "DHX-DEPENDABLE");
 
         String documentId = uploadContentToRepository(quotesDirectory, is, mimetype, uploadedFileName, properties);
 
@@ -338,7 +367,7 @@ public class AlfrescoIntegrationTest{
         Document document = (Document) session.getObject(documentId);
         log.info("Content mimetype: {}", document.getPropertyValue("cmis:"));
         InputStream contentStream = document.getContentStream().getStream();
-        log.info("Content read back: {}", getContentAsBytes(contentStream));
+        log.info("Content read back: {} bytes", getContentAsBytes(contentStream).length);
         contentStream.close();
     }
 

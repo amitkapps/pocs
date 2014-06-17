@@ -31,13 +31,20 @@ import java.util.*;
 public class GatesIntegrationTestMain {
 
     //    public static final String ALFRESCO_WEB_SERVER = "http://svc.edm.matson.com";
-    public static final String ALFRESCO_WEB_SERVER = "http://10.3.4.84:8080";
+//    public static final String ALFRESCO_WEB_SERVER = "http://10.3.4.84:8080";
+    public static final String ALFRESCO_WEB_SERVER = "http://10.3.5.130:8080";
+    public static final String QUOTE_ID = "7815936_000";//PRE
+//    public static final String QUOTE_ID = "9346758_000";//PROD
+
     public static final String HTTP_ALFRESCO_ATOMPUB_URL = ALFRESCO_WEB_SERVER + "/alfresco/cmisatom";
+    public static final String HTTP_ALFRESCO_WS_URL = ALFRESCO_WEB_SERVER + "alfresco/cmis";
 
     private static SessionFactory sessionFactory;
     private static Session session;
     private static Map<String,String> sessionFactoryParameters;
-    static Logger log = LoggerFactory.getLogger(GatesIntegrationTest.class);
+    static Logger log = LoggerFactory.getLogger(GatesIntegrationTestMain.class);
+    private static String serviceUrl = "http://10.3.4.84:8080/alfresco/cmis";
+
 
     public static void createSession(){
         sessionFactory = SessionFactoryImpl.newInstance();
@@ -46,13 +53,29 @@ public class GatesIntegrationTestMain {
         sessionFactoryParameters.put(SessionParameter.USER, "gatesApp");
         sessionFactoryParameters.put(SessionParameter.PASSWORD, "gatesApp");
         //Connection setting
+
+        //Atompub binding
         sessionFactoryParameters.put(SessionParameter.ATOMPUB_URL, HTTP_ALFRESCO_ATOMPUB_URL);
         sessionFactoryParameters.put(SessionParameter.BINDING_TYPE, BindingType.ATOMPUB.value());
+
+        //Web service binding
+/*
+        sessionFactoryParameters.put(SessionParameter.BINDING_TYPE, BindingType.WEBSERVICES.value()); // Uncomment for Web Services binding
+        sessionFactoryParameters.put(SessionParameter.WEBSERVICES_ACL_SERVICE, getServiceUrl() + "/ACLService");
+        sessionFactoryParameters.put(SessionParameter.WEBSERVICES_DISCOVERY_SERVICE, getServiceUrl() + "/DiscoveryService");
+        sessionFactoryParameters.put(SessionParameter.WEBSERVICES_MULTIFILING_SERVICE, getServiceUrl() + "/MultiFilingService");
+        sessionFactoryParameters.put(SessionParameter.WEBSERVICES_NAVIGATION_SERVICE, getServiceUrl() + "/NavigationService");
+        sessionFactoryParameters.put(SessionParameter.WEBSERVICES_OBJECT_SERVICE, getServiceUrl() + "/ObjectService");
+        sessionFactoryParameters.put(SessionParameter.WEBSERVICES_POLICY_SERVICE, getServiceUrl() + "/PolicyService");
+        sessionFactoryParameters.put(SessionParameter.WEBSERVICES_RELATIONSHIP_SERVICE, getServiceUrl() + "/RelationshipService");
+        sessionFactoryParameters.put(SessionParameter.WEBSERVICES_REPOSITORY_SERVICE, getServiceUrl() + "/RepositoryService");
+        sessionFactoryParameters.put(SessionParameter.WEBSERVICES_VERSIONING_SERVICE, getServiceUrl() + "/VersioningService");
+*/
 
         // Set the alfresco object factory
         //This allows for being able to use Aspects
         sessionFactoryParameters.put(SessionParameter.OBJECT_FACTORY_CLASS, "org.alfresco.cmis.client.impl.AlfrescoObjectFactoryImpl");
-
+        log.info("SessionParams: {}" + sessionFactoryParameters);
 //        What is the repository id?
 //        parameter.put(SessionParameter.REPOSITORY_ID, "A1");
 //        Session session = sessionFactory.createSession(parameter);
@@ -70,6 +93,10 @@ public class GatesIntegrationTestMain {
         //OpenCMIS is thread-safe. The Session object can and should be reused across thread boundaries.
         session = sessionFactory.createSession(sessionFactoryParameters);
         log.info("Got a connection to repository:{}, with id:{}", repository.getName(), repository.getId());
+    }
+
+    private static String getServiceUrl() {
+        return serviceUrl;
     }
 
     public void destroySession(){
@@ -102,7 +129,7 @@ public class GatesIntegrationTestMain {
 */
         //Issue running timestamp clause with in_folder or other clauses need lucene configuration
         //https://issues.alfresco.com/jira/browse/ALF-5378
-        String query = "SELECT * FROM gat:gqtCustomer  WHERE   ( gat:quoteIdentifier = '9346758_000' )" ;
+        String query = "SELECT * FROM gat:gqtCustomer  WHERE   ( gat:quoteIdentifier = '"+ QUOTE_ID+"' )" ;
 
 //        ItemIterable<QueryResult> q = getSession().query(query, false);
         ItemIterable<QueryResult> q = session.query(query, false);
@@ -181,6 +208,12 @@ public class GatesIntegrationTestMain {
         Session session = sessionFactory.createSession(sessionFactoryParameters);
         return session;
 
+    }
+
+    public static void main(String[] args){
+        GatesIntegrationTestMain.createSession();
+        GatesIntegrationTestMain test = new GatesIntegrationTestMain();
+        test.testGetDocumentListRepeatedly();
     }
 
 }

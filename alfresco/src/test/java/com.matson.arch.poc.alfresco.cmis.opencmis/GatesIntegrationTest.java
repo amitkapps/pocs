@@ -34,7 +34,8 @@ import java.util.*;
 public class GatesIntegrationTest {
 
 //    public static final String ALFRESCO_WEB_SERVER = "http://svc.edm.matson.com";
-    public static final String ALFRESCO_WEB_SERVER = "http://10.3.4.84:8080";
+//    public static final String ALFRESCO_WEB_SERVER = "http://10.3.4.84:8080"; //PROD
+    public static final String ALFRESCO_WEB_SERVER = "http://10.3.5.130:8080"; //PREPROD
     public static final String HTTP_ALFRESCO_ATOMPUB_URL = ALFRESCO_WEB_SERVER + "/alfresco/cmisatom";
 
     private static SessionFactory sessionFactory;
@@ -189,6 +190,47 @@ public class GatesIntegrationTest {
         Session session = sessionFactory.createSession(sessionFactoryParameters);
         return session;
 
+    }
+
+    @Test
+    public void test_upload_document(){
+
+        long currentTime = System.currentTimeMillis();
+        String filename = "amit_doc_test_" + currentTime;
+        byte[] body = ("Alfresco document body " + currentTime).getBytes();
+        String mimetype = "text/plain";
+        String directory = "";
+        log.info("Uploading document to alfresco: {}", filename);
+
+        try {
+            Session session = getSession();
+            InputStream is = new ByteArrayInputStream(body);
+
+            ContentStream contentStream = session.getObjectFactory().createContentStream(filename, 0, mimetype, is);
+
+            //if(!properties.containsKey(PropertyIds.OBJECT_TYPE_ID)) properties.put(PropertyIds.OBJECT_TYPE_ID, "cmis:document");
+            Map<String, Object> properties = new HashMap<String, Object>();
+            properties.put(PropertyIds.NAME, filename);
+            properties.put(PropertyIds.CONTENT_STREAM_FILE_NAME, filename);
+
+            CmisObject dropBoxObject = session.getObjectByPath(directory);
+
+            //the path should resolve to a directory not another type e.g. document
+            Folder dropBoxFolder = (Folder) dropBoxObject;
+            log.info(directory +" folder id: " + dropBoxFolder.getId());
+            log.info("Copies set in alfresco metadata :"+properties.get("gat:copies"));
+            Document document = dropBoxFolder.createDocument(properties, contentStream, VersioningState.MAJOR);
+            log.info("(saveFile)Report was UPloaded, filename:{}, stream id: {}, id:{}", new Object[]{filename, document.getContentStreamId(), document.getId()});
+
+            String id = document.getId();
+            is.close();
+            log.info("Document created with id: {}", id);
+
+
+        } catch (Exception e) {
+            log.error("ERROR SAVING TO ALFRESCO: "+e);
+            log.warn("Could not save document "+filename+" queing it instead");
+        }
     }
 
 }
