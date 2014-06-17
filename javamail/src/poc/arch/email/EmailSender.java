@@ -16,7 +16,7 @@ public class EmailSender {
     // File Name SendEmail.java
 
         public static void main(String [] args){
-            sendEmails(1, 100);
+            sendEmails(100, 100);
         }
 
     private static void sendEmails(int totalEmails, long delay) {
@@ -39,8 +39,8 @@ public class EmailSender {
 
     private static void sendEmail(int counter) {
         // Recipient's email ID needs to be mentioned.
-        String to = "akapoor@matson.com";
-//        String to = "matson.ses@gmail.com";
+//        String to = "amit.kapps@gmail.com";
+        String to = "matson.ses@gmail.com";
         //Test amazon ses email id to simulate bounce/out of the office/complaints(spam) etc.
 //        String to = "bounce@simulator.amazonses.com";
 //        String to = "ooto@simulator.amazonses.com";
@@ -53,10 +53,10 @@ public class EmailSender {
 
         // Assuming you are sending email from localhost
         //Local Centos
-        String host = "10.8.5.35"; //Local Centos
-        String port = "1025"; //Local Centos
-//        String host = "10.8.7.60"; // Dev apache
-//        String port = "25"; //Dev apache
+//        String host = "10.8.5.35"; //Local Centos
+//        String port = "1025"; //Local Centos
+        String host = "10.8.7.60"; // Dev apache
+        String port = "25"; //Dev apache
 
         // Get system properties
         Properties properties = System.getProperties();

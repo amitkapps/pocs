@@ -30,6 +30,7 @@ public class GetEmailAttachment{
      */
     public void processEmailAttachemnt() throws MessagingException, IOException {
 
+/*
         try {
             System.out.println("######### email process is started @ " + new java.util.Date() + " ######### \n");
 
@@ -40,7 +41,9 @@ public class GetEmailAttachment{
             String username = "RNDev";
             String password = "matson12!";
             System.out.println("host : " + host + ", email username : " + username + ", password : " + password);
-            /* * IMAP configuration */
+            */
+/* * IMAP configuration *//*
+
             Properties system_properties = System.getProperties();
 
             system_properties.put("mail.imap.partialfetch", "true");
@@ -106,15 +109,18 @@ public class GetEmailAttachment{
             // TODO Auto-generated catch block
             e.printStackTrace();
             System.out.println("Messaging Error :: " + e);
-        } /*catch (IOException e) {
+        } */
+/*catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
             System.out.println("IO Error :: " + e);
-        } */catch (Exception e) {
+        } *//*
+catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
             System.out.println("Error :: " + e);
         }
+*/
 
     }
 

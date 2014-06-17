@@ -1,30 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b755943a-0230-436b-95b1-8baeabb54de4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/poc/arch/email/EmailSender.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../jdbc/.classpath" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../jdbc/.project" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../jdbc/bin/com/amitk/poc/jdbc/PreparedStmt.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../jdbc/bin/com/amitk/poc/jdbc/RandomLetters.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../jdbc/src/com/amitk/poc/jdbc/PreparedStmt.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../jdbc/src/com/amitk/poc/jdbc/RandomLetters.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EJBTimer/EJBTimer.iws" afterPath="$PROJECT_DIR$/../EJBTimer/EJBTimer.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/poc/arch/email/GetEmailAttachment.java" afterPath="$PROJECT_DIR$/src/poc/arch/email/GetEmailAttachment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloWorldWeb/HelloWorldWeb.ipr" afterPath="$PROJECT_DIR$/../HelloWorldWeb/HelloWorldWeb.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HelloWorldWeb/HelloWorldWeb.iws" afterPath="$PROJECT_DIR$/../HelloWorldWeb/HelloWorldWeb.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebServices/WebServices.iws" afterPath="$PROJECT_DIR$/../WebServices/WebServices.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../apache-httpd/apache-httpd.ipr" afterPath="$PROJECT_DIR$/../apache-httpd/apache-httpd.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../apache-httpd/apache-httpd.iws" afterPath="$PROJECT_DIR$/../apache-httpd/apache-httpd.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../apache-httpd/sample-webapps/clusterapp/clusterapp.iml" afterPath="$PROJECT_DIR$/../apache-httpd/sample-webapps/clusterapp/clusterapp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javamail.ipr" afterPath="$PROJECT_DIR$/javamail.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javamail.iws" afterPath="$PROJECT_DIR$/javamail.iws" />
-    </list>
+    <list default="true" id="b755943a-0230-436b-95b1-8baeabb54de4" name="Default" comment="" />
     <ignored path="javamail.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b755943a-0230-436b-95b1-8baeabb54de4" time="1398790693872" ignored="false" />
-    <file path="/EmailSender.java" changelist="b755943a-0230-436b-95b1-8baeabb54de4" time="1396976746873" ignored="false" />
-    <file path="/fragment.java" changelist="b755943a-0230-436b-95b1-8baeabb54de4" time="1387905041586" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../matson/projects/gates/gates/pom.xml" changelist="b755943a-0230-436b-95b1-8baeabb54de4" time="1400700270824" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../matson/projects/gates/gates/gates-service-app/target/application.xml" changelist="b755943a-0230-436b-95b1-8baeabb54de4" time="1400700270824" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../matson/projects/gates/gates/gates-interactive-app/target/application.xml" changelist="b755943a-0230-436b-95b1-8baeabb54de4" time="1400700270824" ignored="false" />
+    <file path="/a.dummy" changelist="b755943a-0230-436b-95b1-8baeabb54de4" time="1400704798125" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +71,7 @@
       <file leaf-file-name="GetEmailAttachment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/poc/arch/email/GetEmailAttachment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="34" selection-start="1505" selection-end="1505" vertical-scroll-proportion="0.0">
+            <state line="119" column="0" selection-start="4145" selection-end="4145" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -97,18 +80,7 @@
       <file leaf-file-name="EmailSender.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/poc/arch/email/EmailSender.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="88" selection-start="2598" selection-end="2598" vertical-scroll-proportion="0.6138132">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Math.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/src.zip!/java/lang/Math.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="712" column="25" selection-start="28691" selection-end="28691" vertical-scroll-proportion="0.0">
+            <state line="18" column="25" selection-start="390" selection-end="390" vertical-scroll-proportion="0.37717602">
               <folding />
             </state>
           </provider>
@@ -121,14 +93,6 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="GitLogSettings">
-    <option name="myDateState">
-      <MyDateState />
-    </option>
-  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
@@ -140,18 +104,16 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="2245" />
-    <option name="height" value="1174" />
+    <option name="width" value="1440" />
+    <option name="height" value="874" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <OptionsSetting value="true" id="Undo Check Out" />
-    <OptionsSetting value="true" id="Get Latest Version" />
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
@@ -171,6 +133,17 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javamail" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -227,38 +200,51 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javamail" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Project" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/javamail.ipr" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="PublishConfig">
+    <servers>
+      <server id="6199c161-e901-463d-9f2f-51aeb5d96c5c">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="b0a37fc8-e419-4f35-a76e-7f998ec46f74">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="e9ab436c-74aa-43d4-92a0-8f285c552e64">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+    </servers>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -442,36 +428,35 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="2245" height="1174" extended-state="0" />
+    <frame x="0" y="22" width="1440" height="874" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TCPMON" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="PlugProxy" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18599363" sideWeight="0.7017094" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29790795" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18077475" sideWeight="0.7228117" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27718833" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -540,57 +525,16 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/poc/arch/email/EmailSender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="21" selection-start="1375" selection-end="1375" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/src.zip!/java/lang/Math.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="712" column="25" selection-start="28691" selection-end="28691" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/poc/arch/email/GetEmailAttachment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="34" selection-start="1505" selection-end="1505" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/poc/arch/email/EmailSender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="21" selection-start="1375" selection-end="1375" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/poc/arch/email/GetEmailAttachment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="34" selection-start="1505" selection-end="1505" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/poc/arch/email/EmailSender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="24" selection-start="389" selection-end="389" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/src.zip!/java/lang/Math.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="712" column="25" selection-start="28691" selection-end="28691" vertical-scroll-proportion="0.0">
+        <state line="50" column="29" selection-start="1747" selection-end="1747" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -604,23 +548,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/poc/arch/email/EmailSender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="31" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/src.zip!/java/lang/Math.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="712" column="25" selection-start="28691" selection-end="28691" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/poc/arch/email/GetEmailAttachment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="34" selection-start="1505" selection-end="1505" vertical-scroll-proportion="0.0">
+        <state line="27" column="0" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -632,31 +560,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/mail.jar!/javax/mail/Transport.class">
+    <entry file="file://$PROJECT_DIR$/src/poc/arch/email/EmailSender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="1371" selection-end="1371" vertical-scroll-proportion="0.6596558" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/poc/arch/email/GetEmailAttachment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="34" selection-start="1505" selection-end="1505" vertical-scroll-proportion="0.0">
+        <state line="27" column="0" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/src.zip!/java/lang/Math.java">
+    <entry file="file://$PROJECT_DIR$/src/poc/arch/email/GetEmailAttachment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="712" column="25" selection-start="28691" selection-end="28691" vertical-scroll-proportion="0.0">
+        <state line="119" column="0" selection-start="4145" selection-end="4145" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/poc/arch/email/EmailSender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="88" selection-start="2598" selection-end="2598" vertical-scroll-proportion="0.6138132">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="63" column="22" selection-start="2188" selection-end="2188" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/poc/arch/email/GetEmailAttachment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/poc/arch/email/GetEmailAttachment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="0" selection-start="4145" selection-end="4145" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/poc/arch/email/EmailSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="25" selection-start="390" selection-end="390" vertical-scroll-proportion="0.37717602">
+          <folding />
         </state>
       </provider>
     </entry>
