@@ -5,12 +5,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../javamail/110_20140715103155_0_notify.pdf" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../aws-ses/src/test/java/poc/arc/aws/ses/monitor/SESMonitor.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../aws-ses/src/main/resources/log4j.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/log4j.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/order_receipt.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pov-pci.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pov-pci.ipr" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pov-pci.iws" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/relay_response.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../javamail/out/production/javamail/poc/arch/email/EmailSender.class" afterPath="$PROJECT_DIR$/../javamail/out/production/javamail/poc/arch/email/EmailSender.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../javamail/out/production/javamail/poc/arch/email/GetEmailAttachment.class" afterPath="$PROJECT_DIR$/../javamail/out/production/javamail/poc/arch/email/GetEmailAttachment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../alfresco/src/test/java/com.matson.arch.poc.alfresco.cmis.opencmis/AlfrescoIntegrationTest.java" afterPath="$PROJECT_DIR$/../alfresco/src/test/java/com.matson.arch.poc.alfresco.cmis.opencmis/AlfrescoIntegrationTest.java" />
@@ -25,7 +20,7 @@
     </list>
     <ignored path="pov-pci.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406677205907" ignored="false" />
+    <file path="/Dummy.txt" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406693971655" ignored="false" />
     <file path="/index.jsp" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406678476308" ignored="false" />
     <file path="/pom.xml" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406677288194" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -121,11 +116,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/relay_response.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state line="16" column="68" selection-start="629" selection-end="629" vertical-scroll-proportion="0.29447854">
-              <folding>
-                <marker date="1406678548000" expanded="true" signature="202:2732" placeholder="..." />
-                <marker date="1406678548000" expanded="true" signature="499:2606" placeholder="{...}" />
-                <marker date="1406678548000" expanded="true" signature="2370:2536" placeholder="//..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -528,6 +519,11 @@
       <created>1406677171974</created>
       <updated>1406677171974</updated>
     </task>
+    <task id="LOCAL-00001" summary="auth net">
+      <created>1406693988795</created>
+      <updated>1406693988795</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -606,7 +602,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="auth net" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -620,6 +616,7 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="auth net" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -660,11 +657,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/relay_response.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="68" selection-start="629" selection-end="629" vertical-scroll-proportion="0.29447854">
-          <folding>
-            <marker date="1406678548000" expanded="true" signature="202:2732" placeholder="..." />
-            <marker date="1406678548000" expanded="true" signature="499:2606" placeholder="{...}" />
-            <marker date="1406678548000" expanded="true" signature="2370:2536" placeholder="//..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
