@@ -8,7 +8,7 @@
 <body>
 <h2>Authorize.net Hosted Payment</h2>
 
-<%--<%
+<%
     String apiLoginId = "9JqM5H4BpuXu";
     String transactionKey = "9429M6t2c6tWhG4U";
     //My payment page should be exposed to the internet so authorize.net can post back response.
@@ -24,8 +24,8 @@
     long x_fp_sequence = fingerprint.getSequence();
     long x_fp_timestamp = fingerprint.getTimeStamp();
     String x_fp_hash = fingerprint.getFingerprintHash();
-%>--%>
-<%--<form name='secure_redirect_form' id='secure_redirect_form_id'
+%>
+<form name='secure_redirect_form' id='secure_redirect_form_id'
       action='https://test.authorize.net/gateway/transact.dll' method='post'>
     <label>CreditCardNumber</label>
     <input type='text' class='text' name='x_card_num' size='15' />
@@ -35,6 +35,7 @@
     <input type='text' class='text' name='x_amount' size='9' readonly value='<%=amount%>' />
     <input type='text' name='x_invoice_num' value='<%=System.currentTimeMillis()%>' />
     <input type='text' name='x_relay_url' value='<%=relayResponseUrl%>' />
+    <%--<input type='text' name='x_relay_always' value='true' />--%>
     <input type='text' name='x_login' value='<%=apiLoginId%>' />
     <input type='text' name='x_fp_sequence' value='<%=x_fp_sequence%>' />
     <input type='text' name='x_fp_timestamp' value='<%=x_fp_timestamp%>' />
@@ -47,7 +48,7 @@
     <input type='text' name='notes' value='extra hot please' />
     <input type='submit' name='buy_button' value='BUY' />
 
-</form>--%>
+</form>
 
 <!--#INCLUDE FILE=”simlib.asp”-->
 <%--
@@ -89,6 +90,7 @@
 //displayed directly on the page can be performed via the following code (JSP) :
 %>
 <%
+/*
     String apiLoginId = "9JqM5H4BpuXu";
     String transactionKey = "9429M6t2c6tWhG4U";
     String amount = "1.99";
@@ -100,8 +102,10 @@
     long x_fp_sequence = fingerprint.getSequence();
     long x_fp_timestamp = fingerprint.getTimeStamp();
     String x_fp_hash = fingerprint.getFingerprintHash();
+*/
 %>
 
+<%--
 <FORM NAME='formName' ID='formID' ACTION='https://test.authorize.net/gateway/transact.dll' METHOD='POST'>
     <INPUT TYPE='HIDDEN' NAME='x_login' VALUE='<%=net.authorize.util.StringUtils.sanitizeString(apiLoginId)%>'>
     <INPUT TYPE='HIDDEN' NAME='x_fp_sequence' VALUE='<%=net.authorize.util.StringUtils.sanitizeString(Long.toString(x_fp_sequence))%>'>
@@ -115,5 +119,6 @@
     <INPUT TYPE='HIDDEN' NAME='x_test_request' VALUE='FALSE'>
     <INPUT TYPE='SUBMIT' NAME='submit_button' VALUE='Submit' CLASS='null'>
 </FORM>
+--%>
 </body>
 </html>
