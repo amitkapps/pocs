@@ -9,6 +9,7 @@
 <body>
 <h1>Your Receipt Page</h1></br>
 <%
+    System.out.println("Order receipt being displayed!!!");
     // Show the confirmation data
     Map<String, String[]> requestParameterMap = request.getParameterMap();
 

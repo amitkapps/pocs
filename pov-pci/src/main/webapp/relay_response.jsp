@@ -13,13 +13,14 @@
     if (referrer.substr(0,8)=="https://") referrer = referrer.substr(8);
     if (referrer && referrer.indexOf(document.location.hostname) != 0) {
         <%
+        System.out.println("Relay response being processed!!!");
              String apiLoginId = "9JqM5H4BpuXu";
-             String receiptPageUrl = "http://10.8.4.193:8080/pov-pci/order_receipt.jsp";
+             String receiptPageUrl = "https://kapoors.me/pov-pci/order_receipt.jsp";
              /*
               * Leave the MD5HashKey as is - unless you have explicitly set it in the
               * merchant interface: Account > Settings > Security Settings > MD5-Hash
               */
-             String MD5HashKey = "YOUR_API_LOGIN_ID";
+             String MD5HashKey = "1234";
 
              // Perform Java server side processing...
              net.authorize.sim.Result result = net.authorize.sim.Result.createResult(apiLoginId,
