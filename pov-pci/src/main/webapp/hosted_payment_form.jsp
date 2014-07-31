@@ -86,7 +86,7 @@
     <ol>
         <li>This page will direct to the payment form hosted at authorize.net. The payment form will input the credit card information (test with cc# 4007000000027, any future expiration date).
         <li>This page should also let the customers know that it will be directing the user to our payment gateway</li>
-        <li>After the user submits the credit card information, authorize.net does an http post back to our relay_response.jsp page. Here we simply capture the response code and reason code and do a meta refresh with a url (order_receipt.jsp) with all response parameters to order_receipt.jsp on our server. authorize.net captures this html response and renders that in page after the submit.
+        <li>After the user submits the credit card information, authorize.net does an http post back to our relay_response.jsp (this url should be registered in your authorize.net account settings) page. Here we simply capture the response code and reason code and do a meta refresh with a url (order_receipt.jsp, this also needs to be a registered url in authorize.net account settings) with all response parameters to order_receipt.jsp on our server. authorize.net captures this html response and renders that in page after the submit.
         <li>Our final page: order_receipt.jsp can finally render our own result page to the customer with success/failure and store the transaction response etc.
     </ol>
 

@@ -3,17 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="d9a23007-eefb-4654-bea4-c0b3fc9db262" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../alfresco/alfresco.iws" afterPath="$PROJECT_DIR$/../alfresco/alfresco.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/order_receipt.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/order_receipt.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/hosted_payment_form.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/hosted_payment_form.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pov-pci.iws" afterPath="$PROJECT_DIR$/pov-pci.iws" />
     </list>
     <ignored path="pov-pci.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406770592826" ignored="false" />
+    <file path="/Dummy.txt" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406770843817" ignored="false" />
     <file path="/index.jsp" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406769652367" ignored="false" />
     <file path="/pom.xml" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406677288194" ignored="false" />
     <file path="/relay_response.jsp" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406767184696" ignored="false" />
     <file path="/order_receipt.jsp" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406770736253" ignored="false" />
-    <file path="/hosted_payment_form.jsp" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406770519860" ignored="false" />
+    <file path="/hosted_payment_form.jsp" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406771079675" ignored="false" />
     <file path="/direct_post.jsp" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406763140281" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,10 +111,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hosted_payment_form.jsp" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="hosted_payment_form.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/hosted_payment_form.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="134" selection-start="4525" selection-end="4525" vertical-scroll-proportion="-32.291668">
+            <state line="88" column="355" selection-start="4746" selection-end="4746" vertical-scroll-proportion="0.6052632">
               <folding />
             </state>
           </provider>
@@ -123,16 +123,16 @@
       <file leaf-file-name="direct_post.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/direct_post.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="30" selection-start="2156" selection-end="2156" vertical-scroll-proportion="37.083332">
+            <state line="42" column="30" selection-start="2156" selection-end="2156" vertical-scroll-proportion="37.583332">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="order_receipt.jsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="order_receipt.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/order_receipt.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="5" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.7894737">
+            <state line="31" column="5" selection-start="1118" selection-end="1118" vertical-scroll-proportion="-13.75">
               <folding />
             </state>
           </provider>
@@ -161,8 +161,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/response.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/relay_response.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/hosted_payment_form.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/order_receipt.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/hosted_payment_form.jsp" />
       </list>
     </option>
   </component>
@@ -541,7 +541,11 @@
       <created>1406770597931</created>
       <updated>1406770597931</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="working with sim: hosted payment form">
+      <created>1406770852146</created>
+      <updated>1406770852146</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -705,21 +709,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/direct_post.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="30" selection-start="2156" selection-end="2156" vertical-scroll-proportion="37.083332">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/hosted_payment_form.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="134" selection-start="4525" selection-end="4525" vertical-scroll-proportion="-32.291668">
+        <state line="42" column="30" selection-start="2156" selection-end="2156" vertical-scroll-proportion="37.583332">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/order_receipt.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="5" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.7894737">
+        <state line="31" column="5" selection-start="1118" selection-end="1118" vertical-scroll-proportion="-13.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/hosted_payment_form.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="355" selection-start="4746" selection-end="4746" vertical-scroll-proportion="0.6052632">
           <folding />
         </state>
       </provider>
