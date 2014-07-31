@@ -6,21 +6,8 @@
 
 <html>
 <body>
-<h2>Authorize.net Hosted Payment</h2>
+<h2>Test app to integrate with authorize.net for PCI compliance</h2>
 
-
-<!--#INCLUDE FILE=”simlib.asp”-->
-<%--
-<FORM METHOD=POST ACTION= "https://test.authorize.net/gateway/transact.dll">
-    &lt;%&ndash;<% ret = InsertFP (APIloginid, sequence, amount, txnkey) %>&ndash;%&gt;
-    <INPUT TYPE=HIDDEN NAME="x_version" VALUE="3.1">
-    <INPUT TYPE=HIDDEN NAME="x_login" VALUE="9JqM5H4BpuXu">
-    <INPUT TYPE=HIDDEN NAME="x_show_form" VALUE="PAYMENT_FORM">
-    <INPUT TYPE=HIDDEN NAME="x_method" VALUE="CC">
-    <INPUT TYPE=HIDDEN NAME="x_amount" VALUE="9.95">
-    <INPUT TYPE=SUBMIT VALUE="Click here for the secure payment form">
-</FORM>
---%>
 
 <%
     //The SDK implementation for SIM is fairly concise. To easily create a finger-
@@ -49,37 +36,58 @@
 //displayed directly on the page can be performed via the following code (JSP) :
 %>
 <%
-        String apiLoginId = "9JqM5H4BpuXu";
-        String transactionKey = "9429M6t2c6tWhG4U";
-        String relayResponseUrl = "https://kapoors.me/pov-pci/relay_response.jsp";
+    String apiLoginId = "9JqM5H4BpuXu";
+    String transactionKey = "9429M6t2c6tWhG4U";
+    //This url should be registred in the authorize.net settings
+    String relayResponseUrl = "http://63.64.20.165/pov-pci/relay_response.jsp";
+    String cancelUrl = "http://63.64.20.165/pov-pci";
 
-    String amount = "1200";
-        Fingerprint fingerprint = Fingerprint.createFingerprint(
-                apiLoginId,
-                transactionKey,
-                1234567890,
-                amount);
-        long x_fp_sequence = fingerprint.getSequence();
-        long x_fp_timestamp = fingerprint.getTimeStamp();
-        String x_fp_hash = fingerprint.getFingerprintHash();
+    String amount = request.getParameter("amount");
+    if(null== amount || "".equals(amount.trim()))
+        amount = "1200";
+
+    //requirement to generate a hash for security
+    Fingerprint fingerprint = Fingerprint.createFingerprint(
+            apiLoginId,
+            transactionKey,
+            1234567890,
+            amount);
+    long x_fp_sequence = fingerprint.getSequence();
+    long x_fp_timestamp = fingerprint.getTimeStamp();
+    String x_fp_hash = fingerprint.getFingerprintHash();
 %>
 
 <FORM NAME='formName' ID='formID' ACTION='https://test.authorize.net/gateway/transact.dll' METHOD='POST'>
+    <%--Configurable options documented under section Submitting Transactions : http://developer.authorize.net/guides/SIM/wwhelp/wwhimpl/js/html/wwhelp.htm#href=SIM_Submitting_transactions.06.1.html --%>
+    <%--User Id--%>
     hidden x_login: <INPUT TYPE='text' NAME='x_login' VALUE='<%=net.authorize.util.StringUtils.sanitizeString(apiLoginId)%>'> <br/>
+        <%--Fingerprint--%>
     hidden x_fp_sequence: <INPUT TYPE='text' NAME='x_fp_sequence' VALUE='<%=net.authorize.util.StringUtils.sanitizeString(Long.toString(x_fp_sequence))%>'><br/>
     hidden x_fp_timestamp: <INPUT TYPE='text' NAME='x_fp_timestamp' VALUE='<%=net.authorize.util.StringUtils.sanitizeString(Long.toString(x_fp_timestamp))%>'>  <br/>
     hidden x_fp_hash: <INPUT TYPE='text' NAME='x_fp_hash' VALUE='<%=net.authorize.util.StringUtils.sanitizeString(x_fp_hash)%>'>                                <br/>
+
     hidden x_version: <INPUT TYPE='text' NAME='x_version' VALUE='3.1'><br/>
     hidden x_method: <INPUT TYPE='text' NAME='x_method' VALUE='CC'><br/>
     hidden x_type: <INPUT TYPE='text' NAME='x_type' VALUE='AUTH_CAPTURE'><br/>
+        <%--Amount is part of fingerprint so you can't change amount after generating fp--%>
     hidden x_amount: <INPUT TYPE='text' NAME='x_amount' readonly="readonly" VALUE='<%=net.authorize.util.StringUtils.sanitizeString(amount)%>'><br/>
+        <%--We're asking authorize.ne tto show the hosted payment form--%>
+        <%--Hosted payment page can also be customized with logos, styles to some extent, font, color etc.
+            Ref: http://developer.authorize.net/guides/SIM/wwhelp/wwhimpl/js/html/wwhelp.htm#href=SIM_Submitting_transactions.06.6.html
+        --%>
     hidden x_show_form: <INPUT TYPE='text' NAME='x_show_form' VALUE='PAYMENT_FORM'><br/>
+        <%--TRUE, to run in test mode to force an error message with CC# 4222222222222 and amount = the error code required (e.g. 27.00)
+            Ref: http://developer.authorize.net/guides/SIM/wwhelp/wwhimpl/js/html/wwhelp.htm#href=SIM_Test_transactions.html
+        --%>
     hidden x_test_request: <INPUT TYPE='text' NAME='x_test_request' VALUE='FALSE'><br/>
+
     hidden x_relay_response: <INPUT TYPE="text" NAME="x_relay_response" value="true"/><br/>
+        <%--URL to post back the response to--%>
     hidden x_relay_response_url: <input type='text' name='x_relay_url' value='<%=relayResponseUrl%>' /><br/>
+    hidden x_cancel_url: <input type="text" name="x_cancel_url" value='<%=cancelUrl%>'/><br/>
+        <%--Some other pre defined attributes that can be passed in and will be menioned in the email that authorize.net sends out--%>
     hidden x_invoice_num: <input type='text' name='x_invoice_num' value='1234567' /><br/>
     hidden x_description: <input type='text' name='x_description' value='Vehicle abc shipping service by Matson' /><br/>
-
 
     <INPUT TYPE='SUBMIT' NAME='submit_button' VALUE='Submit' CLASS='null'><br/>
 

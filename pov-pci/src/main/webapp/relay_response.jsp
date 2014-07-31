@@ -7,15 +7,18 @@
 <head>
     <%
         System.out.println("Relay response being processed!!!");
+
+        //API Login ID provided by Authorize.net
         String apiLoginId = "9JqM5H4BpuXu";
-        String receiptPageUrl = "https://kapoors.me/pov-pci/order_receipt.jsp";
-             /*
-              * Leave the MD5HashKey as is - unless you have explicitly set it in the
-              * merchant interface: Account > Settings > Security Settings > MD5-Hash
-              */
+        String receiptPageUrl = "http://63.64.20.165/pov-pci/order_receipt.jsp";
+         /*
+          * Leave the MD5HashKey as is - unless you have explicitly set it in the
+          * merchant interface: Account > Settings > Security Settings > MD5-Hash
+          */
         String MD5HashKey = "1234";
 
         // Perform Java server side processing...
+        //API captures all the response from the authorize.net server (nothing but a set of params in the url)
         net.authorize.sim.Result result = net.authorize.sim.Result.createResult(apiLoginId,
                 MD5HashKey, request.getParameterMap());
 

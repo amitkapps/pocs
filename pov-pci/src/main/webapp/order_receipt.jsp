@@ -14,40 +14,29 @@
     Map<String, String[]> requestParameterMap = request.getParameterMap();
 
     if (requestParameterMap != null && requestParameterMap.containsKey(
-            ResponseField.RESPONSE_CODE.getFieldName()))
-    {
+            ResponseField.RESPONSE_CODE.getFieldName())) {
 
         String transactionId = "";
-        if (requestParameterMap.containsKey(ResponseField.TRANSACTION_ID.getFieldName()))
-        {
+        if (requestParameterMap.containsKey(ResponseField.TRANSACTION_ID.getFieldName())) {
             transactionId = requestParameterMap.get(ResponseField.TRANSACTION_ID.getFieldName())[0];
         }
 
         // 1 means we have a successful transaction
-        if("1".equals(requestParameterMap.get(ResponseField.RESPONSE_CODE.getFieldName())[0])) {
+        if ("1".equals(requestParameterMap.get(ResponseField.RESPONSE_CODE.getFieldName())[0])) {
 %>
 <h2>Success!</h2>
 <h4>Authorize.net Transaction ID:
-<div><%=net.authorize.util.StringUtils.sanitizeString(transactionId)%></div>
+    <div><%=net.authorize.util.StringUtils.sanitizeString(transactionId)%>
+    </div>
 </h4>
 <%
-} else {
+    } else {
 %>
 <h2>Error!</h2>
-<h3><%=net.authorize.util.StringUtils.sanitizeString(
-        requestParameterMap.get(ResponseField.RESPONSE_REASON_TEXT.getFieldName())[0])%></h3>
-<table>
-    <tr>
-        <td>response code</td>
-        <td><%=net.authorize.util.StringUtils.sanitizeString(
-                requestParameterMap.get(ResponseField.RESPONSE_CODE.getFieldName())[0])%></td>
-    </tr>
-    <tr>
-        <td>response reason code</td>
-        <td><%=net.authorize.util.StringUtils.sanitizeString(
-                requestParameterMap.get(ResponseField.RESPONSE_REASON_CODE.getFieldName())[0])%></td>
-    </tr>
-</table>
+
+Response Reason: "<%=request.getParameter(ResponseField.RESPONSE_REASON_TEXT.getFieldName())%>"<br/>
+Response code: "<%=request.getParameter(ResponseField.RESPONSE_CODE.getFieldName())%><br/>
+Response reason code: "<%= request.getParameter(ResponseField.RESPONSE_REASON_CODE.getFieldName())%><br/>
 <%
         }
     }
@@ -60,6 +49,7 @@ Info: <br/>
     <li>No page on Matson servers need to have any inputs for credit card information</li>
 
 </ol>
+<a href="index.jsp">Start Over</a>
 
 </body>
 </html>
