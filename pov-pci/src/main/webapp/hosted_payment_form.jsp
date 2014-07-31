@@ -53,7 +53,7 @@
         String transactionKey = "9429M6t2c6tWhG4U";
         String relayResponseUrl = "https://kapoors.me/pov-pci/relay_response.jsp";
 
-    String amount = "1.99";
+    String amount = "1200";
         Fingerprint fingerprint = Fingerprint.createFingerprint(
                 apiLoginId,
                 transactionKey,
@@ -72,12 +72,14 @@
     hidden x_version: <INPUT TYPE='text' NAME='x_version' VALUE='3.1'><br/>
     hidden x_method: <INPUT TYPE='text' NAME='x_method' VALUE='CC'><br/>
     hidden x_type: <INPUT TYPE='text' NAME='x_type' VALUE='AUTH_CAPTURE'><br/>
-    hidden x_amount: <INPUT TYPE='text' NAME='x_amount' VALUE='<%=net.authorize.util.StringUtils.sanitizeString(amount)%>'><br/>
+    hidden x_amount: <INPUT TYPE='text' NAME='x_amount' readonly="readonly" VALUE='<%=net.authorize.util.StringUtils.sanitizeString(amount)%>'><br/>
     hidden x_show_form: <INPUT TYPE='text' NAME='x_show_form' VALUE='PAYMENT_FORM'><br/>
     hidden x_test_request: <INPUT TYPE='text' NAME='x_test_request' VALUE='FALSE'><br/>
     hidden x_relay_response: <INPUT TYPE="text" NAME="x_relay_response" value="true"/><br/>
     hidden x_relay_response_url: <input type='text' name='x_relay_url' value='<%=relayResponseUrl%>' /><br/>
-    hidden x_notes: <input type='text' name='notes' value='Notes here' /><br/>
+    hidden x_invoice_num: <input type='text' name='x_invoice_num' value='1234567' /><br/>
+    hidden x_description: <input type='text' name='x_description' value='Vehicle abc shipping service by Matson' /><br/>
+
 
     <INPUT TYPE='SUBMIT' NAME='submit_button' VALUE='Submit' CLASS='null'><br/>
 
