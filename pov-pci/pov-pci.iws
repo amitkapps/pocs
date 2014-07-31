@@ -2,21 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9a23007-eefb-4654-bea4-c0b3fc9db262" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/direct_post.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/hosted_payment_form.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../alfresco/alfresco.iws" afterPath="$PROJECT_DIR$/../alfresco/alfresco.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/order_receipt.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/order_receipt.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pov-pci.iml" afterPath="$PROJECT_DIR$/pov-pci.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pov-pci.ipr" afterPath="$PROJECT_DIR$/pov-pci.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pov-pci.iws" afterPath="$PROJECT_DIR$/pov-pci.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/relay_response.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/relay_response.jsp" />
     </list>
     <ignored path="pov-pci.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406697762452" ignored="false" />
-    <file path="/index.jsp" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406707460833" ignored="false" />
+    <file path="/Dummy.txt" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406712341601" ignored="false" />
+    <file path="/index.jsp" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406769652367" ignored="false" />
     <file path="/pom.xml" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406677288194" ignored="false" />
-    <file path="/relay_response.jsp" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406699118431" ignored="false" />
-    <file path="/order_receipt.jsp" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406699141455" ignored="false" />
+    <file path="/relay_response.jsp" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406767184696" ignored="false" />
+    <file path="/order_receipt.jsp" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406770279814" ignored="false" />
+    <file path="/hosted_payment_form.jsp" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406770519860" ignored="false" />
+    <file path="/direct_post.jsp" changelist="d9a23007-eefb-4654-bea4-c0b3fc9db262" time="1406763140281" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,16 +100,34 @@
       <file leaf-file-name="relay_response.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/relay_response.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="41" selection-start="664" selection-end="708" vertical-scroll-proportion="-10.625">
+            <state line="52" column="0" selection-start="2142" selection-end="2142" vertical-scroll-proportion="-14.083333">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="0" selection-start="3869" selection-end="3869" vertical-scroll-proportion="3.1292517">
+            <state line="4" column="52" selection-start="105" selection-end="105" vertical-scroll-proportion="-2.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hosted_payment_form.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/hosted_payment_form.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="88" column="134" selection-start="4525" selection-end="4525" vertical-scroll-proportion="0.7416268">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="direct_post.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/direct_post.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="30" selection-start="2156" selection-end="2156" vertical-scroll-proportion="37.083332">
               <folding />
             </state>
           </provider>
@@ -116,7 +136,7 @@
       <file leaf-file-name="order_receipt.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/order_receipt.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="56" selection-start="337" selection-end="337" vertical-scroll-proportion="-6.875">
+            <state line="58" column="50" selection-start="2064" selection-end="2064" vertical-scroll-proportion="-11.041667">
               <folding />
             </state>
           </provider>
@@ -141,9 +161,12 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/order_receipt.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/direct_post.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/response.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/relay_response.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/order_receipt.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/hosted_payment_form.jsp" />
       </list>
     </option>
   </component>
@@ -261,32 +284,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pov-pci" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pov-pci" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -455,6 +452,13 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -474,6 +478,17 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+      <deployment />
+      <server-settings />
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
     <list size="0" />
@@ -518,7 +533,15 @@
       <created>1406694089389</created>
       <updated>1406694089389</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="various SIM options">
+      <created>1406707952406</created>
+      <updated>1406707952406</updated>
+    </task>
+    <task id="LOCAL-00005" summary="various SIM options">
+      <created>1406712347802</created>
+      <updated>1406712347802</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -536,6 +559,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32891247" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998455" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -543,8 +567,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24318507" sideWeight="0.6710875" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.07317073" sideWeight="0.6710875" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.7209469" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17001435" sideWeight="0.6710875" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31299734" sideWeight="0.7209469" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TCPMON" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -553,7 +577,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998455" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -599,7 +622,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="various SIM options" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -613,6 +636,7 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="various SIM options" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -650,13 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="25" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="18" selection-start="949" selection-end="949" vertical-scroll-proportion="0.0">
@@ -664,23 +681,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/order_receipt.jsp">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="56" selection-start="337" selection-end="337" vertical-scroll-proportion="-6.875">
+        <state line="13" column="25" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/relay_response.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="41" selection-start="664" selection-end="708" vertical-scroll-proportion="-10.625">
+        <state line="52" column="0" selection-start="2142" selection-end="2142" vertical-scroll-proportion="-14.083333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/order_receipt.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="50" selection-start="2064" selection-end="2064" vertical-scroll-proportion="-11.041667">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="0" selection-start="3869" selection-end="3869" vertical-scroll-proportion="3.1292517">
+        <state line="4" column="52" selection-start="105" selection-end="105" vertical-scroll-proportion="-2.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/direct_post.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="30" selection-start="2156" selection-end="2156" vertical-scroll-proportion="37.083332">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/hosted_payment_form.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="134" selection-start="4525" selection-end="4525" vertical-scroll-proportion="0.7416268">
           <folding />
         </state>
       </provider>

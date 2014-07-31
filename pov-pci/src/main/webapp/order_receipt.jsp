@@ -7,7 +7,7 @@
 <html>
 <head></head>
 <body>
-<h1>Your Receipt Page</h1></br>
+<h1>My Receipt Page</h1></br>
 <%
     System.out.println("Order receipt being displayed!!!");
     // Show the confirmation data
@@ -51,5 +51,14 @@
         }
     }
 %>
+Session: <%=request.getSession().getId()%><br/>
+Info: <br/>
+<ol>
+    <li>This page can display the result of the credit card transaction that happened at authorize.net.</li>
+    <li>At no time any credit card information entered servers hosting our code</li>
+    <li>No page on Matson servers need to have any inputs for credit card information</li>
+
+</ol>
+
 </body>
 </html>
