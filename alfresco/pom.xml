@@ -49,10 +49,67 @@
             <version>1.5.11</version>
         </dependency>
 
+<!--
         <dependency>
             <groupId>org.apache.chemistry.opencmis</groupId>
             <artifactId>chemistry-opencmis-client-impl</artifactId>
             <version>0.7.0</version>
+        </dependency>
+-->
+        <dependency>
+            <groupId>org.apache.chemistry.opencmis</groupId>
+            <artifactId>chemistry-opencmis-client-impl</artifactId>
+            <version>0.7.0</version>
+            <exclusions>
+<!--
+                <exclusion>
+                    <artifactId>jaxb-impl</artifactId>
+                    <groupId>com.sun.xml.bind</groupId>
+                </exclusion>
+-->
+<!--
+                <exclusion>
+                    <artifactId>stax-ex</artifactId>
+                    <groupId>org.jvnet.staxex</groupId>
+                </exclusion>
+-->
+<!--
+                <exclusion>
+                    <artifactId>stax-api</artifactId>
+                    <groupId>javax.xml.stream</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>activation</artifactId>
+                    <groupId>javax.activation</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>stax-api</artifactId>
+                    <groupId>stax</groupId>
+                </exclusion>
+-->
+<!--
+                <exclusion>
+                    <artifactId>jaxws-rt</artifactId>
+                    <groupId>com.sun.xml.ws</groupId>
+                </exclusion>
+-->
+<!--
+                <exclusion>
+                    <groupId>com.sun.xml.messaging.saaj</groupId>
+                    <artifactId>saaj-impl</artifactId>
+                </exclusion>
+-->
+                <exclusion>
+                    <groupId>javax.xml.soap</groupId>
+                    <artifactId>saaj-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.axis</groupId>
+            <artifactId>axis-saaj</artifactId>
+            <version>1.4</version>
         </dependency>
 
         <!--Alfresco's Open CMIS Extension so CMIS can work with Aspects-->
