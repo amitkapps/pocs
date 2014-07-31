@@ -27,8 +27,9 @@
         if("1".equals(requestParameterMap.get(ResponseField.RESPONSE_CODE.getFieldName())[0])) {
 %>
 <h2>Success!</h2>
-<h3>Your transaction ID:</h3>
+<h4>Authorize.net Transaction ID:
 <div><%=net.authorize.util.StringUtils.sanitizeString(transactionId)%></div>
+</h4>
 <%
 } else {
 %>
