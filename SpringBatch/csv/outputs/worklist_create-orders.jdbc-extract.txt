@@ -1,0 +1,10 @@
+1,Odessa,create-orders.jdbc-extract;
+2,Kendall,create-orders.jdbc-extract;
+3,Constance,create-orders.jdbc-extract;
+4,Clayton,create-orders.jdbc-extract;
+5,Elton,create-orders.jdbc-extract;
+6,Stone,create-orders.jdbc-extract;
+7,Julie,create-orders.jdbc-extract;
+8,Russell,create-orders.jdbc-extract;
+9,Maite,create-orders.jdbc-extract;
+10,Randall,create-orders.jdbc-extract;
