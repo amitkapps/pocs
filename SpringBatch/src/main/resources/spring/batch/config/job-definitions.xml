@@ -11,10 +11,10 @@
 		http://www.springframework.org/schema/util/spring-util-3.2.xsd
 		">
 
-    <import resource="./context.xml" />
+    <import resource="./context.xml"/>
 
     <batch:job-repository data-source="dataSource" transaction-manager="transactionManager"
-                          isolation-level-for-create="READ_COMMITTED" />
+                          isolation-level-for-create="READ_COMMITTED"/>
 
     <batch:step id="parentStep" abstract="true">
         <batch:listeners>
@@ -22,33 +22,251 @@
         </batch:listeners>
     </batch:step>
 
-    <batch:job id="helloJob" restartable="true">
-        <batch:step id="step_1" parent="parentStep">
+    <!--
+        <batch:job id="helloJob" restartable="true">
+            <batch:step id="step_1" parent="parentStep">
+                <batch:tasklet>
+                    <batch:chunk reader="helloReader" writer="helloWriter" commit-interval="10"/>
+                    <batch:transaction-attributes isolation="READ_COMMITTED" propagation="REQUIRES_NEW"/>
+                    <batch:listeners merge="true">
+                        <batch:listener ref="itemReadListener"/>
+                    </batch:listeners>
+                </batch:tasklet>
+            </batch:step>
+        </batch:job>
+
+        <bean id="helloReader" class="org.springframework.batch.item.database.JdbcCursorItemReader">
+            <property name="dataSource" ref="dataSource"/>
+            <property name="sql" value="select id, first_name, last_name, birth_dt, phone_number, salary, age from users"/>
+            <property name="rowMapper">
+                <bean class="poc.amitk.springbatch.UserRowMapper" />
+            </property>
+        </bean>
+        <bean id="helloWriter" class="org.beanio.spring.BeanIOFlatFileItemWriter">
+            <property name="streamMapping" value="classpath:/spring/batch/config/beanio/users-beanio.xml" />
+            <property name="streamName" value="usersfixedlength" />
+            <property name="resource" value="file:csv/outputs/users.txt" />
+        </bean>
+
+        <bean id="itemReadListener" class="poc.amitk.springbatch.ItemReadWriteListener"/>
+
+        <bean id="sampleTasklet" class="poc.gates.nightlybatch.SampleTasklet"/>
+    -->
+    <bean id="errorLoggingStepExecutionListener" class="poc.amitk.springbatch.ErrorLoggingStepExecutionListener"/>
+
+
+    <bean id="workListJdbcReader" class="org.springframework.batch.item.database.JdbcCursorItemReader">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="sql" value="select id, work_name, processed_by from work_list"/>
+        <property name="rowMapper">
+            <bean class="poc.gates.nightlybatch.WorkListRowMapper"/>
+        </property>
+    </bean>
+    <!--
+        <bean id="workListFileReader" class="org.beanio.spring.BeanIOFlatFileItemReader" scope="step">
+            <property name="streamMapping" value="classpath:/spring/batch/config/beanio/WorkList-beanio.xml" />
+            <property name="streamName" value="workListCSV" />
+            <property name="resource" value="file:csv/outputs/worklist_jdbc-extract.txt"/>
+        </bean>
+    -->
+
+    <bean id="workListFileWriter" class="org.beanio.spring.BeanIOFlatFileItemWriter" scope="step">
+        <property name="streamMapping" value="classpath:/spring/batch/config/beanio/WorkList-beanio.xml"/>
+        <property name="streamName" value="workListCSV"/>
+        <property name="resource" value="file:csv/outputs/worklist_#{stepExecution.stepName}.txt"/>
+    </bean>
+
+    <bean id="workListReadWriteListener" class="poc.gates.nightlybatch.WorkListReadWriteListener" scope="step"/>
+    <bean id="workListProcessor" class="poc.gates.nightlybatch.WorkListProcessor" scope="step"/>
+    <bean id="nightly-batch-taskexecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+        <property name="corePoolSize" value="5"/>
+        <property name="keepAliveSeconds" value="120"/>
+        <property name="maxPoolSize" value="10"/>
+        <property name="threadNamePrefix" value="nightly-batch"/>
+        <property name="waitForTasksToCompleteOnShutdown" value="true"/>
+    </bean>
+
+    <batch:job id="gates-nightly-batch-job" restartable="true">
+        <batch:flow id="flow.create-orders" parent="create-orders" next="flow.split.invoice-ship"/>
+        <!--<batch:flow id="flow.create-orders" parent="create-orders-job-flow" next="flow.split.invoice-ship"/> &lt;!&ndash;Doesn't work&ndash;&gt;-->
+        <batch:split id="flow.split.invoice-ship" task-executor="nightly-batch-taskexecutor">
+            <batch:flow parent="create-invoices"/>
+            <!--<batch:flow parent="create-invoices-job-flow"/> &lt;!&ndash;Doesn't work&ndash;&gt;-->
+            <batch:flow parent="ship-orders"/>
+            <!--<batch:flow parent="ship-orders-job-flow"/> &lt;!&ndash;Doesn't work&ndash;&gt;-->
+        </batch:split>
+    </batch:job>
+
+    <batch:job id="create-orders-job">
+        <batch:flow id="create-orders-job-flow" parent="create-orders"/>
+    </batch:job>
+
+    <batch:flow id="create-orders">
+        <batch:step id="create-orders.jdbc-extract" parent="parentStep" next="create-orders.file-output">
             <batch:tasklet>
-                <batch:chunk reader="helloReader" writer="helloWriter" commit-interval="10"/>
+                <batch:chunk reader="workListJdbcReader" writer="workListFileWriter" commit-interval="5">
+                    <batch:processor>
+                        <bean scope="step" class="poc.gates.nightlybatch.WorkListProcessor">
+                            <property name="errorString" value="AAA"/>
+                        </bean>
+                    </batch:processor>
+                </batch:chunk>
+
                 <batch:transaction-attributes isolation="READ_COMMITTED" propagation="REQUIRES_NEW"/>
                 <batch:listeners merge="true">
-                    <batch:listener ref="itemReadListener"/>
+                    <batch:listener ref="workListReadWriteListener"/>
                 </batch:listeners>
             </batch:tasklet>
         </batch:step>
+
+        <batch:step id="create-orders.file-output">
+            <batch:tasklet>
+                <batch:chunk writer="workListFileWriter" commit-interval="5">
+                    <batch:reader>
+                        <bean class="org.beanio.spring.BeanIOFlatFileItemReader" scope="step">
+                            <property name="streamMapping"
+                                      value="classpath:/spring/batch/config/beanio/WorkList-beanio.xml"/>
+                            <property name="streamName" value="workListCSV"/>
+                            <property name="resource" value="file:csv/outputs/worklist_create-orders.jdbc-extract.txt"/>
+                        </bean>
+                    </batch:reader>
+                    <batch:processor>
+                        <bean scope="step" class="poc.gates.nightlybatch.WorkListProcessor">
+                            <property name="errorString" value="BBB"/>
+                        </bean>
+                    </batch:processor>
+                </batch:chunk>
+                <batch:transaction-attributes isolation="READ_COMMITTED" propagation="REQUIRES_NEW"/>
+                <batch:listeners merge="true">
+                    <batch:listener ref="workListReadWriteListener"/>
+                </batch:listeners>
+            </batch:tasklet>
+        </batch:step>
+
+    </batch:flow>
+
+    <batch:job id="create-invoices-job">
+        <batch:flow id="create-invoices-job-flow" parent="create-invoices"/>
     </batch:job>
 
-    <bean id="helloReader" class="org.springframework.batch.item.database.JdbcCursorItemReader">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="sql" value="select id, first_name, last_name, birth_dt, phone_number, salary, age from users"/>
-        <property name="rowMapper">
-            <bean class="poc.amitk.springbatch.UserRowMapper" />
-        </property>
-    </bean>
-    <bean id="helloWriter" class="org.beanio.spring.BeanIOFlatFileItemWriter">
-        <property name="streamMapping" value="classpath:/spring/batch/config/beanio/users-beanio.xml" />
-        <property name="streamName" value="usersfixedlength" />
-        <property name="resource" value="file:csv/outputs/users.txt" />
-    </bean>
+    <batch:flow id="create-invoices">
+        <batch:step id="create-invoices.file-extract" parent="parentStep" next="create-invoices.file-output">
+            <batch:tasklet>
+                <batch:chunk writer="workListFileWriter" commit-interval="5">
+                    <batch:reader>
+                        <bean class="org.beanio.spring.BeanIOFlatFileItemReader" scope="step">
+                            <property name="streamMapping"
+                                      value="classpath:/spring/batch/config/beanio/WorkList-beanio.xml"/>
+                            <property name="streamName" value="workListCSV"/>
+                            <property name="resource" value="file:csv/outputs/worklist_create-orders.file-output.txt"/>
+                        </bean>
+                    </batch:reader>
+                    <batch:processor>
+                        <bean scope="step" class="poc.gates.nightlybatch.WorkListProcessor">
+                            <property name="errorString" value="CCC"/>
+                        </bean>
+                    </batch:processor>
+                </batch:chunk>
+                <batch:transaction-attributes isolation="READ_COMMITTED" propagation="REQUIRES_NEW"/>
+                <batch:listeners merge="true">
+                    <batch:listener ref="workListReadWriteListener"/>
+                </batch:listeners>
+            </batch:tasklet>
+        </batch:step>
 
-    <bean id="itemReadListener" class="poc.amitk.springbatch.ItemReadWriteListener"/>
-    <bean id="errorLoggingStepExecutionListener" class="poc.amitk.springbatch.ErrorLoggingStepExecutionListener"/>
+        <batch:step id="create-invoices.file-output">
+            <batch:tasklet>
+                <batch:chunk writer="workListFileWriter" commit-interval="5">
+                    <batch:reader>
+                        <bean class="org.beanio.spring.BeanIOFlatFileItemReader" scope="step">
+                            <property name="streamMapping"
+                                      value="classpath:/spring/batch/config/beanio/WorkList-beanio.xml"/>
+                            <property name="streamName" value="workListCSV"/>
+                            <property name="resource"
+                                      value="file:csv/outputs/worklist_create-invoices.file-extract.txt"/>
+                        </bean>
+                    </batch:reader>
+                    <batch:processor>
+                        <bean scope="step" class="poc.gates.nightlybatch.WorkListProcessor">
+                            <property name="errorString" value="DDD"/>
+                        </bean>
+                    </batch:processor>
+                </batch:chunk>
+                <batch:transaction-attributes isolation="READ_COMMITTED" propagation="REQUIRES_NEW"/>
+                <batch:listeners merge="true">
+                    <batch:listener ref="workListReadWriteListener"/>
+                </batch:listeners>
+            </batch:tasklet>
+        </batch:step>
+
+    </batch:flow>
+
+    <batch:job id="ship-orders-job">
+        <batch:flow id="ship-orders-job-flow" parent="ship-orders"/>
+    </batch:job>
+    <batch:flow id="ship-orders">
+        <batch:step id="ship-orders.file-extract" parent="parentStep" next="ship-orders.file-output">
+            <batch:tasklet>
+                <batch:chunk writer="workListFileWriter" commit-interval="5">
+                    <batch:reader>
+                        <bean class="org.beanio.spring.BeanIOFlatFileItemReader" scope="step">
+                            <property name="streamMapping"
+                                      value="classpath:/spring/batch/config/beanio/WorkList-beanio.xml"/>
+                            <property name="streamName" value="workListCSV"/>
+                            <property name="resource" value="file:csv/outputs/worklist_create-orders.file-output.txt"/>
+                        </bean>
+                    </batch:reader>
+                    <batch:processor>
+                        <bean scope="step" class="poc.gates.nightlybatch.WorkListProcessor">
+                            <property name="errorString" value="EEE"/>
+                        </bean>
+                    </batch:processor>
+                </batch:chunk>
+                <batch:transaction-attributes isolation="READ_COMMITTED" propagation="REQUIRES_NEW"/>
+                <batch:listeners merge="true">
+                    <batch:listener ref="workListReadWriteListener"/>
+                </batch:listeners>
+            </batch:tasklet>
+        </batch:step>
+
+        <batch:step id="ship-orders.file-output">
+            <batch:tasklet>
+                <batch:chunk writer="workListFileWriter" commit-interval="5">
+                    <batch:reader>
+                        <bean class="org.beanio.spring.BeanIOFlatFileItemReader" scope="step">
+                            <property name="streamMapping"
+                                      value="classpath:/spring/batch/config/beanio/WorkList-beanio.xml"/>
+                            <property name="streamName" value="workListCSV"/>
+                            <property name="resource"
+                                      value="file:csv/outputs/worklist_ship-orders.file-extract.txt"/>
+                        </bean>
+                    </batch:reader>
+                    <batch:processor>
+                        <bean scope="step" class="poc.gates.nightlybatch.WorkListProcessor">
+                            <property name="errorString" value="FFF"/>
+                        </bean>
+                    </batch:processor>
+                </batch:chunk>
+                <batch:transaction-attributes isolation="READ_COMMITTED" propagation="REQUIRES_NEW"/>
+                <batch:listeners merge="true">
+                    <batch:listener ref="workListReadWriteListener"/>
+                </batch:listeners>
+            </batch:tasklet>
+        </batch:step>
+
+    </batch:flow>
+
+    <!--
+        <batch:job id="gates-nightly-batch-job" restartable="true">
+            <batch:step id="Daily-Batch-Cycle-Initialize-Job.step" next="ITN-RELEASE-PROCESS-BATCH-JOB.step">
+                <batch:job ref="Daily-Batch-Cycle-Initialize-Job" job-launcher="jobLauncher" job-parameters-extractor="defaultJobParametersExtractor"/>
+            </batch:step>
+            <batch:step id="ITN-RELEASE-PROCESS-BATCH-JOB.step">
+                <batch:job ref="ITN-RELEASE-PROCESS-BATCH-JOB" job-launcher="jobLauncher" job-parameters-extractor="defaultJobParametersExtractor"/>
+            </batch:step>
+        </batch:job>
+        <bean id="defaultJobParametersExtractor" class="org.springframework.batch.core.step.job.DefaultJobParametersExtractor"/>
+    -->
 
 
 </beans>
