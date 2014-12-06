@@ -33,9 +33,9 @@ public class NightlyBatchRunner {
         JobExplorer jobExplorer = (JobExplorer) context.getBean("jobExplorer");
         JobOperator jobOperator = (JobOperator) context.getBean("jobOperator");
         JobRepository jobRepository = (JobRepository) context.getBean("jobRepository");
-//        Job job = (Job) context.getBean("gates-nightly-batch-job");
+        Job job = (Job) context.getBean("gates-nightly-batch-job");
 //        Job job = (Job) context.getBean("create-orders-job");
-        Job job = (Job) context.getBean("create-invoices-job");
+//        Job job = (Job) context.getBean("create-invoices-job");
 
         try {
 

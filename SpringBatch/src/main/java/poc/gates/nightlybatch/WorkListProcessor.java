@@ -18,6 +18,7 @@ public class WorkListProcessor implements ItemProcessor<WorkList, WorkList> {
     Logger log = LoggerFactory.getLogger(WorkListProcessor.class);
     private StepExecution stepExecution;
     private String errorString = "XXX";
+    private long sleepTimeMillis = 1000;
 
     @BeforeStep
     public void storeStepExecution(StepExecution stepExecution){
@@ -28,13 +29,19 @@ public class WorkListProcessor implements ItemProcessor<WorkList, WorkList> {
         this.errorString = errorString;
     }
 
+    public void setSleepTimeMillis(long sleepTimeMillis) {
+        this.sleepTimeMillis = sleepTimeMillis;
+    }
+
     public WorkList process(WorkList workList) throws Exception {
         log.info("Step {}, Processing workList item {}", stepExecution.getStepName(), workList.getId() + workList.getWorkName());
         if(workList.getWorkName().contains(errorString)){
             throw new RuntimeException("ErrorString: " + errorString + " at " + workList.getId() + workList.getWorkName() + ", step: " + stepExecution.getStepName());
         }
         workList.setProcessedBy(workList.getProcessedBy()+stepExecution.getStepName() + ";");
-        Thread.sleep(1000);
+        Thread.sleep(sleepTimeMillis);
         return workList;  //To change body of implemented methods use File | Settings | File Templates.
     }
+
+
 }
