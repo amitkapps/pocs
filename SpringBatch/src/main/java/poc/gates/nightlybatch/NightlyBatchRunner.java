@@ -25,7 +25,8 @@ public class NightlyBatchRunner {
 
     private void run() {
 
-        String[] springConfig = { "spring/batch/config/job-definitions.xml" };
+//        String[] springConfig = { "spring/batch/config/job-definitions.xml" };
+        String[] springConfig = { "spring/batch/config/job-definitions-jobstep.xml" };
 
         ApplicationContext context = new ClassPathXmlApplicationContext(springConfig);
 
@@ -57,7 +58,7 @@ public class NightlyBatchRunner {
                 log.info("No previous executions, starting a new execution/instance");
                 execution = jobLauncher.run(job, param);
             }
-            log.info("Exit Status : {}", execution.getStatus());
+            log.info("Job Status : {}", execution.getStatus());
             log.info("Failure Exceptions: {}", execution.getAllFailureExceptions());
 
 
