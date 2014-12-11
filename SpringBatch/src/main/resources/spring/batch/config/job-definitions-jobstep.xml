@@ -64,6 +64,9 @@
 
     <!--MASTER JOB-->
 
+    <bean id="dayOfWeekDecider" class="poc.gates.nightlybatch.DayOfWeekDecider">
+        <constructor-arg value="#{T(java.util.Calendar).FRIDAY}"/>
+    </bean>
 
     <batch:job id="gates-nightly-batch-job" restartable="true">
         <!--<batch:flow id="flow.create-orders" parent="create-orders" next="flow.split.invoice-ship"/>-->
@@ -76,6 +79,10 @@
         <batch:split id="flow.split.invoice-ship" task-executor="nightly-batch-taskexecutor" next="initiate-feedback-job-step">
 
             <batch:flow>
+                <batch:decision id="isTuesday" decider="dayOfWeekDecider">
+                    <batch:next on="TODAY_MATCHES" to="create-invoices-job-step"/>
+                    <batch:end on="COMPLETED" exit-code="COMPLETED" />
+                </batch:decision>
                 <batch:step id="create-invoices-job-step">
                     <batch:job ref="create-invoices-job" job-launcher="autoRestartFailedJobsJobLauncher" job-parameters-extractor="jobParametersExtractor"/>
                 </batch:step>
