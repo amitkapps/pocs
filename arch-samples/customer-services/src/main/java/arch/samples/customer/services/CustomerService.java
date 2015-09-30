@@ -21,7 +21,7 @@ public class CustomerService {
 
     public Customer getCustomerById(int customerId) {
 
-        logger.info("version:{}", version);
+//        logger.info("version:{}", version);
 
         return new Customer(customerId)
                 .setFirstName("John")

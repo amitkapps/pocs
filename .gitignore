@@ -1,1 +1,16 @@
-aws-ses/src/test/java/poc/arc/aws/ses/monitor/SESMonitor.java
+arch-samples/customer-services-client/.gradle
+arch-samples/customer-services-client/build/
+arch-samples/customer-services/.gradle/
+arch-samples/customer-services/build/
+arch-samples/customer-services/node_modules/
+arch-samples/eureka-server/.gradle/
+arch-samples/eureka-server/build/
+arch-samples/hystrix-dashboard/.gradle/
+arch-samples/hystrix-dashboard/build/
+arch-samples/customer-services-client/customer-services-client.iml
+arch-samples/customer-services-client/customer-services-client.ipr
+arch-samples/customer-services-client/customer-services-client.iws
+arch-samples/customer-services/customer-services.ipr
+arch-samples/customer-services/customer-services.iws
+arch-samples/eureka-server/eureka-server.iws
+arch-samples/hystrix-dashboard/hystrix-dashboard.iws

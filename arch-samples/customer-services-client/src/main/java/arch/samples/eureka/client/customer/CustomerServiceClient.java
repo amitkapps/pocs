@@ -1,6 +1,7 @@
 package arch.samples.eureka.client.customer;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,11 @@ public class CustomerServiceClient {
         this.restTemplate = restTemplate;
     }
 
-    @HystrixCommand()
+    @HystrixCommand(
+            fallbackMethod = "getCustomerByIdFallBack",
+            commandProperties = {
+                    @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "7000")
+            })
     public Customer getCustomerById(int customerId) {
         logger.info("Retrieving customer");
 
@@ -26,5 +31,10 @@ public class CustomerServiceClient {
         logger.info("{}", customer);
         return customer;
 
+    }
+
+    public Customer getCustomerByIdFallBack(int customerId){
+        logger.warn("Fallback method, returning null customer");
+        return new Customer();
     }
 }

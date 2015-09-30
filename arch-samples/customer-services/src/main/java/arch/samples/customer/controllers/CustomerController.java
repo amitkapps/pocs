@@ -2,6 +2,8 @@ package arch.samples.customer.controllers;
 
 import arch.samples.customer.models.Customer;
 import arch.samples.customer.services.CustomerService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 public class CustomerController {
-
+    Logger logger = LoggerFactory.getLogger(CustomerController.class);
 
     private final CustomerService customerService;
     private int breakingPointId = 10;
@@ -24,13 +26,13 @@ public class CustomerController {
 
     @RequestMapping(value = "/customer/break", method = RequestMethod.POST)
     public void setBreakingPointId(@RequestBody Customer customer){
-        System.out.println("Setting breaking point " + customer);
+        logger.info("Setting breaking point {}", customer);
         this.breakingPointId = customer.getId();
     }
 
     @RequestMapping(value = "/customer/{customerId}", method = RequestMethod.GET)
     public Customer getCustomerById(@PathVariable int customerId) throws InterruptedException {
-        System.out.println("Creating customer object " + customerId);
+        logger.info("Requesting cusomer object with id {}", customerId);
         if(breakingPointId == customerId)
             Thread.sleep(10000);
 

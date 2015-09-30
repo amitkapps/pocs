@@ -40,12 +40,13 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter")
-    compile("org.springframework:spring-web")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile('org.springframework.boot:spring-boot-starter-actuator')
     compile("com.fasterxml.jackson.core:jackson-annotations")
     compile("com.fasterxml.jackson.core:jackson-databind")
-    compile ('org.springframework.cloud:spring-cloud-starter-config')
-    compile ('org.springframework.cloud:spring-cloud-starter-eureka')
-    compile 'org.springframework.cloud:spring-cloud-starter-hystrix'
+    compile('org.springframework.cloud:spring-cloud-starter-config')
+    compile('org.springframework.cloud:spring-cloud-starter-eureka')
+    compile('org.springframework.cloud:spring-cloud-starter-hystrix')
 
     testCompile("junit:junit")
     testCompile("org.springframework.boot:spring-boot-starter-test")
