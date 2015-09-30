@@ -14,3 +14,15 @@ arch-samples/customer-services/customer-services.ipr
 arch-samples/customer-services/customer-services.iws
 arch-samples/eureka-server/eureka-server.iws
 arch-samples/hystrix-dashboard/hystrix-dashboard.iws
+SpringBatch/target/
+SpringRestfulWS/target/
+alfresco/target/
+aws-ses/target/
+pov-pci/target/
+temp/.idea/
+arch-aws-cli/target/
+spring-boot/.gradle/
+spring-boot/build/
+spring-boot/spring-boot.iml
+spring-boot/spring-boot.ipr
+spring-boot/spring-boot.iws
