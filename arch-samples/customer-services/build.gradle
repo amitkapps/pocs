@@ -1,37 +1,46 @@
-apply plugin: 'rebel'
-
 buildscript {
     repositories {
         mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
-        classpath group: 'org.zeroturnaround', name: 'gradle-jrebel-plugin', version: '1.1.2'
+        classpath ("io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE")
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.6.RELEASE")
     }
 }
 
+apply plugin: 'io.spring.dependency-management'
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
 
-jar.dependsOn(generateRebel)
+dependencyManagement{
+    imports{
+        mavenBom('org.springframework.cloud:spring-cloud-starter-parent:Brixton.M1')
+    }
+}
 
 jar {
     baseName = 'arch-sample-customer-service'
     version =  '0.1.0'
 }
 
+dependencies {
+    compile ('org.springframework.cloud:spring-cloud-starter-config')
+    compile ('org.springframework.cloud:spring-cloud-starter-eureka')
+    testCompile("junit:junit")
+}
 
 repositories {
     mavenCentral()
+    maven{
+        url 'http://repo.spring.io/milestone'
+    }
 }
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter-actuator")
-    testCompile("junit:junit")
-}

@@ -1,0 +1,13 @@
+customer-services:
+  version: 0.1.0.SNAPSHOT
+
+info:
+  version: 0.1.0.SNAPSHOT
+
+eureka:
+  client:
+    service:
+      url: http://localhost:8761
+  instance:
+    metadataMap:
+      instanceId: ${spring.application.name}.${spring.application.instance_id:${random.value}}

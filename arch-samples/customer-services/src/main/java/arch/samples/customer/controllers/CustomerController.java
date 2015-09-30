@@ -1,17 +1,26 @@
 package arch.samples.customer.controllers;
 
 import arch.samples.customer.models.Customer;
+import arch.samples.customer.services.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Created by amitkapps on 9/24/15.
+ * external interface to customer services
  */
 @RestController
 public class CustomerController {
 
 
+    private final CustomerService customerService;
     private int breakingPointId = 10;
 
+
+    @Autowired
+    public CustomerController(CustomerService customerService){
+        this.customerService = customerService;
+    }
 
     @RequestMapping(value = "/customer/break", method = RequestMethod.POST)
     public void setBreakingPointId(@RequestBody Customer customer){
@@ -25,9 +34,6 @@ public class CustomerController {
         if(breakingPointId == customerId)
             Thread.sleep(10000);
 
-        return new Customer(customerId)
-                .setFirstName("John")
-                .setLastName("Doe")
-                .setOrganizationName("Matson Inc.");
+        return customerService.getCustomerById(customerId);
     };
 }
