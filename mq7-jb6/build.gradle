@@ -1,0 +1,61 @@
+buildscript {
+    repositories {
+        maven { url 'http://repo.springsource.org/libs-snapshot' }
+        mavenLocal()
+//        flatDir {
+//            dirs 'lib'
+//        }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$bootVersion")
+
+    }
+}
+
+apply plugin: 'spring-boot'
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'war'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url 'http://repo.springsource.org/libs-snapshot' }
+    maven { url 'https://repo.spring.io/plugins-release' }
+    maven { url "https://repository.jboss.org/nexus/content/repositories/releases" }
+    maven { url "http://10.8.7.59:8081/nexus/content/groups/public" }
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+//    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    compile 'org.springframework:spring-jms'
+    compile 'javax.jms:jms:1.1'
+//    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+
+    providedRuntime 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    providedRuntime 'javax.servlet:jstl'
+
+    compile "org.codehaus.groovy:groovy:$groovyVersion"
+    compile "org.codehaus.groovy:groovy-json:2.4.4"
+    compile 'com.google.code.gson:gson:2.2.4'
+
+    // testing deps
+    testCompile "org.springframework.boot:spring-boot-starter-test:$bootVersion"
+}
+
+
+war {
+    baseName = 'mq7-jb6'
+    version = ''
+    from('src') {
+        include 'jboss-web.xml'
+        include 'jboss-deployment-structure.xml'
+        into 'WEB-INF'
+    }
+}
+
+
+task(type: Wrapper) {
+    gradleVersion = '2.5'
+}
