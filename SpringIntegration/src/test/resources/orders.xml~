@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<orders>
-    <order id="1">
-        <buyer name="John"/>
-    </order>
-    <order id="2">
-        <buyer name="Jane"/>
-    </order>
-</orders>
