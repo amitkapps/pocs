@@ -44,7 +44,7 @@ public class PutMQMessagesJmsApi {
         JMSTextMessage message = (JMSTextMessage) session.createTextMessage(String.valueOf(""));
 
 
-        for(int i=1; i<=1000; i++){
+        for(int i=1; i<=1; i++){
             message.setText(String.valueOf(i));
             sender.send(message);
             System.out.println("Sent message: " + i);
