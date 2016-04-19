@@ -24,15 +24,16 @@ public class VesselServiceControllerTest {
         Date start = new Date();
         RestTemplate restTemplate = new RestTemplate();
 
-        String url = "http://localhost:8080/springjms/rest/terminalService/{terminalId}/vesselList";
+//        String url = "http://localhost:8080/springjms/rest/terminalService/{terminalId}/vesselList"; //local
+        String url = "http://10.101.10.192:8080/springjms/rest/terminalService/{terminalId}/vesselList"; //dev poc
 
         for (int terminalId=1; terminalId <= TERMINAL_COUNT; terminalId++){
             String response = restTemplate.getForObject(url, String.class, terminalId);
             logger.info("got response for {} : {}", terminalId, response);
             if( terminalId % 5000 == 0)
-                Thread.sleep(15*60*1000);
+                Thread.sleep(3/2*60*60*1000);
             else
-                Thread.sleep(100);
+                Thread.sleep(10);
 
         }
 
