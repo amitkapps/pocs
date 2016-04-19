@@ -1,0 +1,17 @@
+build
+classes
+.idea
+.yo-rc.json
+.gradle
+*.iml
+*.ipr
+*.iws
+out
+
+# Logs and databases #
+######################
+*.log
+**/rebel.xml
+*.classpath
+.project
+*.prefs
